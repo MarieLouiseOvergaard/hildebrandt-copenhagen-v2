@@ -1,0 +1,255 @@
+.styling-main {
+  overflow-x: hidden;
+  background: var(--color-white);
+}
+
+.styling-hero,
+.styling-guide {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-right: var(--page-gutter);
+  padding-left: var(--page-gutter);
+}
+
+.styling-hero {
+  display: grid;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+  padding-top: 58px;
+  padding-bottom: 72px;
+}
+
+.styling-hero-copy,
+.styling-feature-copy,
+.styling-card-copy {
+  min-width: 0;
+}
+
+.styling-hero h1,
+.styling-section-heading h2 {
+  letter-spacing: .04em;
+}
+
+.styling-hero h1 {
+  max-width: 560px;
+}
+
+.styling-hero p:not(.eyebrow) {
+  max-width: 540px;
+  margin-top: 18px;
+}
+
+.styling-hero-media,
+.styling-feature-media,
+.styling-card-media {
+  display: grid;
+  width: 100%;
+  margin: 0;
+  place-items: center;
+  overflow: hidden;
+  background: var(--color-light-blue);
+}
+
+.styling-hero-media,
+.styling-feature-media {
+  aspect-ratio: 1.65 / 1;
+}
+
+.styling-card-media {
+  aspect-ratio: 1.28 / 1;
+}
+
+.styling-hero-media img,
+.styling-feature-media img,
+.styling-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.styling-guide {
+  padding-top: 28px;
+  padding-bottom: 96px;
+}
+
+.styling-section-heading {
+  max-width: 680px;
+  margin-bottom: clamp(34px, 5vw, 64px);
+}
+
+.styling-feature {
+  display: grid;
+  width: 100%;
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+}
+
+.styling-feature + .styling-grid-band,
+.styling-grid-band + .styling-feature {
+  margin-top: clamp(48px, 7vw, 96px);
+}
+
+.styling-feature h3,
+.styling-card h3 {
+  color: var(--color-heading);
+  letter-spacing: .05em;
+}
+
+.styling-feature p,
+.styling-card p {
+  max-width: 560px;
+  margin-top: 12px;
+}
+
+.styling-button {
+  width: auto;
+  min-width: 178px;
+  margin-top: 28px;
+}
+
+.styling-grid-band {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 58px var(--content-gutter) 64px;
+  background: var(--color-light-blue);
+}
+
+.styling-grid {
+  display: grid;
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 56px);
+}
+
+.styling-card {
+  min-width: 0;
+}
+
+.styling-card-link {
+  display: grid;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+.styling-card-link:focus-visible,
+.styling-feature-media:focus-visible,
+.styling-button:focus-visible {
+  outline: 2px solid var(--color-heading);
+  outline-offset: 6px;
+}
+
+.styling-card-copy {
+  padding-top: 22px;
+}
+
+.styling-card-link:focus-visible h3,
+.styling-card-link:hover h3,
+.styling-feature:has(.styling-feature-media:focus-visible) h3,
+.styling-feature:has(.styling-feature-media:hover) h3 {
+  color: var(--color-primary);
+}
+
+@media (min-width: 1200px) {
+  .styling-hero {
+    grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
+  }
+
+  .styling-feature {
+    grid-template-columns: minmax(0, .4fr) minmax(0, .6fr);
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .styling-hero,
+  .styling-feature {
+    grid-template-columns: minmax(0, .42fr) minmax(0, .58fr);
+  }
+
+  .styling-hero {
+    padding-top: 54px;
+    padding-bottom: 64px;
+  }
+
+  .styling-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .styling-hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 0 44px;
+  }
+
+  .styling-hero-copy,
+  .styling-guide {
+    padding-right: var(--page-gutter);
+    padding-left: var(--page-gutter);
+  }
+
+  .styling-hero-media {
+    order: -1;
+  }
+
+  .styling-hero-media,
+  .styling-feature-media {
+    aspect-ratio: 1.45 / 1;
+  }
+
+  .styling-hero h1,
+  .styling-hero p:not(.eyebrow),
+  .styling-feature p,
+  .styling-card p {
+    max-width: none;
+  }
+
+  .styling-guide {
+    padding-top: 10px;
+    padding-bottom: 58px;
+  }
+
+  .styling-section-heading {
+    margin-bottom: 32px;
+  }
+
+  .styling-feature,
+  .styling-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .styling-feature {
+    gap: 20px;
+  }
+
+  .styling-feature + .styling-grid-band,
+  .styling-grid-band + .styling-feature {
+    margin-top: 46px;
+  }
+
+  .styling-grid-band {
+    padding: 42px var(--page-gutter) 54px;
+  }
+
+  .styling-grid {
+    gap: 34px;
+  }
+
+  .styling-card-media {
+    aspect-ratio: 1.35 / 1;
+  }
+
+  .styling-card-copy {
+    padding-top: 16px;
+  }
+
+  .styling-button {
+    width: 100%;
+  }
+}
