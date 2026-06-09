@@ -1,9 +1,13 @@
+﻿/* Her ligger udseendet til Stylingtips-siden. */
+
+/* Denne del styrer udseendet for gruppen her. */
 .styling-main {
   overflow-x: hidden;
   background: var(--color-white);
 }
-
 .styling-hero,
+
+/* Guide-sektioner med forklaringer og gode råd. */
 .styling-guide {
   width: 100%;
   max-width: var(--container-max);
@@ -12,6 +16,7 @@
   padding-left: var(--page-gutter);
 }
 
+/* Den store øverste sektion på siden. */
 .styling-hero {
   display: grid;
   gap: clamp(28px, 5vw, 72px);
@@ -19,29 +24,34 @@
   padding-top: 58px;
   padding-bottom: 72px;
 }
-
 .styling-hero-copy,
 .styling-feature-copy,
+
+/* Små kort med indhold. */
 .styling-card-copy {
   min-width: 0;
 }
-
 .styling-hero h1,
+
+/* Grundregler for almindelige HTML-elementer. */
 .styling-section-heading h2 {
   letter-spacing: .04em;
 }
 
+/* Den store øverste sektion på siden. */
 .styling-hero h1 {
   max-width: 560px;
 }
 
+/* Den store øverste sektion på siden. */
 .styling-hero p:not(.eyebrow) {
   max-width: 540px;
   margin-top: 18px;
 }
-
 .styling-hero-media,
 .styling-feature-media,
+
+/* Billeder og billedkasser. */
 .styling-card-media {
   display: grid;
   width: 100%;
@@ -50,18 +60,21 @@
   overflow: hidden;
   background: var(--color-light-blue);
 }
-
 .styling-hero-media,
+
+/* Billeder og billedkasser. */
 .styling-feature-media {
   aspect-ratio: 1.65 / 1;
 }
 
+/* Billeder og billedkasser. */
 .styling-card-media {
   aspect-ratio: 1.28 / 1;
 }
-
 .styling-hero-media img,
 .styling-feature-media img,
+
+/* Billeder og billedkasser. */
 .styling-card-media img {
   display: block;
   width: 100%;
@@ -69,46 +82,54 @@
   object-fit: contain;
 }
 
+/* Guide-sektioner med forklaringer og gode råd. */
 .styling-guide {
   padding-top: 28px;
   padding-bottom: 96px;
 }
 
+/* Denne del styrer udseendet for gruppen her. */
 .styling-section-heading {
   max-width: 680px;
   margin-bottom: clamp(34px, 5vw, 64px);
 }
 
+/* Denne del styrer udseendet for gruppen her. */
 .styling-feature {
   display: grid;
   width: 100%;
   gap: clamp(28px, 5vw, 72px);
   align-items: center;
 }
-
 .styling-feature + .styling-grid-band,
+
+/* Lister og rækker med flere ting. */
 .styling-grid-band + .styling-feature {
   margin-top: clamp(48px, 7vw, 96px);
 }
-
 .styling-feature h3,
+
+/* Små kort med indhold. */
 .styling-card h3 {
   color: var(--color-heading);
   letter-spacing: .05em;
 }
-
 .styling-feature p,
+
+/* Små kort med indhold. */
 .styling-card p {
   max-width: 560px;
   margin-top: 12px;
 }
 
+/* Knapper og links man skal klikke på. */
 .styling-button {
   width: auto;
   min-width: 178px;
   margin-top: 28px;
 }
 
+/* Lister og rækker med flere ting. */
 .styling-grid-band {
   width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -116,6 +137,7 @@
   background: var(--color-light-blue);
 }
 
+/* Lister og rækker med flere ting. */
 .styling-grid {
   display: grid;
   width: 100%;
@@ -125,131 +147,122 @@
   gap: clamp(24px, 4vw, 56px);
 }
 
+/* Små kort med indhold. */
 .styling-card {
   min-width: 0;
 }
 
+/* Små kort med indhold. */
 .styling-card-link {
   display: grid;
   height: 100%;
   color: inherit;
   text-decoration: none;
 }
-
 .styling-card-link:focus-visible,
 .styling-feature-media:focus-visible,
+
+/* Knapper og links man skal klikke på. */
 .styling-button:focus-visible {
   outline: 2px solid var(--color-heading);
   outline-offset: 6px;
 }
 
+/* Små kort med indhold. */
 .styling-card-copy {
   padding-top: 22px;
 }
-
 .styling-card-link:focus-visible h3,
 .styling-card-link:hover h3,
 .styling-feature:has(.styling-feature-media:focus-visible) h3,
+
+/* Billeder og billedkasser. */
 .styling-feature:has(.styling-feature-media:hover) h3 {
   color: var(--color-primary);
 }
 
+/* Regler for andre skærmstørrelser. */
 @media (min-width: 1200px) {
   .styling-hero {
     grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
   }
-
   .styling-feature {
     grid-template-columns: minmax(0, .4fr) minmax(0, .6fr);
   }
-
 }
 
+/* Regler for andre skærmstørrelser. */
 @media (min-width: 768px) and (max-width: 1199px) {
   .styling-hero,
   .styling-feature {
     grid-template-columns: minmax(0, .42fr) minmax(0, .58fr);
   }
-
   .styling-hero {
     padding-top: 54px;
     padding-bottom: 64px;
   }
-
   .styling-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
+/* Regler for andre skærmstørrelser. */
 @media (max-width: 767px) {
   .styling-hero {
     grid-template-columns: 1fr;
     gap: 24px;
     padding: 0 0 44px;
   }
-
   .styling-hero-copy,
   .styling-guide {
     padding-right: var(--page-gutter);
     padding-left: var(--page-gutter);
   }
-
   .styling-hero-media {
     order: -1;
   }
-
   .styling-hero-media,
   .styling-feature-media {
     aspect-ratio: 1.45 / 1;
   }
-
   .styling-hero h1,
   .styling-hero p:not(.eyebrow),
   .styling-feature p,
   .styling-card p {
     max-width: none;
   }
-
   .styling-guide {
     padding-top: 10px;
     padding-bottom: 58px;
   }
-
   .styling-section-heading {
     margin-bottom: 32px;
   }
-
   .styling-feature,
   .styling-grid {
     grid-template-columns: 1fr;
   }
-
   .styling-feature {
     gap: 20px;
   }
-
   .styling-feature + .styling-grid-band,
   .styling-grid-band + .styling-feature {
     margin-top: 46px;
   }
-
   .styling-grid-band {
     padding: 42px var(--page-gutter) 54px;
   }
-
   .styling-grid {
     gap: 34px;
   }
-
   .styling-card-media {
     aspect-ratio: 1.35 / 1;
   }
-
   .styling-card-copy {
     padding-top: 16px;
   }
-
   .styling-button {
     width: 100%;
   }
 }
+

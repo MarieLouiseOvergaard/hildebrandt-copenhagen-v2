@@ -1125,9 +1125,11 @@ const salonbookUrl = "https://salonbook.one/?henriksencopenhagen#/";
 
 document.querySelectorAll(".footer-booking").forEach((link) => {
   link.href = salonbookUrl;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
   link.addEventListener("click", (event) => {
     event.preventDefault();
-    window.location.href = salonbookUrl;
+    window.open(salonbookUrl, "_blank", "noopener,noreferrer");
   });
 });
 
