@@ -188,6 +188,11 @@
   margin-bottom:34px
 }
 
+.om-os-mixly-content p {
+  width:100%;
+  max-width:640px
+}
+
 /* Denne del styrer udseendet for gruppen her. */
 .om-os-mixly-actions {
   display:flex;
@@ -404,7 +409,7 @@
   }
   .om-os-mixly {
     display:grid;
-    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);
     align-items:center;
     gap:clamp(52px,5vw,76px);
     padding:86px var(--page-gutter) 112px
@@ -530,7 +535,7 @@
   .om-os-hero-title,.om-os-mixly-content .om-os-section-title {
     margin-bottom:20px
   }
-  .om-os-hero-primary-content p:not(.eyebrow),.om-os-hero-secondary-content p,.om-os-mixly-content p {
+  .om-os-hero-primary-content p:not(.eyebrow),.om-os-hero-secondary-content p {
     max-width:470px
   }
   .om-os-hero-primary-content p:last-of-type,.om-os-hero-secondary-content p:last-of-type,.om-os-mixly-content p:last-of-type {
@@ -594,7 +599,7 @@
     aspect-ratio:337/380
   }
   .om-os-mixly {
-    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    grid-template-columns:minmax(0,0.92fr) minmax(0,1.08fr);
     gap:clamp(52px,5vw,76px);
     align-items:stretch
   }
@@ -623,7 +628,7 @@
     width:100%
   }
   .om-os-mixly-content p {
-    max-width:470px
+    max-width:640px
   }
   .om-os-instagram {
     display:flex;

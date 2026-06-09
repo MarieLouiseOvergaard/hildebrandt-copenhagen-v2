@@ -362,8 +362,10 @@
 
 /* Guide-sektioner med forklaringer og gode råd. */
 .guide-editorial {
-  max-width:none;
-  background:var(--color-light-blue)
+  max-width:var(--container-max);
+  background:var(--color-light-blue);
+  box-shadow:0 0 0 100vmax var(--color-light-blue);
+  clip-path:inset(0 -100vmax)
 }
 
 /* Knapper og links man skal klikke på. */

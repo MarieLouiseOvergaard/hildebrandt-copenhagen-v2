@@ -2,7 +2,9 @@
 
 :root {
   --kroelle-split-gap-desktop:clamp(48px,5vw,64px);
-  --kroelle-split-gap-tablet:clamp(32px,4vw,48px)
+  --kroelle-split-gap-tablet:clamp(32px,4vw,48px);
+  --kroelle-content-gap-desktop:56px;
+  --kroelle-content-gap-tablet:36px
 }
 
 /* Krøller, styling og hårguide. */
@@ -40,6 +42,17 @@
   flex-direction:column;
   align-items:flex-start;
   min-width:0
+}
+
+/* Fælles indholdsgrid for community og kursus. */
+.kroelle-community,.kroelle-course {
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:var(--kroelle-content-gap-desktop)
+}
+
+.kroelle-community-text,.kroelle-course-text {
+  width:100%;
+  max-width:470px
 }
 
 /* Den store øverste sektion på siden. */
@@ -297,8 +310,9 @@
   display:grid;
   grid-template-columns:minmax(220px,0.28fr) minmax(0,1fr);
   align-items:center;
-  gap:46px;
-  width:92%;
+  gap:var(--kroelle-content-gap-desktop);
+  width:calc(100% - var(--page-gutter) - var(--page-gutter));
+  max-width:calc(var(--container-max) - var(--page-gutter) - var(--page-gutter));
   margin:0 auto 96px;
   padding:28px 64px 26px;
   border-radius:var(--button-radius);
@@ -462,13 +476,15 @@
     justify-self:end
   }
   .kroelle-community {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:var(--kroelle-content-gap-desktop);
     padding-top:0;
-    padding-bottom:48px
+    padding-bottom:64px
   }
   .kroelle-course {
-    grid-template-columns:minmax(0,55fr) minmax(360px,45fr);
-    gap:var(--kroelle-split-gap-desktop);
-    padding-top:48px;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:var(--kroelle-content-gap-desktop);
+    padding-top:64px;
     padding-bottom:96px
   }
 }
@@ -530,10 +546,10 @@
     display:none
   }
   .kroelle-community {
-    grid-template-columns:minmax(0,45fr) minmax(0,55fr);
-    gap:var(--kroelle-split-gap-tablet);
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:var(--kroelle-content-gap-tablet);
     padding-top:0;
-    padding-bottom:48px
+    padding-bottom:64px
   }
   .kroelle-placeholder-community {
     width:100%;
@@ -547,9 +563,10 @@
   }
   .kroelle-signup {
     grid-template-columns:minmax(180px,0.35fr) minmax(0,0.65fr);
-    gap:28px;
-    width:92%;
-    margin-bottom:96px;
+    gap:var(--kroelle-content-gap-tablet);
+    width:calc(100% - var(--page-gutter) - var(--page-gutter));
+    max-width:calc(var(--container-max) - var(--page-gutter) - var(--page-gutter));
+    margin-bottom:76px;
     padding:30px var(--page-gutter)
   }
   .kroelle-signup-copy {
@@ -576,10 +593,10 @@
     max-width:100%
   }
   .kroelle-course {
-    grid-template-columns:minmax(0,45fr) minmax(0,55fr);
-    gap:var(--kroelle-split-gap-tablet);
-    padding-top:48px;
-    padding-bottom:96px
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:var(--kroelle-content-gap-tablet);
+    padding-top:64px;
+    padding-bottom:76px
   }
   .kroelle-course-images {
     grid-template-columns:minmax(0,1fr)
@@ -602,16 +619,23 @@
     padding-left:var(--page-gutter)
   }
   .kroelle-hero {
+    gap:24px;
     padding-top:0;
-    padding-bottom:44px
+    padding-right:0;
+    padding-bottom:44px;
+    padding-left:0
   }
   .kroelle-community-text,.kroelle-course-text,.kroelle-hero-text {
     width:100%
   }
+  .kroelle-hero-text {
+    padding-right:var(--page-gutter);
+    padding-left:var(--page-gutter)
+  }
   .kroelle-hero-figure {
     order:-1;
     width:100%;
-    margin-bottom:22px
+    margin-bottom:0
   }
   .kroelle-community h2,.kroelle-course h2,.kroelle-hero h1 {
     max-width:100%;
@@ -773,18 +797,28 @@
   }
   .kroelle-course {
     padding-top:0;
-    padding-bottom:72px
+    padding-right:0;
+    padding-bottom:0;
+    padding-left:0
+  }
+  .kroelle-course-text {
+    order:1;
+    max-width:none;
+    padding-right:var(--page-gutter);
+    padding-left:var(--page-gutter)
   }
   .kroelle-course-images {
+    order:2;
     grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:5px;
     width:100%
   }
   .kroelle-placeholder-course {
     height:auto;
-    aspect-ratio:1/1
+    aspect-ratio:315/370
   }
   .kroelle-placeholder-course::before {
-    content:"IMG\A 1 × 1"
+    content:"IMG\A 315 × 370"
   }
 }
 
