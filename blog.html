@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="img/logo/monogramDarkblue.svg">
+  <title>Blog | Hildebrandt Copenhagen</title>
+  <meta name="description" content="L&#230;s Hildebrandt Copenhagens blog med r&#229;d om kr&#248;ller, b&#248;lger, Mixly produkter, styling, pleje og gode h&#229;rvaner.">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/footer.css">
+  <link rel="stylesheet" href="styles/blog.css">
+</head>
+<body class="blog-page">
+  <!-- Header: topnavigation og branding for siden. -->
+  <header class="header">
+    <div class="top-menu">
+      <a class="book-knap" href="https://salonbook.one/?henriksencopenhagen#/" aria-label="Book tid">Book tid</a>
+      <a class="menu-logo-link top-menu-logo" href="index.html" aria-label="Gå til forsiden">
+        <img class="menu-logo top-menu-logo-image" src="img/logo/monogramLysgraa.svg" alt="Hildebrandt Copenhagen monogram">
+      </a>
+
+      <nav class="top-nav" aria-label="Hjælpenavigation">
+        <ul class="top-nav-list">
+          <li class="top-nav-item">
+            <a class="top-nav-link top-nav-link-cart" href="#" aria-label="Kurv"><img class="top-nav-icon top-nav-icon-cart" src="img/ikoner/kurv.svg" alt=""></a>
+          </li>
+          <li class="top-nav-item top-nav-item-menu">
+            <button class="top-nav-link menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"></button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <nav class="menu" aria-label="Hovednavigation">
+      <ul class="menu-list">
+        <li class="menu-item menu-item-dropdown">
+          <a class="menu-link menu-link-dropdown" href="produkter.html" aria-haspopup="true">
+            <span>Produkter</span>
+            <span class="menu-link-arrow" aria-hidden="true">⌄</span>
+          </a>
+          <div class="menu-dropdown" aria-label="Produktmenu">
+            <div class="menu-dropdown-inner">
+              <nav class="menu-dropdown-column" aria-label="Produktoversigt">
+                <ul class="menu-dropdown-list">
+                  <li class="menu-dropdown-item">
+                    <a class="menu-dropdown-link" href="produkter-startpakker.html">Startpakke</a>
+                  </li>
+                  <li class="menu-dropdown-item">
+                    <a class="menu-dropdown-link" href="produkter-saet.html">Sæt</a>
+                  </li>
+                  <li class="menu-dropdown-item">
+                    <a class="menu-dropdown-link" href="produkter.html">Alle produkter</a>
+                  </li>
+                </ul>
+              </nav>
+              <nav class="menu-dropdown-column" aria-label="Produkttyper">
+                <ul class="menu-dropdown-list">
+                  <li class="menu-dropdown-item">
+                    <a class="menu-dropdown-link" href="produkter-shampoo.html">Shampoo</a>
+                  </li>
+                  <li class="menu-dropdown-item">
+                    <a class="menu-dropdown-link" href="produkter-conditioner.html">Conditioner</a>
+                  </li>
+                  <li class="menu-dropdown-item">
+                    <a class="menu-dropdown-link" href="produkter-haarmasker.html">Hårmaske</a>
+                  </li>
+                  <li class="menu-dropdown-item">
+                    <a class="menu-dropdown-link" href="produkter-styling.html">Styling</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="menu-dropdown-products">
+                <a class="menu-dropdown-product" href="produkter-startpakker.html">
+                  <span class="menu-dropdown-product-image"><img src="img/salon/navigationsbar1.jpg" alt="Salonstemning fra Hildebrandt Copenhagen" loading="lazy" decoding="async"><span class="image-placeholder-label">165 x 195</span></span>
+                  <span class="menu-dropdown-product-title">Klar til at komme i gang?</span>
+                </a>
+                <a class="menu-dropdown-product" href="blog.html">
+                  <span class="menu-dropdown-product-image"><img src="img/ikoner/low-rich-balance.png" alt="LOW-RICH balance ikon til Mixly krølleguide"><span class="image-placeholder-label">165 x 195</span></span>
+                  <span class="menu-dropdown-product-title">Find din LOW-RICH balance</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="behandlinger.html">Behandlinger</a>
+        </li>
+        <li class="menu-item menu-item-dropdown">
+          <a class="menu-link menu-link-dropdown" href="kroelleunivers.html" aria-haspopup="true">
+            Krølleunivers
+            <span class="menu-link-arrow" aria-hidden="true">⌄</span>
+          </a>
+          <div class="menu-dropdown" aria-label="Krølleuniversmenu">
+            <div class="menu-dropdown-inner">
+              <nav class="menu-dropdown-column" aria-label="Krølleunivers">
+                <ul class="menu-dropdown-list">
+                  <li class="menu-dropdown-item">
+                    <a class="menu-dropdown-link" href="kroelleunivers.html">Curl DNA fordi ingen krøller er ens</a>
+                  </li>
+                  <li class="menu-dropdown-item">
+                    <a class="menu-dropdown-link" href="guides.html">Din guide til LOW og RICH</a>
+                  </li>
+                  <li class="menu-dropdown-item">
+                    <a class="menu-dropdown-link" href="blog.html">Flere krølleguides og tips</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="menu-dropdown-column" aria-hidden="true"></div>
+              <div class="menu-dropdown-products">
+                <a class="menu-dropdown-product" href="kroelleunivers.html">
+                  <span class="menu-dropdown-product-image"><img src="img/salon/navigationsbar2.jpg" alt="Naturlige krøller som inspiration til krølleuniverset" loading="lazy" decoding="async"><span class="image-placeholder-label">165 x 195</span></span>
+                  <span class="menu-dropdown-product-title">Lær dine krøller at kende</span>
+                </a>
+                <a class="menu-dropdown-product" href="blog.html">
+                  <span class="menu-dropdown-product-image"><img src="img/salon/produkter-i-haand.jpg" alt="Mixly produkter holdt i hånden til krøllepleje" loading="lazy" decoding="async"><span class="image-placeholder-label">165 x 195</span></span>
+                  <span class="menu-dropdown-product-title">Udforsk guides</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="omos.html">Historien bag Hildebrandt</a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="kontakt.html">Kontakt</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-panel mobile-menu-panel-main" data-mobile-panel="main">
+      <div class="mobile-menu-header">
+        <p class="mobile-menu-title">Menu</p>
+        <button class="mobile-menu-close" type="button" aria-label="Luk menu">×</button>
+      </div>
+
+      <nav class="mobile-menu-nav" aria-label="Mobilnavigation">
+        <ul class="mobile-menu-list">
+          <li class="mobile-menu-item">
+            <button class="mobile-menu-link mobile-menu-link-products" type="button">
+              <span>Produkter</span>
+              <span class="mobile-menu-arrow" aria-hidden="true">›</span>
+            </button>
+          </li>
+          <li class="mobile-menu-item">
+            <a class="mobile-menu-link" href="behandlinger.html">Behandlinger</a>
+          </li>
+          <li class="mobile-menu-item">
+            <button class="mobile-menu-link mobile-menu-link-curl" type="button">
+              Krølleunivers
+              <span class="mobile-menu-arrow" aria-hidden="true">›</span>
+            </button>
+          </li>
+          <li class="mobile-menu-item">
+            <a class="mobile-menu-link" href="omos.html">Historien bag Hildebrandt</a>
+          </li>
+          <li class="mobile-menu-item">
+            <a class="mobile-menu-link" href="kontakt.html">Kontakt</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mobile-menu-panel mobile-menu-panel-products" data-mobile-panel="products">
+      <div class="mobile-menu-header">
+        <button class="mobile-menu-back" type="button" aria-label="Tilbage til menu">‹</button>
+        <p class="mobile-menu-title">Produkter</p>
+      </div>
+
+      <div class="mobile-menu-scroll">
+        <nav class="mobile-menu-nav" aria-label="Produktnavigation">
+          <ul class="mobile-menu-list mobile-menu-product-list">
+            <li class="mobile-menu-item">
+              <a class="mobile-menu-link" href="produkter-startpakker.html">Startpakke</a>
+            </li>
+            <li class="mobile-menu-item">
+              <a class="mobile-menu-link" href="produkter-saet.html">Sæt</a>
+            </li>
+            <li class="mobile-menu-item">
+              <a class="mobile-menu-link" href="produkter-shampoo.html">Shampoo</a>
+            </li>
+            <li class="mobile-menu-item">
+              <a class="mobile-menu-link" href="produkter-conditioner.html">Conditioner</a>
+            </li>
+            <li class="mobile-menu-item">
+              <a class="mobile-menu-link" href="produkter-haarmasker.html">Hårmaske</a>
+            </li>
+            <li class="mobile-menu-item">
+              <a class="mobile-menu-link" href="produkter-styling.html">Styling</a>
+            </li>
+            <li class="mobile-menu-item">
+              <a class="mobile-menu-link" href="produkter.html">Alle produkter</a>
+            </li>
+            <li class="mobile-menu-item mobile-menu-feature-item">
+              <a class="mobile-menu-link mobile-menu-feature-link" href="guides.html">Find din LOW-RICH balance</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="mobile-menu-feature">
+          <div class="mobile-menu-feature-image" aria-hidden="true"><img src="img/ikoner/low-rich-balance.png" alt="LOW-RICH balance ikon til Mixly krølleguide"></div>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-menu-panel mobile-menu-panel-curl" data-mobile-panel="curl">
+      <div class="mobile-menu-header">
+        <button class="mobile-menu-back" type="button" aria-label="Tilbage til menu">‹</button>
+        <p class="mobile-menu-title">Krølleunivers</p>
+      </div>
+
+      <div class="mobile-menu-scroll">
+        <nav class="mobile-menu-nav" aria-label="Krølleuniversnavigation">
+          <ul class="mobile-menu-list mobile-menu-product-list">
+            <li class="mobile-menu-item">
+              <a class="mobile-menu-link" href="kroelleunivers.html">Curl DNA fordi ingen krøller er ens</a>
+            </li>
+            <li class="mobile-menu-item">
+              <a class="mobile-menu-link" href="guides.html">Din guide til LOW og RICH</a>
+            </li>
+            <li class="mobile-menu-item">
+              <a class="mobile-menu-link" href="blog.html">Flere krølleguides og tips</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <main class="blog-main">
+    <!-- Sektion .blog-hero: samlet indholdsblok paa siden. -->
+    <section class="blog-hero" aria-labelledby="blog-title">
+      <p class="eyebrow">Blog</p>
+      <h1 id="blog-title">Læs mere om dine krøller</h1>
+      <p class="blog-hero-text">Her finder du guides, inspiration og erfaringer om produkter, rutiner og hverdagen med krøllet og bølget hår.</p>
+    </section>
+
+    <!-- Sektion .blog-listing: samlet indholdsblok paa siden. -->
+    <section class="blog-listing" aria-labelledby="blog-listing-title">
+      <h2 id="blog-listing-title" class="blog-section-title">Blogindlæg</h2>
+      <input class="blog-filter-input" id="blog-filter-all" type="radio" name="blog-filter" checked>
+      <input class="blog-filter-input" id="blog-filter-kroelleviden" type="radio" name="blog-filter">
+      <input class="blog-filter-input" id="blog-filter-guides" type="radio" name="blog-filter">
+      <input class="blog-filter-input" id="blog-filter-mixly" type="radio" name="blog-filter">
+      <div class="blog-filters" aria-label="Filtrer blogindlæg">
+        <label class="blog-filter" for="blog-filter-all">Alle</label>
+        <label class="blog-filter" for="blog-filter-kroelleviden">Krølleviden</label>
+        <label class="blog-filter" for="blog-filter-guides">Guides</label>
+        <label class="blog-filter" for="blog-filter-mixly">Mixly</label>
+      </div>
+
+      <div class="blog-grid">
+        <!-- Artikel: selvstaendigt indhold, fx blogindlaeg eller produktblok. -->
+        <article class="blog-card blog-card-kroelleviden">
+          <figure class="blog-card-image" aria-label="Illustration til indholdet"><img src="img/salon/kroelleunivers.kursus.jpg" alt="Naturlige kr&#248;ller som inspiration til kr&#248;lleviden"><span class="image-placeholder-label">IMG</span><span>360 x 215</span></figure>
+          <p class="blog-card-category">Krølleviden</p>
+          <h3 class="blog-card-title">Hvorfor krøllet og bølget hår kræver en anden tilgang end glat hår</h3>
+          <a class="blog-card-link" href="blog/hvorfor-kroellet-og-bolget-har-kraever-en-anden-tilgang.html">Læs indlæg →</a>
+        </article>
+        <!-- Artikel: selvstaendigt indhold, fx blogindlaeg eller produktblok. -->
+        <article class="blog-card blog-card-guides">
+          <figure class="blog-card-image" aria-label="Illustration til indholdet"><img src="img/salon/haar.jpg" alt="Kr&#248;ller og b&#248;lger som inspiration til h&#229;rpleje" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span><span>360 x 215</span></figure>
+          <p class="blog-card-category">Guides</p>
+          <h3 class="blog-card-title">5 gode råd til at få det bedste ud af dine krøller og bølger</h3>
+          <a class="blog-card-link" href="blog/5-gode-rad-til-dine-kroller-og-bolger.html">Læs indlæg →</a>
+        </article>
+        <!-- Artikel: selvstaendigt indhold, fx blogindlaeg eller produktblok. -->
+        <article class="blog-card blog-card-mixly">
+          <figure class="blog-card-image" aria-label="Illustration til indholdet"><img src="img/salon/produkter.styling.stemning1.jpg" alt="Mixly produkter til pleje af kr&#248;ller og b&#248;lger" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span><span>360 x 215</span></figure>
+          <p class="blog-card-category">Mixly</p>
+          <h3 class="blog-card-title">Derfor virker dine krølleprodukter ikke og hvad du skal gøre i stedet</h3>
+          <a class="blog-card-link" href="blog/derfor-virker-dine-krolleprodukter-ikke.html">Læs indlæg →</a>
+        </article>
+        <!-- Artikel: selvstaendigt indhold, fx blogindlaeg eller produktblok. -->
+        <article class="blog-card blog-card-kroelleviden">
+          <figure class="blog-card-image" aria-label="Illustration til indholdet"><img src="img/salon/forside.behandling3-desktop.jpg" alt="Styling og definition af naturlige kr&#248;ller" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span><span>360 x 215</span></figure>
+          <p class="blog-card-category">Krølleviden</p>
+          <h3 class="blog-card-title">Sådan får du dine naturlige krøller frem</h3>
+          <a class="blog-card-link" href="blog/sadan-far-du-dine-naturlige-kroller-frem.html">Læs indlæg →</a>
+        </article>
+        <!-- Artikel: selvstaendigt indhold, fx blogindlaeg eller produktblok. -->
+        <article class="blog-card blog-card-guides">
+          <figure class="blog-card-image" aria-label="Illustration til indholdet"><img src="img/salon/behandlinger.sektion3.stemning2.jpg" alt="Skandinaviske kr&#248;ller og b&#248;lger med naturligt fald" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span><span>360 x 215</span></figure>
+          <p class="blog-card-category">Guides</p>
+          <h3 class="blog-card-title">Sådan får du dine skandinaviske krøller frem - uden spildte penge</h3>
+          <a class="blog-card-link" href="blog/sadan-far-du-dine-skandinaviske-kroller-frem.html">Læs indlæg →</a>
+        </article>
+        <!-- Artikel: selvstaendigt indhold, fx blogindlaeg eller produktblok. -->
+        <article class="blog-card blog-card-kroelleviden">
+          <figure class="blog-card-image" aria-label="Illustration til indholdet"><img src="img/salon/navigationsbar2.jpg" alt="Fine kr&#248;ller og b&#248;lger som inspiration til gode h&#229;rvaner" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span><span>360 x 215</span></figure>
+          <p class="blog-card-category">Krølleviden</p>
+          <h3 class="blog-card-title">5 vaner du bør undgå, hvis du har fint krøllet eller bølget hår</h3>
+          <a class="blog-card-link" href="blog/5-vaner-du-bor-undga.html">Læs indlæg →</a>
+        </article>
+        <!-- Artikel: selvstaendigt indhold, fx blogindlaeg eller produktblok. -->
+        <article class="blog-card blog-card-guides">
+          <figure class="blog-card-image" aria-label="Illustration til indholdet"><img src="img/produktbilleder/packs/Mixly-Pakke-1.png" alt="Mixly startpakke til kr&#248;llet og b&#248;lget h&#229;r" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span><span>360 x 215</span></figure>
+          <p class="blog-card-category">Guides</p>
+          <h3 class="blog-card-title">Sådan vælger du din Mixly startpakke - kom godt i gang</h3>
+          <a class="blog-card-link" href="blog/sadan-vaelger-du-din-mixly-startpakke.html">Læs indlæg →</a>
+        </article>
+        <!-- Artikel: selvstaendigt indhold, fx blogindlaeg eller produktblok. -->
+        <article class="blog-card blog-card-mixly">
+          <figure class="blog-card-image" aria-label="Illustration til indholdet"><img src="img/ingredienser/packs/Ingredienser-Mixly-Pakke-1.png" alt="Ingredienser i Mixly produkter til kr&#248;ller og b&#248;lger" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span><span>360 x 215</span></figure>
+          <p class="blog-card-category">Mixly</p>
+          <h3 class="blog-card-title">Sådan vil Mixlys ingredienser virke i dit fine krøllede eller bølgede hår</h3>
+          <a class="blog-card-link" href="blog/sadan-virker-mixlys-ingredienser.html">Læs indlæg →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sektion .blog-newsletter: samlet indholdsblok paa siden. -->
+    <section class="blog-newsletter" aria-labelledby="blog-newsletter-title">
+      <div class="blog-newsletter-copy">
+        <p id="blog-newsletter-title">Bliv en del af</p>
+        <p>HCM community</p>
+      </div>
+      <!-- Formular: samler felter og knapper til brugerinput. -->
+      <form class="blog-newsletter-form" action="#" method="post">
+        <div class="blog-newsletter-fields">
+          <label class="blog-newsletter-label" for="newsletter-name">Navn</label>
+          <input id="newsletter-name" class="blog-newsletter-input" type="text" name="name" placeholder="Navn" autocomplete="name">
+          <label class="blog-newsletter-label" for="newsletter-email">E-mail</label>
+          <input id="newsletter-email" class="blog-newsletter-input" type="email" name="email" placeholder="E-mail" autocomplete="email">
+          <button class="button button-primary blog-newsletter-submit" type="submit">Tilmeld dig</button>
+        </div>
+        <label class="blog-newsletter-consent">
+          <input class="blog-newsletter-checkbox" type="checkbox" name="privacy">
+          <span>Jeg accepterer, at HCM Community må gemme og dele min data jf. vores privatlivspolitik.</span>
+        </label>
+      </form>
+    </section>
+  </main>
+
+<!-- Footer: nederste omraade med links, kontakt og ekstra information. -->
+<!-- Footer -->
+<footer class="footer footer--frontpage">
+  <!-- Sektion .footer-tider: samlet indholdsblok paa siden. -->
+  <section class="footer-tider" aria-labelledby="footer-tider-titel">
+    <h2 id="footer-tider-titel" class="footer-tider-titel">Åbningstider</h2>
+    <p class="kontakt-status footer-status" aria-live="polite">
+      <span class="kontakt-status-label">Tjekker status</span>
+      <span class="kontakt-status-detail"></span>
+    </p>
+    <dl class="footer-tider-liste">
+      <dt>Mandag</dt>
+      <dd>8.30-14.00</dd>
+      <dt>Tirsdag</dt>
+      <dd>10.00-17.30</dd>
+      <dt>Onsdag</dt>
+      <dd>Lukket</dd>
+      <dt>Torsdag</dt>
+      <dd>10.00-17.30</dd>
+      <dt>Fredag</dt>
+      <dd>10.00-16.00</dd>
+    </dl>
+  </section>
+
+  <!-- Sektion .footer-kontakt: samlet indholdsblok paa siden. -->
+  <section class="footer-kontakt" aria-labelledby="footer-kontakt-titel">
+    <h2 id="footer-kontakt-titel" class="footer-kontakt-titel">Kontakt</h2>
+    <address class="footer-kontakt-adresse">
+      <span class="footer-kontakt-brand">Hildebrandt Copenhagen x Mixly</span>
+      <span>Nordre Fasanvej 163, 2000 Frederiksberg</span><br>
+      <a href="tel:+4530741430">+45 30 74 14 30</a><br>
+      <a href="mailto:hej@hildebrandtcopenhagen.dk">hej@hildebrandtcopenhagen.dk</a>
+    </address>
+  </section>
+
+  <nav class="footer-menu" aria-labelledby="footer-menu-titel">
+    <h2 id="footer-menu-titel" class="footer-menu-titel">Udforsk</h2>
+    <ul class="footer-menu-liste">
+      <li class="footer-menu-item">
+        <a class="footer-menu-link" href="behandlinger.html">Behandlinger</a>
+      </li>
+      <li class="footer-menu-item">
+        <a class="footer-menu-link" href="produkter.html">Produkter</a>
+      </li>
+      <li class="footer-menu-item">
+        <a class="footer-menu-link" href="guides.html">Krølleguide</a>
+      </li>
+      <li class="footer-menu-item">
+        <a class="footer-menu-link" href="omos.html">Historien bag Hildebrandt</a>
+      </li>
+    </ul>
+    <a class="button button-primary footer-booking" href="https://salonbook.one/?henriksencopenhagen#/">Book tid</a>
+  </nav>
+
+  <!-- Sektion .footer-newsletter: samlet indholdsblok paa siden. -->
+  <section class="footer-newsletter" aria-labelledby="footer-newsletter-titel">
+    <h2 id="footer-newsletter-titel" class="footer-newsletter-titel">Få tips til dine krøller</h2>
+    <!-- Formular: samler felter og knapper til brugerinput. -->
+    <form class="footer-newsletter-form" action="#" method="post">
+      <label class="footer-newsletter-label" for="footer-newsletter-name">Navn</label>
+      <input id="footer-newsletter-name" class="footer-newsletter-input" type="text" name="name" placeholder="Navn" autocomplete="name">
+
+      <label class="footer-newsletter-label" for="footer-newsletter-email">E-mail</label>
+      <input id="footer-newsletter-email" class="footer-newsletter-input" type="email" name="email" placeholder="E-mail" autocomplete="email">
+
+      <label class="footer-newsletter-consent">
+        <input class="footer-newsletter-checkbox" type="checkbox" name="consent">
+        <span>Jeg accepterer, at HCM Community må gemme og dele min data jf. vores privatlivspolitik.</span>
+      </label>
+
+      <button class="button button-secondary footer-newsletter-submit" type="submit">Tilmeld dig</button>
+    </form>
+  </section>
+
+  <div class="footer-info">
+    <div class="footer-legal">
+      <a class="footer-terms" href="handelsbetingelser.html">Handelsbetingelser</a>
+      <p class="footer-cvr">CVR 44399973</p>
+    </div>
+    <ul class="footer-socials" aria-label="Sociale medier">
+      <li class="footer-socials-item">
+        <a class="footer-social-link" href="https://www.instagram.com/hildebrandt_copenhagen/" aria-label="Instagram @hildebrandt_copenhagen">
+          <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <rect x="5" y="5" width="14" height="14" rx="4"></rect>
+            <circle cx="12" cy="12" r="3.2"></circle>
+            <circle cx="16.5" cy="7.5" r="1"></circle>
+          </svg>
+        </a>
+      </li>
+      <li class="footer-socials-item">
+        <a class="footer-social-link" href="https://www.facebook.com/hildebrandtcopenhagen" aria-label="Facebook">
+          <svg class="footer-social-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M14.3 8.1h2.1V5h-2.6c-3 0-4.5 1.8-4.5 4.4v2H7v3.1h2.3V20h3.4v-5.5h2.8l.4-3.1h-3.2V9.7c0-1 .4-1.6 1.6-1.6Z"></path>
+          </svg>
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+  <!-- Script: indlaeser JavaScript til interaktioner paa siden. -->
+  <script src="scripts/script.js"></script>
+</body>
+</html>
