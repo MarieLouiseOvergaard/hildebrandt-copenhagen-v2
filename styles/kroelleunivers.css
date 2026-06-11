@@ -1,7 +1,7 @@
 ﻿/* Her ligger udseendet til krølleuniverset. */
 
 :root {
-  --kroelle-split-gap-desktop:clamp(48px,5vw,64px);
+  --kroelle-split-gap-desktop:clamp(36px,4vw,56px);
   --kroelle-split-gap-tablet:clamp(32px,4vw,48px);
   --kroelle-content-gap-desktop:56px;
   --kroelle-content-gap-tablet:36px
@@ -76,13 +76,18 @@
 
 /* Krøller, styling og hårguide. */
 .kroelle-course h2 {
-  margin-bottom:26px;
+  margin-bottom:0;
   line-height:1.14
 }
 
 /* Den store øverste sektion på siden. */
 .kroelle-community p:not(.eyebrow),.kroelle-course p:not(.eyebrow),.kroelle-hero p:not(.eyebrow) {
   max-width:520px
+}
+
+/* Den store øverste sektion på siden. */
+.kroelle-hero p:not(.eyebrow) {
+  max-width:100%
 }
 
 /* Den store øverste sektion på siden. */
@@ -178,6 +183,20 @@
 }
 
 /* Den store øverste sektion på siden. */
+.kroelle-placeholder-hero {
+  max-width:670px;
+  justify-self:end;
+  aspect-ratio:auto
+}
+
+/* Den store øverste sektion på siden. */
+.kroelle-placeholder-hero picture,
+.kroelle-placeholder-hero img {
+  height:auto;
+  object-fit:contain
+}
+
+/* Den store øverste sektion på siden. */
 .kroelle-placeholder-community::before,.kroelle-placeholder-hero::before {
   content:"IMG\A 670 × 370"
 }
@@ -195,13 +214,16 @@
 
 /* Krøller, styling og hårguide. */
 .kroelle-compare {
-  padding:0 var(--page-gutter) 120px
+  padding:0 0 120px
 }
 
 /* Krøller, styling og hårguide. */
 .kroelle-section-head {
+  width:100%;
   max-width:var(--container-max);
-  margin:0 auto
+  margin:0 auto;
+  padding-right:var(--page-gutter);
+  padding-left:var(--page-gutter)
 }
 
 /* Lister og rækker med flere ting. */
@@ -211,7 +233,9 @@
   gap:40px;
   width:100%;
   max-width:var(--container-max);
-  margin:10px auto 0
+  margin:10px auto 0;
+  padding-right:var(--page-gutter);
+  padding-left:var(--page-gutter)
 }
 
 /* Små kort med indhold. */
@@ -240,6 +264,11 @@
   font-weight:300
 }
 
+/* Små kort med indhold. */
+.kroelle-card:first-child h3 {
+  padding-left:0
+}
+
 /* Footeren nederst på siden. */
 .kroelle-card-list li,.kroelle-card-list li:first-child,.kroelle-quote footer,.kroelle-quote p {
   color:var(--color-light-blue)
@@ -259,6 +288,7 @@
 
 /* Små kort med indhold. */
 .kroelle-card:first-child .kroelle-card-list {
+  padding-left:0;
   border-radius:0 12px 12px 0;
   box-shadow:-10vw 0 0 var(--color-heading),-20vw 0 0 var(--color-heading),-30vw 0 0 var(--color-heading),-40vw 0 0 var(--color-heading),-50vw 0 0 var(--color-heading),-60vw 0 0 var(--color-heading),-70vw 0 0 var(--color-heading),-80vw 0 0 var(--color-heading),-90vw 0 0 var(--color-heading),-100vw 0 0 var(--color-heading)
 }
@@ -465,7 +495,7 @@
 /* Regler for andre skærmstørrelser. */
 @media (min-width:1200px) {
   .kroelle-community,.kroelle-hero {
-    grid-template-columns:minmax(360px,45fr) minmax(0,55fr);
+    grid-template-columns:minmax(360px,48fr) minmax(0,52fr);
     gap:var(--kroelle-split-gap-desktop)
   }
   .kroelle-hero {
@@ -474,6 +504,9 @@
   }
   .kroelle-community-figure,.kroelle-hero-figure {
     justify-self:end
+  }
+  .kroelle-placeholder-hero {
+    width:min(100%,670px)
   }
   .kroelle-community {
     grid-template-columns:repeat(2,minmax(0,1fr));
@@ -492,17 +525,17 @@
 /* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1199px) {
   .kroelle-hero {
-    grid-template-columns:minmax(0,45fr) minmax(0,55fr);
+    grid-template-columns:minmax(0,50fr) minmax(0,50fr);
     gap:var(--kroelle-split-gap-tablet);
     padding-top:54px;
     padding-bottom:82px
   }
   .kroelle-placeholder-hero {
     width:100%;
-    max-width:none;
+    max-width:460px;
     height:auto;
     justify-self:end;
-    aspect-ratio:670/370
+    aspect-ratio:auto
   }
   .kroelle-placeholder-hero::before {
     content:"IMG\A 670 × 370"
@@ -518,11 +551,11 @@
     font-size:var(--font-body-tablet)
   }
   .kroelle-compare {
-    padding:0 var(--page-gutter) 72px
+    padding:0 0 72px
   }
   .kroelle-section-head {
-    padding-right:0;
-    padding-left:0
+    padding-right:var(--page-gutter);
+    padding-left:var(--page-gutter)
   }
   .kroelle-compare-grid {
     grid-template-columns:repeat(2,minmax(0,1fr));
@@ -538,6 +571,12 @@
   }
   .kroelle-card h3 {
     padding-left:24px
+  }
+  .kroelle-card:first-child h3 {
+    padding-left:0
+  }
+  .kroelle-card:first-child .kroelle-card-list {
+    padding-left:0
   }
   .kroelle-card-list li+li {
     margin-top:18px
@@ -556,7 +595,14 @@
     max-width:none;
     height:auto;
     justify-self:end;
-    aspect-ratio:670/370
+    aspect-ratio:auto
+  }
+  .kroelle-placeholder-community picture,
+  .kroelle-placeholder-community img {
+    height:auto
+  }
+  .kroelle-placeholder-community img {
+    object-fit:contain
   }
   .kroelle-placeholder-community::before {
     content:"IMG\A 670 × 370"
@@ -611,6 +657,38 @@
 }
 
 /* Regler for andre skærmstørrelser. */
+@media (min-width:900px) and (max-width:1199px) {
+  .kroelle-placeholder-community {
+    aspect-ratio:670/370
+  }
+  .kroelle-placeholder-community picture,
+  .kroelle-placeholder-community img {
+    height:100%
+  }
+  .kroelle-placeholder-community img {
+    object-fit:cover
+  }
+}
+
+/* Regler for andre skærmstørrelser. */
+@media (min-width:768px) and (max-width:899px) {
+  .kroelle-community {
+    grid-template-columns:minmax(0,54fr) minmax(0,46fr)
+  }
+}
+
+/* Regler for andre skærmstørrelser. */
+@media (min-width:1120px) and (max-width:1199px) {
+  .kroelle-hero {
+    grid-template-columns:minmax(0,48fr) minmax(0,52fr)
+  }
+  .kroelle-placeholder-hero {
+    width:min(100%,560px);
+    max-width:560px
+  }
+}
+
+/* Regler for andre skærmstørrelser. */
 @media (max-width:767px) {
   .kroelle-community,.kroelle-course,.kroelle-hero {
     grid-template-columns:1fr;
@@ -661,6 +739,9 @@
     font-size:.72rem;
     letter-spacing:.14em
   }
+  .kroelle-course-button {
+    font-size:14px
+  }
   .kroelle-placeholder-hero {
     max-width:100%;
     aspect-ratio:auto
@@ -669,11 +750,11 @@
     content:"IMG\A 100% × 200"
   }
   .kroelle-compare {
-    padding:0 var(--page-gutter) 40px
+    padding:0 0 40px
   }
   .kroelle-section-head {
-    padding-right:0;
-    padding-left:0
+    padding-right:var(--page-gutter);
+    padding-left:var(--page-gutter)
   }
   .kroelle-compare-grid {
     grid-template-columns:1fr;
@@ -688,6 +769,9 @@
     font-size:1.35rem;
     letter-spacing:.02em
   }
+  .kroelle-card:first-child h3 {
+    padding-left:0
+  }
   .kroelle-card-list li,.kroelle-checkbox {
     font-size:var(--font-body-mobile)
   }
@@ -696,6 +780,9 @@
     min-height:0;
     padding:24px 18px;
     border-radius:10px
+  }
+  .kroelle-card:first-child .kroelle-card-list {
+    padding-left:0
   }
   .kroelle-card-list li+li {
     margin-top:16px
@@ -728,8 +815,7 @@
     padding-bottom:40px
   }
   .kroelle-community-figure {
-    order:-1;
-    width:100%
+    display:none
   }
   .kroelle-placeholder-community {
     max-width:100%;
