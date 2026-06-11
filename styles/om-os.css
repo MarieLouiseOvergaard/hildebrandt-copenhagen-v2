@@ -126,7 +126,7 @@
   display:grid;
   min-height:345px;
   place-items:center;
-  padding:90px var(--content-gutter);
+  padding:90px var(--page-gutter);
   background:var(--color-turkis);
   text-align:center
 }
@@ -186,6 +186,86 @@
 .om-os-mixly-content .om-os-section-title {
   max-width:640px;
   margin-bottom:34px
+}
+
+/* Instagram bruger det fælles, manuelt scrollbare layout fra global.css. */
+.om-os-main .om-os-instagram {
+  width:100%;
+  max-width:none;
+  margin-right:0;
+  margin-left:0;
+  overflow:hidden;
+  padding:0
+}
+
+.om-os-main .om-os-instagram-header {
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:40px;
+  padding:0 var(--page-gutter) 18px
+}
+
+.om-os-main .om-os-instagram .om-os-section-title {
+  max-width:760px;
+  letter-spacing:.04em;
+  line-height:1.18
+}
+
+.om-os-main .om-os-instagram-handle {
+  flex:0 0 auto;
+  padding-bottom:8px;
+  font-size:.86rem;
+  line-height:1.2
+}
+
+.om-os-main .om-os-instagram-grid {
+  display:flex;
+  flex-wrap:nowrap;
+  gap:5px;
+  width:100%;
+  overflow-x:auto;
+  overflow-y:hidden;
+  animation:none;
+  scroll-snap-type:none;
+  scrollbar-width:none;
+  will-change:auto;
+  -webkit-overflow-scrolling:touch
+}
+
+.om-os-main .om-os-instagram-grid::-webkit-scrollbar {
+  display:none
+}
+
+.om-os-main .om-os-instagram-link {
+  flex:0 0 calc((100% - 20px)/ 5);
+  max-width:none;
+  width:auto;
+  scroll-snap-align:start
+}
+
+@media (max-width:767px) {
+  .om-os-main .om-os-instagram-header {
+    display:contents
+  }
+  .om-os-main .om-os-instagram .om-os-section-title {
+    order:1;
+    max-width:260px;
+    padding:0 var(--page-gutter) 20px
+  }
+  .om-os-main .om-os-instagram-grid {
+    order:2;
+    padding:0
+  }
+  .om-os-main .om-os-instagram-handle {
+    order:3;
+    align-self:flex-end;
+    margin-top:16px;
+    padding:0 var(--page-gutter)
+  }
+  .om-os-main .om-os-instagram-link {
+    flex-basis:50%
+  }
 }
 
 .om-os-mixly-content p {
@@ -298,6 +378,7 @@
     font-size:.76rem
   }
 }
+
 
 /* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1023px) {
@@ -438,17 +519,13 @@
     gap:5px;
     justify-content:flex-start;
     overflow:visible;
-    animation:100s linear infinite om-os-instagram-desktop-slider;
-    will-change:transform
+    animation:none
   }
   .om-os-instagram-link {
     flex:0 0 calc((100% - 20px)/ 5);
     max-width:none;
     min-width:0;
     width:auto
-  }
-  .om-os-instagram-link-duplicate {
-    display:block
   }
   .om-os-image-placeholder-instagram {
     width:100%;
@@ -489,8 +566,7 @@
     flex-wrap:nowrap;
     justify-content:flex-start;
     gap:5px;
-    animation:100s linear infinite om-os-instagram-tablet-slider;
-    will-change:transform
+    animation:none
   }
   .om-os-instagram-link {
     flex:0 0 28%;
@@ -518,7 +594,7 @@
     grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)
   }
   .om-os-hero-row-secondary {
-    grid-template-columns:minmax(0,680px) minmax(0,1fr)
+    grid-template-columns:minmax(0,1fr) minmax(0,1.2fr)
   }
   .om-os-hero-figure-secondary {
     display:grid;
@@ -620,9 +696,13 @@
     padding-top:28px
   }
   .om-os-hero-figure-secondary {
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:5px
+    display:block;
+  }
+  .om-os-hero-figure-secondary .om-os-image-placeholder-hero-secondary:first-child {
+    aspect-ratio:337/380
+  }
+  .om-os-hero-figure-secondary .om-os-image-placeholder-hero-secondary:last-child {
+    display:none
   }
   .om-os-mixly-content,.om-os-mixly-figure {
     width:100%
@@ -641,16 +721,12 @@
     flex-wrap:nowrap;
     gap:5px;
     width:100%;
-    animation:100s linear infinite om-os-instagram-desktop-slider;
-    will-change:transform
+    animation:none
   }
   .om-os-instagram-link {
     flex:0 0 calc((100% - 20px)/ 5);
     max-width:none;
     width:auto
-  }
-  .om-os-instagram-link-duplicate {
-    display:block
   }
   .om-os-instagram-item {
     height:auto;
@@ -659,26 +735,6 @@
   .om-os-image-placeholder-instagram {
     height:auto;
     aspect-ratio:1/1
-  }
-}
-
-/* Sådan bevæger animationen sig. */
-@keyframes om-os-instagram-tablet-slider {
-  0% {
-    transform:translateX(0)
-  }
-  100% {
-    transform:translateX(calc(-50% - 2.5px))
-  }
-}
-
-/* Sådan bevæger animationen sig. */
-@keyframes om-os-instagram-mobile-slider {
-  0% {
-    transform:translateX(0)
-  }
-  100% {
-    transform:translateX(calc(-50% - 2.5px))
   }
 }
 
@@ -788,16 +844,12 @@
     gap:5px;
     width:100%;
     overflow:visible;
-    animation:100s linear infinite om-os-instagram-mobile-slider;
-    will-change:transform
+    animation:none
   }
   .om-os-instagram-link {
     flex:0 0 42%;
     max-width:none;
     width:auto
-  }
-  .om-os-instagram-link-duplicate {
-    display:block
   }
   .om-os-instagram-item {
     height:auto;

@@ -23,7 +23,7 @@
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  padding:80px var(--content-gutter);
+  padding:80px var(--page-gutter);
   text-align:center;
   background:var(--color-turkis)
 }
@@ -465,6 +465,10 @@
     padding-right:var(--page-gutter);
     padding-left:var(--page-gutter)
   }
+  .kontakt-kort h2 {
+    padding-right:0;
+    padding-left:0
+  }
   .kontakt-kort-placeholder {
     min-height:230px;
     margin-top:12px
@@ -482,13 +486,32 @@
   .kontakt-info-item h3 {
     font-size:14px
   }
+  .kontakt-main .om-os-instagram-header {
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:12px;
+    padding:0 var(--page-gutter) 20px
+  }
+  .kontakt-main .om-os-instagram .om-os-section-title {
+    flex:1 1 auto;
+    min-width:0;
+    padding:0
+  }
+  .kontakt-main .om-os-instagram-handle {
+    flex:0 0 auto;
+    align-self:flex-end;
+    margin:0;
+    padding:0;
+    white-space:nowrap
+  }
 }
 
 /* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1023px) {
   .kontakt-hero {
     min-height:340px;
-    padding:70px var(--content-gutter)
+    padding:70px var(--page-gutter)
   }
   .kontakt-hero-titel {
     max-width:none;

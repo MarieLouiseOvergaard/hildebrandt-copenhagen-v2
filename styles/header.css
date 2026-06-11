@@ -159,19 +159,47 @@
   filter:brightness(0) invert(97%)
 }
 
-/* Menuen og navigationen. */
-.top-menu>.book-knap {
-  font-size:clamp(11px, 1.25vw, 20px)
+/* Primær bookingknap i topheaderen på tablet og desktop. */
+@media (min-width:768px) {
+  .top-menu>.book-knap {
+    display:inline-flex;
+    min-width:0;
+    height:auto;
+    align-items:center;
+    justify-content:center;
+    margin-right:auto;
+    padding:9px 15px;
+    border:1px solid var(--color-primary);
+    border-radius:var(--button-radius);
+    color:var(--color-white);
+    background:var(--color-primary);
+    background-image:linear-gradient(currentColor,currentColor);
+    background-repeat:no-repeat;
+    background-position:15px calc(50% + 10px);
+    background-size:0 1px;
+    font-family:var(--font-heading);
+    font-size:14px;
+    font-weight:400;
+    letter-spacing:.12em;
+    line-height:1.2;
+    text-transform:uppercase;
+    transition:background-size 220ms
+  }
+  .top-menu>.book-knap:focus-visible,.top-menu>.book-knap:hover {
+    background-size:calc(100% - 30px) 1px
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .top-menu>.book-knap {
+    transition:none
+  }
 }
 
 /* Regler for andre skærmstørrelser. */
 @media (min-width:1181px) {
   .top-menu {
     justify-content:flex-start
-  }
-  .top-menu>.book-knap {
-    position:static;
-    margin-right:auto
   }
   .top-nav {
     margin-left:auto
@@ -872,6 +900,58 @@
 }
 
 /* Regler for andre skærmstørrelser. */
+@media (max-width:767px) {
+  .top-menu>.book-knap {
+    position:fixed;
+    z-index:1100;
+    right:max(14px,env(safe-area-inset-right));
+    bottom:calc(14px + env(safe-area-inset-bottom));
+    left:auto;
+    display:inline-flex;
+    width:auto;
+    min-width:0;
+    max-width:calc(100% - 28px - env(safe-area-inset-left) - env(safe-area-inset-right));
+    min-height:46px;
+    align-items:center;
+    justify-content:center;
+    padding:0 22px;
+    border:1px solid var(--color-primary);
+    border-radius:var(--button-radius);
+    color:var(--color-white);
+    background:var(--color-primary);
+    box-shadow:0 4px 14px rgba(51,76,86,.18);
+    font-family:var(--font-heading);
+    font-size:12px;
+    font-weight:400;
+    letter-spacing:.12em;
+    line-height:1;
+    opacity:1;
+    pointer-events:auto;
+    text-transform:uppercase;
+    transform:none;
+    white-space:nowrap;
+    transition:opacity .2s,background .2s,border-color .2s,box-shadow .2s,transform .2s
+  }
+  body:not(.is-sticky-booking-visible) .top-menu>.book-knap {
+    opacity:0;
+    pointer-events:none;
+    transform:translateY(8px)
+  }
+  .top-menu>.book-knap::after,.top-menu>.book-knap::before {
+    content:none
+  }
+  .top-menu>.book-knap:focus-visible,.top-menu>.book-knap:hover {
+    border-color:var(--color-primary);
+    background:var(--color-primary);
+    box-shadow:0 6px 18px rgba(51,76,86,.22)
+  }
+  .top-menu>.book-knap:active {
+    box-shadow:0 3px 10px rgba(51,76,86,.18);
+    transform:translateY(1px)
+  }
+}
+
+/* Regler for andre skærmstørrelser. */
 @media (max-width:1180px) {
   .is-mobile-nav-fixed .top-menu-logo,.top-menu-logo {
     opacity:1;
@@ -890,7 +970,7 @@
     transform:translate(-50%,-50%);
     transition:opacity 180ms
   }
-  .mobile-menu-title,.top-menu>.book-knap {
+  .mobile-menu-title {
     font-family:var(--font-heading);
     line-height:1;
     text-transform:uppercase
@@ -918,11 +998,6 @@
     border-top:0;
     font-size:.58rem
   }
-  .book-knap,.top-menu>.book-knap {
-    display:inline-flex;
-    color:var(--color-white);
-    background:var(--color-primary)
-  }
   .is-mobile-nav-fixed .header {
     padding-bottom:64px
   }
@@ -932,56 +1007,11 @@
     right:0;
     left:0
   }
-  .top-menu>.book-knap {
-    position:fixed;
-    z-index:1100;
-    right:max(14px,env(safe-area-inset-right));
-    bottom:calc(14px + env(safe-area-inset-bottom));
-    left:auto;
-    width:auto;
-    min-width:0;
-    max-width:calc(100% - 28px - env(safe-area-inset-left) - env(safe-area-inset-right));
-    min-height:46px;
-    align-items:center;
-    justify-content:center;
-    padding:0 22px;
-    border:1px solid var(--color-primary);
-    border-radius:var(--button-radius);
-    box-shadow:0 4px 14px rgba(51,76,86,.18);
-    font-size:12px;
-    font-weight:400;
-    letter-spacing:.12em;
-    opacity:1;
-    pointer-events:auto;
-    transform:none;
-    white-space:nowrap;
-    transition:opacity .2s,background .2s,border-color .2s,box-shadow .2s,transform .2s
-  }
   .is-sticky-booking-visible .top-nav-list,.top-nav-list {
     padding-right:0
   }
-  body:not(.is-sticky-booking-visible) .top-menu>.book-knap {
-    opacity:0;
-    pointer-events:none;
-    transform:translateY(8px)
-  }
-  .top-menu>.book-knap::after,.top-menu>.book-knap::before,.top-nav-link-cart::before {
+  .top-nav-link-cart::before {
     content:none
-  }
-  .top-menu>.book-knap:focus-visible,.top-menu>.book-knap:hover {
-    border-color:var(--color-primary);
-    background:var(--color-primary);
-    box-shadow:0 6px 18px rgba(51,76,86,.22)
-  }
-  .top-menu>.book-knap:active {
-    box-shadow:0 3px 10px rgba(51,76,86,.18);
-    transform:translateY(1px)
-  }
-  .book-knap {
-    min-height:44px;
-    align-items:center;
-    justify-content:center;
-    border:1px solid var(--color-primary)
   }
   .top-nav {
     display:block;
@@ -1250,11 +1280,6 @@
   .is-mobile-nav-fixed .header,body {
     padding-bottom:0
   }
-  .top-menu>.book-knap,body:not(.is-sticky-booking-visible) .top-menu>.book-knap {
-    opacity:1;
-    pointer-events:auto;
-    transform:none
-  }
   .header {
     position:fixed
   }
@@ -1269,14 +1294,6 @@
     justify-content:flex-start;
     gap:12px;
     padding:0 24px
-  }
-  .top-menu>.book-knap {
-    position:static;
-    width:auto;
-    min-height:44px;
-    margin-right:auto;
-    padding:0 16px;
-    font-size:11px
   }
   .top-menu-logo {
     width:min(180px,24vw);

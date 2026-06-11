@@ -2,7 +2,7 @@
 
 /* Guide-sektioner med forklaringer og gode råd. */
 .guides-main {
-  --guide-page-offset:var(--content-gutter);
+  --guide-page-offset:var(--page-gutter);
   overflow-x:hidden;
   background:var(--color-white)
 }
@@ -166,8 +166,8 @@
 /* Guide-sektioner med forklaringer og gode råd. */
 .guide-compare .guide-section-heading {
   max-width:none;
-  padding-right:var(--content-gutter);
-  padding-left:var(--content-gutter)
+  padding-right:var(--page-gutter);
+  padding-left:var(--page-gutter)
 }
 
 /* Guide-sektioner med forklaringer og gode råd. */
@@ -494,7 +494,7 @@
   display:grid;
   min-height:345px;
   place-items:center;
-  padding:90px var(--content-gutter);
+  padding:90px var(--page-gutter);
   background:var(--color-turkis);
   text-align:center
 }

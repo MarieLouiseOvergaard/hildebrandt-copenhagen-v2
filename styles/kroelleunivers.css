@@ -281,7 +281,7 @@
   display:grid;
   min-height:345px;
   place-items:center;
-  padding:90px var(--content-gutter);
+  padding:90px var(--page-gutter);
   background:var(--color-turkis);
   text-align:center
 }

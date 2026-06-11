@@ -988,17 +988,191 @@ function setActiveMainNavigation() {
 
 setActiveMainNavigation();
 
-document.querySelectorAll(".om-os-instagram-grid").forEach((grid) => {
-  if (grid.querySelector(".om-os-instagram-link-duplicate")) {
+function setupAutoScrollCarousel(viewport, options = {}) {
+  const track = options.trackSelector ? viewport.querySelector(options.trackSelector) : viewport;
+  const items = track ? Array.from(track.querySelectorAll(`:scope > ${options.itemSelector}`)) : [];
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const interval = options.interval || 5000;
+  let intervalId = null;
+  let animationFrameId = null;
+  let previousFrameTime = null;
+  let resumeTimeoutId = null;
+  let scrollTimeoutId = null;
+  let dragStartX = 0;
+  let dragStartScrollLeft = 0;
+  let isMouseDragging = false;
+  let didMouseDrag = false;
+  let isProgrammaticScroll = false;
+
+  if (!track || items.length <= 1) {
     return;
   }
 
-  Array.from(grid.children).forEach((link) => {
-    const duplicate = link.cloneNode(true);
-    duplicate.classList.add("om-os-instagram-link-duplicate");
-    duplicate.setAttribute("aria-hidden", "true");
-    duplicate.setAttribute("tabindex", "-1");
-    grid.appendChild(duplicate);
+  items.forEach((item) => {
+    const clone = item.cloneNode(true);
+    clone.dataset.autoScrollClone = "true";
+    clone.setAttribute("aria-hidden", "true");
+    if (clone.matches("a,button,input,select,textarea,[tabindex]")) {
+      clone.setAttribute("tabindex", "-1");
+    }
+    clone.querySelectorAll("a,button,input,select,textarea,[tabindex]").forEach((element) => {
+      element.setAttribute("tabindex", "-1");
+    });
+    track.appendChild(clone);
+  });
+
+  function getStep() {
+    return items[1].offsetLeft - items[0].offsetLeft;
+  }
+
+  function getLoopWidth() {
+    const firstClone = track.querySelector("[data-auto-scroll-clone='true']");
+    return firstClone ? firstClone.offsetLeft - items[0].offsetLeft : 0;
+  }
+
+  function normalizePosition() {
+    const loopWidth = getLoopWidth();
+
+    if (loopWidth > 0 && viewport.scrollLeft >= loopWidth - 1) {
+      viewport.classList.add("is-loop-resetting");
+      void viewport.offsetHeight;
+      viewport.scrollLeft -= loopWidth;
+      viewport.classList.remove("is-loop-resetting");
+    }
+  }
+
+  function stopAutoplay() {
+    window.clearInterval(intervalId);
+    intervalId = null;
+    window.cancelAnimationFrame(animationFrameId);
+    animationFrameId = null;
+    previousFrameTime = null;
+  }
+
+  function runContinuousAutoplay(timestamp) {
+    if (previousFrameTime !== null) {
+      viewport.scrollLeft += options.speed * ((timestamp - previousFrameTime) / 1000);
+      normalizePosition();
+    }
+
+    previousFrameTime = timestamp;
+    animationFrameId = window.requestAnimationFrame(runContinuousAutoplay);
+  }
+
+  function startAutoplay() {
+    if (reduceMotion || intervalId || animationFrameId) {
+      return;
+    }
+
+    if (options.speed) {
+      animationFrameId = window.requestAnimationFrame(runContinuousAutoplay);
+      return;
+    }
+
+    intervalId = window.setInterval(() => {
+      normalizePosition();
+      isProgrammaticScroll = true;
+      viewport.scrollBy({ left: getStep(), behavior: "smooth" });
+      window.setTimeout(() => {
+        isProgrammaticScroll = false;
+      }, 700);
+    }, interval);
+  }
+
+  function pauseAutoplay() {
+    stopAutoplay();
+    window.clearTimeout(resumeTimeoutId);
+    resumeTimeoutId = window.setTimeout(startAutoplay, options.resumeDelay || interval);
+  }
+
+  function stopForInteraction() {
+    stopAutoplay();
+    window.clearTimeout(resumeTimeoutId);
+  }
+
+  viewport.addEventListener("pointerdown", (event) => {
+    stopForInteraction();
+    viewport.classList.add("is-interacting");
+    void viewport.offsetHeight;
+    viewport.scrollLeft = viewport.scrollLeft;
+
+    if (event.pointerType !== "mouse" || event.button !== 0) {
+      return;
+    }
+
+    isMouseDragging = true;
+    didMouseDrag = false;
+    dragStartX = event.clientX;
+    dragStartScrollLeft = viewport.scrollLeft;
+    viewport.classList.add("is-dragging");
+    viewport.setPointerCapture(event.pointerId);
+  });
+  viewport.addEventListener("pointermove", (event) => {
+    if (!isMouseDragging) {
+      return;
+    }
+
+    const distance = event.clientX - dragStartX;
+    didMouseDrag = didMouseDrag || Math.abs(distance) > 4;
+    viewport.scrollLeft = dragStartScrollLeft - distance;
+
+    if (didMouseDrag) {
+      event.preventDefault();
+    }
+  });
+  function stopMouseDrag(event) {
+    isMouseDragging = false;
+    viewport.classList.remove("is-dragging");
+    viewport.classList.remove("is-interacting");
+    pauseAutoplay();
+
+    if (event.type === "pointercancel") {
+      didMouseDrag = false;
+    }
+
+    if (viewport.hasPointerCapture(event.pointerId)) {
+      viewport.releasePointerCapture(event.pointerId);
+    }
+  }
+
+  viewport.addEventListener("pointerup", stopMouseDrag);
+  viewport.addEventListener("pointercancel", stopMouseDrag);
+  viewport.addEventListener("click", (event) => {
+    if (didMouseDrag) {
+      event.preventDefault();
+      event.stopPropagation();
+      didMouseDrag = false;
+    }
+  }, true);
+  viewport.addEventListener("wheel", pauseAutoplay, { passive: true });
+  viewport.addEventListener("keydown", pauseAutoplay);
+  viewport.addEventListener("scroll", () => {
+    window.clearTimeout(scrollTimeoutId);
+    scrollTimeoutId = window.setTimeout(() => {
+      normalizePosition();
+
+      if (!isProgrammaticScroll && !isMouseDragging) {
+        pauseAutoplay();
+      }
+    }, 180);
+  }, { passive: true });
+
+  startAutoplay();
+}
+
+document.querySelectorAll(".anmeldelser-liste").forEach((viewport) => {
+  setupAutoScrollCarousel(viewport, {
+    trackSelector: ".anmeldelser-track",
+    itemSelector: ".anmeldelse",
+    interval: 5000
+  });
+});
+
+document.querySelectorAll(".om-os-instagram-grid").forEach((viewport) => {
+  setupAutoScrollCarousel(viewport, {
+    itemSelector: ".om-os-instagram-link",
+    speed: 12,
+    resumeDelay: 3000
   });
 });
 
@@ -1470,7 +1644,6 @@ const treatmentRows = document.querySelectorAll(".behandlinger-sektion-liste");
 const guideStepRows = document.querySelectorAll(".guide-steps-grid");
 const productCards = document.querySelectorAll(".product-card");
 const relatedProductCards = document.querySelectorAll(".produkt-skabelon-related-card");
-const reviewSlider = document.querySelector("[data-anmeldelser-slider]");
 const productSections = Array.from(document.querySelectorAll("[data-product-section]"));
 const productFilterLinks = Array.from(document.querySelectorAll("[data-product-filter]"));
 const phoneMedia = window.matchMedia("(max-width: 1180px)");
@@ -1937,120 +2110,6 @@ function createProductHoverEye(card) {
   eyeButton.setAttribute("aria-label", `Quick view: ${getCardTitle(card)}`);
   eyeButton.innerHTML = `<img src="${getInterfaceIconUrl("eye")}" alt="" aria-hidden="true">`;
   image.append(eyeButton);
-}
-
-function setupReviewSlider(slider) {
-  const track = slider.querySelector("[data-anmeldelser-track]");
-  const slides = track ? Array.from(track.querySelectorAll(".anmeldelse")) : [];
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const displayDuration = Number.parseFloat(getComputedStyle(slider.closest(".anmeldelser")).getPropertyValue("--anmeldelse-display-duration")) || 5000;
-  const transitionDuration = Number.parseFloat(getComputedStyle(slider.closest(".anmeldelser")).getPropertyValue("--anmeldelse-transition-duration")) || 600;
-  let activeIndex = 0;
-  let intervalId = null;
-  let visibleCount = 1;
-
-  if (!track || slides.length <= 1) {
-    return;
-  }
-
-  function getVisibleCount() {
-    return window.matchMedia("(max-width: 767px)").matches ? 1 : 3;
-  }
-
-  function updateSlideAccessibility() {
-    Array.from(track.children).forEach((slide) => {
-      const originalIndex = Number(slide.dataset.reviewIndex);
-      const isVisible =
-        !slide.dataset.clone &&
-        originalIndex >= activeIndex &&
-        originalIndex < activeIndex + visibleCount;
-
-      slide.setAttribute("aria-hidden", isVisible ? "false" : "true");
-    });
-  }
-
-  function getSlideStep() {
-    const firstSlide = track.querySelector(".anmeldelse");
-    const secondSlide = firstSlide ? firstSlide.nextElementSibling : null;
-
-    if (firstSlide && secondSlide) {
-      return secondSlide.offsetLeft - firstSlide.offsetLeft;
-    }
-
-    return slider.clientWidth;
-  }
-
-  function setTrackPosition(shouldAnimate = true) {
-    track.style.transition = shouldAnimate ? "" : "none";
-    track.style.transform = `translateX(${-getSlideStep() * activeIndex}px)`;
-    updateSlideAccessibility();
-
-    if (!shouldAnimate) {
-      track.offsetHeight;
-      track.style.transition = "";
-    }
-  }
-
-  function rebuildClones() {
-    track.querySelectorAll("[data-clone='true']").forEach((clone) => clone.remove());
-    visibleCount = getVisibleCount();
-
-    slides.forEach((slide, index) => {
-      slide.dataset.reviewIndex = String(index);
-      slide.removeAttribute("data-clone");
-    });
-
-    slides.slice(0, visibleCount).forEach((slide, index) => {
-      const clone = slide.cloneNode(true);
-      clone.dataset.clone = "true";
-      clone.dataset.reviewIndex = String(index);
-      clone.setAttribute("aria-hidden", "true");
-      track.appendChild(clone);
-    });
-
-    activeIndex = 0;
-    setTrackPosition(false);
-  }
-
-  function setActiveReview(nextIndex) {
-    activeIndex = nextIndex;
-    setTrackPosition();
-
-    if (activeIndex >= slides.length) {
-      window.setTimeout(() => {
-        activeIndex = 0;
-        setTrackPosition(false);
-      }, transitionDuration);
-    }
-  }
-
-  function stopReviews() {
-    window.clearInterval(intervalId);
-    intervalId = null;
-  }
-
-  function startReviews() {
-    if (reduceMotion || intervalId) {
-      return;
-    }
-
-    intervalId = window.setInterval(() => {
-      setActiveReview(activeIndex + 1);
-    }, displayDuration);
-  }
-
-  slider.addEventListener("mouseenter", stopReviews);
-  slider.addEventListener("mouseleave", startReviews);
-  slider.addEventListener("focusin", stopReviews);
-  slider.addEventListener("focusout", startReviews);
-  window.addEventListener("resize", rebuildClones);
-
-  rebuildClones();
-  startReviews();
-}
-
-if (reviewSlider) {
-  setupReviewSlider(reviewSlider);
 }
 
 function setupSliderIndicators(row, options = {}) {

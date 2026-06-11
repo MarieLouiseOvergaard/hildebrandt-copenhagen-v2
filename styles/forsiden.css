@@ -33,7 +33,7 @@
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  padding:30px var(--content-gutter);
+  padding:30px var(--page-gutter);
   color:#f7f7f7;
   background-color:var(--color-text);
   background-image:url("../img/salon/hero-desktop.jpg");
@@ -226,7 +226,7 @@
 /* Citater og anmeldelser. */
 .citat-sektion {
   min-height:345px;
-  padding:90px var(--content-gutter);
+  padding:90px var(--page-gutter);
   background:var(--color-turkis)
 }
 
@@ -332,9 +332,7 @@
 
 /* Citater og anmeldelser. */
 .anmeldelser {
-  --anmeldelse-display-duration:5000ms;
-  --anmeldelse-transition-duration:600ms;
-  padding:58px var(--content-gutter) 120px;
+  padding:58px var(--page-gutter) 120px;
   background:var(--color-light-blue);
   text-align:center
 }
@@ -356,25 +354,47 @@
   position:relative;
   max-width:1180px;
   margin:96px auto 0;
-  overflow:hidden
+  overflow-x:auto;
+  overflow-y:hidden;
+  scroll-snap-type:x proximity;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  cursor:grab;
+  -webkit-overflow-scrolling:touch
+}
+
+.anmeldelser-liste.is-dragging,
+.anmeldelser-liste.is-interacting {
+  cursor:grabbing;
+  scroll-behavior:auto;
+  scroll-snap-type:none;
+  user-select:none
+}
+
+.anmeldelser-liste.is-loop-resetting {
+  scroll-behavior:auto;
+  scroll-snap-type:none
+}
+
+.anmeldelser-liste::-webkit-scrollbar {
+  display:none
 }
 
 /* Citater og anmeldelser. */
 .anmeldelser-track {
   display:flex;
-  gap:96px;
-  transition:transform var(--anmeldelse-transition-duration) ease;
-  will-change:transform
+  gap:56px
 }
 
 /* Citater og anmeldelser. */
 .anmeldelse {
   display:flex;
-  flex:0 0 calc((100% - 192px)/ 3);
+  flex:0 0 calc((100% - 112px) / 3);
   min-width:0;
   flex-direction:column;
   align-items:center;
-  justify-content:flex-start
+  justify-content:flex-start;
+  scroll-snap-align:start
 }
 
 /* Citater og anmeldelser. */
@@ -384,13 +404,6 @@
   margin-bottom:26px;
   color:var(--color-primary);
   letter-spacing:.12em
-}
-
-/* Regler for andre skærmstørrelser. */
-@media (prefers-reduced-motion:reduce) {
-  .anmeldelser-track {
-    transition:none
-  }
 }
 
 /* Guide-sektioner med forklaringer og gode råd. */
@@ -470,7 +483,7 @@
 /* Citater og anmeldelser. */
 .salon-citat {
   min-height:305px;
-  padding:64px var(--content-gutter);
+  padding:64px var(--page-gutter);
   background:#294a54
 }
 
@@ -550,10 +563,10 @@
   .mixly-introduktion-indhold {
     align-items:start;
     grid-template-columns:minmax(300px,0.72fr) minmax(0,1.55fr);
-    width:calc(100% - var(--content-gutter));
+    width:calc(100% - var(--page-gutter));
     max-width:none;
     margin-right:0;
-    margin-left:var(--content-gutter);
+    margin-left:var(--page-gutter);
     padding-right:0;
     padding-left:0
   }
@@ -565,7 +578,7 @@
   }
   .mixly-introduktion-billeder {
     min-width:0;
-    width:calc(100% + var(--content-gutter));
+    width:calc(100% + var(--page-gutter));
     max-width:none;
     margin-top:0;
     margin-right:0;
@@ -835,10 +848,10 @@
     margin-top:72px
   }
   .anmeldelser-track {
-    gap:0
+    gap:20px
   }
   .anmeldelse {
-    flex:0 0 100%;
+    flex:0 0 88%;
     padding:0 8px
   }
   .anmeldelse-stjerner {
@@ -906,7 +919,7 @@
 @media (min-width:768px) and (max-width:1023px) {
   .hero {
     min-height:380px;
-    padding:30px var(--content-gutter);
+    padding:30px var(--page-gutter);
     background-image:url("../img/salon/hero-tablet.jpg")
   }
   .hero-title {
@@ -1081,6 +1094,12 @@
 
 /* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1199px) {
+  .anmeldelser-track {
+    gap:32px
+  }
+  .anmeldelse {
+    flex:0 0 72%
+  }
   .mixly-introduktion-indhold {
     grid-template-columns:var(--forside-split-text-column) var(--forside-split-media-column);
     column-gap:var(--forside-split-gap-tablet);
@@ -1172,10 +1191,10 @@
   }
   .mixly-introduktion-indhold {
     align-items:stretch;
-    width:calc(100% - var(--content-gutter));
+    width:calc(100% - var(--page-gutter));
     max-width:none;
     margin-right:0;
-    margin-left:var(--content-gutter);
+    margin-left:var(--page-gutter);
     padding-right:0;
     padding-left:0;
     grid-template-columns:var(--forside-split-text-column) var(--forside-split-media-column);
@@ -1192,7 +1211,7 @@
   }
   .mixly-introduktion-billeder {
     grid-template-columns:repeat(2,minmax(0,1fr));
-    width:calc(100% + var(--content-gutter));
+    width:calc(100% + var(--page-gutter));
     max-width:none;
     height:100%;
     margin:0;
@@ -1227,7 +1246,7 @@
     max-width:none
   }
   .guide-sektion {
-    grid-template-columns:var(--forside-split-media-column) var(--forside-split-text-column);
+    grid-template-columns:minmax(240px,0.9fr) minmax(0,1.1fr);
     gap:var(--forside-split-gap-tablet);
     align-items:start;
     overflow:hidden
@@ -1246,13 +1265,29 @@
     width:100%;
     height:auto;
     min-height:0;
-    aspect-ratio:var(--forside-split-media-aspect)
+    aspect-ratio:auto
+  }
+  .guide-sektion-billede img,.guide-sektion-billede picture {
+    width:100%;
+    height:auto;
+    object-fit:contain
   }
   .guide-sektion_-produkt {
     display:none
   }
   .behandlinger-sektion p:not(.eyebrow),.guide-sektion p:not(.eyebrow),.mixly-introduktion p:not(.eyebrow),.om-belinda p:not(.eyebrow) {
     max-width:none
+  }
+}
+
+/* Desktopbilledets brede format fra skærme over 1025px. */
+@media (min-width:1026px) and (max-width:1199px) {
+  .guide-sektion-billede {
+    aspect-ratio:var(--forside-split-media-aspect)
+  }
+  .guide-sektion-billede img,.guide-sektion-billede picture {
+    height:100%;
+    object-fit:cover
   }
 }
 

@@ -15,8 +15,8 @@
   width:100%;
   max-width:var(--container-max);
   margin:0 auto;
-  padding-left:40px;
-  padding-right:40px
+  padding-left:var(--page-gutter);
+  padding-right:var(--page-gutter)
 }
 
 /* Billeder og billedkasser. */
@@ -123,15 +123,15 @@
   align-items:start;
   max-width:var(--container-max);
   margin:0 auto;
-  padding:45px 40px 45px 0
+  padding:45px var(--page-gutter) 45px 0
 }
 
 /* På store skærme må billedrækken gerne gå helt ud til venstre. */
 @media (min-width:1200px) {
   .behandlinger-two-column {
-    width:calc(100% - var(--content-gutter));
+    width:calc(100% - var(--page-gutter));
     max-width:none;
-    margin-right:var(--content-gutter);
+    margin-right:var(--page-gutter);
     margin-left:0;
     padding-right:0;
     padding-left:0
@@ -142,8 +142,8 @@
     overflow:hidden
   }
   .behandlinger-mixly .behandlinger-card-row {
-    width:calc(100% + min(var(--content-gutter), 220px));
-    margin-left:calc(min(var(--content-gutter), 220px) * -1);
+    width:calc(100% + min(var(--page-gutter), 220px));
+    margin-left:calc(min(var(--page-gutter), 220px) * -1);
     max-width:none
   }
 }

@@ -75,9 +75,8 @@ html,p {
   --font-review-quote-mobile:20px;
   --font-review-author-mobile:16px;
   --button-width:324px;
-  --container-max:1280px;
-  --page-gutter:clamp(20px, 4vw, 56px);
-  --content-gutter:max(var(--page-gutter), calc((100vw - var(--container-max)) / 2 + var(--page-gutter)));
+  --container-max:1440px;
+  --page-gutter:clamp(20px, 4vw, 48px);
   --button-height:50px;
   --button-radius:2px
 }
@@ -294,12 +293,12 @@ blockquote footer {
 }
 
 /* Knapper og links man skal klikke på. */
-.blog-filter:focus-visible .button-label::after,.blog-filter:hover .button-label::after,.book-knap:focus-visible .button-label::after,.book-knap:hover .button-label::after,.button.is-active .button-label::after,.button:focus-visible .button-label::after,.button:hover .button-label::after,.button[aria-current=page] .button-label::after,.button[aria-pressed=true] .button-label::after,.guide-button:focus-visible .button-label::after,.guide-button:hover .button-label::after,.kroelle-button:focus-visible .button-label::after,.kroelle-button:hover .button-label::after,.kroelle-course-button:focus-visible .button-label::after,.kroelle-course-button:hover .button-label::after,.kroelle-form-button:focus-visible .button-label::after,.kroelle-form-button:hover .button-label::after,.product-filter-link.is-active .button-label::after,.product-filter-link:focus-visible .button-label::after,.product-filter-link:hover .button-label::after,.product-filter-link[aria-current=page] .button-label::after,.produkt-skabelon-size-active .button-label::after,.produkt-skabelon-size:focus-visible .button-label::after,.produkt-skabelon-size:has(input:checked) .button-label::after,.produkt-skabelon-size:hover .button-label::after,.quick-view-size.is-active .button-label::after,.quick-view-size:focus-visible .button-label::after,.quick-view-size:hover .button-label::after,.side-cart-checkout:focus-visible .button-label::after,.side-cart-checkout:hover .button-label::after {
+.blog-filter:focus-visible .button-label::after,.blog-filter:hover .button-label::after,.button.is-active .button-label::after,.button:focus-visible .button-label::after,.button:hover .button-label::after,.button[aria-current=page] .button-label::after,.button[aria-pressed=true] .button-label::after,.guide-button:focus-visible .button-label::after,.guide-button:hover .button-label::after,.kroelle-button:focus-visible .button-label::after,.kroelle-button:hover .button-label::after,.kroelle-course-button:focus-visible .button-label::after,.kroelle-course-button:hover .button-label::after,.kroelle-form-button:focus-visible .button-label::after,.kroelle-form-button:hover .button-label::after,.product-filter-link.is-active .button-label::after,.product-filter-link:focus-visible .button-label::after,.product-filter-link:hover .button-label::after,.product-filter-link[aria-current=page] .button-label::after,.produkt-skabelon-size-active .button-label::after,.produkt-skabelon-size:focus-visible .button-label::after,.produkt-skabelon-size:has(input:checked) .button-label::after,.produkt-skabelon-size:hover .button-label::after,.quick-view-size.is-active .button-label::after,.quick-view-size:focus-visible .button-label::after,.quick-view-size:hover .button-label::after,.side-cart-checkout:focus-visible .button-label::after,.side-cart-checkout:hover .button-label::after {
   clip-path:none
 }
 
 /* Menuen og navigationen. */
-.blog-filter:focus-visible .button-label,.blog-filter:hover .button-label,.book-knap:focus-visible .button-label,.book-knap:hover .button-label,.button.is-active .button-label,.button:focus-visible .button-label,.button:hover .button-label,.button[aria-current=page] .button-label,.button[aria-pressed=true] .button-label,.guide-button:focus-visible .button-label,.guide-button:hover .button-label,.kroelle-button:focus-visible .button-label,.kroelle-button:hover .button-label,.kroelle-course-button:focus-visible .button-label,.kroelle-course-button:hover .button-label,.kroelle-form-button:focus-visible .button-label,.kroelle-form-button:hover .button-label,.mobile-menu-link-active .button-label,.mobile-menu-link:focus-visible .button-label,.mobile-menu-link:hover .button-label,.mobile-menu-link[aria-current=page] .button-label,.product-filter-link.is-active .button-label,.product-filter-link:focus-visible .button-label,.product-filter-link:hover .button-label,.product-filter-link[aria-current=page] .button-label,.produkt-skabelon-size-active .button-label,.produkt-skabelon-size:focus-visible .button-label,.produkt-skabelon-size:has(input:checked) .button-label,.produkt-skabelon-size:hover .button-label,.quick-view-size.is-active .button-label,.quick-view-size:focus-visible .button-label,.quick-view-size:hover .button-label,.side-cart-checkout:focus-visible .button-label,.side-cart-checkout:hover .button-label {
+.blog-filter:focus-visible .button-label,.blog-filter:hover .button-label,.button.is-active .button-label,.button:focus-visible .button-label,.button:hover .button-label,.button[aria-current=page] .button-label,.button[aria-pressed=true] .button-label,.guide-button:focus-visible .button-label,.guide-button:hover .button-label,.kroelle-button:focus-visible .button-label,.kroelle-button:hover .button-label,.kroelle-course-button:focus-visible .button-label,.kroelle-course-button:hover .button-label,.kroelle-form-button:focus-visible .button-label,.kroelle-form-button:hover .button-label,.mobile-menu-link-active .button-label,.mobile-menu-link:focus-visible .button-label,.mobile-menu-link:hover .button-label,.mobile-menu-link[aria-current=page] .button-label,.product-filter-link.is-active .button-label,.product-filter-link:focus-visible .button-label,.product-filter-link:hover .button-label,.product-filter-link[aria-current=page] .button-label,.produkt-skabelon-size-active .button-label,.produkt-skabelon-size:focus-visible .button-label,.produkt-skabelon-size:has(input:checked) .button-label,.produkt-skabelon-size:hover .button-label,.quick-view-size.is-active .button-label,.quick-view-size:focus-visible .button-label,.quick-view-size:hover .button-label,.side-cart-checkout:focus-visible .button-label,.side-cart-checkout:hover .button-label {
   background-size:100% 1px
 }
 
@@ -328,7 +327,7 @@ blockquote footer {
 }
 
 /* Menuen og navigationen. */
-.blog-filter,.book-knap,.button,.guide-button,.kroelle-button,.kroelle-course-button,.kroelle-form-button,.menu-toggle,.mobile-menu-back,.mobile-menu-close,.product-add-button,.product-filter-link,.product-hover-eye,.produkt-skabelon-size,.quick-view-size,.side-cart-checkout,.side-cart-close,.side-cart-remove,.top-nav-link,button,input[type=button],input[type=reset],input[type=submit] {
+.blog-filter,.button,.guide-button,.kroelle-button,.kroelle-course-button,.kroelle-form-button,.menu-toggle,.mobile-menu-back,.mobile-menu-close,.product-add-button,.product-filter-link,.product-hover-eye,.produkt-skabelon-size,.quick-view-size,.side-cart-checkout,.side-cart-close,.side-cart-remove,.top-nav-link,button,input[type=button],input[type=reset],input[type=submit] {
   border-radius:var(--button-radius)
 }
 
@@ -557,8 +556,33 @@ blockquote footer {
   flex-wrap:nowrap;
   gap:5px;
   width:100%;
-  animation:100s linear infinite om-os-instagram-desktop-slider;
-  will-change:transform
+  overflow-x:auto;
+  overflow-y:hidden;
+  scroll-snap-type:none;
+  scrollbar-width:none;
+  cursor:grab;
+  -webkit-overflow-scrolling:touch
+}
+
+.om-os-instagram-grid.is-dragging,
+.om-os-instagram-grid.is-interacting {
+  cursor:grabbing;
+  scroll-behavior:auto;
+  user-select:none
+}
+
+.om-os-instagram-grid.is-loop-resetting {
+  scroll-behavior:auto;
+  scroll-snap-type:none
+}
+
+.om-os-instagram-grid img {
+  user-select:none;
+  -webkit-user-drag:none
+}
+
+.om-os-instagram-grid::-webkit-scrollbar {
+  display:none
 }
 
 /* Links og billeder fra sociale medier. */
@@ -566,12 +590,8 @@ blockquote footer {
   display:block;
   flex:0 0 calc((100% - 20px)/ 5);
   max-width:none;
-  width:auto
-}
-
-/* Links og billeder fra sociale medier. */
-.om-os-instagram-link-duplicate {
-  display:block
+  width:auto;
+  scroll-snap-align:start
 }
 
 /* Billeder og billedkasser. */
@@ -607,16 +627,6 @@ blockquote footer {
 /* Billeder og billedkasser. */
 .om-os-instagram .om-os-image-placeholder span:first-child {
   font-size:1.85rem
-}
-
-/* Sådan bevæger animationen sig. */
-@keyframes om-os-instagram-desktop-slider {
-  0% {
-    transform:translateX(0)
-  }
-  100% {
-    transform:translateX(calc(-50% - 2.5px))
-  }
 }
 
 /* Regler for andre skærmstørrelser. */
@@ -672,15 +682,13 @@ blockquote footer {
     margin-right:0;
     margin-left:0;
     padding:0;
-    animation:100s linear infinite om-os-instagram-mobile-slider;
-    will-change:transform
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:none
   }
   .om-os-instagram-link {
     flex:0 0 50%;
     width:auto
-  }
-  .om-os-instagram-link-duplicate {
-    display:block
   }
   .om-os-instagram-item {
     height:auto;
@@ -695,27 +703,6 @@ blockquote footer {
   }
   .om-os-instagram .om-os-image-placeholder span:first-child {
     font-size:1.45rem
-  }
-  @keyframes om-os-instagram-mobile-slider {
-    0% {
-      transform:translateX(0)
-    }
-    100% {
-      transform:translateX(calc(-50% - 2.5px))
-    }
-  }
-  @media (prefers-reduced-motion:reduce) {
-    .om-os-instagram {
-      overflow:visible
-    }
-    .om-os-instagram-grid {
-      overflow-x:auto;
-      scroll-snap-type:x mandatory;
-      animation:none
-    }
-    .om-os-instagram-link {
-      scroll-snap-align:start
-    }
   }
   h1,h2 {
     line-height:1.12

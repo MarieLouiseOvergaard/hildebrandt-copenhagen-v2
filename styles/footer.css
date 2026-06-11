@@ -12,7 +12,7 @@
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:110px;
-  padding:70px var(--content-gutter) 34px;
+  padding:70px var(--page-gutter) 34px;
   color:#6f7f85;
   background:var(--color-light-blue)
 }
@@ -262,7 +262,7 @@
 .footer--frontpage {
   grid-template-columns:minmax(150px,1fr) minmax(220px,1.15fr) minmax(150px,0.9fr) minmax(240px,1.1fr);
   gap:clamp(46px,7vw,120px);
-  padding:68px var(--content-gutter) 14px;
+  padding:68px var(--page-gutter) 14px;
   color:var(--color-text);
   background:var(--color-light-blue)
 }

@@ -847,7 +847,7 @@ body[data-product-page-filter=all] .product-card,body[data-product-page-filter=a
   display:grid;
   min-height:345px;
   place-items:center;
-  padding:78px var(--content-gutter);
+  padding:78px var(--page-gutter);
   background:#294a54;
   text-align:center
 }

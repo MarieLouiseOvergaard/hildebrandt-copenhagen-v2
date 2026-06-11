@@ -714,7 +714,7 @@
   align-items:start;
   gap:96px;
   margin-top:72px;
-  padding:50px var(--content-gutter);
+  padding:50px var(--page-gutter);
   background:var(--color-light-blue)
 }
 
@@ -1601,7 +1601,7 @@
   .produkt-skabelon-details {
     gap:48px;
     margin-top:54px;
-    padding:42px var(--content-gutter)
+    padding:42px var(--page-gutter)
   }
   .produkt-skabelon-spec-row {
     grid-template-columns:130px 1fr

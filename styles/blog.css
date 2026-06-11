@@ -250,7 +250,7 @@
   grid-template-columns:minmax(0,330px) minmax(0,1fr);
   gap:42px;
   margin:0 0 40px;
-  padding:28px var(--content-gutter) 26px;
+  padding:28px var(--page-gutter) 26px;
   background:var(--color-light-blue)
 }
 
