@@ -1164,6 +1164,10 @@
   display:contents
 }
 
+.rich-repair-mobile-swipe-hint {
+  display:none
+}
+
 /* Regler for andre skærmstørrelser. */
 @media (max-width:767px) {
   .produkt-skabelon-details,.produkt-skabelon-hero,.produkt-skabelon-set-buy {
@@ -2003,15 +2007,18 @@
     display:flex;
     padding:14px 16px 0;
     font-size:12px;
-    font-weight:700;
+    font-weight:400;
     line-height:1.7
   }
   .rich-repair-shampoo-page .produkt-skabelon-hero {
     padding:0 16px
   }
   .rich-repair-shampoo-page .produkt-skabelon-image-hero {
+    width:calc(100% + 32px);
     min-height:320px;
     margin-top:22px;
+    margin-right:-16px;
+    margin-left:-16px;
     display:block;
     overflow-x:auto;
     overflow-y:hidden;
@@ -2028,6 +2035,7 @@
   }
   .rich-repair-shampoo-page .rich-repair-mobile-gallery-slide,
   .rich-repair-shampoo-page .rich-repair-mobile-gallery-slide:not(:first-child) {
+    position:relative;
     flex:0 0 100%;
     min-width:100%;
     min-height:320px;
@@ -2069,11 +2077,15 @@
     padding:8px 0;
     border-bottom:1px solid #8fa4ad
   }
+  .rich-repair-shampoo-page .rich-repair-mobile-details-specs div:last-child {
+    border-bottom:0
+  }
   .rich-repair-shampoo-page .rich-repair-mobile-details-specs dt {
     margin:0 0 4px;
     color:var(--color-heading);
     font-family:var(--font-heading);
     font-size:12px;
+    font-weight:400;
     line-height:1.15;
     text-transform:uppercase
   }
@@ -2082,37 +2094,102 @@
     font-size:12px;
     line-height:1.35
   }
+  .rich-repair-shampoo-page .rich-repair-mobile-swipe-hint {
+    position:absolute;
+    display:block;
+    right:12px;
+    bottom:10px;
+    z-index:2;
+    max-width:calc(100% - 24px);
+    color:var(--color-primary);
+    font-family:var(--font-heading);
+    font-size:11px;
+    font-weight:400;
+    line-height:1.3;
+    letter-spacing:0;
+    text-align:right;
+    text-transform:none;
+    pointer-events:none
+  }
   .rich-repair-shampoo-page .produkt-skabelon-quick-view {
-    gap:0;
-    justify-content:flex-start;
-    padding:0 0 12px;
-    overflow-x:auto;
-    scroll-snap-type:x proximity;
+    gap:10px;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    padding:14px 0 16px;
+    overflow:visible;
+    scroll-snap-type:none;
     scrollbar-width:none
   }
   .rich-repair-shampoo-page .produkt-skabelon-quick-view::-webkit-scrollbar {
     display:none
   }
   .rich-repair-shampoo-page .produkt-skabelon-quick-view-thumbnail {
-    flex:0 0 auto;
-    width:48px;
-    height:42px;
+    flex:0 1 46px;
+    width:clamp(40px, 13.5vw, 52px);
+    height:clamp(34px, 11vw, 43px);
     padding:3px;
-    border-width:1px;
-    border-radius:0;
-    background:#e3f3f7;
-    scroll-snap-align:start
+    border:1px solid transparent;
+    border-radius:var(--button-radius);
+    background:var(--color-light-blue);
+    scroll-snap-align:none
   }
   .rich-repair-shampoo-page .produkt-skabelon-quick-view-thumbnail:first-child {
     background:var(--color-white)
   }
   .rich-repair-shampoo-page .produkt-skabelon-quick-view-thumbnail-info {
-    width:64px;
-    color:var(--color-text);
+    color:var(--color-heading);
     font-family:var(--font-heading);
-    font-size:10px;
-    letter-spacing:.04em;
-    text-transform:uppercase
+    font-size:3.5px;
+    line-height:1;
+    letter-spacing:0;
+    text-align:left;
+    text-transform:none
+  }
+  .rich-repair-shampoo-page .rich-repair-mobile-thumbnail-specs {
+    display:grid;
+    width:100%;
+    height:100%;
+    align-content:center;
+    gap:2px;
+    margin:0;
+    color:var(--color-heading);
+    font-family:var(--font-heading);
+    text-transform:none
+  }
+  .rich-repair-shampoo-page .rich-repair-mobile-thumbnail-specs div {
+    display:grid;
+    gap:0;
+    min-width:0;
+    align-items:center;
+    padding:0;
+    border-bottom:0
+  }
+  .rich-repair-shampoo-page .rich-repair-mobile-thumbnail-specs dt {
+    display:block;
+    height:auto;
+    margin:0;
+    color:var(--color-heading);
+    font-size:3.5px;
+    font-weight:400;
+    line-height:1;
+    text-align:left;
+    text-transform:uppercase;
+    white-space:nowrap
+  }
+  .rich-repair-shampoo-page .rich-repair-mobile-thumbnail-specs dd {
+    display:block;
+    width:100%;
+    height:0;
+    margin:0;
+    border-top:1px solid #8fa4ad
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-quick-view-thumbnail-active,
+  .rich-repair-shampoo-page .produkt-skabelon-quick-view-thumbnail:focus-visible {
+    border-color:var(--color-heading)
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-quick-view-thumbnail:hover:not(.produkt-skabelon-quick-view-thumbnail-active):not(:focus-visible) {
+    border-color:transparent
   }
   .rich-repair-shampoo-page .produkt-skabelon-summary {
     padding:0
@@ -2144,7 +2221,7 @@
   .rich-repair-shampoo-page .produkt-skabelon-size-label {
     margin-bottom:12px;
     font-size:13px;
-    font-weight:700;
+    font-weight:400;
     letter-spacing:.08em
   }
   .rich-repair-shampoo-page .produkt-skabelon-size-options {
@@ -2160,20 +2237,24 @@
   .rich-repair-shampoo-page .produkt-skabelon-description {
     order:5;
     margin-top:22px;
-    padding:0 0 20px;
+    padding:0;
     border-top:0;
-    border-bottom-color:#78919b
+    border-bottom:0
   }
   .rich-repair-shampoo-page .produkt-skabelon-buy {
     order:6;
+    width:var(--button-width);
+    max-width:100%;
     height:50px;
     margin-top:24px;
+    margin-right:auto;
+    margin-left:auto;
     font-size:13px;
     letter-spacing:.12em
   }
   .rich-repair-shampoo-page .produkt-skabelon-accordions {
     order:7;
-    margin-top:16px;
+    margin-top:24px;
     border-top:1px solid #b6c5ca;
     border-bottom:0
   }
@@ -2211,6 +2292,9 @@
     padding:0;
     background:0 0
   }
+  .rich-repair-shampoo-page .produkt-skabelon-set-copy p:not(.eyebrow) {
+    display:none
+  }
   .rich-repair-shampoo-page .produkt-skabelon-set-products .product-card {
     position:relative;
     display:grid;
@@ -2247,17 +2331,21 @@
     min-width:0
   }
   .rich-repair-shampoo-page .produkt-skabelon-set-products .product-content h4 {
-    max-width:170px
+    max-width:none;
+    font-size:12px;
+    line-height:1.18
   }
   .rich-repair-shampoo-page .produkt-skabelon-set-products .product-meta {
     margin-top:6px
   }
   .rich-repair-shampoo-page .produkt-skabelon-set-products .product-meta span:last-child {
     order:1;
+    font-size:10px;
     text-align:left
   }
   .rich-repair-shampoo-page .produkt-skabelon-set-products .product-meta span:first-child {
-    order:2
+    order:2;
+    font-size:12px
   }
   .rich-repair-shampoo-page .produkt-skabelon-details {
     display:none
@@ -2283,14 +2371,34 @@
     margin-top:26px
   }
   .rich-repair-shampoo-page .produkt-skabelon-low-rich-cta {
+    width:var(--button-width);
+    max-width:100%;
     height:50px
   }
   .rich-repair-shampoo-page .produkt-skabelon-related {
     padding:0 16px 38px
   }
   .rich-repair-shampoo-page .produkt-skabelon-related-grid {
+    display:flex;
     gap:4px;
-    margin-top:18px
+    margin-top:18px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x proximity;
+    scrollbar-width:none
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-related-grid::-webkit-scrollbar {
+    display:none
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-related-card {
+    display:block;
+    flex:0 0 calc((100% - 12px)/ 2.35);
+    scroll-snap-align:start
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-related-card:nth-child(n+3),
+  .rich-repair-shampoo-page .produkt-skabelon-related-card h3,
+  .rich-repair-shampoo-page .produkt-skabelon-related-card p {
+    display:block
   }
   .rich-repair-shampoo-page .produkt-skabelon-related-image {
     aspect-ratio:1/1.28
@@ -2400,6 +2508,110 @@
   }
   .produkt-skabelon-set-products .product-card:focus-within .product-add-button,.produkt-skabelon-set-products .product-card:hover .product-add-button {
     transform:none
+  }
+}
+
+/* Tabletjustering kun for Rich Repair Cleansing Shampoo. */
+@media (min-width:768px) and (max-width:1180px) {
+  .rich-repair-shampoo-page .produkt-skabelon-tags {
+    flex-wrap:nowrap;
+    gap:14px;
+    font-size:10px;
+    letter-spacing:.06em;
+    white-space:nowrap
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-set-buy {
+    display:block;
+    width:100%;
+    max-width:none;
+    margin-top:0;
+    padding:0;
+    border:0
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-set-copy {
+    width:100%;
+    margin:0 0 14px;
+    text-align:left
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-set-copy h2 {
+    display:none
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-set-products {
+    display:block;
+    width:100%;
+    max-width:none;
+    padding:0;
+    background:0 0
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-set-copy p:not(.eyebrow) {
+    display:none
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-set-products .product-card {
+    position:relative;
+    display:grid;
+    width:100%;
+    grid-template-columns:88px minmax(0,1fr);
+    gap:14px;
+    align-items:start;
+    background:0 0;
+    overflow:visible
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-set-products .product-add-button {
+    display:none
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-set-products .product-image {
+    grid-column:1;
+    width:88px;
+    height:88px;
+    aspect-ratio:auto;
+    background:var(--color-light-blue);
+    border-radius:var(--button-radius)
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-set-products .product-image img {
+    width:84%;
+    height:84%;
+    object-fit:contain
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-set-products .product-content {
+    grid-column:2;
+    display:block;
+    min-width:0;
+    margin:0;
+    padding:0;
+    border-top:0;
+    overflow:visible
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-set-products .product-content h4 {
+    height:auto;
+    max-width:none;
+    margin:0;
+    overflow:visible;
+    font-size:13px;
+    line-height:1.18
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-set-products .product-content p {
+    display:none
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-set-products .product-meta {
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:flex-start;
+    gap:2px;
+    min-height:auto;
+    margin-top:6px;
+    padding-top:0;
+    border-top:0;
+    line-height:1.3
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-set-products .product-meta span:first-child {
+    order:2;
+    font-size:13px
+  }
+  .rich-repair-shampoo-page .produkt-skabelon-set-products .product-meta span:last-child {
+    order:1;
+    font-size:11px;
+    text-align:left
   }
 }
 
