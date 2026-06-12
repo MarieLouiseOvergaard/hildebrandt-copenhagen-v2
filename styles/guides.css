@@ -284,6 +284,41 @@
   left:-22px
 }
 
+/* Overskrifterne følger containeren, mens LOW/RICH-boksene fortsat går mod skærmkanterne. */
+@media (min-width:1200px) {
+  .guide-compare {
+    container-type:inline-size;
+    max-width:none;
+    padding-right:0;
+    padding-left:0
+  }
+  .guide-compare .guide-section-heading {
+    width:100%;
+    max-width:var(--container-max);
+    margin-right:auto;
+    margin-left:auto
+  }
+  .guide-compare-card h2 {
+    padding-right:var(--page-gutter);
+    padding-left:var(--page-gutter)
+  }
+  .guide-compare-low h2 {
+    padding-left:max(var(--page-gutter),calc((100cqw - var(--container-max)) / 2 + var(--page-gutter)))
+  }
+  .guide-compare-low .guide-compare-body {
+    padding-left:max(32px,calc((100cqw - var(--container-max)) / 2 + var(--page-gutter)))
+  }
+  .guide-compare-rich .guide-compare-body {
+    padding-right:max(32px,calc((100cqw - var(--container-max)) / 2 + var(--page-gutter)))
+  }
+  .guide-compare-rich .guide-compare-placeholder img {
+    transform:translateY(-10px) scale(.94)
+  }
+  .guide-compare-grid {
+    max-width:none
+  }
+}
+
 /* Guide-sektioner med forklaringer og gode råd. */
 .guide-steps {
   padding-top:48px;
