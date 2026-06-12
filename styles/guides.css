@@ -423,6 +423,19 @@
   margin-top:28px
 }
 
+/* Knapper og links man skal klikke på. */
+.guide-cta-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:28px
+}
+
+/* Knapper og links man skal klikke på. */
+.guide-cta-actions .button {
+  margin-top:0
+}
+
 /* Guide-sektioner med forklaringer og gode råd. */
 .guide-section.guide-feeling {
   max-width:none;
