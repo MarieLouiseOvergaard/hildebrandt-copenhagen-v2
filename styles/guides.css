@@ -215,7 +215,7 @@
   padding:30px calc((var(--guide-compare-product-width) * .72) + 28px) 30px 32px;
   overflow:visible;
   border-radius:0 12px 12px 0;
-  background:var(--color-turkis)
+  background: #A0BECF
 }
 
 /* Guide-sektioner med forklaringer og gode råd. */
