@@ -59,7 +59,7 @@ function setupCommunitySignup(formSelector, copySelector, successClass) {
     const nameInput = form.querySelector("input[name='name']");
     const emailInput = form.querySelector("input[type='email']");
     const consentInput = form.querySelector("input[name='privacy'], input[name='consent']");
-    const fieldsGroup = form.querySelector(".kroelle-form-fields");
+    const fieldsGroup = form.querySelector(".kroelle-form-fields, .blog-newsletter-fields");
 
     const getErrorElement = (field, anchor) => {
       let errorElement = form.querySelector(`[data-community-signup-error="${field}"]`);

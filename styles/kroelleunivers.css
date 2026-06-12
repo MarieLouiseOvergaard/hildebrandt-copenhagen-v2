@@ -4,7 +4,8 @@
   --kroelle-split-gap-desktop:clamp(36px,4vw,56px);
   --kroelle-split-gap-tablet:clamp(32px,4vw,48px);
   --kroelle-content-gap-desktop:56px;
-  --kroelle-content-gap-tablet:36px
+  --kroelle-content-gap-tablet:36px;
+  --kroelle-curly-cut-bg:color-mix(in srgb,var(--color-turkis) 30%,transparent)
 }
 
 /* Krøller, styling og hårguide. */
@@ -229,6 +230,7 @@
 /* Lister og rækker med flere ting. */
 .kroelle-compare-grid {
   display:grid;
+  align-items:stretch;
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:40px;
   width:100%;
@@ -241,6 +243,8 @@
 /* Små kort med indhold. */
 .kroelle-card {
   width:100%;
+  display:flex;
+  flex-direction:column;
   max-width:none;
   min-width:0
 }
@@ -266,7 +270,13 @@
 
 /* Små kort med indhold. */
 .kroelle-card:first-child h3 {
-  padding-left:0
+  padding-left:0;
+  font-size:2.2rem
+}
+
+/* Små kort med indhold. */
+.kroelle-card:nth-child(2) h3 {
+  font-size:1.95rem
 }
 
 /* Footeren nederst på siden. */
@@ -275,13 +285,19 @@
 }
 
 /* Små kort med indhold. */
+.kroelle-card:first-child .kroelle-card-list li {
+  color:#F7F7F7
+}
+
+/* Små kort med indhold. */
 .kroelle-card-list {
   display:flex;
   flex-direction:column;
   justify-content:flex-start;
-  height:300px;
-  min-height:0;
-  padding:30px 36px;
+  position:relative;
+  flex:1;
+  height:100%;
+  padding:28px 36px;
   border-radius:12px;
   background:var(--color-heading)
 }
@@ -290,20 +306,39 @@
 .kroelle-card:first-child .kroelle-card-list {
   padding-left:0;
   border-radius:0 12px 12px 0;
-  box-shadow:-10vw 0 0 var(--color-heading),-20vw 0 0 var(--color-heading),-30vw 0 0 var(--color-heading),-40vw 0 0 var(--color-heading),-50vw 0 0 var(--color-heading),-60vw 0 0 var(--color-heading),-70vw 0 0 var(--color-heading),-80vw 0 0 var(--color-heading),-90vw 0 0 var(--color-heading),-100vw 0 0 var(--color-heading)
+  background:var(--color-turkis);
+  box-shadow:-10vw 0 0 var(--color-turkis),-20vw 0 0 var(--color-turkis),-30vw 0 0 var(--color-turkis),-40vw 0 0 var(--color-turkis),-50vw 0 0 var(--color-turkis),-60vw 0 0 var(--color-turkis),-70vw 0 0 var(--color-turkis),-80vw 0 0 var(--color-turkis),-90vw 0 0 var(--color-turkis),-100vw 0 0 var(--color-turkis)
 }
 
 /* Små kort med indhold. */
 .kroelle-card:nth-child(2) .kroelle-card-list {
   border-radius:12px 0 0 12px;
-  box-shadow:10vw 0 0 var(--color-heading),20vw 0 0 var(--color-heading),30vw 0 0 var(--color-heading),40vw 0 0 var(--color-heading),50vw 0 0 var(--color-heading),60vw 0 0 var(--color-heading),70vw 0 0 var(--color-heading),80vw 0 0 var(--color-heading),90vw 0 0 var(--color-heading),100vw 0 0 var(--color-heading)
+  background:var(--kroelle-curly-cut-bg);
+  box-shadow:none
+}
+
+/* Små kort med indhold. */
+.kroelle-card:nth-child(2) .kroelle-card-list::after {
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:100%;
+  width:100vw;
+  background:var(--kroelle-curly-cut-bg)
+}
+
+/* Små kort med indhold. */
+.kroelle-card:nth-child(2) .kroelle-card-list li {
+  color:var(--color-heading)
 }
 
 /* Små kort med indhold. */
 .kroelle-card-list li {
   font-family:var(--font-body);
   font-size:var(--font-body-desktop);
-  line-height:1.55
+  line-height:1.55;
+  overflow-wrap:anywhere
 }
 
 /* Krøller, styling og hårguide. */
@@ -351,7 +386,10 @@
 
 /* Krøller, styling og hårguide. */
 .kroelle-signup-copy {
-  align-self:start;
+  align-self:stretch;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
   padding:6px 42px 4px 0;
   border-right:1px solid var(--color-heading);
   text-align:center
@@ -361,10 +399,10 @@
 .kroelle-signup-copy p {
   color:var(--color-heading);
   font-family:var(--font-quote);
-  font-size:30px;
+  font-size:clamp(24px, 2vw, 28px);
   font-style:italic;
   letter-spacing:.04em;
-  line-height:1.55;
+  line-height:1.32;
   text-transform:uppercase
 }
 
@@ -393,7 +431,7 @@
   color:var(--color-heading);
   background:0 0;
   font-family:var(--font-heading);
-  font-size:16px;
+  font-size:14px;
   font-weight:300;
   letter-spacing:.06em;
   line-height:52px;
@@ -494,6 +532,12 @@
 
 /* Regler for andre skærmstørrelser. */
 @media (min-width:1200px) {
+  .kroelle-compare-grid {
+    grid-template-columns:minmax(0,3fr) minmax(0,2fr)
+  }
+  .kroelle-card:nth-child(2) h3 {
+    margin-bottom:14px
+  }
   .kroelle-community,.kroelle-hero {
     grid-template-columns:minmax(360px,48fr) minmax(0,52fr);
     gap:var(--kroelle-split-gap-desktop)
@@ -558,28 +602,38 @@
     padding-left:var(--page-gutter)
   }
   .kroelle-compare-grid {
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:40px
+    grid-template-columns:minmax(0,54fr) minmax(0,46fr);
+    gap:24px
   }
   .kroelle-card {
     max-width:none
   }
   .kroelle-card-list {
-    height:300px;
-    min-height:0;
-    padding:28px 24px
+    padding:24px 18px
   }
   .kroelle-card h3 {
     padding-left:24px
   }
   .kroelle-card:first-child h3 {
-    padding-left:0
+    padding-left:0;
+    font-size:2.1rem
+  }
+  .kroelle-card:nth-child(2) h3 {
+    font-size:1.85rem
   }
   .kroelle-card:first-child .kroelle-card-list {
     padding-left:0
   }
   .kroelle-card-list li+li {
     margin-top:18px
+  }
+  .kroelle-card-list li {
+    font-size:12px;
+    line-height:1.48
+  }
+  .kroelle-card:nth-child(2) .kroelle-card-list li {
+    overflow-wrap:normal;
+    white-space:nowrap
   }
   .kroelle-course-images figure:nth-child(2),.kroelle-mobile-images {
     display:none
@@ -619,24 +673,44 @@
     padding:6px 28px 4px 0
   }
   .kroelle-signup-copy p {
-    font-size:var(--font-quote-tablet);
-    line-height:1.45
+    font-size:clamp(19px, 2.4vw, 22px);
+    line-height:1.35
   }
   .kroelle-form {
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(160px,auto);
+    gap:16px 20px;
     width:100%
   }
   .kroelle-form-fields {
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:16px 20px
+    display:contents
+  }
+  .kroelle-form input[type=text] {
+    grid-column:1
+  }
+  .kroelle-form input[type=email] {
+    grid-column:2
   }
   .kroelle-form-button {
     width:auto;
     min-width:180px;
-    justify-self:start;
-    grid-column:1/-1
+    justify-self:end;
+    grid-column:2;
+    grid-row:2
   }
   .kroelle-checkbox {
-    max-width:100%
+    grid-column:1;
+    grid-row:2;
+    max-width:100%;
+    gap:9px;
+    margin-top:0;
+    font-size:12px;
+    line-height:1.35
+  }
+  .kroelle-checkbox input {
+    flex:0 0 18px;
+    width:18px;
+    height:18px
   }
   .kroelle-course {
     grid-template-columns:repeat(2,minmax(0,1fr));
@@ -770,13 +844,19 @@
     letter-spacing:.02em
   }
   .kroelle-card:first-child h3 {
-    padding-left:0
+    padding-left:0;
+    font-size:1.42rem
+  }
+  .kroelle-card:nth-child(2) h3 {
+    width:84%;
+    margin-left:auto;
+    padding-left:18px;
+    font-size:1.26rem
   }
   .kroelle-card-list li,.kroelle-checkbox {
     font-size:var(--font-body-mobile)
   }
   .kroelle-card-list {
-    height:auto;
     min-height:0;
     padding:24px 18px;
     border-radius:10px
@@ -784,8 +864,21 @@
   .kroelle-card:first-child .kroelle-card-list {
     padding-left:0
   }
+  .kroelle-card:nth-child(2) .kroelle-card-list {
+    width:84%;
+    margin-left:auto;
+    border-radius:10px 0 0 10px
+  }
+  .kroelle-card:nth-child(2) .kroelle-card-list::after {
+    display:block;
+    width:var(--page-gutter)
+  }
   .kroelle-card-list li+li {
     margin-top:16px
+  }
+  .kroelle-card-list li {
+    font-size:calc(var(--font-body-mobile) - .5px);
+    line-height:1.5
   }
   .kroelle-quote-section {
     min-height:230px;
@@ -843,8 +936,8 @@
     border-right:0
   }
   .kroelle-signup-copy p {
-    font-size:24px;
-    line-height:1.55
+    font-size:20px;
+    line-height:1.35
   }
   .kroelle-form {
     display:flex;
@@ -855,12 +948,13 @@
     display:contents
   }
   .kroelle-form input[type=email],.kroelle-form input[type=text] {
-    height:62px;
-    padding:0 26px;
+    height:56px;
+    padding:0 22px;
     border:0;
     border-top:1px solid var(--color-heading);
     border-bottom:1px solid var(--color-heading);
-    line-height:62px
+    font-size:11px;
+    line-height:56px
   }
   .kroelle-form input[type=email] {
     margin-top:22px
@@ -872,14 +966,15 @@
   }
   .kroelle-checkbox {
     order:2;
-    gap:12px;
+    gap:9px;
     margin-top:22px;
-    line-height:1.55
+    font-size:11px;
+    line-height:1.4
   }
   .kroelle-checkbox input {
-    flex-basis:32px;
-    width:32px;
-    height:32px
+    flex-basis:20px;
+    width:20px;
+    height:20px
   }
   .kroelle-course {
     padding-top:0;
@@ -907,4 +1002,3 @@
     content:"IMG\A 315 × 370"
   }
 }
-

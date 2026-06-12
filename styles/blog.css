@@ -247,16 +247,23 @@
 /* Blogindhold og blogkort. */
 .blog-page .blog-newsletter {
   display:grid;
-  grid-template-columns:minmax(0,330px) minmax(0,1fr);
-  gap:42px;
-  margin:0 0 40px;
-  padding:28px var(--page-gutter) 26px;
+  grid-template-columns:minmax(220px,0.28fr) minmax(0,1fr);
+  align-items:center;
+  gap:56px;
+  width:calc(100% - var(--page-gutter) - var(--page-gutter));
+  max-width:calc(var(--container-max) - var(--page-gutter) - var(--page-gutter));
+  margin:0 auto 40px;
+  padding:28px 64px 26px;
+  border-radius:var(--button-radius);
   background:var(--color-light-blue)
 }
 
 /* Blogindhold og blogkort. */
 .blog-page .blog-newsletter-copy {
-  align-self:start;
+  align-self:stretch;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
   padding:6px 42px 4px 0;
   border-right:1px solid var(--color-heading);
   text-align:center
@@ -266,10 +273,10 @@
 .blog-page .blog-newsletter-copy p {
   color:var(--color-heading);
   font-family:var(--font-quote);
-  font-size:30px;
+  font-size:clamp(24px, 2vw, 28px);
   font-style:italic;
   letter-spacing:.04em;
-  line-height:1.55;
+  line-height:1.32;
   text-transform:uppercase
 }
 
@@ -289,8 +296,8 @@
 /* Blogindhold og blogkort. */
 .blog-page .blog-newsletter-fields {
   display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:clamp(20px,3vw,64px);
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(150px,0.68fr);
+  gap:20px;
   align-items:end
 }
 
@@ -298,13 +305,13 @@
 .blog-page .blog-newsletter-input {
   width:100%;
   height:52px;
-  padding:0;
+  padding:0 18px;
   border:0;
   border-top:1px solid var(--color-heading);
   border-bottom:1px solid var(--color-heading);
   color:var(--color-heading);
   background:0 0;
-  font-size:16px;
+  font-size:14px;
   letter-spacing:.06em;
   line-height:52px
 }
@@ -328,7 +335,7 @@
 .blog-page .blog-newsletter-consent {
   display:flex;
   align-items:flex-start;
-  gap:16px;
+  gap:12px;
   margin-top:16px;
   color:#777;
   font-family:var(--font-body);
@@ -361,13 +368,27 @@
 
 /* Felter hvor brugeren kan skrive eller vælge noget. */
 .blog-page .blog-newsletter-checkbox {
-  width:22px;
-  height:22px;
-  flex:0 0 auto;
+  display:grid;
+  width:24px;
+  height:24px;
+  flex:0 0 24px;
+  place-items:center;
   margin:0;
   border:1px solid var(--color-heading);
   appearance:none;
-  background:0 0
+  background:0 0;
+  cursor:pointer
+}
+
+/* Felter hvor brugeren kan skrive eller vælge noget. */
+.blog-page .blog-newsletter-checkbox:checked {
+  background:linear-gradient(135deg,transparent 45%,var(--color-heading) 45%,var(--color-heading) 55%,transparent 55%),linear-gradient(45deg,transparent 45%,var(--color-heading) 45%,var(--color-heading) 55%,transparent 55%)
+}
+
+/* Felter hvor brugeren kan skrive eller vælge noget. */
+.blog-page .blog-newsletter-checkbox:focus-visible {
+  outline:1px solid var(--color-primary);
+  outline-offset:3px
 }
 
 /* Blogindhold og blogkort. */
@@ -514,24 +535,55 @@
   }
   .blog-page .blog-newsletter {
     grid-template-columns:1fr;
-    gap:26px;
-    margin:0;
-    padding:36px 18px
+    gap:28px;
+    width:auto;
+    max-width:none;
+    margin:0 var(--page-gutter) 54px;
+    padding:44px 28px 48px
   }
   .blog-page .blog-newsletter-copy {
     padding:0;
     border-right:0
   }
   .blog-page .blog-newsletter-copy p {
-    font-size:24px;
+    font-size:20px;
     line-height:1.35
   }
+  .blog-page .blog-newsletter-form {
+    display:flex;
+    flex-direction:column;
+    width:100%
+  }
   .blog-page .blog-newsletter-fields {
-    grid-template-columns:1fr;
-    gap:12px
+    display:contents
   }
   .blog-page .blog-newsletter-input,.blog-page .blog-newsletter-submit {
-    height:48px
+    height:56px
+  }
+  .blog-page .blog-newsletter-input {
+    padding:0 22px;
+    font-size:11px;
+    line-height:56px
+  }
+  .blog-page .blog-newsletter-input[type=email] {
+    margin-top:22px
+  }
+  .blog-page .blog-newsletter-submit {
+    order:3;
+    width:100%;
+    margin-top:36px
+  }
+  .blog-page .blog-newsletter-consent {
+    order:2;
+    gap:9px;
+    margin-top:22px;
+    font-size:11px;
+    line-height:1.4
+  }
+  .blog-page .blog-newsletter-checkbox {
+    flex-basis:20px;
+    width:20px;
+    height:20px
   }
   .blog-page .blog-post {
     padding:42px 18px 64px
@@ -587,14 +639,60 @@
     font-size:var(--font-h3-tablet);
     line-height:1.2
   }
-  .blog-page .blog-newsletter {
-    grid-template-columns:1fr;
-    margin-right:0;
-    margin-left:0
-  }
-  .blog-page .blog-newsletter-fields {
-    grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(160px,0.7fr);
-    gap:24px
-  }
 }
 
+/* Regler for andre skærmstørrelser. */
+@media (min-width:768px) and (max-width:1199px) {
+  .blog-page .blog-newsletter {
+    grid-template-columns:minmax(180px,0.35fr) minmax(0,0.65fr);
+    gap:36px;
+    width:calc(100% - var(--page-gutter) - var(--page-gutter));
+    max-width:calc(var(--container-max) - var(--page-gutter) - var(--page-gutter));
+    margin-right:auto;
+    margin-left:auto;
+    padding:30px var(--page-gutter)
+  }
+  .blog-page .blog-newsletter-copy {
+    padding:6px 28px 4px 0
+  }
+  .blog-page .blog-newsletter-copy p {
+    font-size:clamp(19px, 2.4vw, 22px);
+    line-height:1.35
+  }
+  .blog-page .blog-newsletter-form {
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(160px,auto);
+    gap:16px 20px;
+    width:100%
+  }
+  .blog-page .blog-newsletter-fields {
+    display:contents
+  }
+  .blog-page .blog-newsletter-input[type=text] {
+    grid-column:1
+  }
+  .blog-page .blog-newsletter-input[type=email] {
+    grid-column:2
+  }
+  .blog-page .blog-newsletter-submit {
+    width:auto;
+    min-width:180px;
+    justify-self:end;
+    grid-column:2;
+    grid-row:2
+  }
+  .blog-page .blog-newsletter-consent {
+    grid-column:1;
+    grid-row:2;
+    max-width:100%;
+    gap:9px;
+    margin-top:0;
+    font-size:12px;
+    line-height:1.35
+  }
+  .blog-page .blog-newsletter-checkbox {
+    flex:0 0 18px;
+    width:18px;
+    height:18px
+  }
+}
