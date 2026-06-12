@@ -128,6 +128,8 @@ body[data-product-page-filter=conditioner] [data-product-section=conditioner],bo
 
 /* Produkter og produktkort. */
 .product-section {
+  width:100%;
+  min-width:0;
   max-width:var(--container-max);
   margin:0 auto;
   padding:0 var(--page-gutter) 76px
@@ -151,6 +153,8 @@ body[data-product-page-filter=conditioner] [data-product-section=conditioner],bo
 
 /* Produkter og produktkort. */
 .product-row {
+  width:100%;
+  min-width:0;
   display:flex;
   flex-wrap:wrap;
   gap:1.5rem;
@@ -175,6 +179,7 @@ body[data-product-page-filter=all] .product-row {
   overflow-x:auto;
   overflow-y:hidden;
   scroll-padding-left:0;
+  scroll-padding-right:var(--page-gutter);
   scroll-snap-type:x proximity;
   scrollbar-width:none
 }
@@ -186,17 +191,17 @@ body[data-product-page-filter=all] .product-row::-webkit-scrollbar {
 
 /* Produkter og produktkort. */
 body[data-product-page-filter=all] .product-row::after {
-  flex:0 0 24px;
+  flex:0 0 0;
   content:""
 }
 
 /* Produkter og produktkort. */
-body[data-product-page-filter=all] .slider-indicators {
+body[data-product-page-filter=all] .product-section .slider-indicators {
   display:flex
 }
 
 /* Knapper og links man skal klikke på. */
-.product-add-button .product-add-button-icon,.product-image img[src=""],.product-promo-image[src=""],.quick-add-sheet[hidden],.slider-indicators.is-hidden,.slider-indicators:empty,body:not([data-product-page-filter=all]) .slider-indicators {
+.product-add-button .product-add-button-icon,.product-image img[src=""],.product-promo-image[src=""],.quick-add-sheet[hidden],.slider-indicators.is-hidden,.slider-indicators:empty,body:not([data-product-page-filter=all]) .product-section .slider-indicators {
   display:none
 }
 
@@ -994,11 +999,14 @@ body[data-product-page-filter=all] .product-card,body[data-product-page-filter=a
     padding-bottom:.8rem
   }
   body[data-product-page-filter=all] .product-row {
-    padding-right:var(--page-gutter);
+    display:flex;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
     scroll-snap-type:x mandatory
   }
   body[data-product-page-filter=all] .product-row::after {
-    flex:0 0 10px
+    flex-basis:0
   }
   .product-card,.product-promo-card {
     width:100%
@@ -1307,3 +1315,16 @@ body[data-product-page-filter=all] .product-card,body[data-product-page-filter=a
   }
 }
 
+/* Produktkategorierne på den samlede oversigt skal altid kunne scrolles på mobil og tablet. */
+@media (max-width:1180px) {
+  body[data-product-page-filter=all] .product-row {
+    display:flex;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden
+  }
+  body[data-product-page-filter=all] .product-section .slider-indicators {
+    display:flex;
+    min-height:3px
+  }
+}

@@ -2171,8 +2171,10 @@ function setupSliderIndicators(row, options = {}) {
   }
 
   updateIndicators();
+  window.requestAnimationFrame(updateIndicators);
   row.addEventListener("scroll", updateIndicators, { passive: true });
   window.addEventListener("resize", updateIndicators);
+  window.addEventListener("load", updateIndicators);
   row.closest("details")?.addEventListener("toggle", updateIndicators);
 }
 
@@ -2287,6 +2289,19 @@ relatedProductCards.forEach((card) => {
 });
 
 function syncProductCardAddButtonPlacement() {
+  document.querySelectorAll(".product-add-button").forEach((addButton) => {
+    const text = addButton.querySelector(".product-add-button-text");
+    const icon = addButton.querySelector(".product-add-button-icon");
+
+    if (text) {
+      text.hidden = phoneMedia.matches;
+    }
+
+    if (icon) {
+      icon.hidden = !phoneMedia.matches;
+    }
+  });
+
   productCards.forEach((card) => {
     const image = getCardImageFrame(card);
     const content = card.querySelector(".product-content");
@@ -3834,6 +3849,8 @@ function createQuickAddSheet() {
     const option = event.target.closest(".quick-add-sheet-option");
 
     if (option) {
+      event.preventDefault();
+      event.stopPropagation();
       sheet.dataset.selectedSize = option.dataset.size || "";
       const selectedVariant = sheet.quickAddData?.sizes?.find((size) => size.label === sheet.dataset.selectedSize);
 
@@ -3842,8 +3859,9 @@ function createQuickAddSheet() {
         return;
       }
 
+      const product = getProductFromCardVariant(sheet.quickAddCard, selectedVariant);
       closeQuickAddSheet();
-      addToCart(getProductFromCardVariant(sheet.quickAddCard, selectedVariant));
+      addToCart(product);
       return;
     }
   };
