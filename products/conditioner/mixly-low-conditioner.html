@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="../../styles/footer.css">
   <link rel="stylesheet" href="../../styles/produkt-skabelon.css">
 </head>
-<body class="produkt-skabelon-page conditioner-product-page">
+<body class="produkt-skabelon-page conditioner-product-page mixly-low-conditioner-page">
   <!-- Header: topnavigation og branding for siden. -->
   <header class="header">
     <div class="top-menu">
@@ -220,8 +220,31 @@
   <main id="produkt-skabelon" class="produkt-skabelon-main">
     <!-- Sektion .produkt-skabelon-hero: samlet indholdsblok paa siden. -->
     <section class="produkt-skabelon-hero" aria-labelledby="produkt-skabelon-title">
-      <div class="produkt-skabelon-image produkt-skabelon-image-hero" aria-label="Produktbillede">
-        <img src="../../img/produktbilleder/Low-Conditioner-1.png" alt="Low Conditioner">
+      <div class="produkt-skabelon-image produkt-skabelon-image-hero" data-rich-repair-gallery aria-label="Produktbillede">
+        <div class="rich-repair-mobile-gallery">
+          <div class="rich-repair-mobile-gallery-slide rich-repair-mobile-product-slide" data-gallery-slide="0">
+            <img data-main-product-image src="../../img/produktbilleder/Low-Conditioner-1.png" alt="Low Conditioner">
+            <span class="rich-repair-mobile-swipe-hint" aria-hidden="true">Swipe for hurtigt overblik →</span>
+          </div>
+          <div class="rich-repair-mobile-gallery-slide rich-repair-mobile-table-slide" data-gallery-slide="1">
+            <dl class="rich-repair-mobile-details-specs">
+              <div><dt>Anvendelse</dt><dd>Fordel i vådt hår · Lad virke minimum 3 min. · Skyl grundigt</dd></div>
+              <div><dt>Effekt</dt><dd>Fugt · Blødhed · Balance · Naturlig bevægelse</dd></div>
+              <div><dt>God til</dt><dd>Fine krøller og bølger med behov for let pleje</dd></div>
+              <div><dt>Tekstur</dt><dd>Let og cremet</dd></div>
+              <div><dt>Mix & Match</dt><dd>Mix med Rich Conditioner efter hårets behov</dd></div>
+            </dl>
+            <span class="rich-repair-mobile-swipe-hint" aria-hidden="true">Swipe for nøgleingredienser →</span>
+          </div>
+          <div class="rich-repair-mobile-gallery-slide rich-repair-mobile-ingredient-slide" data-gallery-slide="2">
+            <img src="../../img/ingredienser/Ingrediens-Low-Conditioner-1000.png" alt="Ingredienser i Mixly Low Conditioner">
+          </div>
+        </div>
+      </div>
+      <div class="produkt-skabelon-quick-view" aria-label="Produktvariant billeder">
+        <button class="produkt-skabelon-quick-view-thumbnail produkt-skabelon-quick-view-thumbnail-active" type="button" data-gallery-target="0" data-product-image="../../img/produktbilleder/Low-Conditioner-1.png" aria-label="Produktbillede"><img src="../../img/produktbilleder/Low-Conditioner-1.png" alt=""></button>
+        <button class="produkt-skabelon-quick-view-thumbnail produkt-skabelon-quick-view-thumbnail-info" type="button" data-gallery-target="1" aria-label="Hurtigt overblik"><dl class="rich-repair-mobile-thumbnail-specs" aria-hidden="true"><div><dt>Anvendelse</dt><dd></dd></div><div><dt>Effekt</dt><dd></dd></div><div><dt>God til</dt><dd></dd></div><div><dt>Tekstur</dt><dd></dd></div></dl></button>
+        <button class="produkt-skabelon-quick-view-thumbnail" type="button" data-gallery-target="2" aria-label="Produktbillede med ingredienser"><img src="../../img/ingredienser/Ingrediens-Low-Conditioner-1000.png" alt=""></button>
       </div>
       <div class="produkt-skabelon-summary">
         <h1 id="produkt-skabelon-title">Mixly Low Conditioner</h1>
@@ -320,21 +343,19 @@
           </div>
           <div class="produkt-skabelon-set-products">
             <!-- Artikel: selvstaendigt indhold, fx blogindlaeg eller produktblok. -->
-            <article class="product-card">
+            <a class="product-card" href="../../products/saet/low-rich-conditioner.html" aria-label="Se Low + Rich Deep Drink Conditioner">
               <div class="product-image">
-                <a href="../../products/saet/low-rich-conditioner.html" aria-label="Se Low + Rich Deep Drink Conditioner">
-                  <img src="../../img/produktbilleder/sets/MIXLY-Low-Rich-Conditioner-1000-Saet.png" alt="Low + Rich Deep Drink Conditioner">
-                </a>
+                <img src="../../img/produktbilleder/sets/MIXLY-Low-Rich-Conditioner-1000-Saet.png" alt="Low + Rich Deep Drink Conditioner">
               </div>
               <div class="product-content">
-                <h4><a href="../../products/saet/low-rich-conditioner.html">Low + Rich Deep Drink Conditioner</a></h4>
+                <h4>Low + Rich Deep Drink Conditioner</h4>
                 <p>Conditioners, der hjælper krøller med fugt, lethed og naturlig bevægelse.</p>
                 <div class="product-meta">
                   <span>318 kr. / 798 kr.</span>
                   <span>2 × 200 ml / 2 × 1000 ml</span>
                 </div>
               </div>
-            </article>
+            </a>
           </div>
         </section>
       </div>
@@ -362,7 +383,7 @@
       <div class="produkt-skabelon-low-rich-placeholder">
         <img class="produkt-skabelon-low-rich-image" src="../../img/ikoner/balance-low-rich.png" alt="Balance mellem Low og Rich produkter">
       </div>
-      <div class="produkt-skabelon-low-rich-actions"><a class="button button-secondary produkt-skabelon-low-rich-cta" href="../../kroelleunivers.html">Læs om metoden</a></div>
+      <div class="produkt-skabelon-low-rich-actions"><a class="button button-secondary produkt-skabelon-low-rich-cta" href="../../guides.html">Læs om metoden</a></div>
     </section>
 
     <!-- Sektion .produkt-skabelon-related: samlet indholdsblok paa siden. -->
@@ -524,7 +545,103 @@
 </footer>
   <!-- Script: indlaeser JavaScript til interaktioner paa siden. -->
   <script src="../../scripts/script.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const gallery = document.querySelector('[data-rich-repair-gallery]');
+    const mainImage = document.querySelector('[data-main-product-image]');
+    const quickViewThumbnails = document.querySelectorAll('.produkt-skabelon-quick-view-thumbnail');
+    const productThumbnail = document.querySelector('.produkt-skabelon-quick-view-thumbnail[data-gallery-target="0"]');
+    const productThumbnailImage = productThumbnail?.querySelector('img');
+    const sizeButtons = document.querySelectorAll('.produkt-skabelon-size[data-product-image]');
+    const setCard = document.querySelector('.produkt-skabelon-set-buy .product-card');
+    const setCardImage = setCard?.querySelector('.product-image img');
+    const setCardPrice = setCard?.querySelector('.product-meta span:first-child');
+    const setCardSize = setCard?.querySelector('.product-meta span:last-child');
+    const setVariants = {
+      small: {
+        href: '../../products/saet/low-rich-deep-drink-conditioner-200.html',
+        image: '../../img/produktbilleder/sets/MIXLY-Low-Rich-Deep-Drink-Conditioner-200-Saet-a.png',
+        price: '318 kr.',
+        size: '2 × 200 ml'
+      },
+      large: {
+        href: '../../products/saet/low-rich-conditioner.html',
+        image: '../../img/produktbilleder/sets/MIXLY-Low-Rich-Conditioner-1000-Saet.png',
+        price: '798 kr.',
+        size: '2 × 1000 ml'
+      }
+    };
+
+    if (!gallery || !mainImage || quickViewThumbnails.length === 0) {
+      return;
+    }
+
+    const setActiveThumbnail = function(index) {
+      quickViewThumbnails.forEach(thumbnail => {
+        thumbnail.classList.toggle(
+          'produkt-skabelon-quick-view-thumbnail-active',
+          thumbnail.getAttribute('data-gallery-target') === String(index)
+        );
+      });
+    };
+
+    const setProductImage = function(imageUrl) {
+      if (!imageUrl) {
+        return;
+      }
+
+      mainImage.src = imageUrl;
+      if (productThumbnail && productThumbnailImage) {
+        productThumbnail.dataset.productImage = imageUrl;
+        productThumbnailImage.src = imageUrl;
+      }
+    };
+
+    const updateSetRecommendation = function(label) {
+      const variant = String(label).includes('1000') ? setVariants.large : setVariants.small;
+
+      if (setCard) setCard.href = variant.href;
+      if (setCardImage) setCardImage.src = variant.image;
+      if (setCardPrice) setCardPrice.textContent = variant.price;
+      if (setCardSize) setCardSize.textContent = variant.size;
+    };
+
+    const showSlide = function(index) {
+      const targetIndex = Number(index) || 0;
+
+      gallery.scrollTo({
+        left: targetIndex * gallery.clientWidth,
+        behavior: 'smooth'
+      });
+
+      setActiveThumbnail(targetIndex);
+    };
+
+    quickViewThumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', function() {
+        const imageUrl = this.getAttribute('data-product-image');
+        const galleryTarget = this.getAttribute('data-gallery-target') || '0';
+
+        setProductImage(imageUrl);
+        showSlide(galleryTarget);
+      });
+    });
+
+    sizeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        setProductImage(this.getAttribute('data-product-image'));
+        updateSetRecommendation(this.textContent);
+      });
+    });
+
+    const activeSizeButton = document.querySelector('.produkt-skabelon-size-active[data-product-image]') || sizeButtons[0];
+    updateSetRecommendation(activeSizeButton?.textContent || '');
+
+    gallery.addEventListener('scroll', function() {
+      const galleryWidth = gallery.clientWidth || 1;
+      setActiveThumbnail(Math.round(gallery.scrollLeft / galleryWidth));
+    }, { passive: true });
+  });
+  </script>
 </body>
 </html>
-
-
