@@ -1,268 +1,257 @@
-﻿/* Her ligger udseendet til Stylingtips-siden. */
-
-/* Denne del styrer udseendet for gruppen her. */
+﻿
 .styling-main {
-  overflow-x: hidden;
-  background: var(--color-white);
-}
-.styling-hero,
-
-/* Guide-sektioner med forklaringer og gode råd. */
-.styling-guide {
-  width: 100%;
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding-right: var(--page-gutter);
-  padding-left: var(--page-gutter);
+  overflow-x:hidden;
+  background:var(--color-white)
 }
 
-/* Den store øverste sektion på siden. */
-.styling-hero {
-  display: grid;
-  gap: clamp(28px, 5vw, 72px);
-  align-items: center;
-  padding-top: 58px;
-  padding-bottom: 72px;
-}
-.styling-hero-copy,
-.styling-feature-copy,
-
-/* Små kort med indhold. */
-.styling-card-copy {
-  min-width: 0;
-}
-.styling-hero h1,
-
-/* Grundregler for almindelige HTML-elementer. */
-.styling-section-heading h2 {
-  letter-spacing: .04em;
-}
-
-/* Den store øverste sektion på siden. */
-.styling-hero h1 {
-  max-width: 560px;
-}
-
-/* Den store øverste sektion på siden. */
-.styling-hero p:not(.eyebrow) {
-  max-width: 540px;
-  margin-top: 18px;
-}
-.styling-hero-media,
-.styling-feature-media,
-
-/* Billeder og billedkasser. */
-.styling-card-media {
-  display: grid;
-  width: 100%;
-  margin: 0;
-  place-items: center;
-  overflow: hidden;
-  background: var(--color-light-blue);
-}
-.styling-hero-media,
-
-/* Billeder og billedkasser. */
-.styling-feature-media {
-  aspect-ratio: 1.65 / 1;
-}
-
-/* Billeder og billedkasser. */
-.styling-card-media {
-  aspect-ratio: 1.28 / 1;
-}
-.styling-hero-media img,
-.styling-feature-media img,
-
-/* Billeder og billedkasser. */
-.styling-card-media img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* Guide-sektioner med forklaringer og gode råd. */
-.styling-guide {
-  padding-top: 28px;
-  padding-bottom: 96px;
-}
-
-/* Denne del styrer udseendet for gruppen her. */
-.styling-section-heading {
-  max-width: 680px;
-  margin-bottom: clamp(34px, 5vw, 64px);
-}
-
-/* Denne del styrer udseendet for gruppen her. */
-.styling-feature {
-  display: grid;
-  width: 100%;
-  gap: clamp(28px, 5vw, 72px);
-  align-items: center;
-}
-.styling-feature + .styling-grid-band,
-
-/* Lister og rækker med flere ting. */
-.styling-grid-band + .styling-feature {
-  margin-top: clamp(48px, 7vw, 96px);
-}
-.styling-feature h3,
-
-/* Små kort med indhold. */
-.styling-card h3 {
-  color: var(--color-heading);
-  letter-spacing: .05em;
-}
-.styling-feature p,
-
-/* Små kort med indhold. */
-.styling-card p {
-  max-width: 560px;
-  margin-top: 12px;
-}
-
-/* Knapper og links man skal klikke på. */
 .styling-button {
-  width: auto;
-  min-width: 178px;
-  margin-top: 28px;
+  min-width:154px;
+  border-color:var(--color-primary);
+  color:var(--color-white);
+  background:var(--color-primary)
 }
 
-/* Lister og rækker med flere ting. */
-.styling-grid-band {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  padding: 58px var(--page-gutter) 64px;
-  background: var(--color-light-blue);
+.styling-button:focus-visible,.styling-button:hover {
+  border-color:var(--color-primary);
+  color:var(--color-white);
+  background:var(--color-primary)
 }
 
-/* Lister og rækker med flere ting. */
-.styling-grid {
-  display: grid;
-  width: 100%;
-  max-width: var(--container-max);
-  margin: 0 auto;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(24px, 4vw, 56px);
+.styling-hero-content {
+  display:flex;
+  min-width:0;
+  width:100%;
+  max-width:560px;
+  flex-direction:column;
+  align-items:flex-start
 }
 
-/* Små kort med indhold. */
-.styling-card {
-  min-width: 0;
+.styling-hero-media {
+  display:grid;
+  width:100%;
+  min-height:0;
+  max-height:none;
+  aspect-ratio:16 / 9;
+  overflow:hidden;
+  place-items:center;
+  background:transparent;
+  color:#111;
+  font-family:var(--font-heading);
+  text-align:center
 }
 
-/* Små kort med indhold. */
-.styling-card-link {
-  display: grid;
-  height: 100%;
-  color: inherit;
-  text-decoration: none;
-}
-.styling-card-link:focus-visible,
-.styling-feature-media:focus-visible,
-
-/* Knapper og links man skal klikke på. */
-.styling-button:focus-visible {
-  outline: 2px solid var(--color-heading);
-  outline-offset: 6px;
+.styling-hero-media picture,.styling-hero-media img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center
 }
 
-/* Små kort med indhold. */
-.styling-card-copy {
-  padding-top: 22px;
-}
-.styling-card-link:focus-visible h3,
-.styling-card-link:hover h3,
-.styling-feature:has(.styling-feature-media:focus-visible) h3,
-
-/* Billeder og billedkasser. */
-.styling-feature:has(.styling-feature-media:hover) h3 {
-  color: var(--color-primary);
+.styling-hero-media .image-placeholder-label {
+  display:none
 }
 
-/* Regler for andre skærmstørrelser. */
-@media (min-width: 1200px) {
+.styling-hero-media:has(img[src]:not([src=""]))::before {
+  display:none
+}
+
+.styling-hero-media::before {
+  content:"IMG"
+}
+
+.styling-hero {
+  display:grid;
+  width:100%;
+  max-width:var(--container-max);
+  margin:0 auto;
+  padding:58px var(--page-gutter);
+  gap:56px;
+  align-items:start;
+  background:var(--color-white)
+}
+
+.styling-hero h1 {
+  max-width:520px
+}
+
+.styling-hero-lead {
+  margin-top:16px
+}
+
+.styling-hero p:not(.eyebrow):not(.styling-hero-lead) {
+  max-width:470px;
+  margin-top:24px
+}
+
+.styling-hero .button {
+  align-self:flex-start;
+  margin-top:24px
+}
+
+.styling-cases {
+  display:grid;
+  width:100%;
+  max-width:var(--container-max);
+  margin:0 auto;
+  padding:56px var(--page-gutter) 72px;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(36px,5vw,76px);
+  background:var(--color-white)
+}
+
+.styling-case {
+  display:grid;
+  min-width:0;
+  grid-template-columns:minmax(120px,0.5fr) minmax(0,1fr);
+  gap:clamp(22px,3vw,38px);
+  align-items:start
+}
+
+.styling-case-media {
+  display:grid;
+  width:100%;
+  aspect-ratio:0.58;
+  min-height:190px;
+  place-items:center;
+  overflow:hidden;
+  background:var(--color-image-placeholder);
+  color:#111;
+  font-family:var(--font-heading);
+  text-align:center
+}
+
+.styling-case-copy {
+  min-width:0
+}
+
+.styling-case-copy p:not(.eyebrow) {
+  max-width:430px;
+  margin-top:16px
+}
+
+.styling-case-copy p:not(.eyebrow)+p {
+  margin-top:24px
+}
+
+@media (min-width:1200px) {
   .styling-hero {
-    grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
-  }
-  .styling-feature {
-    grid-template-columns: minmax(0, .4fr) minmax(0, .6fr);
-  }
-}
-
-/* Regler for andre skærmstørrelser. */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .styling-hero,
-  .styling-feature {
-    grid-template-columns: minmax(0, .42fr) minmax(0, .58fr);
-  }
-  .styling-hero {
-    padding-top: 54px;
-    padding-bottom: 64px;
-  }
-  .styling-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:1fr 1.15fr;
+    padding-top:80px;
+    padding-bottom:80px
   }
 }
 
-/* Regler for andre skærmstørrelser. */
-@media (max-width: 767px) {
+@media (min-width:768px) and (max-width:1199px) {
   .styling-hero {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 0 0 44px;
+    grid-template-columns:minmax(0,1.2fr) minmax(0,0.8fr);
+    gap:36px;
+    padding:54px var(--page-gutter) 0
   }
-  .styling-hero-copy,
-  .styling-guide {
-    padding-right: var(--page-gutter);
-    padding-left: var(--page-gutter);
-  }
+
   .styling-hero-media {
-    order: -1;
-  }
-  .styling-hero-media,
-  .styling-feature-media {
-    aspect-ratio: 1.45 / 1;
-  }
-  .styling-hero h1,
-  .styling-hero p:not(.eyebrow),
-  .styling-feature p,
-  .styling-card p {
-    max-width: none;
-  }
-  .styling-guide {
-    padding-top: 10px;
-    padding-bottom: 58px;
-  }
-  .styling-section-heading {
-    margin-bottom: 32px;
-  }
-  .styling-feature,
-  .styling-grid {
-    grid-template-columns: 1fr;
-  }
-  .styling-feature {
-    gap: 20px;
-  }
-  .styling-feature + .styling-grid-band,
-  .styling-grid-band + .styling-feature {
-    margin-top: 46px;
-  }
-  .styling-grid-band {
-    padding: 42px var(--page-gutter) 54px;
-  }
-  .styling-grid {
-    gap: 34px;
-  }
-  .styling-card-media {
-    aspect-ratio: 1.35 / 1;
-  }
-  .styling-card-copy {
-    padding-top: 16px;
-  }
-  .styling-button {
-    width: 100%;
+    aspect-ratio:4/5
   }
 }
 
+@media (min-width:845px) and (max-width:1199px) {
+  .styling-hero {
+    grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr);
+    gap:56px;
+    padding-top:58px;
+    padding-bottom:0
+  }
+
+  .styling-hero-media {
+    aspect-ratio:4/5
+  }
+}
+
+@media (min-width:831px) and (max-width:859px) {
+  .styling-hero {
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)
+  }
+}
+
+@media (min-width:860px) and (max-width:1199px) {
+  .styling-hero {
+    grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);
+    align-items:start
+  }
+
+  .styling-hero-media {
+    aspect-ratio:1.8/1
+  }
+}
+
+@media (max-width:767px) {
+  .styling-hero {
+    grid-template-columns:1fr;
+    gap:24px;
+    padding:0 0 44px
+  }
+
+  .styling-hero-media {
+    order:-1;
+    aspect-ratio:1.8/1
+  }
+
+  .styling-hero-content {
+    max-width:none;
+    padding:0 var(--page-gutter)
+  }
+
+  .styling-hero h1,.styling-hero p:not(.eyebrow):not(.styling-hero-lead) {
+    max-width:100%
+  }
+
+  .styling-cases {
+    grid-template-columns:1fr;
+    padding-top:48px;
+    padding-bottom:56px;
+    gap:42px
+  }
+
+  .styling-case {
+    grid-template-columns:1fr;
+    gap:20px
+  }
+
+  .styling-case-media {
+    aspect-ratio:1.8/1;
+    min-height:0
+  }
+
+  .styling-case-copy p:not(.eyebrow) {
+    max-width:100%
+  }
+}
+
+@media (min-width:768px) and (max-width:830px) {
+  .styling-hero-media {
+    height:clamp(360px, 34vw, 440px);
+    aspect-ratio:auto;
+    overflow:hidden;
+    background:transparent
+  }
+
+  .styling-hero-media picture,.styling-hero-media img {
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center
+  }
+}
+
+@media (min-width:831px) {
+  .styling-hero {
+    align-items:stretch
+  }
+
+  .styling-hero-media {
+    min-height:0;
+    height:auto;
+    overflow:hidden
+  }
+}

@@ -245,70 +245,47 @@
 
   <!-- Main: sidens primaere indhold starter her. -->
   <main class="styling-main">
+    <!-- Sektion .styling-hero: samlet indholdsblok paa siden. -->
     <section class="styling-hero" aria-labelledby="styling-hero-title">
-      <div class="styling-hero-copy">
-        <p class="eyebrow">Styling</p>
-        <h1 id="styling-hero-title">Find den rette styling til dit h&aring;r</h1>
-        <p>Du beh&oslash;ver ikke g&oslash;re det perfekt. Start simpelt, pr&oslash;v dig frem og find den stylingkombination, der passer til dit h&aring;r og din hverdag.</p>
+      <div class="styling-hero-content">
+        <p class="eyebrow">Stylingsguide</p>
+        <h1 id="styling-hero-title">Find den rette styling til dit hår</h1>
+        <p class="styling-hero-lead">Mixly er bygget op omkring LOW og RICH, så du kan tilpasse din styling til dit hårs behov. Nogle dage har dit hår brug for mere fugt. Andre dage mere definition, volumen eller hold. <br>Her kan du udforske de mest brugte stylingkombinationer og få en fornemmelse af, hvor du kan starte.</p>
+        <a class="button styling-button" href="guides.html">Lær om Low og Rich</a>
       </div>
-      <figure class="styling-hero-media">
-        <img src="img/produkt-blanding1-gel-mobil.png" alt="Mixly stylingprodukter til kr&oslash;ller og b&oslash;lger" loading="eager" decoding="async">
-      </figure>
+      <div class="styling-hero-media" aria-hidden="true">
+        <picture>
+          <source media="(min-width: 768px) and (max-width: 830px)" srcset="img/guide-hero-tablet.jpg">
+          <img src="img/guide-hero.jpg" alt="">
+        </picture>
+        <span class="image-placeholder-label">IMG</span>
+      </div>
     </section>
 
-    <section class="styling-guide">
-      <article class="styling-feature">
-        <div class="styling-feature-copy">
-          <h3>Gel + Creme</h3>
-          <p>Til dig der &oslash;nsker mere definition, men stadig vil bevare et bl&oslash;dt og naturligt look.</p>
-          <p>Cream giver fugt. Gel hj&aelig;lper kr&oslash;llerne med at holde formen l&aelig;ngere.</p>
-          <a class="button button-secondary styling-button" href="products/saet/low-refiner-curl-gel-rich-curl-cream.html">Se kombinationen</a>
+    <!-- Sektion .styling-cases: samlet indholdsblok paa siden. -->
+    <section class="styling-cases" aria-label="Styling efter haarbehov">
+      <article class="styling-case">
+        <div class="styling-case-media" aria-hidden="true">
+          <span class="image-placeholder-label">IMG</span>
         </div>
-        <a class="styling-feature-media" href="products/saet/low-refiner-curl-gel-rich-curl-cream.html" aria-label="Se Low Refiner Curl Gel og Rich Curl Cream">
-          <img src="img/produkt-blanding1-gel-mobil.png" alt="Low Refiner Curl Gel og Rich Curl Cream til definerede kr&oslash;ller" loading="lazy" decoding="async">
-        </a>
+        <div class="styling-case-copy">
+          <p class="eyebrow">Naturlig pleje</p>
+          <h2>Til dig, der oplever tørt hår eller krus</h2>
+          <p>Leave-in Conditioner giver fugt, samler krøllerne og hjælper med at reducere frizz. Du kan bruge LOW, RICH eller en kombination af begge, alt efter hvor meget pleje og fugt dit hår har brug for.</p>
+          <p>Perfekt til dig, der ønsker et naturligt resultat uden hold eller stylingeffekt.</p>
+        </div>
       </article>
 
-      <div class="styling-grid-band">
-        <div class="styling-grid" aria-label="Flere stylingtips">
-          <article class="styling-card">
-            <a class="styling-card-link" href="products/conditioner/low-leave-in-conditioner.html" aria-label="Se Low Leave-in Conditioner">
-              <figure class="styling-card-media">
-                <img src="img/produkt-blanding2-leavein-mobil.png" alt="Low Leave-in Conditioner til bl&oslash;de og rolige kr&oslash;ller" loading="lazy" decoding="async">
-              </figure>
-              <div class="styling-card-copy">
-                <h3>Leave-in Conditioner</h3>
-                <p>Til dage hvor dit h&aring;r bare skal f&oslash;les bl&oslash;dt, roligt og naturligt.</p>
-                <p>Giver fugt, samler kr&oslash;llerne og reducerer frizz - uden at h&aring;ret f&oslash;les stylet.</p>
-              </div>
-            </a>
-          </article>
-
-          <article class="styling-card">
-            <a class="styling-card-link" href="products/styling/low-curly-botanic-whipped-mousse.html" aria-label="Se Low Curly Botanic Whipped Mousse">
-              <figure class="styling-card-media">
-                <img src="img/produkt-blanding1-creme-mobil.png" alt="Creme og mousse til kr&oslash;ller med st&oslash;tte, fylde og hold" loading="lazy" decoding="async">
-              </figure>
-              <div class="styling-card-copy">
-                <h3>Creme + Mousse</h3>
-                <p>Til dage hvor dit h&aring;r har brug for mere st&oslash;tte, fylde og l&aelig;ngere holdbarhed.</p>
-                <p>Perfekt til fugtigt vejr eller n&aring;r dine kr&oslash;ller hurtigt falder sammen.</p>
-              </div>
-            </a>
-          </article>
+      <article class="styling-case">
+        <div class="styling-case-media" aria-hidden="true">
+          <span class="image-placeholder-label">IMG</span>
         </div>
-      </div>
-
-      <article class="styling-feature">
-        <div class="styling-feature-copy">
-          <h3>Mix &amp; Match</h3>
-          <p>Dit h&aring;r &aelig;ndrer sig - og det m&aring; din styling ogs&aring; gerne.</p>
-          <p>Kombin&eacute;r produkterne p&aring; tv&aelig;rs og find den balance, der passer til dit h&aring;r lige nu.</p>
-          <a class="button button-secondary styling-button" href="produkter-styling.html">Se styling</a>
+        <div class="styling-case-copy">
+          <p class="eyebrow">Fugt &amp; definition</p>
+          <h2>Til dig der synes krøllerne mister formen</h2>
+          <p>Cream tilfører fugt og pleje, mens gel hjælper krøllerne med at holde formen længere. Ved at justere balancen mellem LOW og RICH kan du skabe mere definition og kontrol uden at håret føles stift.</p>
+          <p>God til dage, hvor krøllerne har brug for lidt mere støtte.</p>
         </div>
-        <a class="styling-feature-media" href="produkter-styling.html" aria-label="Se styling produktoversigt">
-          <img src="img/produkt-blanding2-morning-mobil.png" alt="Mixly stylingprodukter der kan kombineres efter h&aring;rets behov" loading="lazy" decoding="async">
-        </a>
       </article>
     </section>
   </main>
@@ -416,6 +393,3 @@
   <script src="scripts/script.js"></script>
 </body>
 </html>
-
-
-
