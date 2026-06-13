@@ -453,6 +453,86 @@
   text-align:right
 }
 
+/* Sticky købsknap til udvalgte produktsider på desktop. */
+:is(.conditioner-product-page,.hair-mask-product-page,.set-product-page,.shampoo-product-page,.starter-kit-product-page,.styling-product-page) .product-sticky-cart {
+  display:none
+}
+
+@media (min-width:1025px) {
+  :is(.conditioner-product-page,.hair-mask-product-page,.set-product-page,.shampoo-product-page,.starter-kit-product-page,.styling-product-page) .product-sticky-cart {
+    position:fixed;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:900;
+    display:block;
+    padding:7px var(--page-gutter);
+    border-top:1px solid var(--color-border);
+    background:var(--color-white);
+    box-shadow:0 -6px 20px rgba(51,76,86,.1);
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(100%);
+    transition:opacity .2s ease,transform .2s ease,visibility .2s ease
+  }
+  :is(.conditioner-product-page,.hair-mask-product-page,.set-product-page,.shampoo-product-page,.starter-kit-product-page,.styling-product-page) .product-sticky-cart-visible {
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0)
+  }
+  :is(.conditioner-product-page,.hair-mask-product-page,.set-product-page,.shampoo-product-page,.starter-kit-product-page,.styling-product-page) .product-sticky-cart-inner {
+    display:grid;
+    width:min(100%,var(--container-max));
+    min-height:64px;
+    grid-template-columns:42px minmax(0,1fr) auto;
+    gap:16px;
+    align-items:center;
+    margin:0 auto
+  }
+  :is(.conditioner-product-page,.hair-mask-product-page,.set-product-page,.shampoo-product-page,.starter-kit-product-page,.styling-product-page) .product-sticky-cart-image {
+    display:block;
+    width:42px;
+    height:64px;
+    padding:0;
+    object-fit:contain;
+    background:var(--color-white)
+  }
+  :is(.conditioner-product-page,.hair-mask-product-page,.set-product-page,.shampoo-product-page,.starter-kit-product-page,.styling-product-page) .product-sticky-cart-product {
+    min-width:0
+  }
+  :is(.conditioner-product-page,.hair-mask-product-page,.set-product-page,.shampoo-product-page,.starter-kit-product-page,.styling-product-page) .product-sticky-cart-heading {
+    display:grid;
+    grid-template-columns:minmax(0,1fr) auto;
+    gap:24px;
+    align-items:end;
+    margin:0;
+    padding-bottom:5px;
+    border-bottom:1px solid var(--color-heading);
+    color:var(--color-heading);
+    font-family:var(--font-heading);
+    font-size:14px;
+    font-weight:300;
+    line-height:1.15
+  }
+  :is(.conditioner-product-page,.hair-mask-product-page,.set-product-page,.shampoo-product-page,.starter-kit-product-page,.styling-product-page) .product-sticky-cart-name {
+    margin:0;
+    text-transform:uppercase
+  }
+  :is(.conditioner-product-page,.hair-mask-product-page,.set-product-page,.shampoo-product-page,.starter-kit-product-page,.styling-product-page) .product-sticky-cart-price {
+    margin:5px 0 0;
+    color:var(--color-heading);
+    font-family:var(--font-heading);
+    font-size:16px;
+    font-weight:300;
+    line-height:1.1
+  }
+  :is(.conditioner-product-page,.hair-mask-product-page,.set-product-page,.shampoo-product-page,.starter-kit-product-page,.styling-product-page) .product-sticky-cart-button {
+    width:208px;
+    min-width:208px;
+    margin:0
+  }
+}
+
 /* Produkter og produktkort. */
 .produkt-skabelon-accordion {
   border-bottom:1px solid #8fa4ad

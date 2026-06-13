@@ -3704,6 +3704,90 @@ if (productPageSizeButtons.length) {
   });
 }
 
+function setupProductStickyCart() {
+  const supportsStickyCart = document.body.classList.contains("conditioner-product-page") ||
+    document.body.classList.contains("hair-mask-product-page") ||
+    document.body.classList.contains("set-product-page") ||
+    document.body.classList.contains("shampoo-product-page") ||
+    document.body.classList.contains("starter-kit-product-page") ||
+    document.body.classList.contains("styling-product-page");
+
+  if (!supportsStickyCart) {
+    return;
+  }
+
+  const originalBuyButton = document.querySelector(".produkt-skabelon-buy");
+  const title = document.querySelector("#produkt-skabelon-title");
+  const price = document.querySelector("[data-product-page-price]");
+  const heroImage = document.querySelector(".produkt-skabelon-image-hero img");
+  const footer = document.querySelector(".footer");
+
+  if (!originalBuyButton || !title || !price || !heroImage || !footer) {
+    return;
+  }
+
+  const stickyCart = document.createElement("aside");
+  stickyCart.className = "product-sticky-cart";
+  stickyCart.setAttribute("aria-label", `Tilføj ${title.textContent.trim()} til kurv`);
+  stickyCart.setAttribute("aria-hidden", "true");
+  stickyCart.innerHTML = `
+    <div class="product-sticky-cart-inner">
+      <img class="product-sticky-cart-image" src="${heroImage.getAttribute("src") || ""}" alt="">
+      <div class="product-sticky-cart-product">
+        <p class="product-sticky-cart-heading">
+          <span class="product-sticky-cart-name">${title.textContent.trim()}</span>
+          <span data-product-sticky-size></span>
+        </p>
+        <p class="product-sticky-cart-price" data-product-sticky-price></p>
+      </div>
+      <button class="button button-primary product-sticky-cart-button" type="button">Tilføj til kurv</button>
+    </div>
+  `;
+  footer.before(stickyCart);
+
+  const stickyImage = stickyCart.querySelector(".product-sticky-cart-image");
+  const stickySize = stickyCart.querySelector("[data-product-sticky-size]");
+  const stickyPrice = stickyCart.querySelector("[data-product-sticky-price]");
+  const stickyButton = stickyCart.querySelector(".product-sticky-cart-button");
+  const desktopMedia = window.matchMedia("(min-width: 1025px)");
+  let originalBuyVisible = true;
+
+  const updateContent = () => {
+    const activeSize = document.querySelector(".produkt-skabelon-size-active[data-product-price]") ||
+      document.querySelector(".produkt-skabelon-size[data-product-price]");
+
+    stickySize.textContent = activeSize?.textContent.trim() || getProductPageAmountLabel();
+    stickyPrice.textContent = price.textContent.trim();
+    stickyImage.src = activeSize?.dataset.productImage || heroImage.getAttribute("src") || "";
+  };
+
+  const updateVisibility = () => {
+    const isVisible = desktopMedia.matches && !originalBuyVisible;
+    stickyCart.classList.toggle("product-sticky-cart-visible", isVisible);
+    stickyCart.setAttribute("aria-hidden", String(!isVisible));
+    stickyButton.disabled = !isVisible;
+  };
+
+  document.querySelectorAll(".produkt-skabelon-size[data-product-price]").forEach((button) => {
+    button.addEventListener("click", updateContent);
+  });
+
+  stickyButton.addEventListener("click", () => {
+    originalBuyButton.click();
+  });
+
+  new IntersectionObserver((entries) => {
+    originalBuyVisible = entries[0]?.isIntersecting ?? true;
+    updateVisibility();
+  }, { threshold: 0.01 }).observe(originalBuyButton);
+
+  desktopMedia.addEventListener("change", updateVisibility);
+  updateContent();
+  updateVisibility();
+}
+
+setupProductStickyCart();
+
 normalizeDisplayedPrices();
 
 let openQuickAddDropdown = null;
