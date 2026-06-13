@@ -2096,7 +2096,7 @@
   :is(.rich-repair-shampoo-page, .rich-shampoo-page, .rich-curly-shampoo-bar-sensitive-page, .low-shampoo-page, .low-refresh-cleansing-shampoo-page, .low-curly-shampoo-bar-sensitive-page, .curly-charcoal-calm-shampoo-page, .startpakke-1-page, .startpakke-2-page, .startpakke-3-page, .low-curly-botanic-whipped-mousse-page, .low-curly-sea-mist-barrier-page, .low-refiner-curl-gel-page, .rich-curl-cream-page, .rich-curly-morning-mist-barrier-page, .rich-curly-rice-infusion-oil-page, .low-refiner-curl-gel-rich-curl-cream-page, .low-refresh-rich-repair-cleansing-shampoo-page, .low-rich-conditioner-page, .low-rich-curly-shampoo-bar-sensitive-set-page, .low-rich-deep-drink-conditioner-200-page, .low-rich-leave-in-conditioner-page, .low-rich-shampoo-set-page, .rich-low-curly-conditioner-bars-orange-sensitive-page, .rich-low-intensive-care-for-curly-ends-page, .rich-low-shampoo-set-page, .rich-morning-low-sea-mist-barrier-page, .low-curly-protein-treatment-tea-page, .low-intensive-care-for-curly-ends-page, .rich-curly-moisturizing-treatment-mask-page, .rich-intensive-care-for-curly-ends-page, .low-curly-conditioner-bar-sensitive-conditioner-page, .low-leave-in-conditioner-page, .mixly-low-conditioner-page, .rich-curly-conditioner-bar-orange-page, .rich-deep-drink-conditioner-page, .rich-leave-in-conditioner-page) .produkt-skabelon-image-hero {
     width:calc(100% + 32px);
     min-height:320px;
-    margin-top:22px;
+    margin-top:0;
     margin-right:-16px;
     margin-left:-16px;
     display:block;
