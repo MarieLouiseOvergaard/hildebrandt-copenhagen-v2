@@ -419,7 +419,7 @@
 }
 
 /* Knapper og links man skal klikke på. */
-.guide-cta-copy .button,.guide-styling-copy h4 {
+.guide-cta-copy .button,.guide-editorial-copy .button,.guide-styling-copy h4 {
   margin-top:28px
 }
 
@@ -691,12 +691,15 @@
     grid-template-columns:minmax(0,1fr) minmax(0,1fr)
   }
   .guide-hero {
-    grid-template-columns:minmax(0,0.72fr) minmax(0,1.28fr);
-    padding-top:58px;
-    padding-bottom:24px
+    grid-template-columns:1fr 1.15fr;
+    padding-top:80px;
+    padding-bottom:80px
   }
   .guide-cta,.guide-editorial {
     grid-template-columns:minmax(0,1.28fr) minmax(0,0.72fr)
+  }
+  .guide-editorial {
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)
   }
   .guide-cta {
     align-items:stretch
@@ -739,7 +742,7 @@
   }
   .guide-hero {
     grid-template-columns:minmax(0,1.2fr) minmax(0,0.8fr);
-    padding:54px var(--page-gutter) 82px
+    padding:54px var(--page-gutter) 0
   }
   .guide-cta {
     grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr);
@@ -849,7 +852,7 @@
     grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr);
     gap:56px;
     padding-top:58px;
-    padding-bottom:24px
+    padding-bottom:0
   }
   .guide-hero-media {
     aspect-ratio:4/5
@@ -857,10 +860,17 @@
 }
 
 /* Regler for andre skærmstørrelser. */
+@media (min-width:831px) and (max-width:859px) {
+  .guide-hero {
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)
+  }
+}
+
+/* Regler for andre skærmstørrelser. */
 @media (min-width:860px) and (max-width:1199px) {
   .guide-hero {
     grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);
-    align-items:stretch
+    align-items:start
   }
   .guide-hero-media {
     aspect-ratio:1.8/1
@@ -1078,6 +1088,104 @@
   .guide-styling-placeholder picture img {
     height:auto;
     object-fit:contain
+  }
+}
+
+.guide-hero-media {
+  min-height:0;
+  max-height:none;
+  aspect-ratio:16 / 9;
+  overflow:hidden;
+  background:transparent
+}
+
+.guide-hero-media img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center
+}
+
+@media (min-width:768px) and (max-width:830px) {
+  .guide-hero-media,.guide-editorial-image {
+    aspect-ratio:auto;
+    background:transparent
+  }
+  .guide-hero-media picture,.guide-hero-media img,.guide-editorial-image picture,.guide-editorial-image img {
+    display:block;
+    width:100%;
+    height:auto;
+    object-fit:initial
+  }
+}
+
+@media (max-width:830px) and (min-width:768px) {
+  .guide-hero-media,.guide-editorial-image {
+    height:clamp(360px, 34vw, 440px);
+    overflow:hidden
+  }
+  .guide-hero-media img,.guide-editorial-image img {
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center
+  }
+}
+
+@media (min-width:831px) {
+  .guide-hero {
+    align-items:stretch
+  }
+  .guide-hero-media {
+    min-height:0;
+    height:auto;
+    overflow:hidden
+  }
+  .guide-hero-media img {
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center
+  }
+  .guide-editorial,.guide-cta {
+    align-items:stretch
+  }
+  .guide-editorial {
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr)
+  }
+  .guide-editorial-copy {
+    max-width:620px
+  }
+  .guide-editorial-image,.guide-cta-image {
+    position:relative;
+    align-self:stretch;
+    min-height:0;
+    max-height:none;
+    height:100%;
+    aspect-ratio:auto;
+    overflow:hidden;
+    background:transparent
+  }
+  .guide-editorial-image {
+    height:clamp(340px, 24vw, 460px);
+    overflow:hidden
+  }
+  .guide-editorial-image picture,.guide-editorial-image img,.guide-cta-image picture,.guide-cta-image img {
+    display:block;
+    width:100%;
+    height:100%
+  }
+  .guide-editorial-image picture {
+    position:absolute;
+    inset:0
+  }
+  .guide-editorial-image img,.guide-cta-image img {
+    height:100%;
+    object-fit:cover;
+    object-position:center
   }
 }
 
