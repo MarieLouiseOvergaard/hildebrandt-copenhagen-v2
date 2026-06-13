@@ -1065,7 +1065,11 @@ function setupAutoScrollCarousel(viewport, options = {}) {
     }
 
     if (options.speed) {
-      animationFrameId = window.requestAnimationFrame(runContinuousAutoplay);
+      isProgrammaticScroll = true;
+      intervalId = window.setInterval(() => {
+        viewport.scrollLeft += options.speed / 20;
+        normalizePosition();
+      }, 50);
       return;
     }
 
@@ -1151,7 +1155,7 @@ function setupAutoScrollCarousel(viewport, options = {}) {
     scrollTimeoutId = window.setTimeout(() => {
       normalizePosition();
 
-      if (!isProgrammaticScroll && !isMouseDragging) {
+      if (!isProgrammaticScroll && !isMouseDragging && !intervalId && !animationFrameId) {
         pauseAutoplay();
       }
     }, 180);
@@ -1642,6 +1646,7 @@ if (postMenu) {
 const productRows = document.querySelectorAll(".product-row");
 const treatmentRows = document.querySelectorAll(".behandlinger-sektion-liste");
 const guideStepRows = document.querySelectorAll(".guide-steps-grid");
+const stylingCaseRows = document.querySelectorAll(".styling-cases");
 const productCards = document.querySelectorAll(".product-card");
 const relatedProductCards = document.querySelectorAll(".produkt-skabelon-related-card");
 const productSections = Array.from(document.querySelectorAll("[data-product-section]"));
@@ -2117,6 +2122,7 @@ function setupSliderIndicators(row, options = {}) {
   const label = options.label || "produktgruppe";
   const alwaysShow = Boolean(options.alwaysShow);
   const indicators = row.nextElementSibling;
+  const counter = options.counterSelector ? document.querySelector(options.counterSelector) : null;
 
   if (!indicators || !indicators.classList.contains("slider-indicators")) {
     return;
@@ -2128,6 +2134,9 @@ function setupSliderIndicators(row, options = {}) {
     if (maxScroll <= 1 && !alwaysShow) {
       indicators.classList.add("is-hidden");
       indicators.replaceChildren();
+      if (counter) {
+        counter.textContent = "";
+      }
       return;
     }
 
@@ -2168,6 +2177,10 @@ function setupSliderIndicators(row, options = {}) {
       indicator.classList.toggle("active", isActive);
       indicator.setAttribute("aria-current", isActive ? "true" : "false");
     });
+
+    if (counter) {
+      counter.textContent = `${activeIndex + 1} af ${pages}`;
+    }
   }
 
   updateIndicators();
@@ -2204,6 +2217,14 @@ guideStepRows.forEach((row) => {
   setupSliderIndicators(row, {
     itemSelector: ".guide-step-card",
     label: "step",
+  });
+});
+
+stylingCaseRows.forEach((row) => {
+  setupSliderIndicators(row, {
+    itemSelector: ".styling-case",
+    label: "stylingtip",
+    counterSelector: ".styling-cases-counter",
   });
 });
 
