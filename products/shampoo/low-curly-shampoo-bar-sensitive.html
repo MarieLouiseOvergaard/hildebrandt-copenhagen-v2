@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="../../styles/footer.css">
   <link rel="stylesheet" href="../../styles/produkt-skabelon.css">
 </head>
-<body class="produkt-skabelon-page">
+<body class="produkt-skabelon-page shampoo-product-page low-curly-shampoo-bar-sensitive-page">
   <!-- Header: topnavigation og branding for siden. -->
   <header class="header">
     <div class="top-menu">
@@ -220,8 +220,42 @@
   <main id="produkt-skabelon" class="produkt-skabelon-main">
     <!-- Sektion .produkt-skabelon-hero: samlet indholdsblok paa siden. -->
     <section class="produkt-skabelon-hero" aria-labelledby="produkt-skabelon-title">
-      <div class="produkt-skabelon-image produkt-skabelon-image-hero" aria-label="Produktbillede">
-        <img src="../../img/produktbilleder/Low-Curly-Shampoo-Bar-Sensitive-1.png" alt="Low Curly Shampoo Bar Sensitive">
+      <div class="produkt-skabelon-image produkt-skabelon-image-hero" data-rich-repair-gallery aria-label="Produktbillede">
+        <div class="rich-repair-mobile-gallery">
+          <div class="rich-repair-mobile-gallery-slide rich-repair-mobile-product-slide" data-gallery-slide="0">
+            <img data-main-product-image src="../../img/produktbilleder/Low-Curly-Shampoo-Bar-Sensitive-1.png" alt="Low Curly Shampoo Bar Sensitive">
+            <span class="rich-repair-mobile-swipe-hint" aria-hidden="true">Swipe for hurtigt overblik →</span>
+          </div>
+          <div class="rich-repair-mobile-gallery-slide rich-repair-mobile-table-slide" data-gallery-slide="1">
+            <dl class="rich-repair-mobile-details-specs">
+              <div><dt>Anvendelse</dt><dd>Skum op mellem hænderne eller direkte i håret · Massér ind i hår og hovedbund · Skyl med lunkent vand</dd></div>
+              <div><dt>Effekt</dt><dd>Skånsom rens · Fugt · Balance · Blødhed</dd></div>
+              <div><dt>God til</dt><dd>Sensitiv hovedbund, fine krøller og bølger</dd></div>
+              <div><dt>Tekstur</dt><dd>Fast shampoo bar med blødt skum</dd></div>
+              <div><dt>Mix &amp; Match</dt><dd>Afslut med conditioner eller conditioner bar efter behov</dd></div>
+            </dl>
+            <span class="rich-repair-mobile-swipe-hint" aria-hidden="true">Swipe for nøgleingredienser →</span>
+          </div>
+          <div class="rich-repair-mobile-gallery-slide rich-repair-mobile-ingredient-slide" data-gallery-slide="2">
+            <img src="../../img/ingredienser/ingredienser-Low-Curly-Shampoo-Bar-Sensitive-1.png" alt="Ingredienser i Low Curly Shampoo Bar Sensitive">
+          </div>
+        </div>
+      </div>
+      <div class="produkt-skabelon-quick-view" aria-label="Produktvariant billeder">
+        <button class="produkt-skabelon-quick-view-thumbnail produkt-skabelon-quick-view-thumbnail-active" type="button" data-gallery-target="0" data-product-image="../../img/produktbilleder/Low-Curly-Shampoo-Bar-Sensitive-1.png" aria-label="Produktbillede">
+          <img src="../../img/produktbilleder/Low-Curly-Shampoo-Bar-Sensitive-1.png" alt="">
+        </button>
+        <button class="produkt-skabelon-quick-view-thumbnail produkt-skabelon-quick-view-thumbnail-info" type="button" data-gallery-target="1" aria-label="Hurtigt overblik">
+          <dl class="rich-repair-mobile-thumbnail-specs" aria-hidden="true">
+            <div><dt>Anvendelse</dt><dd></dd></div>
+            <div><dt>Effekt</dt><dd></dd></div>
+            <div><dt>God til</dt><dd></dd></div>
+            <div><dt>Tekstur</dt><dd></dd></div>
+          </dl>
+        </button>
+        <button class="produkt-skabelon-quick-view-thumbnail" type="button" data-gallery-target="2" aria-label="Produktbillede med ingredienser">
+          <img src="../../img/ingredienser/ingredienser-Low-Curly-Shampoo-Bar-Sensitive-1.png" alt="">
+        </button>
       </div>
       <div class="produkt-skabelon-summary">
         <h1 id="produkt-skabelon-title">Low Curly Shampoo Bar Sensitive</h1>
@@ -499,7 +533,75 @@
 </footer>
   <!-- Script: indlaeser JavaScript til interaktioner paa siden. -->
   <script src="../../scripts/script.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const gallery = document.querySelector('[data-rich-repair-gallery]');
+    const mainImage = document.querySelector('[data-main-product-image]');
+    const quickViewThumbnails = document.querySelectorAll('.produkt-skabelon-quick-view-thumbnail');
+    const productThumbnail = document.querySelector('.produkt-skabelon-quick-view-thumbnail[data-gallery-target="0"]');
+    const productThumbnailImage = productThumbnail?.querySelector('img');
+
+    if (!gallery || !mainImage || quickViewThumbnails.length === 0) {
+      return;
+    }
+
+    const setActiveThumbnail = function(index) {
+      quickViewThumbnails.forEach(thumbnail => {
+        thumbnail.classList.toggle(
+          'produkt-skabelon-quick-view-thumbnail-active',
+          thumbnail.getAttribute('data-gallery-target') === String(index)
+        );
+      });
+    };
+
+    const showSlide = function(index) {
+      const targetIndex = Number(index) || 0;
+
+      gallery.scrollTo({
+        left: targetIndex * gallery.clientWidth,
+        behavior: 'smooth'
+      });
+
+      setActiveThumbnail(targetIndex);
+    };
+
+    quickViewThumbnails.forEach(thumbnail => {
+      thumbnail.addEventListener('click', function() {
+        const imageUrl = this.getAttribute('data-product-image');
+        const galleryTarget = this.getAttribute('data-gallery-target') || '0';
+
+        if (imageUrl) {
+          mainImage.src = imageUrl;
+          if (productThumbnail && productThumbnailImage) {
+            productThumbnail.dataset.productImage = imageUrl;
+            productThumbnailImage.src = imageUrl;
+          }
+        }
+
+        showSlide(galleryTarget);
+      });
+    });
+
+    gallery.addEventListener('scroll', function() {
+      const galleryWidth = gallery.clientWidth || 1;
+      setActiveThumbnail(Math.round(gallery.scrollLeft / galleryWidth));
+    }, { passive: true });
+
+    document.querySelectorAll('.produkt-skabelon-size[data-product-image]').forEach(sizeButton => {
+      sizeButton.addEventListener('click', function() {
+        const imageUrl = this.getAttribute('data-product-image');
+
+        if (imageUrl && productThumbnail && productThumbnailImage) {
+          mainImage.src = imageUrl;
+          productThumbnail.dataset.productImage = imageUrl;
+          productThumbnailImage.src = imageUrl;
+        }
+
+        showSlide(0);
+      });
+    });
+  });
+  </script>
 </body>
 </html>
-
 
