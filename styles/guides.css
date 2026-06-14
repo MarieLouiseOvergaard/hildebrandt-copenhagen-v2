@@ -41,17 +41,7 @@
 
 /* Knapper og links man skal klikke på. */
 .guide-button {
-  min-width:154px;
-  border-color:var(--color-primary);
-  color:var(--color-white);
-  background:var(--color-primary)
-}
-
-/* Knapper og links man skal klikke på. */
-.guide-button:focus-visible,.guide-button:hover {
-  border-color:var(--color-primary);
-  color:var(--color-white);
-  background:var(--color-primary)
+  min-width:154px
 }
 
 /* Den store øverste sektion på siden. */

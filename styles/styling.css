@@ -6,16 +6,7 @@
 }
 
 .styling-button {
-  min-width:154px;
-  border-color:var(--color-primary);
-  color:var(--color-white);
-  background:var(--color-primary)
-}
-
-.styling-button:focus-visible,.styling-button:hover {
-  border-color:var(--color-primary);
-  color:var(--color-white);
-  background:var(--color-primary)
+  min-width:154px
 }
 
 .styling-hero-content {
