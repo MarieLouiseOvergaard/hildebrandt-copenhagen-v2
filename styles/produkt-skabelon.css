@@ -267,8 +267,13 @@
 }
 
 /* Produkter og produktkort. */
-.produkt-skabelon-set-copy .eyebrow,.produkt-skabelon-tags {
+.produkt-skabelon-set-copy .eyebrow {
   color:var(--color-primary)
+}
+
+/* Produkter og produktkort. */
+.produkt-skabelon-tags {
+  color:var(--color-heading)
 }
 
 /* Produkter og produktkort. */
@@ -1404,7 +1409,7 @@
     justify-content:center;
     gap:8px 12px;
     margin:12px 0 14px;
-    color:var(--color-primary);
+    color:var(--color-heading);
     font-size:10px;
     line-height:1.2;
     flex-wrap:wrap
@@ -1443,7 +1448,7 @@
     justify-content:space-between;
     gap:10px 16px;
     margin:18px 0 0;
-    color:var(--color-primary);
+    color:var(--color-heading);
     font-size:10px;
     line-height:1.2
   }

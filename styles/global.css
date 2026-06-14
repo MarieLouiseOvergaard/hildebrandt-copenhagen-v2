@@ -516,6 +516,68 @@ blockquote footer {
   white-space:nowrap
 }
 
+/* Visuel cookie-prototype: gemmer ikke brugerens valg. */
+.cookie-popup {
+  position:fixed;
+  z-index:5200;
+  inset:0;
+  display:grid;
+  padding:var(--page-gutter);
+  place-items:center
+}
+
+.cookie-popup[hidden] {
+  display:none
+}
+
+.cookie-popup-overlay {
+  position:absolute;
+  inset:0;
+  background:rgba(20,32,36,.42)
+}
+
+.cookie-popup-panel {
+  position:relative;
+  width:min(520px,100%);
+  max-height:calc(100vh - (var(--page-gutter) * 2));
+  overflow:auto;
+  padding:36px;
+  background:var(--color-white);
+  box-shadow:0 22px 60px rgba(20,32,36,.24)
+}
+
+.cookie-popup-panel p:not(.eyebrow) {
+  margin-top:18px
+}
+
+.cookie-popup-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:28px
+}
+
+.cookie-popup-actions .button {
+  flex:1 1 190px;
+  width:auto;
+  min-width:0
+}
+
+.cookie-popup-link {
+  display:inline-block;
+  margin-top:18px;
+  color:var(--color-heading);
+  font-family:var(--font-body);
+  font-size:14px;
+  line-height:1.4;
+  text-decoration:underline;
+  text-underline-offset:4px
+}
+
+.is-cookie-popup-open {
+  overflow:hidden
+}
+
 /* Links og billeder fra sociale medier. */
 .om-os-instagram {
   display:flex;
@@ -648,6 +710,22 @@ blockquote footer {
   .quick-view-spec-row {
     grid-template-columns:1fr;
     gap:4px
+  }
+  .cookie-popup {
+    align-items:end;
+    padding:16px
+  }
+  .cookie-popup-panel {
+    max-height:calc(100vh - 32px);
+    padding:28px 20px 22px
+  }
+  .cookie-popup-actions {
+    gap:8px;
+    margin-top:24px
+  }
+  .cookie-popup-actions .button {
+    flex-basis:100%;
+    width:100%
   }
   .om-os-instagram {
     display:flex;

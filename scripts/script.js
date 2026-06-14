@@ -45,6 +45,73 @@ function prepareButtonUnderlines() {
 
 prepareButtonUnderlines();
 
+// Visuel cookie-prototype: gemmer kun valg i sessionStorage.
+function setupCookiePrototype() {
+  if (document.querySelector(".cookie-popup")) {
+    return;
+  }
+
+  const storageKey = "cookiePrototypeChoice";
+  const getStoredChoice = () => {
+    try {
+      return sessionStorage.getItem(storageKey);
+    } catch (error) {
+      return null;
+    }
+  };
+  const saveChoice = (choice) => {
+    try {
+      sessionStorage.setItem(storageKey, choice);
+    } catch (error) {
+      // Prototypen skal stadig kunne lukkes, hvis sessionStorage er blokeret.
+    }
+  };
+
+  if (getStoredChoice()) {
+    return;
+  }
+
+  const popup = document.createElement("div");
+  popup.className = "cookie-popup";
+  popup.setAttribute("role", "dialog");
+  popup.setAttribute("aria-modal", "true");
+  popup.setAttribute("aria-labelledby", "cookie-popup-title");
+  popup.innerHTML = `
+    <div class="cookie-popup-overlay" aria-hidden="true"></div>
+    <section class="cookie-popup-panel">
+      <p class="eyebrow">Cookies</p>
+      <h2 id="cookie-popup-title">Vi bruger cookies</h2>
+      <p>Vi bruger cookies for at sikre, at hjemmesiden fungerer som den skal, og for at få indsigt i, hvordan den bliver brugt. Du kan acceptere alle cookies eller kun tillade de nødvendige.</p>
+      <div class="cookie-popup-actions">
+        <button class="button button-primary" type="button" data-cookie-popup-close data-cookie-choice="all">Accepter alle</button>
+        <button class="button button-secondary" type="button" data-cookie-popup-close data-cookie-choice="necessary">Kun nødvendige</button>
+      </div>
+      <a class="cookie-popup-link" href="#">Læs mere i vores cookiepolitik</a>
+    </section>
+  `;
+
+  const closePopup = () => {
+    popup.hidden = true;
+    popup.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("is-cookie-popup-open");
+  };
+
+  popup.addEventListener("click", (event) => {
+    const closeButton = event.target.closest("[data-cookie-popup-close]");
+
+    if (closeButton) {
+      saveChoice(closeButton.dataset.cookieChoice || "closed");
+      closePopup();
+    }
+  });
+
+  document.body.append(popup);
+  document.body.classList.add("is-cookie-popup-open");
+  prepareButtonUnderlines();
+}
+
+setupCookiePrototype();
+
 // Community signup forms
 function setupCommunitySignup(formSelector, copySelector, successClass) {
   const errorMessages = {
