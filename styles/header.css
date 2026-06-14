@@ -196,6 +196,15 @@
   }
 }
 
+@media (hover:none),(pointer:coarse) {
+  .top-menu>.book-knap:hover {
+    background-size:0 1px
+  }
+  .top-menu>.book-knap:active {
+    transform:scale(1.02)
+  }
+}
+
 /* Regler for andre skærmstørrelser. */
 @media (min-width:1181px) {
   .top-menu {
@@ -277,6 +286,18 @@
 /* Menuen og navigationen. */
 .menu-link-active::after,.menu-link:focus-visible::after,.menu-link:hover::after,.menu-link[aria-current=page]::after {
   transform:scaleX(1)
+}
+
+@media (hover:none),(pointer:coarse) {
+  .menu-link:focus-visible::after,.menu-link:hover::after {
+    transform:scaleX(0)
+  }
+  .menu-link-active::after,.menu-link[aria-current=page]::after {
+    transform:scaleX(1)
+  }
+  .menu-link:active {
+    transform:scale(1.02)
+  }
 }
 
 /* Menuen og navigationen. */
@@ -475,6 +496,18 @@
 /* Menuen og navigationen. */
 .menu-dropdown-product:focus-visible .menu-dropdown-product-title,.menu-dropdown-product:hover .menu-dropdown-product-title {
   background-size:100% 1px
+}
+
+@media (hover:none),(pointer:coarse) {
+  .menu-dropdown-link:focus-visible,.menu-dropdown-link:hover,.menu-dropdown-product:focus-visible .menu-dropdown-product-title,.menu-dropdown-product:hover .menu-dropdown-product-title {
+    background-size:0 1px
+  }
+  .menu-dropdown-link-active,.menu-dropdown-link[aria-current=page] {
+    background-size:100% 1px
+  }
+  .menu-dropdown-link:active,.menu-dropdown-product:active {
+    transform:scale(1.02)
+  }
 }
 
 /* Menuen og navigationen. */
@@ -819,13 +852,24 @@
   color:var(--color-heading);
   cursor:pointer;
   font-size:14px;
-  transition:color 180ms,background 180ms
+  transition:transform 180ms
 }
 
 /* Knapper og links man skal klikke på. */
-.side-cart-discount button:focus-visible,.side-cart-discount button:hover {
-  color:var(--color-white);
-  background:var(--color-heading)
+.side-cart-checkout:focus-visible .button-label,.side-cart-checkout:hover .button-label,.side-cart-discount button:focus-visible .button-label,.side-cart-discount button:hover .button-label {
+  background-size:100% 1px
+}
+
+/* Kurvknapperne følger sekundærknappens interaktion uden udfyldt hover. */
+.side-cart .side-cart-checkout:focus-visible,.side-cart .side-cart-checkout:hover {
+  border-color:#7f9caf;
+  color:var(--color-heading);
+  background:var(--color-white)
+}
+
+.side-cart .side-cart-discount button:focus-visible,.side-cart .side-cart-discount button:hover {
+  color:var(--color-heading);
+  background:transparent
 }
 
 /* Kurven og det man lægger i kurven. */
@@ -863,7 +907,7 @@
   background:var(--color-white);
   font-family:var(--font-body);
   font-size:16px;
-  transition:color 180ms,background 180ms,border-color 180ms
+  transition:transform 180ms
 }
 
 /* Footeren nederst på siden. */
@@ -886,17 +930,19 @@
   background:#f6f6f6
 }
 
-/* Kurven og det man lægger i kurven. */
-.side-cart-checkout:focus-visible,.side-cart-checkout:hover {
-  border-color:var(--color-heading);
-  color:var(--color-white);
-  background:var(--color-heading)
-}
-
 /* Knapper og links man skal klikke på. */
 .side-cart a:focus-visible,.side-cart button:focus-visible {
   outline:2px solid var(--color-heading);
   outline-offset:3px
+}
+
+@media (hover:none),(pointer:coarse) {
+  .side-cart-checkout:focus-visible .button-label,.side-cart-checkout:hover .button-label,.side-cart-discount button:focus-visible .button-label,.side-cart-discount button:hover .button-label {
+    background-size:0 1px
+  }
+  .side-cart-checkout:active,.side-cart-discount button:active {
+    transform:scale(1.02)
+  }
 }
 
 /* Regler for andre skærmstørrelser. */
@@ -1428,4 +1474,3 @@
     font-size:10px
   }
 }
-

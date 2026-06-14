@@ -134,6 +134,18 @@
   transform:scaleX(1)
 }
 
+@media (hover:none),(pointer:coarse) {
+  .footer-kontakt-adresse a:focus-visible::after,.footer-kontakt-adresse a:hover::after,.footer-menu-link:focus-visible::after,.footer-menu-link:hover::after,.footer-social-link:focus-visible::after,.footer-social-link:hover::after,.footer-terms:focus-visible::after,.footer-terms:hover::after {
+    transform:scaleX(0)
+  }
+  .footer-menu-link[aria-current=page]::after {
+    transform:scaleX(1)
+  }
+  .footer-kontakt-adresse a:active,.footer-menu-link:active,.footer-social-link:active,.footer-terms:active {
+    transform:scale(1.02)
+  }
+}
+
 /* Footeren nederst på siden. */
 .footer-social-link::after {
   bottom:-4px
@@ -859,4 +871,3 @@
     justify-content:flex-start
   }
 }
-

@@ -116,6 +116,15 @@ body[data-product-page-filter=all] [data-product-filter=all]::after,body[data-pr
   transform:scaleX(1)
 }
 
+@media (hover:none),(pointer:coarse) {
+  .product-filter-link:focus-visible::after,.product-filter-link:hover::after {
+    transform:scaleX(0)
+  }
+  .product-filter-link.is-active::after,.product-filter-link[aria-current=page]::after,body[data-product-page-filter=all] [data-product-filter=all]::after,body[data-product-page-filter=conditioner] [data-product-filter=conditioner]::after,body[data-product-page-filter=haarmasker] [data-product-filter=haarmasker]::after,body[data-product-page-filter=saet] [data-product-filter=saet]::after,body[data-product-page-filter=shampoo] [data-product-filter=shampoo]::after,body[data-product-page-filter=startpakker] [data-product-filter=startpakker]::after,body[data-product-page-filter=styling] [data-product-filter=styling]::after {
+    transform:scaleX(1)
+  }
+}
+
 /* Produkter og produktkort. */
 .product-section[hidden],body[data-product-page-filter=conditioner] .product-section,body[data-product-page-filter=haarmasker] .product-section,body[data-product-page-filter=saet] .product-section,body[data-product-page-filter=shampoo] .product-section,body[data-product-page-filter=startpakker] .product-section,body[data-product-page-filter=styling] .product-section {
   display:none

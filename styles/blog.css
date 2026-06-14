@@ -114,6 +114,15 @@
   transform:scaleX(1)
 }
 
+@media (hover:none),(pointer:coarse) {
+  .blog-page .blog-filter:focus-visible::after,.blog-page .blog-filter:hover::after {
+    transform:scaleX(0)
+  }
+  .blog-page #blog-filter-all:checked~.blog-filters label[for=blog-filter-all]::after,.blog-page #blog-filter-guides:checked~.blog-filters label[for=blog-filter-guides]::after,.blog-page #blog-filter-kroelleviden:checked~.blog-filters label[for=blog-filter-kroelleviden]::after,.blog-page #blog-filter-mixly:checked~.blog-filters label[for=blog-filter-mixly]::after {
+    transform:scaleX(1)
+  }
+}
+
 /* Knapper og links man skal klikke på. */
 .blog-page #blog-filter-all:checked~.blog-filters label[for=blog-filter-all] .button-label::after,.blog-page #blog-filter-guides:checked~.blog-filters label[for=blog-filter-guides] .button-label::after,.blog-page #blog-filter-kroelleviden:checked~.blog-filters label[for=blog-filter-kroelleviden] .button-label::after,.blog-page #blog-filter-mixly:checked~.blog-filters label[for=blog-filter-mixly] .button-label::after {
   clip-path:none
@@ -231,6 +240,15 @@
 /* Små kort med indhold. */
 .blog-page .blog-card-link:focus-visible,.blog-page .blog-card-link:hover {
   background-size:100% 1px
+}
+
+@media (hover:none),(pointer:coarse) {
+  .blog-page .blog-card-link:focus-visible,.blog-page .blog-card-link:hover {
+    background-size:0 1px
+  }
+  .blog-page .blog-card-link:active {
+    transform:scale(1.02)
+  }
 }
 
 /* Små kort med indhold. */

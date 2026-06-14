@@ -145,15 +145,7 @@
 .styling-main .om-os-instagram {
   box-sizing:border-box;
   width:100%;
-  max-width:var(--container-max);
-  margin-right:auto;
-  margin-left:auto;
-  padding:var(--styling-section-space) var(--page-gutter)
-}
-
-.styling-main .om-os-instagram-header {
-  padding-right:0;
-  padding-left:0
+  padding:var(--styling-section-space) 0
 }
 
 .styling-cases {

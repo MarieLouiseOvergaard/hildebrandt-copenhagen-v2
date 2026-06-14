@@ -2821,14 +2821,14 @@ function renderCartDrawer() {
       <label for="side-cart-discount-code">Rabatkupon</label>
       <div class="side-cart-discount-row">
         <input id="side-cart-discount-code" type="text" name="discount-code" autocomplete="off" placeholder="Indtast kode">
-        <button type="submit" aria-label="Anvend rabatkupon">Anvend</button>
+        <button type="submit" aria-label="Anvend rabatkupon"><span class="button-label">Anvend</span></button>
       </div>
     </form>
     <div class="side-cart-total">
       <span>I alt</span>
       <strong>${formatPrice(getCartTotal())}</strong>
     </div>
-    <a class="side-cart-checkout" href="checkout.html" aria-label="Gå til kassen">Gå til kassen</a>
+    <a class="side-cart-checkout" href="checkout.html" aria-label="Gå til kassen"><span class="button-label">Gå til kassen</span></a>
     <p>Fri fragt over 1000 kr. · 1-2 hverdages levering</p>
   `;
 }
@@ -3112,11 +3112,13 @@ function ensureSingleProductSizeButton() {
   button.className = "produkt-skabelon-size";
   button.type = "button";
   button.textContent = amountLabel;
-    button.dataset.productPrice = price?.textContent.trim() || "";
+  button.dataset.productPrice = price?.textContent.trim() || "";
   button.dataset.productImage = heroImage?.getAttribute("src") || "";
   button.dataset.productDetailsImage = detailsImage?.getAttribute("src") || "";
   fieldset.querySelector(".produkt-skabelon-size-options")?.append(button);
-  price?.after(fieldset);
+
+  const pricePlacement = price?.closest(".produkt-skabelon-price-offer") || price;
+  pricePlacement?.after(fieldset);
   prepareButtonUnderlines();
 }
 

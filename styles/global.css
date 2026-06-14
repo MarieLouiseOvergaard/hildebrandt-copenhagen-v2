@@ -326,6 +326,18 @@ blockquote footer {
   }
 }
 
+@media (hover:none),(pointer:coarse) {
+  .blog-filter:focus-visible .button-label,.blog-filter:hover .button-label,.button:focus-visible .button-label,.button:hover .button-label,.guide-button:focus-visible .button-label,.guide-button:hover .button-label,.kroelle-button:focus-visible .button-label,.kroelle-button:hover .button-label,.kroelle-course-button:focus-visible .button-label,.kroelle-course-button:hover .button-label,.kroelle-form-button:focus-visible .button-label,.kroelle-form-button:hover .button-label,.product-filter-link:focus-visible .button-label,.product-filter-link:hover .button-label,.produkt-skabelon-size:focus-visible .button-label,.produkt-skabelon-size:hover .button-label,.quick-view-size:focus-visible .button-label,.quick-view-size:hover .button-label,.side-cart-checkout:focus-visible .button-label,.side-cart-checkout:hover .button-label {
+    background-size:0 1px
+  }
+  .button.is-active .button-label,.button[aria-current=page] .button-label,.button[aria-pressed=true] .button-label,.product-filter-link.is-active .button-label,.product-filter-link[aria-current=page] .button-label,.produkt-skabelon-size-active .button-label,.produkt-skabelon-size:has(input:checked) .button-label,.quick-view-size.is-active .button-label {
+    background-size:100% 1px
+  }
+  .blog-filter:active,.button:active,.guide-button:active,.kroelle-button:active,.kroelle-course-button:active,.kroelle-form-button:active,.mobile-menu-back:active,.mobile-menu-close:active,.mobile-menu-link:active,.product-filter-link:active,.produkt-skabelon-size:active,.quick-view-size:active,.side-cart-checkout:active,.top-nav-link:active {
+    transform:scale(1.02)
+  }
+}
+
 /* Menuen og navigationen. */
 .blog-filter,.button,.guide-button,.kroelle-button,.kroelle-course-button,.kroelle-form-button,.menu-toggle,.mobile-menu-back,.mobile-menu-close,.product-add-button,.product-filter-link,.product-hover-eye,.produkt-skabelon-size,.quick-view-size,.side-cart-checkout,.side-cart-close,.side-cart-remove,.top-nav-link,button,input[type=button],input[type=reset],input[type=submit] {
   border-radius:var(--button-radius)
@@ -734,25 +746,30 @@ blockquote footer {
     overflow:hidden
   }
   .om-os-instagram-header {
-    display:contents
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:14px;
+    padding:0 var(--page-gutter) 20px
   }
   .om-os-instagram .om-os-section-title {
-    order:1;
+    flex:1 1 auto;
+    min-width:0;
     max-width:260px;
-    padding:0 var(--page-gutter) 20px;
+    padding:0;
     letter-spacing:.02em
   }
   .om-os-instagram-handle {
-    order:3;
+    flex:0 0 auto;
     align-self:flex-end;
-    margin-top:16px;
-    padding:0 var(--page-gutter);
+    margin-top:0;
+    padding:0;
     padding-bottom:0;
     font-size:.78rem;
-    line-height:1.2
+    line-height:1.2;
+    white-space:nowrap
   }
   .om-os-instagram-grid {
-    order:2;
     display:flex;
     grid-template-columns:none;
     gap:5px;

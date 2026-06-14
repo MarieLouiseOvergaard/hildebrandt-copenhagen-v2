@@ -246,22 +246,27 @@
 
 @media (max-width:767px) {
   .om-os-main .om-os-instagram-header {
-    display:contents
-  }
-  .om-os-main .om-os-instagram .om-os-section-title {
-    order:1;
-    max-width:260px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:14px;
     padding:0 var(--page-gutter) 20px
   }
+  .om-os-main .om-os-instagram .om-os-section-title {
+    flex:1 1 auto;
+    min-width:0;
+    max-width:260px;
+    padding:0
+  }
   .om-os-main .om-os-instagram-grid {
-    order:2;
     padding:0
   }
   .om-os-main .om-os-instagram-handle {
-    order:3;
+    flex:0 0 auto;
     align-self:flex-end;
-    margin-top:16px;
-    padding:0 var(--page-gutter)
+    margin-top:0;
+    padding:0;
+    white-space:nowrap
   }
   .om-os-main .om-os-instagram-link {
     flex-basis:50%
@@ -350,10 +355,10 @@
   .om-os-hero-cta,.om-os-mixly-actions .button {
     width:100%;
     max-width:var(--button-width);
-    min-height:48px;
+    height:var(--button-height);
     align-self:center;
-    font-size:.72rem;
-    letter-spacing:.14em
+    font-size:14px;
+    letter-spacing:.12em
   }
   .om-os-hero-cta {
     order:3
@@ -852,7 +857,7 @@
   }
   .om-os-instagram-header {
     display:flex;
-    align-items:baseline;
+    align-items:flex-end;
     justify-content:space-between;
     gap:14px;
     padding-right:14px;
@@ -894,4 +899,3 @@
     content:"IMG\A 160 × 200"
   }
 }
-

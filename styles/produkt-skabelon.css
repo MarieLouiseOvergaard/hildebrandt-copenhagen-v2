@@ -128,6 +128,10 @@
 /* Produkter og produktkort. */
 .produkt-skabelon-price {
   order:3;
+  width:100%;
+  max-width:100%;
+  flex:0 0 100%;
+  align-self:stretch;
   margin-top:24px;
   font-size:var(--font-h2-desktop);
   font-weight:300;
@@ -183,6 +187,7 @@
 }
 
 /* Holder tilbudsprisen samlet, mens størrelsesvælgeren starter på sin egen linje. */
+.produkt-skabelon-price + .produkt-skabelon-size-group,
 .produkt-skabelon-price-offer + .produkt-skabelon-size-group {
   width:100%;
   flex-basis:100%
