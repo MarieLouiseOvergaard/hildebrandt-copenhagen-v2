@@ -134,10 +134,64 @@
   line-height:1.1
 }
 
+/* Produkter og produktkort. */
+.produkt-skabelon-price-offer {
+  order:3;
+  display:flex;
+  width:100%;
+  max-width:100%;
+  flex:0 0 100%;
+  align-self:stretch;
+  flex-wrap:nowrap;
+  align-items:center;
+  gap:clamp(8px,1.2vw,14px);
+  margin-top:24px;
+  color:var(--color-heading);
+  font-family:var(--font-heading);
+  font-size:var(--font-h2-desktop);
+  font-weight:300;
+  line-height:1.1;
+  white-space:nowrap
+}
+
+/* Produkter og produktkort. */
+.produkt-skabelon-price-old,.produkt-skabelon-price-current {
+  flex:0 0 auto
+}
+
+/* Produkter og produktkort. */
+.produkt-skabelon-price-old {
+  color:#78919b;
+  text-decoration:line-through;
+  text-decoration-thickness:1px
+}
+
+/* Produkter og produktkort. */
+.produkt-skabelon-price-current {
+  color:var(--color-primary)
+}
+
+/* Produkter og produktkort. */
+.produkt-skabelon-price-offer .product-badge {
+  position:static;
+  flex:0 0 auto;
+  min-height:30px;
+  padding:0 12px;
+  font-size:.68rem;
+  line-height:1;
+  transform:none
+}
+
+/* Holder tilbudsprisen samlet, mens størrelsesvælgeren starter på sin egen linje. */
+.produkt-skabelon-price-offer + .produkt-skabelon-size-group {
+  width:100%;
+  flex-basis:100%
+}
+
 /* Felter hvor brugeren kan skrive eller vælge noget. */
 .produkt-skabelon-size-label,.produkt-skabelon-status {
   color:var(--color-primary);
-  font-size:var(--font-eyebrow-desktop);
+  font-size:calc(var(--font-eyebrow-desktop) - 1px);
   letter-spacing:.08em;
   font-family:var(--font-heading);
   text-transform:uppercase
@@ -153,6 +207,10 @@
 /* Produkter og produktkort. */
 .produkt-skabelon-size-group {
   order:4;
+  width:100%;
+  max-width:100%;
+  flex:0 0 100%;
+  align-self:stretch;
   margin:28px 0 0;
   padding:0;
   border:0
@@ -281,10 +339,12 @@
   order:1;
   display:flex;
   flex-wrap:wrap;
-  gap:clamp(22px,4vw,54px);
+  width:100%;
+  justify-content:space-between;
+  gap:10px clamp(14px,2.4vw,32px);
   margin-top:24px;
   font-family:var(--font-heading);
-  font-size:var(--font-eyebrow-desktop);
+  font-size:clamp(13px, 1vw, 15px);
   letter-spacing:.08em;
   text-transform:uppercase
 }
@@ -1255,6 +1315,16 @@
 
 /* Regler for andre skærmstørrelser. */
 @media (max-width:767px) {
+  .produkt-skabelon-price-offer {
+    gap:clamp(6px,2vw,8px);
+    font-size:var(--font-h2-mobile)
+  }
+  .produkt-skabelon-price-offer .product-badge {
+    min-height:26px;
+    padding:0 8px;
+    font-size:clamp(8px,2.45vw,10px);
+    letter-spacing:.1em
+  }
   .produkt-skabelon-details,.produkt-skabelon-hero,.produkt-skabelon-set-buy {
     grid-template-columns:1fr
   }
@@ -1268,7 +1338,7 @@
     padding:28px 18px 48px
   }
   .produkt-skabelon-tags {
-    gap:18px
+    gap:8px clamp(8px,3vw,14px)
   }
   .produkt-skabelon-details {
     gap:36px;
@@ -1329,7 +1399,7 @@
   .produkt-skabelon-package-indicators {
     display:flex
   }
-  .produkt-skabelon-image-hero,.produkt-skabelon-image-secondary,.produkt-skabelon-price,.produkt-skabelon-related-image,.produkt-skabelon-set-copy h2 {
+  .produkt-skabelon-image-hero,.produkt-skabelon-image-secondary,.produkt-skabelon-price,.produkt-skabelon-price-offer,.produkt-skabelon-related-image,.produkt-skabelon-set-copy h2 {
     font-size:var(--font-h2-mobile)
   }
   .produkt-skabelon-page {
@@ -1394,10 +1464,10 @@
     line-height:1.12;
     order:20
   }
-  .produkt-skabelon-price,.produkt-skabelon-summary:not(:has(.produkt-skabelon-size-group)) .produkt-skabelon-buy {
+  .produkt-skabelon-price,.produkt-skabelon-price-offer,.produkt-skabelon-summary:not(:has(.produkt-skabelon-size-group)) .produkt-skabelon-buy {
     margin-top:16px
   }
-  .produkt-skabelon-price {
+  .produkt-skabelon-price,.produkt-skabelon-price-offer {
     order:22
   }
   .produkt-skabelon-size-group {
@@ -1406,11 +1476,12 @@
   }
   .produkt-skabelon-tags {
     order:19;
-    justify-content:center;
-    gap:8px 12px;
+    width:100%;
+    justify-content:space-between;
+    gap:8px clamp(8px,3vw,14px);
     margin:12px 0 14px;
     color:var(--color-heading);
-    font-size:10px;
+    font-size:clamp(8px,2.55vw,10px);
     line-height:1.2;
     flex-wrap:wrap
   }
@@ -1445,11 +1516,12 @@
     background:var(--color-primary)
   }
   .produkt-skabelon-tags {
+    width:100%;
     justify-content:space-between;
-    gap:10px 16px;
+    gap:8px clamp(8px,3vw,14px);
     margin:18px 0 0;
     color:var(--color-heading);
-    font-size:10px;
+    font-size:clamp(8px,2.55vw,10px);
     line-height:1.2
   }
   .produkt-skabelon-description {
@@ -1793,6 +1865,16 @@
 
 /* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1180px) {
+  .produkt-skabelon-price-offer {
+    gap:10px;
+    font-size:var(--font-h2-tablet)
+  }
+  .produkt-skabelon-price-offer .product-badge {
+    min-height:28px;
+    padding:0 10px;
+    font-size:.62rem;
+    letter-spacing:.12em
+  }
   .produkt-skabelon-quick-view {
     display:none
   }
@@ -1817,9 +1899,10 @@
     min-width:190px
   }
   .produkt-skabelon-tags {
-    justify-content:flex-start;
-    gap:18px 26px;
-    font-size:var(--font-eyebrow-tablet)
+    width:100%;
+    justify-content:space-between;
+    gap:10px clamp(12px,2.2vw,24px);
+    font-size:clamp(11px,1.25vw,13px)
   }
   .produkt-skabelon-details {
     gap:48px;
@@ -2285,17 +2368,19 @@
   }
   :is(.rich-repair-shampoo-page, .rich-shampoo-page, .rich-curly-shampoo-bar-sensitive-page, .low-shampoo-page, .low-refresh-cleansing-shampoo-page, .low-curly-shampoo-bar-sensitive-page, .curly-charcoal-calm-shampoo-page, .startpakke-1-page, .startpakke-2-page, .startpakke-3-page, .low-curly-botanic-whipped-mousse-page, .low-curly-sea-mist-barrier-page, .low-refiner-curl-gel-page, .rich-curl-cream-page, .rich-curly-morning-mist-barrier-page, .rich-curly-rice-infusion-oil-page, .low-refiner-curl-gel-rich-curl-cream-page, .low-refresh-rich-repair-cleansing-shampoo-page, .low-rich-conditioner-page, .low-rich-curly-shampoo-bar-sensitive-set-page, .low-rich-deep-drink-conditioner-200-page, .low-rich-leave-in-conditioner-page, .low-rich-shampoo-set-page, .rich-low-curly-conditioner-bars-orange-sensitive-page, .rich-low-intensive-care-for-curly-ends-page, .rich-low-shampoo-set-page, .rich-morning-low-sea-mist-barrier-page, .low-curly-protein-treatment-tea-page, .low-intensive-care-for-curly-ends-page, .rich-curly-moisturizing-treatment-mask-page, .rich-intensive-care-for-curly-ends-page, .low-curly-conditioner-bar-sensitive-conditioner-page, .low-leave-in-conditioner-page, .mixly-low-conditioner-page, .rich-curly-conditioner-bar-orange-page, .rich-deep-drink-conditioner-page, .rich-leave-in-conditioner-page) .produkt-skabelon-tags {
     order:1;
+    width:100%;
     justify-content:space-between;
-    gap:8px;
+    gap:8px clamp(8px,3vw,14px);
     margin:14px 0 0;
-    font-size:10px;
+    font-size:clamp(8px,2.55vw,10px);
     letter-spacing:.08em
   }
   :is(.rich-repair-shampoo-page, .rich-shampoo-page, .rich-curly-shampoo-bar-sensitive-page, .low-shampoo-page, .low-refresh-cleansing-shampoo-page, .low-curly-shampoo-bar-sensitive-page, .curly-charcoal-calm-shampoo-page, .startpakke-1-page, .startpakke-2-page, .startpakke-3-page, .low-curly-botanic-whipped-mousse-page, .low-curly-sea-mist-barrier-page, .low-refiner-curl-gel-page, .rich-curl-cream-page, .rich-curly-morning-mist-barrier-page, .rich-curly-rice-infusion-oil-page, .low-refiner-curl-gel-rich-curl-cream-page, .low-refresh-rich-repair-cleansing-shampoo-page, .low-rich-conditioner-page, .low-rich-curly-shampoo-bar-sensitive-set-page, .low-rich-deep-drink-conditioner-200-page, .low-rich-leave-in-conditioner-page, .low-rich-shampoo-set-page, .rich-low-curly-conditioner-bars-orange-sensitive-page, .rich-low-intensive-care-for-curly-ends-page, .rich-low-shampoo-set-page, .rich-morning-low-sea-mist-barrier-page, .low-curly-protein-treatment-tea-page, .low-intensive-care-for-curly-ends-page, .rich-curly-moisturizing-treatment-mask-page, .rich-intensive-care-for-curly-ends-page, .low-curly-conditioner-bar-sensitive-conditioner-page, .low-leave-in-conditioner-page, .mixly-low-conditioner-page, .rich-curly-conditioner-bar-orange-page, .rich-deep-drink-conditioner-page, .rich-leave-in-conditioner-page) .produkt-skabelon-summary h1 {
     order:2;
     margin-top:14px
   }
-  :is(.rich-repair-shampoo-page, .rich-shampoo-page, .rich-curly-shampoo-bar-sensitive-page, .low-shampoo-page, .low-refresh-cleansing-shampoo-page, .low-curly-shampoo-bar-sensitive-page, .curly-charcoal-calm-shampoo-page, .startpakke-1-page, .startpakke-2-page, .startpakke-3-page, .low-curly-botanic-whipped-mousse-page, .low-curly-sea-mist-barrier-page, .low-refiner-curl-gel-page, .rich-curl-cream-page, .rich-curly-morning-mist-barrier-page, .rich-curly-rice-infusion-oil-page, .low-refiner-curl-gel-rich-curl-cream-page, .low-refresh-rich-repair-cleansing-shampoo-page, .low-rich-conditioner-page, .low-rich-curly-shampoo-bar-sensitive-set-page, .low-rich-deep-drink-conditioner-200-page, .low-rich-leave-in-conditioner-page, .low-rich-shampoo-set-page, .rich-low-curly-conditioner-bars-orange-sensitive-page, .rich-low-intensive-care-for-curly-ends-page, .rich-low-shampoo-set-page, .rich-morning-low-sea-mist-barrier-page, .low-curly-protein-treatment-tea-page, .low-intensive-care-for-curly-ends-page, .rich-curly-moisturizing-treatment-mask-page, .rich-intensive-care-for-curly-ends-page, .low-curly-conditioner-bar-sensitive-conditioner-page, .low-leave-in-conditioner-page, .mixly-low-conditioner-page, .rich-curly-conditioner-bar-orange-page, .rich-deep-drink-conditioner-page, .rich-leave-in-conditioner-page) .produkt-skabelon-price {
+  :is(.rich-repair-shampoo-page, .rich-shampoo-page, .rich-curly-shampoo-bar-sensitive-page, .low-shampoo-page, .low-refresh-cleansing-shampoo-page, .low-curly-shampoo-bar-sensitive-page, .curly-charcoal-calm-shampoo-page, .startpakke-1-page, .startpakke-2-page, .startpakke-3-page, .low-curly-botanic-whipped-mousse-page, .low-curly-sea-mist-barrier-page, .low-refiner-curl-gel-page, .rich-curl-cream-page, .rich-curly-morning-mist-barrier-page, .rich-curly-rice-infusion-oil-page, .low-refiner-curl-gel-rich-curl-cream-page, .low-refresh-rich-repair-cleansing-shampoo-page, .low-rich-conditioner-page, .low-rich-curly-shampoo-bar-sensitive-set-page, .low-rich-deep-drink-conditioner-200-page, .low-rich-leave-in-conditioner-page, .low-rich-shampoo-set-page, .rich-low-curly-conditioner-bars-orange-sensitive-page, .rich-low-intensive-care-for-curly-ends-page, .rich-low-shampoo-set-page, .rich-morning-low-sea-mist-barrier-page, .low-curly-protein-treatment-tea-page, .low-intensive-care-for-curly-ends-page, .rich-curly-moisturizing-treatment-mask-page, .rich-intensive-care-for-curly-ends-page, .low-curly-conditioner-bar-sensitive-conditioner-page, .low-leave-in-conditioner-page, .mixly-low-conditioner-page, .rich-curly-conditioner-bar-orange-page, .rich-deep-drink-conditioner-page, .rich-leave-in-conditioner-page) .produkt-skabelon-price,
+  :is(.rich-repair-shampoo-page, .rich-shampoo-page, .rich-curly-shampoo-bar-sensitive-page, .low-shampoo-page, .low-refresh-cleansing-shampoo-page, .low-curly-shampoo-bar-sensitive-page, .curly-charcoal-calm-shampoo-page, .startpakke-1-page, .startpakke-2-page, .startpakke-3-page, .low-curly-botanic-whipped-mousse-page, .low-curly-sea-mist-barrier-page, .low-refiner-curl-gel-page, .rich-curl-cream-page, .rich-curly-morning-mist-barrier-page, .rich-curly-rice-infusion-oil-page, .low-refiner-curl-gel-rich-curl-cream-page, .low-refresh-rich-repair-cleansing-shampoo-page, .low-rich-conditioner-page, .low-rich-curly-shampoo-bar-sensitive-set-page, .low-rich-deep-drink-conditioner-200-page, .low-rich-leave-in-conditioner-page, .low-rich-shampoo-set-page, .rich-low-curly-conditioner-bars-orange-sensitive-page, .rich-low-intensive-care-for-curly-ends-page, .rich-low-shampoo-set-page, .rich-morning-low-sea-mist-barrier-page, .low-curly-protein-treatment-tea-page, .low-intensive-care-for-curly-ends-page, .rich-curly-moisturizing-treatment-mask-page, .rich-intensive-care-for-curly-ends-page, .low-curly-conditioner-bar-sensitive-conditioner-page, .low-leave-in-conditioner-page, .mixly-low-conditioner-page, .rich-curly-conditioner-bar-orange-page, .rich-deep-drink-conditioner-page, .rich-leave-in-conditioner-page) .produkt-skabelon-price-offer {
     order:3;
     margin-top:12px
   }
@@ -2600,8 +2685,8 @@
 @media (min-width:768px) and (max-width:1180px) {
   .rich-repair-shampoo-page .produkt-skabelon-tags {
     flex-wrap:nowrap;
-    gap:14px;
-    font-size:10px;
+    gap:clamp(8px,1.4vw,14px);
+    font-size:clamp(10px,1.05vw,12px);
     letter-spacing:.06em;
     white-space:nowrap
   }
