@@ -381,6 +381,11 @@
   line-height:1.15
 }
 
+.blogs-column-spacer {
+  visibility:hidden;
+  pointer-events:none
+}
+
 .blogs-two-column-item p {
   font-size:14px;
   line-height:1.55
@@ -403,6 +408,10 @@
 
 .blogs-section-button {
   margin-top:36px
+}
+
+.blogs-startpakke-section {
+  padding-top:54px
 }
 
 .blogs-quote-section {
@@ -801,6 +810,24 @@
     aspect-ratio:auto
   }
 
+  .blogs-startpakke-section .product-row {
+    display:flex;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    overflow-y:hidden;
+    scroll-snap-type:x proximity;
+    scrollbar-width:none
+  }
+
+  .blogs-startpakke-section .product-row::-webkit-scrollbar {
+    display:none
+  }
+
+  .blogs-startpakke-section .product-card,.blogs-startpakke-section .product-promo-card {
+    flex:0 0 280px;
+    scroll-snap-align:start
+  }
+
 }
 
 @media (max-width:767px) {
@@ -867,6 +894,10 @@
 
   .blogs-two-column-blue .blogs-two-column-item:last-child {
     order:10
+  }
+
+  .blog-natural-curls-page .blogs-startpakke-section {
+    order:11
   }
 
   .blog-mixly-products-page .guide-steps {
@@ -1071,6 +1102,10 @@
     font-size:var(--font-h2-mobile)
   }
 
+  .blogs-column-spacer {
+    display:none
+  }
+
   .blogs-two-column-item p {
     font-size:var(--font-body-mobile);
     line-height:1.6
@@ -1102,12 +1137,44 @@
     line-height:1.55
   }
 
-  .blog-mixly-products-page .blogs-section-button {
+  .blogs-section-button {
     display:flex;
     width:var(--button-width);
     max-width:100%;
     margin-right:auto;
     margin-left:auto
+  }
+
+  .blogs-startpakke-section {
+    padding-right:var(--page-gutter);
+    padding-left:var(--page-gutter)
+  }
+
+  .blogs-startpakke-section .product-row {
+    display:flex;
+    flex-wrap:nowrap;
+    gap:1.5rem;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding-bottom:.8rem;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch
+  }
+
+  .blogs-startpakke-section .product-row::-webkit-scrollbar {
+    display:none
+  }
+
+  .blogs-startpakke-section .product-row::after {
+    flex:0 0 1px;
+    content:""
+  }
+
+  .blogs-startpakke-section .product-card,.blogs-startpakke-section .product-promo-card {
+    flex:0 0 280px;
+    width:auto;
+    scroll-snap-align:start
   }
 
   .blogs-image-copy-content {
