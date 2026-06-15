@@ -9,10 +9,10 @@
   <link rel="stylesheet" href="../styles/global.css">
   <link rel="stylesheet" href="../styles/header.css">
   <link rel="stylesheet" href="../styles/footer.css">
-  <link rel="stylesheet" href="../styles/blog.css">
-  <link rel="stylesheet" href="../styles/blogindlaeg.css">
+  <link rel="stylesheet" href="../styles/guides.css">
+  <link rel="stylesheet" href="../styles/blogs.css">
 </head>
-<body class="blog-page blog-post-page">
+<body class="blog-page blog-post-page blog-mixly-products-page">
   <!-- Header: topnavigation og branding for siden. -->
   <header class="header">
     <div class="top-menu">
@@ -109,11 +109,11 @@
     <div class="mobile-menu-panel mobile-menu-panel-main" data-mobile-panel="main">
       <div class="mobile-menu-header">
         <p class="mobile-menu-title">Menu</p>
-        <button class="mobile-menu-close" type="button" aria-label="Luk menu">×</button>
+        <button class="mobile-menu-close" type="button" aria-label="Luk menu">&times;</button>
       </div>
       <nav class="mobile-menu-nav" aria-label="Mobilnavigation">
         <ul class="mobile-menu-list">
-          <li class="mobile-menu-item"><button class="mobile-menu-link mobile-menu-link-products" type="button"><span>Produkter</span><span class="mobile-menu-arrow" aria-hidden="true">›</span></button></li>
+          <li class="mobile-menu-item"><button class="mobile-menu-link mobile-menu-link-products" type="button"><span>Produkter</span><span class="mobile-menu-arrow" aria-hidden="true">&rsaquo;</span></button></li>
           <li class="mobile-menu-item"><a class="mobile-menu-link" href="../behandlinger.html">Behandlinger</a></li>
           <li class="mobile-menu-item"><a class="mobile-menu-link" href="../kroelleunivers.html">Krølleunivers</a></li>
           <li class="mobile-menu-item"><a class="mobile-menu-link" href="../guides.html">Din guide til LOW og RICH</a></li>
@@ -126,7 +126,7 @@
     </div>
     <div class="mobile-menu-panel mobile-menu-panel-products" data-mobile-panel="products">
       <div class="mobile-menu-header">
-        <button class="mobile-menu-back" type="button" aria-label="Tilbage til menu">‹</button>
+        <button class="mobile-menu-back" type="button" aria-label="Tilbage til menu">&lsaquo;</button>
         <p class="mobile-menu-title">Produkter</p>
       </div>
       <div class="mobile-menu-scroll">
@@ -149,58 +149,60 @@
     </div>
   </div>
 
-<!-- Main -->
-<main class="blog-post-main">
-  <!-- Indlæggets intro -->
-  <section class="indlaeg-hero" aria-labelledby="indlaeg-titel">
-    <div class="indlaeg-hero-tekst">
-      <p class="eyebrow blog-post-category">Mixly</p>
-      <h1 id="indlaeg-titel">Derfor virker dine krølleprodukter ikke og hvad du skal gøre i stedet</h1>
-      <p>Du har sikkert prøvet det hele. En krøllecreme, der tynger dit hår ned. En gelé, der efterlader dig med stive, fedtede lokker. En shampoo, der udtørrer håret, og en conditioner, der ikke gør nogen forskel.</p>
-    </div>
-  </section>
+  <main class="blogs-main">
+    <section class="blogs-intro" aria-labelledby="blogs-intro-title">
+      <div class="blogs-intro-heading">
+        <p class="eyebrow">Mixly</p>
+        <h1 id="blogs-intro-title">Hvorfor virker dine krølleprodukter ikke og hvad du skal gøre i stedet</h1>
+      </div>
 
-  <!-- Indlæg med indholdsfortegnelse -->
-  <section class="indlaeg-layout" aria-label="Blogindlæg">
-    <nav class="indlaeg-menu" aria-label="Indholdsfortegnelse">
-      <button class="indlaeg-menu-toggle" type="button" aria-expanded="false">
-        <span class="indlaeg-menu-progress" aria-hidden="true">
-          <span class="indlaeg-menu-step aktiv"></span>
-          <span class="indlaeg-menu-step"></span>
-          <span class="indlaeg-menu-step"></span>
-          <span class="indlaeg-menu-step"></span>
-        </span>
-        <span class="indlaeg-menu-toggle-text">I dette indlæg</span>
-      </button>
-      <h2>I dette indlæg</h2>
-      <p class="indlaeg-menu-help">Tryk på et punkt for at hoppe til afsnittet</p>
-      <ol class="indlaeg-menu-liste">
-        <li class="indlaeg-menu-punkt aktiv">
-          <a class="indlaeg-menu-link aktiv" href="#hvorfor-virker-traditionelle-produkter-ikke" aria-current="true">Hvorfor virker traditionelle krølleprodukter ikke?</a>
-        </li>
-        <li class="indlaeg-menu-punkt">
-          <a class="indlaeg-menu-link" href="#mixly-ny-maade">Løsningen? Mixly - en ny måde at pleje krøllet og bølget hår</a>
-        </li>
-        <li class="indlaeg-menu-punkt">
-          <a class="indlaeg-menu-link" href="#skandinaviske-kroller-og-bolger">Krølleprodukter til skandinaviske krøller og bølger</a>
-        </li>
-        <li class="indlaeg-menu-punkt">
-          <a class="indlaeg-menu-link" href="#hvordan-kommer-du-i-gang">Hvordan kommer du i gang?</a>
-        </li>
-      </ol>
-    </nav>
+      <p class="blogs-intro-lead">Du har sikkert prøvet det hele. En krøllecreme, der tynger dit hår ned. En gelé, der efterlader dig med stive, fedtede lokker. En shampoo, der udtørrer håret, og en conditioner, der ikke gør nogen forskel.</p>
 
-    <!-- Artikel: selvstaendigt indhold, fx blogindlaeg eller produktblok. -->
-    <article class="indlaeg-tekst">
-      <p>Hvis du har skandinaviske krøller eller bølger, så kender du sikkert følelsen af at stå med produkter, som er udviklet til noget helt andet hår end dit.</p>
-      <p>Men det er ikke dig, der er noget galt med. Det er produktet.</p>
-      <p>Mixly er udviklet netop til dig med skandinaviske krøller og bølger, som er træt af krølleprodukter, der ikke virker. Vores tilgang til krøllepleje er helt anderledes - og langt mere fleksibel.</p>
-      <figure class="indlaeg-billede" aria-label="Illustration til indholdet"><img src="../img/salon/produkter.styling.stemning1.jpg" alt="Mixly produkter til pleje af kr&#248;ller og b&#248;lger"><span class="image-placeholder-label">IMG</span><span>730 x 320</span></figure>
+      <div class="blogs-intro-copy">
+        <p>Hvis du har skandinaviske krøller eller bølger, så kender du sikkert følelsen af at stå med produkter, som er udviklet til noget helt andet hår end dit. Men det er ikke dig, der er noget galt med. Det er produktet.</p>
+        <p>Mixly er udviklet netop til dig med skandinaviske krøller og bølger, som er træt af krølleprodukter, der ikke virker. Vores tilgang til krøllepleje er helt anderledes - og langt mere fleksibel.</p>
+      </div>
+    </section>
 
+    <section class="blogs-reactions" aria-labelledby="blogs-reactions-title">
+      <div class="blogs-reactions-images">
+        <figure class="blogs-reactions-image">
+          <img src="../img/salon/forside.mixly2.jpg" alt="Mixly produkter og naturlige krøller" loading="lazy" decoding="async">
+        </figure>
+        <figure class="blogs-reactions-image">
+          <img src="../img/salon/haar-tablet.jpg" alt="Naturlige krøller og bølger" loading="lazy" decoding="async">
+        </figure>
+      </div>
 
-      <!-- Sektion .indlaeg-afsnit: samlet indholdsblok paa siden. -->
-      <section class="indlaeg-afsnit">
-        <h2 id="hvorfor-virker-traditionelle-produkter-ikke">Hvorfor virker traditionelle krølleprodukter ikke?</h2>
+      <div class="blogs-reactions-content">
+        <table class="blogs-reactions-table blogs-comparison-table" aria-label="Forskellen på mange krølleprodukter og krøller">
+          <thead>
+            <tr>
+              <th scope="col">MANGE KRØLLEPRODUKTER ER...</th>
+              <th scope="col">MEN KRØLLER ER...</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>For tunge</td>
+              <td>Lettere og mere varierede</td>
+            </tr>
+            <tr>
+              <td>For udtørrende</td>
+              <td>Afhængige af fugt</td>
+            </tr>
+            <tr>
+              <td>En fast løsning</td>
+              <td>Skiftende fra dag til dag</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="blogs-two-column blogs-quote-section" aria-labelledby="blogs-products-title">
+      <article class="blogs-two-column-item">
+        <h2 id="blogs-products-title">Hvorfor virker traditionelle krølleprodukter ikke?</h2>
         <p>Det korte svar: De er for stive i deres formel - og ikke lavet til dit hår.</p>
         <p>Det lidt længere svar:</p>
         <ul>
@@ -208,22 +210,23 @@
           <li>De udtørrer håret: Sulfater og alkohol er almindelige ingredienser i shampoo og styling, og de kan skade krøllernes naturlige form.</li>
           <li>De tager ikke højde for, at dit hår ændrer sig: Krøller har ikke ét behov - det varierer med vejr, hormonbalance, vaskerutiner og styling.</li>
         </ul>
-        <p>Du har måske oplevet, at et produkt virker én dag - og ikke den næste. Det er ikke din skyld. Dit hår er levende og skiftende. Derfor skal din hårpleje også kunne tilpasse sig.</p>
-      </section>
+      </article>
 
-      <!-- Sektion .indlaeg-afsnit: samlet indholdsblok paa siden. -->
-      <section class="indlaeg-afsnit">
-        <h2 id="mixly-ny-maade">Løsningen? Mixly - en ny måde at pleje krøllet og bølget hår</h2>
+      <aside class="blogs-two-column-item blogs-quote-item" aria-label="Citat om skiftende krøllebehov">
+        <blockquote class="blogs-quote">“Du har måske oplevet, at et produkt virker én dag - og ikke den næste. Det er ikke din skyld. Dit hår er levende og skiftende. Derfor skal din hårpleje også kunne tilpasse sig.”</blockquote>
+      </aside>
+    </section>
+
+    <section class="blogs-two-column blogs-two-column-blue" aria-label="Mixly som fleksibel pleje">
+      <article class="blogs-two-column-item">
+        <h2>Løsningen? Mixly - en ny måde at pleje krøllet og bølget hår</h2>
         <p>Hos Mixly tror vi på én grundlæggende ting: Det er ikke dit hår, der skal tilpasse sig produktet. Det er produktet, der skal følge med dit hår.</p>
-        <p>Derfor består Mixly af produkter i Low og Rich versioner, som du selv blander i hånden, inden du bruger dem.</p>
-        <p>Low er som friske grøntsager: let, fugtgivende og fyldt med essentielle næringsstoffer.</p>
-        <p>Rich er som nybagt brød: nærende, styrkende og perfekt til ekstra pleje.</p>
+        <p>Derfor består Mixly af produkter i Low og Rich versioner, som du selv blander i hånden, inden du bruger dem. Low er som friske grøntsager: let, fugtgivende og fyldt med essentielle næringsstoffer. Rich er som nybagt brød: nærende, styrkende og perfekt til ekstra pleje.</p>
         <p>Ved at justere forholdet mellem Low og Rich, kan du selv finde balancen, hver gang du vasker, plejer eller styler dit hår.</p>
-      </section>
+      </article>
 
-      <!-- Sektion .indlaeg-afsnit: samlet indholdsblok paa siden. -->
-      <section class="indlaeg-afsnit">
-        <h2 id="skandinaviske-kroller-og-bolger">Krølleprodukter til skandinaviske krøller og bølger</h2>
+      <article class="blogs-two-column-item">
+        <h2>Krølleprodukter til skandinaviske krøller og bølger</h2>
         <p>Mixly er udviklet specifikt til dig med skandinavisk hårstruktur - ofte finere hår med mange hårstrå og stor variation i krølletypen.</p>
         <p>Derfor er alle vores produkter:</p>
         <ul>
@@ -231,67 +234,43 @@
           <li>Veganske og økologiske, hvor muligt</li>
           <li>Skabt med fokus på både pleje og styling - i balance</li>
         </ul>
-      </section>
-
-      <!-- Sektion .indlaeg-afsnit: samlet indholdsblok paa siden. -->
-      <section class="indlaeg-afsnit">
-        <h2 id="hvordan-kommer-du-i-gang">Hvordan kommer du i gang?</h2>
-        <p>Start med en 50/50 blanding og tilpas efter behov.</p>
-        <p>De første 14 dage:</p>
-        <p>Bland 50% Low og 50% Rich direkte i din håndflade, uanset om det er shampoo, balsam eller stylingprodukter, og oplev, hvordan kombinationen af de to understøtter både dine krøller og din hovedbund.</p>
-        <p>Sådan gør du:</p>
-        <ul>
-          <li>Tryk en passende mængde Low og Rich ud i din håndflade.</li>
-          <li>Bland dem godt sammen med fingerspidserne, så de danner en ensartet konsistens.</li>
-          <li>Påføres i vådt eller tørt hår, og kram forsigtigt blandingen ind i dine krøller og bølger med hænderne.</li>
-          <li>Skyl eller style som normalt, afhængigt af produktet.</li>
-          <li>Lad håret lufttørre eller brug forsigtigt en diffuser på lav blæseeffekt.</li>
-        </ul>
-        <p>Husk: Vent altid 21 dage mellem justeringerne, så dine krøller og bølger får tid til at tilpasse sig, og du kan mærke de fulde fordele ved hver blanding.</p>
-      </section>
-
-      <figure class="indlaeg-billede indlaeg-billede-ekstra" aria-label="Illustration til indholdet"><img src="../img/salon/produkter.styling.stemning1.jpg" alt="Mixly produkter til pleje af kr&#248;ller og b&#248;lger" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span><span>730 x 320</span></figure>
-    </article>
-  </section>
-
-  <!-- Relaterede indlæg -->
-  <section class="indlaeg-laes-ogsa" aria-labelledby="indlaeg-laes-ogsa-titel">
-    <h2 id="indlaeg-laes-ogsa-titel">Læs også</h2>
-    <div class="indlaeg-laes-ogsa-grid blog-grid" data-related-posts>
-      <!-- Artikel: selvstaendigt indhold, fx blogindlaeg eller produktblok. -->
-      <article class="blog-card">
-        <figure class="blog-card-image" aria-label="Illustration til indholdet"><img src="../img/salon/navigationsbar2.jpg" alt="Fine kr&#248;ller og b&#248;lger som inspiration til gode h&#229;rvaner" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span><span>360 x 215</span></figure>
-        <p class="blog-card-category">Krølleviden</p>
-        <h3 class="blog-card-title">Sådan får du dine naturlige krøller frem</h3>
-        <a class="blog-card-link" href="sadan-far-du-dine-naturlige-kroller-frem.html">Læs indlæg ?</a>
+        <a class="button button-primary blogs-section-button" href="../produkter.html"><span class="button-label">Udforsk produkter</span></a>
       </article>
-      <!-- Artikel: selvstaendigt indhold, fx blogindlaeg eller produktblok. -->
-      <article class="blog-card">
-        <figure class="blog-card-image" aria-label="Illustration til indholdet"><img src="../img/salon/produkter.styling.stemning1.jpg" alt="Mixly produkter til pleje af kr&#248;ller og b&#248;lger" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span><span>360 x 215</span></figure>
-        <p class="blog-card-category">Guides</p>
-        <h3 class="blog-card-title">Sådan får du dine skandinaviske krøller frem - uden spildte penge</h3>
-        <a class="blog-card-link" href="sadan-far-du-dine-skandinaviske-kroller-frem.html">Læs indlæg ?</a>
-      </article>
-      <!-- Artikel: selvstaendigt indhold, fx blogindlaeg eller produktblok. -->
-      <article class="blog-card">
-        <figure class="blog-card-image" aria-label="Illustration til indholdet"><img src="../img/salon/produkter.styling.stemning1.jpg" alt="Mixly produkter til pleje af kr&#248;ller og b&#248;lger" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span><span>360 x 215</span></figure>
-        <p class="blog-card-category">Krølleviden</p>
-        <h3 class="blog-card-title">5 vaner du bør undgå, hvis du har fint krøllet eller bølget hår</h3>
-        <a class="blog-card-link" href="5-vaner-du-bor-undga.html">Læs indlæg ?</a>
-      </article>
-    </div>
-  </section>
+    </section>
 
-  <!-- Produkt CTA -->
-  <section class="indlaeg-produkt-cta" aria-labelledby="indlaeg-produkt-cta-titel">
-    <figure class="indlaeg-produkt-cta-billede" aria-label="Mixly produkter til at lære krøller og bølger bedre at kende"><img src="../img/salon/produkter-i-haand.jpg" alt="Mixly produkter til fleksibel pleje af krøller og bølger" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span><span>670 x 370</span></figure>
-    <div class="indlaeg-produkt-cta-tekst">
-      <h2 id="indlaeg-produkt-cta-titel">Vil du lære dit hår bedre at kende?</h2>
-      <p>Mixly er udviklet til skandinaviske krøller og bølger, så du kan justere plejen efter dit hårs behov i stedet for at presse håret ind i én fast rutine.</p>
-      <a class="button button-primary" href="../produkter.html">Se produkter</a>
-    </div>
-  </section>
-</main>
+    <section class="guide-steps guide-section" id="guide-start" aria-labelledby="guide-steps-title">
+      <div class="guide-section-heading">
+        <h2 id="guide-steps-title">Hvordan kommer du i gang?</h2>
+      </div>
+      <div class="guide-steps-grid">
+        <article class="guide-step-card">
+          <img src="../img/guide/guide01.png" alt="" aria-hidden="true">
+          <h2>01.</h2>
+          <h4>Start med 50/50</h4>
+          <p>Bland LOW &amp; RICH direkte i håndfladen, start med lige meget af hver.</p>
+        </article>
+        <article class="guide-step-card">
+          <img src="../img/guide/guide02.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+          <h2>02.</h2>
+          <h4>Brug mere produkt end du tror</h4>
+          <p>Fine hårstrå har stadig brug for masser af pleje og støtte.</p>
+        </article>
+        <article class="guide-step-card">
+          <img src="../img/guide/guide03.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+          <h2>03.</h2>
+          <h4>Lyt til håret</h4>
+          <p>Tungt hår betyder mere LOW. Tørt hår betyder mere RICH.</p>
+        </article>
+        <article class="guide-step-card">
+          <img src="../img/guide/guide04.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+          <h2>04.</h2>
+          <h4>Juster efter 14 dage</h4>
+          <p>Dit hår ændrer sig, og det må din rutine også gerne.</p>
+        </article>
+      </div>
+      <div class="slider-indicators guide-steps-indicators" aria-label="Slider navigation"></div>
+    </section>
+  </main>
 <!-- Footer: nederste omraade med links, kontakt og ekstra information. -->
 <!-- Footer -->
 <footer class="footer footer--frontpage">
@@ -395,7 +374,3 @@
   <script src="../scripts/script.js"></script>
 </body>
 </html>
-
-
-
-

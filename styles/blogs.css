@@ -67,6 +67,10 @@
   clip-path:inset(0 -100vmax)
 }
 
+.blog-five-tips-page .blogs-reactions {
+  margin-top:8px
+}
+
 .blogs-reactions-images {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -123,6 +127,54 @@
 
 .blogs-reactions-table td+td {
   padding-left:24px
+}
+
+.blogs-comparison-table th {
+  width:50%;
+  padding:0 0 13px;
+  border-bottom:1px solid var(--color-heading);
+  color:var(--color-text);
+  font-family:var(--font-heading);
+  font-size:14px;
+  font-weight:400;
+  line-height:1.35;
+  text-align:left
+}
+
+.blogs-comparison-table th+th {
+  padding-left:24px
+}
+
+.blogs-image-copy {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(40px,6vw,88px);
+  align-items:center;
+  width:100%;
+  max-width:var(--container-max);
+  margin:0 auto;
+  padding:56px var(--page-gutter) 52px
+}
+
+.blogs-image-copy-content {
+  width:100%;
+  max-width:570px
+}
+
+.blogs-image-copy-content h2 {
+  max-width:520px;
+  margin-bottom:28px;
+  font-size:24px;
+  line-height:1.15
+}
+
+.blogs-image-copy-content p {
+  font-size:14px;
+  line-height:1.55
+}
+
+.blogs-image-copy-content p+p {
+  margin-top:24px
 }
 
 /* Fælles guideblok med introduktion og to tekstkolonner. */
@@ -338,6 +390,41 @@
   margin-top:24px
 }
 
+.blogs-two-column-item ul {
+  margin-top:6px;
+  padding-left:22px;
+  list-style:disc
+}
+
+.blogs-two-column-item li {
+  font-size:14px;
+  line-height:1.55
+}
+
+.blogs-section-button {
+  margin-top:36px
+}
+
+.blogs-quote-section {
+  align-items:center
+}
+
+.blogs-quote-item {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:260px
+}
+
+.blogs-quote {
+  max-width:570px;
+  color:var(--color-text);
+  font-family:var(--font-quote);
+  font-size:24px;
+  font-style:italic;
+  line-height:1.55
+}
+
 .blogs-two-column-blue {
   max-width:none;
   padding-right:max(var(--page-gutter),calc((100vw - var(--container-max))/2 + var(--page-gutter)));
@@ -505,6 +592,31 @@
     padding:11px 0
   }
 
+  .blog-mixly-products-page .blogs-comparison-table th {
+    font-size:11px;
+    white-space:nowrap
+  }
+
+  .blogs-image-copy {
+    gap:clamp(28px,4vw,44px);
+    padding-top:44px;
+    padding-bottom:44px
+  }
+
+  .blogs-image-copy-content h2 {
+    margin-bottom:20px;
+    font-size:var(--font-h3-tablet)
+  }
+
+  .blogs-image-copy-content p {
+    font-size:12px;
+    line-height:1.55
+  }
+
+  .blogs-image-copy-content p+p {
+    margin-top:20px
+  }
+
   .blogs-column-guide {
     gap:8px clamp(28px,4vw,44px);
     padding-top:42px;
@@ -607,6 +719,20 @@
 
   .blogs-two-column-item p+p {
     margin-top:20px
+  }
+
+  .blogs-two-column-item li {
+    font-size:12px;
+    line-height:1.55
+  }
+
+  .blogs-quote-item {
+    min-height:220px
+  }
+
+  .blogs-quote {
+    font-size:20px;
+    line-height:1.55
   }
 
   .blogs-flexible {
@@ -743,8 +869,25 @@
     order:10
   }
 
-  .blogs-everyday {
+  .blog-mixly-products-page .guide-steps {
     order:11
+  }
+
+  .blogs-everyday {
+    order:13
+  }
+
+  .blogs-image-copy {
+    display:contents
+  }
+
+  .blogs-image-copy .blogs-reactions-images {
+    order:11;
+    margin:0
+  }
+
+  .blogs-image-copy-content {
+    order:12
   }
 
   .blog-startpakke-page .blogs-column-guide {
@@ -934,6 +1077,55 @@
   }
 
   .blogs-two-column-item p+p {
+    margin-top:18px
+  }
+
+  .blogs-two-column-item ul {
+    padding-left:20px
+  }
+
+  .blogs-two-column-item li {
+    font-size:var(--font-body-mobile);
+    line-height:1.6
+  }
+
+  .blogs-quote-item {
+    display:none
+  }
+
+  .blogs-quote-section .blogs-two-column-item:first-child {
+    padding-bottom:42px
+  }
+
+  .blogs-quote {
+    font-size:20px;
+    line-height:1.55
+  }
+
+  .blog-mixly-products-page .blogs-section-button {
+    display:flex;
+    width:var(--button-width);
+    max-width:100%;
+    margin-right:auto;
+    margin-left:auto
+  }
+
+  .blogs-image-copy-content {
+    max-width:none;
+    padding:34px var(--page-gutter) 44px
+  }
+
+  .blogs-image-copy-content h2 {
+    margin-bottom:18px;
+    font-size:var(--font-h2-mobile)
+  }
+
+  .blogs-image-copy-content p {
+    font-size:var(--font-body-mobile);
+    line-height:1.6
+  }
+
+  .blogs-image-copy-content p+p {
     margin-top:18px
   }
 
