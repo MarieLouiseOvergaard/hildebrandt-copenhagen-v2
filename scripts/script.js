@@ -2435,7 +2435,7 @@ const quickAddCatalog = {
   "rich repair cleansing shampoo": {
     tags: ["Økologisk", "Vegansk", "Parfumefri", "Unisex"],
     description:
-      "Giver mere næring og ro til krøller, der føles tørre, frizzede eller medtagne.",
+      "Næring og ro til tørre, frizzede krøller.",
     sizes: [
       { label: "100 ml", price: "110 kr.", image: "img/produktbilleder/MIXLY-Rich-Repair-Shampoo-100.png" },
       { label: "1000 ml", price: "379 kr.", image: "img/produktbilleder/MIXLY-Rich-Repair-Shampoo-1000ml.png" },
@@ -2451,7 +2451,7 @@ const quickAddCatalog = {
   "rich shampoo": {
     tags: ["Økologisk", "Vegansk", "Parfumefri", "Unisex"],
     description:
-      "Giver mere næring og ro til krøller, der føles tørre, frizzede eller medtagne.",
+      "Ekstra fugt og næring til krøller og bølger.",
     sizes: [
       { label: "250 ml", price: "299 kr.", image: "img/produktbilleder/Rich-Shampoo-1.png" },
     ],
@@ -2466,7 +2466,7 @@ const quickAddCatalog = {
   "low refresh cleansing shampoo": {
     tags: ["Økologisk", "Vegansk", "Parfumefri", "Unisex"],
     description:
-      "Renser skånsomt og hjælper krøller med at bevare fugt, lethed og spændstighed.",
+      "Let rens, fugt og spændstighed til krøller.",
     sizes: [
       { label: "100 ml", price: "110 kr.", image: "img/produktbilleder/MIXLY-Low-Refresh-Shampoo-100.png" },
       { label: "1000 ml", price: "379 kr.", image: "img/produktbilleder/MIXLY-Low-Refresh-Shampoo-1000.png" },
@@ -2482,7 +2482,7 @@ const quickAddCatalog = {
   "low conditioner": {
     tags: ["Økologisk", "Vegansk", "Parfumefri", "Unisex"],
     description:
-      "Let conditioner, der hjælper krøller med styrke og bevægelse uden at tynge.",
+      "Let fugt og styrke uden at tynge.",
     sizes: [
       { label: "200 ml", price: "159 kr.", image: "img/produktbilleder/Low-Conditioner-1.png", link: "products/conditioner/mixly-low-conditioner.html" },
       { label: "1000 ml", price: "399 kr.", image: "img/produktbilleder/MIXLY-Low-Conditioner-1000.png", link: "products/conditioner/mixly-low-conditioner.html" },
@@ -2498,7 +2498,7 @@ const quickAddCatalog = {
   "rich deep drink conditioner": {
     tags: ["Økologisk", "Vegansk", "Parfumefri", "Unisex"],
     description:
-      "Conditioner med intens fugt, der hjælper tørre krøller med mere blødhed og ro.",
+      "Intens fugt, blødhed og ro til tørre krøller.",
     sizes: [
       { label: "200 ml", price: "159 kr.", image: "img/produktbilleder/MIXLY-Rich-Deep-Drink-Conditioner-200.png" },
       { label: "1000 ml", price: "399 kr.", image: "img/produktbilleder/MIXLY-Rich-Deep-Drink-Conditioner-1000.png" },

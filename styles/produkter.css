@@ -781,6 +781,24 @@ body[data-product-page-filter=all] .product-card,body[data-product-page-filter=a
   overflow:hidden
 }
 
+@media (min-width:768px) and (max-width:1023px) {
+  .product-card .product-content h4 {
+    font-size:13.5px
+  }
+  .product-card .product-content p {
+    font-size:.82rem
+  }
+}
+
+@media (max-width:767px) {
+  .product-card .product-content h4 {
+    font-size:14px
+  }
+  .product-card .product-content p {
+    font-size:.82rem
+  }
+}
+
 /* Produkter og produktkort. */
 .product-meta {
   display:flex;
