@@ -4513,6 +4513,38 @@ function mergeQuickAddData(data, details) {
 
 document.querySelectorAll(".product-card, .produkt-skabelon-related-card").forEach(enhanceCardQuickAdd);
 
+// Blog package sliders
+document.querySelectorAll(".blogs-package-feature").forEach((feature) => {
+  const panels = feature.querySelector(".blogs-package-feature-panels");
+  const indicators = [...feature.querySelectorAll(".blogs-package-feature-scroll-indicator span")];
+
+  if (!panels || indicators.length === 0) return;
+
+  const slides = [...panels.children];
+  let frame = 0;
+
+  const updateIndicator = () => {
+    frame = 0;
+    const panelsLeft = panels.getBoundingClientRect().left;
+    const activeIndex = slides.reduce((closestIndex, slide, index) => {
+      const currentDistance = Math.abs(slide.getBoundingClientRect().left - panelsLeft);
+      const closestDistance = Math.abs(slides[closestIndex].getBoundingClientRect().left - panelsLeft);
+      return currentDistance < closestDistance ? index : closestIndex;
+    }, 0);
+
+    indicators.forEach((indicator, index) => {
+      indicator.classList.toggle("is-active", index === activeIndex);
+    });
+  };
+
+  indicators[0].classList.add("is-active");
+
+  panels.addEventListener("scroll", () => {
+    if (frame) return;
+    frame = requestAnimationFrame(updateIndicator);
+  }, { passive: true });
+});
+
 // Related blog posts
 const relatedPostsContainer = document.querySelector("[data-related-posts]");
 
