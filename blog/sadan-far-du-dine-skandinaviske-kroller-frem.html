@@ -13,8 +13,9 @@
   <link rel="stylesheet" href="../styles/blogs.css">
 </head>
 <body class="blog-page blog-post-page blog-scandinavian-curls-page">
-  <!-- Header: topnavigation og branding for siden. -->
+  <!-- Header: samler booking, logo og navigation øverst på blogsiden. -->
   <header class="header">
+    <!-- Topmenu: viser bookingknap, SoMe-links og mobilmenu-trigger. -->
     <div class="top-menu">
       <a class="book-knap" href="https://salonbook.one/?henriksencopenhagen#/" aria-label="Book tid" target="_blank" rel="noopener noreferrer">Book tid</a>
       <a class="menu-logo-link top-menu-logo" href="../index.html" aria-label="Gå til forsiden">
@@ -33,13 +34,16 @@
       </nav>
     </div>
 
+    <!-- Hovednavigation: linker til de vigtigste sider på desktop. -->
     <nav class="menu" aria-label="Hovednavigation">
       <ul class="menu-list">
+        <!-- Produktdropdown: grupperer produktkategorier og fremhævet guide. -->
         <li class="menu-item menu-item-dropdown">
           <a class="menu-link menu-link-dropdown" href="../produkter.html" aria-haspopup="true">
             <span>Produkter</span>
             <span class="menu-link-arrow" aria-hidden="true">?</span>
           </a>
+          <!-- Produktmenu: viser produktlinks og anbefalet LOW-RICH guide. -->
           <div class="menu-dropdown" aria-label="Produktmenu">
             <div class="menu-dropdown-inner">
               <nav class="menu-dropdown-column" aria-label="Produktoversigt">
@@ -71,10 +75,12 @@
         </li>
         <li class="menu-item"><a class="menu-link" href="../behandlinger.html">Behandlinger</a></li>
         <li class="menu-item menu-item-dropdown">
+          <!-- Krølleunivers-dropdown: samler guides, stylingtips og blogindhold. -->
           <a class="menu-link menu-link-dropdown" href="../kroelleunivers.html" aria-haspopup="true">
             Krølleunivers
             <span class="menu-link-arrow" aria-hidden="true">?</span>
           </a>
+          <!-- Krølleuniversmenu: viser relevante guide- og inspirationslinks. -->
           <div class="menu-dropdown" aria-label="Krølleuniversmenu">
             <div class="menu-dropdown-inner">
               <nav class="menu-dropdown-column" aria-label="Krølleunivers">
@@ -105,7 +111,9 @@
     </nav>
   </header>
 
+  <!-- Mobilmenu: skifter mellem hovedpanel og underpaneler via JavaScript. -->
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <!-- Hovedpanel: viser primære mobilnavigationer. -->
     <div class="mobile-menu-panel mobile-menu-panel-main" data-mobile-panel="main">
       <div class="mobile-menu-header">
         <p class="mobile-menu-title">Menu</p>
@@ -124,6 +132,7 @@
         </ul>
       </nav>
     </div>
+    <!-- Produktpanel: viser produktkategorier og fremhævet guide til mobil. -->
     <div class="mobile-menu-panel mobile-menu-panel-products" data-mobile-panel="products">
       <div class="mobile-menu-header">
         <button class="mobile-menu-back" type="button" aria-label="Tilbage til menu">‹</button>
@@ -150,13 +159,14 @@
   </div>
 
   <main class="blogs-main">
+    <!-- Brødkrummer: viser placering i blogsektionen og link tilbage til oversigten. -->
     <nav class="indlaeg-breadcrumb" aria-label="Brødkrummesti">
       <ol class="indlaeg-breadcrumb-list">
         <li class="indlaeg-breadcrumb-item"><a class="indlaeg-breadcrumb-link" href="../blog.html">Blog</a></li>
         <li class="indlaeg-breadcrumb-item"><span class="indlaeg-breadcrumb-current" aria-current="page">Sådan får du dine skandinaviske krøller frem - uden spildte penge</span></li>
       </ol>
     </nav>
-
+    <!-- Blogintro: viser kategori, titel og indledende kontekst for indlægget. -->
     <section class="blogs-intro" aria-labelledby="blogs-intro-title">
       <div class="blogs-intro-heading">
         <p class="eyebrow">Guides</p>
@@ -172,6 +182,7 @@
       </div>
     </section>
 
+    <!-- Reaktionssektion: fremhaever centrale pointer med billeder og tabel. -->
     <section class="blogs-reactions" aria-labelledby="blogs-reactions-title">
       <div class="blogs-reactions-images" aria-label="Billeder af skandinaviske krøller">
         <figure class="blogs-reactions-image">
@@ -202,7 +213,7 @@
         </table>
       </div>
     </section>
-
+    <!-- To-kolonne-sektion: opdeler forklaring og løsning i overskuelige tekstblokke. -->
     <section class="blogs-two-column" aria-label="Krølleprodukter til skandinavisk hår">
       <article class="blogs-two-column-item">
         <h2>Hvorfor virker almindelige krølleprodukter så ikke på samme måde?</h2>
@@ -224,7 +235,7 @@
         <a class="button button-primary blogs-section-button" href="../produkter.html"><span class="button-label">Udforsk produkter</span></a>
       </article>
     </section>
-
+    <!-- To-kolonne-sektion: opdeler forklaring og løsning i overskuelige tekstblokke. -->
     <section class="blogs-two-column blogs-two-column-blue blogs-curl-routine" aria-labelledby="blogs-curl-routine-title">
       <article class="blogs-two-column-item">
         <h2 id="blogs-curl-routine-title">Eksempel med Mixly: Hvordan får man krøller frem uden krus?</h2>
@@ -241,7 +252,7 @@
         <p>6. Bryd castet<br>Når håret er helt tørt, kan du forsigtigt kramme det igen for at fjerne “castet” - den stive hinde, der giver hold, men som kan blødgøres for et mere naturligt look.</p>
       </article>
     </section>
-
+    <!-- Billede og tekst: kombinerer visuel inspiration med næste handling. -->
     <section class="blogs-image-copy" aria-labelledby="blogs-how-mixly-works-title">
       <div class="blogs-image-copy-content blogs-two-column-item">
         <h2 id="blogs-how-mixly-works-title">Hvordan fungerer Mixly?</h2>
@@ -265,6 +276,7 @@
       </div>
     </section>
 
+    <!-- Hverdagspleje: samler de afsluttende plejeråd i en kompakt blok. -->
     <section class="blogs-everyday" aria-labelledby="blogs-created-for-curls-title">
       <figure class="blogs-everyday-image">
         <img src="../img/salon/haar.jpg" alt="Fine naturlige skandinaviske bølger med blød bevægelse" loading="lazy" decoding="async">
@@ -290,12 +302,13 @@
         </ul>
       </div>
     </section>
-    <!-- Sektion .om-os-instagram: samlet indholdsblok paa siden. -->
+    <!-- Instagram: viser visuelle indgange til salonens sociale univers. -->
     <section class="om-os-instagram" aria-labelledby="blog-instagram-title">
       <div class="om-os-instagram-header">
         <h2 id="blog-instagram-title" class="om-os-section-title">F&#248;lg med i kr&#248;lleuniverset</h2>
         <a class="om-os-instagram-handle" href="https://www.instagram.com/hildebrandt_copenhagen/" target="_blank" rel="noopener noreferrer">@hildebrandt_copenhagen</a>
       </div>
+      <!-- Instagram-grid: samler klikbare billeder, der linker til profilen. -->
       <div class="om-os-instagram-grid" aria-label="Instagram billeder" tabindex="0">
         <a class="om-os-instagram-link" href="https://www.instagram.com/hildebrandt_copenhagen/" aria-label="Instagram opslag 1" target="_blank" rel="noopener noreferrer"><figure class="om-os-instagram-item"><div class="om-os-image-placeholder om-os-image-placeholder-instagram" aria-hidden="true"><img src="../img/instagram/instagram1.jpg" alt="" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span></div></figure></a>
         <a class="om-os-instagram-link" href="https://www.instagram.com/hildebrandt_copenhagen/" aria-label="Instagram opslag 2" target="_blank" rel="noopener noreferrer"><figure class="om-os-instagram-item"><div class="om-os-image-placeholder om-os-image-placeholder-instagram" aria-hidden="true"><img src="../img/instagram/instagram2.jpg" alt="" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span></div></figure></a>
@@ -309,10 +322,9 @@
     </section>
   </main>
 
-<!-- Footer: nederste omraade med links, kontakt og ekstra information. -->
-<!-- Footer -->
+<!-- Footer: samler åbningstider, kontakt, navigation, nyhedsbrev og sociale links. -->
 <footer class="footer footer--frontpage">
-  <!-- Sektion .footer-tider: samlet indholdsblok paa siden. -->
+  <!-- Åbningstider: viser ugeskema og aktuel åben-status. -->
   <section class="footer-tider" aria-labelledby="footer-tider-titel">
     <h2 id="footer-tider-titel" class="footer-tider-titel">Åbningstider</h2>
     <p class="kontakt-status footer-status" aria-live="polite">
@@ -333,7 +345,7 @@
     </dl>
   </section>
 
-  <!-- Sektion .footer-kontakt: samlet indholdsblok paa siden. -->
+  <!-- Footer-kontakt: samler adresse, telefon, mail og hurtige links. -->
   <section class="footer-kontakt" aria-labelledby="footer-kontakt-titel">
     <h2 id="footer-kontakt-titel" class="footer-kontakt-titel">Kontakt</h2>
     <address class="footer-kontakt-adresse">
@@ -344,6 +356,7 @@
     </address>
   </section>
 
+  <!-- Footer-menu: giver hurtig adgang til centrale undersider. -->
   <nav class="footer-menu" aria-labelledby="footer-menu-titel">
     <h2 id="footer-menu-titel" class="footer-menu-titel">Udforsk</h2>
     <ul class="footer-menu-liste">
@@ -363,10 +376,10 @@
     <a class="button button-primary footer-booking" href="https://salonbook.one/?henriksencopenhagen#/" target="_blank" rel="noopener noreferrer">Book tid</a>
   </nav>
 
-  <!-- Sektion .footer-newsletter: samlet indholdsblok paa siden. -->
+  <!-- Footer-nyhedsbrev: giver mulighed for tilmelding direkte fra footeren. -->
   <section class="footer-newsletter" aria-labelledby="footer-newsletter-titel">
     <h2 id="footer-newsletter-titel" class="footer-newsletter-titel">Få tips til dine krøller</h2>
-    <!-- Formular: samler felter og knapper til brugerinput. -->
+    <!-- Footerformular: indsamler nyhedsbrevstilmelding fra footeren. -->
     <form class="footer-newsletter-form" action="#" method="post">
       <label class="footer-newsletter-label" for="footer-newsletter-name">Navn</label>
       <input id="footer-newsletter-name" class="footer-newsletter-input" type="text" name="name" placeholder="Navn" autocomplete="name">
@@ -383,6 +396,7 @@
     </form>
   </section>
 
+  <!-- Footer-info: indeholder logo, sociale links og copyright. -->
   <div class="footer-info">
     <div class="footer-legal">
       <a class="footer-terms" href="../handelsbetingelser.html">Handelsbetingelser</a>
@@ -408,7 +422,7 @@
     </ul>
   </div>
 </footer>
-  <!-- Script: indlaeser JavaScript til interaktioner paa siden. -->
+  <!-- Script: styrer menu og dynamisk åbningstidsstatus. -->
   <script src="../scripts/script.js"></script>
 </body>
 </html>

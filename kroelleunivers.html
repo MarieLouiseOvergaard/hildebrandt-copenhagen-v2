@@ -12,14 +12,16 @@
   <link rel="stylesheet" href="styles/kroelleunivers.css">
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header: samler booking, logo og navigation øverst på krølleunivers-siden. -->
   <header class="header">
+    <!-- Topmenu: viser hurtig booking, logo og mobile handlinger. -->
     <div class="top-menu">
       <a class="book-knap" href="https://salonbook.one/?henriksencopenhagen#/" aria-label="Book tid" target="_blank" rel="noopener noreferrer">Book tid</a>
       <a class="menu-logo-link top-menu-logo" href="index.html" aria-label="Gå til forsiden">
         <img class="menu-logo top-menu-logo-image" src="img/logo/monogramLysgraa.svg" alt="Hildebrandt Copenhagen monogram">
       </a>
 
+      <!-- Hjælpenavigation: indeholder kurv og knap til mobilmenu. -->
       <nav class="top-nav" aria-label="Hjælpenavigation">
         <ul class="top-nav-list">
           <li class="top-nav-item">
@@ -32,6 +34,7 @@
       </nav>
     </div>
 
+    <!-- Hovednavigation: viser desktopmenu med dropdowns og centrale undersider. -->
     <nav class="menu" aria-label="Hovednavigation">
       <ul class="menu-list">
         <li class="menu-item menu-item-dropdown">
@@ -41,6 +44,7 @@
           </a>
           <div class="menu-dropdown" aria-label="Produktmenu">
             <div class="menu-dropdown-inner">
+              <!-- Produktdropdown: grupperer produktlinks efter overblik og type. -->
               <nav class="menu-dropdown-column" aria-label="Produktoversigt">
                 <ul class="menu-dropdown-list">
                   <li class="menu-dropdown-item">
@@ -54,6 +58,7 @@
                   </li>
                 </ul>
               </nav>
+              <!-- Produkttyper: linker direkte til hver produktkategori. -->
               <nav class="menu-dropdown-column" aria-label="Produkttyper">
                 <ul class="menu-dropdown-list">
                   <li class="menu-dropdown-item">
@@ -70,6 +75,7 @@
                   </li>
                 </ul>
               </nav>
+              <!-- Dropdown-teasers: fremhæver startpakker og LOW-RICH-guiden. -->
               <div class="menu-dropdown-products">
                 <a class="menu-dropdown-product" href="produkter-startpakker.html">
                   <span class="menu-dropdown-product-image"><img src="img/salon/navigationsbar1.jpg" alt="Mixly produkter i krøllesalon på Frederiksberg" loading="lazy" decoding="async"><span class="image-placeholder-label">165 x 195</span></span>
@@ -92,6 +98,7 @@
           </a>
           <div class="menu-dropdown" aria-label="Krølleuniversmenu">
             <div class="menu-dropdown-inner">
+              <!-- Krølleunivers-dropdown: samler guides, stylingtips og blogindhold. -->
               <nav class="menu-dropdown-column" aria-label="Krølleunivers">
                 <ul class="menu-dropdown-list">
                   <li class="menu-dropdown-item">
@@ -109,6 +116,7 @@
                 </ul>
               </nav>
               <div class="menu-dropdown-column" aria-hidden="true"></div>
+              <!-- Dropdown-teasers: leder videre til produkter og guides. -->
               <div class="menu-dropdown-products">
                 <a class="menu-dropdown-product" href="produkter.html">
                   <span class="menu-dropdown-product-image"><img src="img/salon/produkter.styling.stemning4.jpg" alt="Mixly stylingprodukter til krøller og bølger" loading="lazy" decoding="async"><span class="image-placeholder-label">165 x 195</span></span>
@@ -132,7 +140,9 @@
     </nav>
   </header>
 
+  <!-- Mobilmenu: skifter mellem hovedpanel og underpaneler via JavaScript. -->
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <!-- Hovedpanel: viser de primære mobilnavigationer. -->
     <div class="mobile-menu-panel mobile-menu-panel-main" data-mobile-panel="main">
       <div class="mobile-menu-header">
         <p class="mobile-menu-title">Menu</p>
@@ -166,6 +176,7 @@
       </nav>
     </div>
 
+    <!-- Produktpanel: viser produktkategorier og fremhævet guide til mobil. -->
     <div class="mobile-menu-panel mobile-menu-panel-products" data-mobile-panel="products">
       <div class="mobile-menu-header">
         <button class="mobile-menu-back" type="button" aria-label="Tilbage til menu">‹</button>
@@ -207,6 +218,7 @@
         </div>
       </div>
     </div>
+    <!-- Krølleuniverspanel: viser guide- og inspirationslinks til mobil. -->
     <div class="mobile-menu-panel mobile-menu-panel-curl" data-mobile-panel="curl">
       <div class="mobile-menu-header">
         <button class="mobile-menu-back" type="button" aria-label="Tilbage til menu">‹</button>
@@ -234,9 +246,9 @@
     </div>
   </div>
 
-  <!-- Main -->
+  <!-- Main: indeholder Curl DNA-forklaring, community, tilmelding og kursus. -->
   <main class="kroelleunivers-main">
-    <!-- Hero-sektion -->
+    <!-- Hero: introducerer Curl DNA-teknikken og leder til booking. -->
     <section class="kroelle-hero" aria-labelledby="kroelle-hero-title">
       <div class="kroelle-hero-text">
         <p class="eyebrow">Curl DNA-teknik</p>
@@ -245,6 +257,7 @@
         <p>Derfor har jeg udviklet Curl DNA-teknikken, en individuel klippemetode tilpasset hårets struktur, tæthed og bevægelse. Målet er et naturligt resultat, der holder i hverdagen.</p>
         <a class="button button-primary kroelle-button" href="https://salonbook.one/?henriksencopenhagen#/" target="_blank" rel="noopener noreferrer">Book en tid</a>
       </div>
+      <!-- Herobillede: bruger tabletvariant for bedre beskæring på mellemstore skærme. -->
       <figure class="kroelle-hero-figure">
         <div class="kroelle-placeholder kroelle-placeholder-hero">
           <picture>
@@ -256,14 +269,14 @@
       </figure>
     </section>
 
-    <!-- Sammenligningssektion -->
+    <!-- Sammenligning: forklarer forskellen på CURL DNA og traditionel Curly Cut. -->
     <section class="kroelle-compare" aria-labelledby="kroelle-compare-title">
       <div class="kroelle-section-head">
         <p class="eyebrow">Hvorfor CURL DNA virker</p>
         <h2 id="kroelle-compare-title" class="sr-only">Curly Cut og CURL DNA</h2>
       </div>
       <div class="kroelle-compare-grid">
-        <!-- Artikel: selvstaendigt indhold, fx blogindlaeg eller produktblok. -->
+        <!-- Sammenligningskort: beskriver egenskaber ved CURL DNA. -->
         <article class="kroelle-card">
           <h3>CURL DNA</h3>
           <ul class="kroelle-card-list">
@@ -274,7 +287,7 @@
             <li>Fremhæver form og volumen</li>
           </ul>
         </article>
-        <!-- Artikel: selvstaendigt indhold, fx blogindlaeg eller produktblok. -->
+        <!-- Sammenligningskort: beskriver egenskaber ved Curly Cut. -->
         <article class="kroelle-card">
           <h3>Curly Cut</h3>
           <ul class="kroelle-card-list">
@@ -288,7 +301,7 @@
       </div>
     </section>
 
-    <!-- Mobile billedplaceholders -->
+    <!-- Mobilbilleder: viser ekstra stemningsbilleder kun i mobil-layoutet. -->
     <section class="kroelle-mobile-images" aria-label="Billeder fra krølleuniverset">
       <figure>
         <div class="kroelle-placeholder kroelle-placeholder-mobile"><img src="img/salon/forside.belinda.jpg" alt="Belinda Hildebrandt krøllefrisør og specialist i nordiske krøller og bølger"><span class="image-placeholder-label">IMG</span></div>
@@ -298,7 +311,7 @@
       </figure>
     </section>
 
-    <!-- HCM community-sektion -->
+    <!-- HCM community: præsenterer fællesskabet og medlemsfordele. -->
     <section class="kroelle-community" aria-labelledby="kroelle-community-title">
       <div class="kroelle-community-text">
         <p class="eyebrow">HCM community</p>
@@ -306,6 +319,7 @@
         <p>HCM Community er et fællesskab for dig, der elsker dine fine krøller eller bølger og ønsker tips, inspiration og særlige fordele.</p>
         <p>Få 10% rabat på fragt og din første ordre samt Early Access til nye produkter, events, konkurrencer og tilbud.</p>
       </div>
+      <!-- Community-billede: skifter til tabletversion for bedre komposition. -->
       <figure class="kroelle-community-figure">
         <div class="kroelle-placeholder kroelle-placeholder-community">
           <picture>
@@ -317,13 +331,12 @@
       </figure>
     </section>
 
-    <!-- Tilmeldingssektion -->
+    <!-- Tilmelding: indsamler navn, e-mail og samtykke til HCM Community. -->
     <section class="kroelle-signup" aria-labelledby="kroelle-signup-title">
       <div class="kroelle-signup-copy">
         <p id="kroelle-signup-title">Bliv en del af</p>
         <p>HCM community</p>
       </div>
-      <!-- Formular: samler felter og knapper til brugerinput. -->
       <form class="kroelle-form" action="#" method="post">
         <div class="kroelle-form-fields">
           <label class="sr-only" for="kroelle-name">Navn</label>
@@ -339,8 +352,9 @@
       </form>
     </section>
 
-    <!-- Kursus-sektion -->
+    <!-- Kursus: henvender sig til frisører, der vil lære CURL DNA-teknikken. -->
     <section class="kroelle-course" aria-labelledby="kroelle-course-title">
+      <!-- Kursusbilleder: viser inspiration og faglig stemning fra krølleuniverset. -->
       <div class="kroelle-course-images">
         <figure>
           <div class="kroelle-placeholder kroelle-placeholder-course"><img src="img/salon/behandlinger.sektion3.stemning2.jpg" alt="HCM Community inspiration til styling af krøller og bølger" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span></div>
@@ -360,10 +374,9 @@
     </section>
   </main>
 
-  <!-- Footer med kontakt, åbningstider og links -->
-<!-- Footer -->
+  <!-- Footer: samler åbningstider, kontakt, navigation, nyhedsbrev og sociale links. -->
 <footer class="footer footer--frontpage">
-  <!-- Sektion .footer-tider: samlet indholdsblok paa siden. -->
+  <!-- Åbningstider: viser faste tider og dynamisk åben/lukket-status. -->
   <section class="footer-tider" aria-labelledby="footer-tider-titel">
     <h2 id="footer-tider-titel" class="footer-tider-titel">Åbningstider</h2>
     <p class="kontakt-status footer-status" aria-live="polite">
@@ -384,7 +397,7 @@
     </dl>
   </section>
 
-  <!-- Sektion .footer-kontakt: samlet indholdsblok paa siden. -->
+  <!-- Kontakt: viser adresse, telefon og e-mail i semantisk address-markup. -->
   <section class="footer-kontakt" aria-labelledby="footer-kontakt-titel">
     <h2 id="footer-kontakt-titel" class="footer-kontakt-titel">Kontakt</h2>
     <address class="footer-kontakt-adresse">
@@ -395,6 +408,7 @@
     </address>
   </section>
 
+  <!-- Footermenu: giver hurtig adgang til centrale undersider og booking. -->
   <nav class="footer-menu" aria-labelledby="footer-menu-titel">
     <h2 id="footer-menu-titel" class="footer-menu-titel">Udforsk</h2>
     <ul class="footer-menu-liste">
@@ -414,10 +428,9 @@
     <a class="button button-primary footer-booking" href="https://salonbook.one/?henriksencopenhagen#/" target="_blank" rel="noopener noreferrer">Book tid</a>
   </nav>
 
-  <!-- Sektion .footer-newsletter: samlet indholdsblok paa siden. -->
+  <!-- Nyhedsbrev: indsamler navn, e-mail og samtykke til community-kommunikation. -->
   <section class="footer-newsletter" aria-labelledby="footer-newsletter-titel">
     <h2 id="footer-newsletter-titel" class="footer-newsletter-titel">Få tips til dine krøller</h2>
-    <!-- Formular: samler felter og knapper til brugerinput. -->
     <form class="footer-newsletter-form" action="#" method="post">
       <label class="footer-newsletter-label" for="footer-newsletter-name">Navn</label>
       <input id="footer-newsletter-name" class="footer-newsletter-input" type="text" name="name" placeholder="Navn" autocomplete="name">
@@ -434,6 +447,7 @@
     </form>
   </section>
 
+  <!-- Footer-info: viser juridiske oplysninger og sociale medier. -->
   <div class="footer-info">
     <div class="footer-legal">
       <a class="footer-terms" href="handelsbetingelser.html">Handelsbetingelser</a>
@@ -459,8 +473,7 @@
     </ul>
   </div>
 </footer>
-  <!-- Script: indlaeser JavaScript til interaktioner paa siden. -->
+  <!-- Script: styrer menu, sliders og dynamisk åbningstidsstatus. -->
   <script src="scripts/script.js"></script>
 </body>
 </html>
-

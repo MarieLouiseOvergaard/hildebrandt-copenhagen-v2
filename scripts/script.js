@@ -10,7 +10,7 @@ const mainContent = document.querySelector("main");
 const mobileBookingTrigger = mainContent?.querySelector(":scope > section, :scope > article, :scope > div") || mainContent;
 const isFrontPage = document.body.querySelector(".hero") && document.body.querySelector(".footer--frontpage");
 
-// Button underlines
+// Knaplabels: pakker rene tekstknapper ind, så underline-animationen virker ens.
 function prepareButtonUnderlines() {
   const underlineButtons = document.querySelectorAll(
     ".button, .book-knap, .guide-button, .kroelle-button, .kroelle-form-button, .kroelle-course-button, .side-cart-checkout, .product-filter-link, .blog-filter, .produkt-skabelon-size, .mobile-menu-link"
@@ -45,7 +45,7 @@ function prepareButtonUnderlines() {
 
 prepareButtonUnderlines();
 
-// Visuel cookie-prototype: gemmer kun valg i sessionStorage.
+// Cookie-popup: viser en sessionbaseret prototype, indtil brugeren har valgt.
 function setupCookiePrototype() {
   if (document.querySelector(".cookie-popup")) {
     return;
@@ -112,7 +112,7 @@ function setupCookiePrototype() {
 
 setupCookiePrototype();
 
-// Community signup forms
+// Community-formularer: validerer navn, e-mail og samtykke før succesvisning.
 function setupCommunitySignup(formSelector, copySelector, successClass) {
   const errorMessages = {
     name: "Du mangler at udfylde dit navn",
@@ -238,7 +238,7 @@ function setupCommunitySignup(formSelector, copySelector, successClass) {
 setupCommunitySignup(".blog-newsletter-form", ".blog-newsletter-copy", "blog-newsletter-success");
 setupCommunitySignup(".kroelle-form", ".kroelle-signup-copy", "kroelle-signup-success");
 
-// Blog helpers
+// Bloghjælpere: tilføjer brødkrummer og klikbare blogkort, hvor markup mangler det.
 function setupBlogBreadcrumbs() {
   const main = document.querySelector(".blog-post-main");
 
@@ -286,6 +286,7 @@ function setupBlogBreadcrumbs() {
 
 setupBlogBreadcrumbs();
 
+// Blogkort: gør billede og titel klikbare med samme link som læs-mere-linket.
 function setupBlogCardLinks(root = document) {
   root.querySelectorAll(".blog-card").forEach((card) => {
     const readLink = card.querySelector(".blog-card-link");
@@ -324,7 +325,7 @@ function setupBlogCardLinks(root = document) {
 
 setupBlogCardLinks();
 
-// Contact form validation
+// Kontaktformular: viser feltfejl og succesbesked uden sidegenindlæsning.
 function setupContactFormValidation() {
   document.querySelectorAll(".kontakt-form").forEach((form) => {
     const nameInput = form.querySelector("input[name='navn'], input[name='name']");
@@ -448,7 +449,7 @@ function setupContactFormValidation() {
 
 setupContactFormValidation();
 
-// Footer newsletter
+// Footer-nyhedsbrev: validerer tilmelding og erstatter formularen med kvittering.
 function setupFooterNewsletterSignup() {
   const errorMessages = {
     name: "Du mangler at udfylde dit navn",
@@ -554,7 +555,7 @@ function setupFooterNewsletterSignup() {
 
 setupFooterNewsletterSignup();
 
-// Checkout
+// Checkout: synkroniserer kurv, rabat, levering, betaling og feltvalidering.
 const checkoutForm = document.querySelector("[data-checkout-form]");
 
 if (checkoutForm) {
@@ -576,10 +577,12 @@ if (checkoutForm) {
   const shippingOptions = Array.from(checkoutForm.querySelectorAll("[name='shipping']"));
   const paymentOptions = Array.from(checkoutForm.querySelectorAll("[name='payment']"));
 
+  // Prisformattering: viser checkout-beløb som danske kroner.
   function formatDanishCurrency(amount) {
     return `${amount.toLocaleString("da-DK", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} kr.`;
   }
 
+  // Checkout-kurv: henter gemte varer sikkert fra localStorage.
   function loadCheckoutCartItems() {
     try {
       const storedItems = JSON.parse(localStorage.getItem("hildebrandtMixlyCart"));
@@ -589,6 +592,7 @@ if (checkoutForm) {
     }
   }
 
+  // Checkout-kurv: gemmer varer og giver resten af siden besked.
   function saveCheckoutCartItems(items) {
     try {
       localStorage.setItem("hildebrandtMixlyCart", JSON.stringify(items));
@@ -599,12 +603,14 @@ if (checkoutForm) {
     document.dispatchEvent(new CustomEvent("hildebrandt-cart-updated"));
   }
 
+  // Tekstsikring: escaper checkout-indhold, før det sættes ind som HTML.
   function escapeCheckoutText(value) {
     const div = document.createElement("div");
     div.textContent = value;
     return div.innerHTML;
   }
 
+  // Checkout-visning: tegner kurvlinjer og opdaterer subtotaler.
   function renderCheckoutCartItems() {
     const items = loadCheckoutCartItems().filter((item) => item && Number(item.quantity) > 0);
     productSubtotal = items.reduce((total, item) => total + Number(item.price || 0) * Number(item.quantity || 0), 0);
@@ -658,6 +664,7 @@ if (checkoutForm) {
     updateCheckoutTotals();
   }
 
+  // Rabatfeedback: viser status for rabatkoden.
   function setCheckoutDiscountMessage(message, isError = false) {
     if (!discountMessage) {
       return;
@@ -667,6 +674,7 @@ if (checkoutForm) {
     discountMessage.classList.toggle("is-error", isError);
   }
 
+  // Rabatberegning: beregner rabat ud fra aktiv kode og subtotal.
   function updateCheckoutDiscount() {
     discountAmount = activeDiscountCode === "rabat10" ? Math.round(productSubtotal * 0.1) : 0;
 
@@ -679,6 +687,7 @@ if (checkoutForm) {
     }
   }
 
+  // Valgtilstand: markerer valgt leverings- eller betalingskort.
   function updateCheckoutOptionState(options, selectedInput) {
     options.forEach((input) => {
       const option = input.closest(".checkout-option, .checkout-payment-option");
@@ -689,6 +698,7 @@ if (checkoutForm) {
     });
   }
 
+  // Valglogik: gør radio-lignende checkoutkort mulige at fravælge.
   function allowCheckoutOptionToggle(input, options, afterToggle) {
     const option = input.closest(".checkout-option, .checkout-payment-option");
 
@@ -715,6 +725,7 @@ if (checkoutForm) {
     });
   }
 
+  // Totaler: lægger levering til og trækker rabat fra ordren.
   function updateCheckoutTotals() {
     const selectedShipping = checkoutForm.querySelector("[name='shipping']:checked");
 
@@ -741,6 +752,7 @@ if (checkoutForm) {
     }
   }
 
+  // Rabatkode: accepterer prototypens kode og nulstiller ugyldige koder.
   function applyCheckoutDiscount() {
     const code = discountInput?.value.trim().toLowerCase() || "";
 
@@ -835,6 +847,7 @@ if (checkoutForm) {
     saveCheckoutCartItems(nextItems);
   });
 
+  // Feltbeskeder: vælger den relevante checkout-fejl for et felt.
   function getCheckoutFieldMessage(field) {
     if (field.name === "terms") {
       return "Du mangler at acceptere vilkår og betingelser";
@@ -856,6 +869,7 @@ if (checkoutForm) {
     return label ? `Tjek feltet ${label}` : "Tjek de markerede felter";
   }
 
+  // Valideringsoprydning: fjerner checkout-fejl og gendanner placeholders.
   function clearCheckoutValidationMessages() {
     checkoutForm.querySelectorAll("[data-checkout-field-error]").forEach((error) => error.remove());
     checkoutForm.querySelectorAll("[data-checkout-original-placeholder]").forEach((field) => {
@@ -864,6 +878,7 @@ if (checkoutForm) {
     });
   }
 
+  // Inlinefejl: opretter eller opdaterer en checkout-fejl ved et felt.
   function showCheckoutInlineError(anchor, key, message) {
     if (!anchor) {
       return;
@@ -882,6 +897,7 @@ if (checkoutForm) {
     errorElement.textContent = message;
   }
 
+  // Feltfejl: markerer ugyldige checkoutfelter visuelt og tekstligt.
   function showCheckoutFieldError(field) {
     const wrapper = field.closest(".checkout-field, .checkout-terms") || field;
     const message = getCheckoutFieldMessage(field);
@@ -1021,6 +1037,7 @@ if (checkoutForm) {
   document.addEventListener("hildebrandt-cart-updated", renderCheckoutCartItems);
 }
 
+// Aktiv navigation: markerer menupunkt ud fra aktuel URL og sidesektion.
 function setActiveMainNavigation() {
   const currentPath = window.location.pathname.replace(/\/index\.html$/, "/");
   const isProductPage =
@@ -1055,6 +1072,7 @@ function setActiveMainNavigation() {
 
 setActiveMainNavigation();
 
+// Auto-carousel: kloner elementer og styrer autoplay, drag og loop-reset.
 function setupAutoScrollCarousel(viewport, options = {}) {
   const track = options.trackSelector ? viewport.querySelector(options.trackSelector) : viewport;
   const items = track ? Array.from(track.querySelectorAll(`:scope > ${options.itemSelector}`)) : [];
@@ -1088,15 +1106,18 @@ function setupAutoScrollCarousel(viewport, options = {}) {
     track.appendChild(clone);
   });
 
+  // Carousel-step: måler afstanden mellem to elementer.
   function getStep() {
     return items[1].offsetLeft - items[0].offsetLeft;
   }
 
+  // Loopbredde: måler originalsporet før de klonede elementer.
   function getLoopWidth() {
     const firstClone = track.querySelector("[data-auto-scroll-clone='true']");
     return firstClone ? firstClone.offsetLeft - items[0].offsetLeft : 0;
   }
 
+  // Loop-reset: flytter scrollpositionen tilbage uden synligt hop.
   function normalizePosition() {
     const loopWidth = getLoopWidth();
 
@@ -1108,6 +1129,7 @@ function setupAutoScrollCarousel(viewport, options = {}) {
     }
   }
 
+  // Autoplay-stop: rydder interval og animation frame.
   function stopAutoplay() {
     window.clearInterval(intervalId);
     intervalId = null;
@@ -1116,6 +1138,7 @@ function setupAutoScrollCarousel(viewport, options = {}) {
     previousFrameTime = null;
   }
 
+  // Kontinuerlig autoplay: flytter carousellen jævnt efter tid.
   function runContinuousAutoplay(timestamp) {
     if (previousFrameTime !== null) {
       viewport.scrollLeft += options.speed * ((timestamp - previousFrameTime) / 1000);
@@ -1126,6 +1149,7 @@ function setupAutoScrollCarousel(viewport, options = {}) {
     animationFrameId = window.requestAnimationFrame(runContinuousAutoplay);
   }
 
+  // Autoplay-start: vælger glidende eller trinvis scroll afhængigt af options.
   function startAutoplay() {
     if (reduceMotion || intervalId || animationFrameId) {
       return;
@@ -1150,12 +1174,14 @@ function setupAutoScrollCarousel(viewport, options = {}) {
     }, interval);
   }
 
+  // Autoplay-pause: stopper midlertidigt og genstarter efter brugerinteraktion.
   function pauseAutoplay() {
     stopAutoplay();
     window.clearTimeout(resumeTimeoutId);
     resumeTimeoutId = window.setTimeout(startAutoplay, options.resumeDelay || interval);
   }
 
+  // Interaktionsstop: holder autoplay stoppet under aktiv brugerhandling.
   function stopForInteraction() {
     stopAutoplay();
     window.clearTimeout(resumeTimeoutId);
@@ -1191,6 +1217,7 @@ function setupAutoScrollCarousel(viewport, options = {}) {
       event.preventDefault();
     }
   });
+  // Drag-stop: afslutter musedrag og genoptager autoplay senere.
   function stopMouseDrag(event) {
     isMouseDragging = false;
     viewport.classList.remove("is-dragging");
@@ -1249,7 +1276,7 @@ document.querySelectorAll(".om-os-instagram-grid").forEach((viewport) => {
 
 const tabletDropdownMedia = window.matchMedia("(min-width: 768px) and (max-width: 1199px)");
 const tabletDropdownItems = Array.from(document.querySelectorAll(".menu-item-dropdown"));
-
+// Tabletdropdowns: lukker åbne desktop-dropdowns på mellemstore skærme.
 function closeTabletDropdowns(exceptItem = null) {
   tabletDropdownItems.forEach((item) => {
     if (item === exceptItem) {
@@ -1299,6 +1326,7 @@ tabletDropdownMedia.addEventListener("change", () => {
   closeTabletDropdowns();
 });
 
+// Mobilmenu: åbner hovedpanelet og låser siden bag menuen.
 function openMobileMenu(event) {
   mobileMenu.classList.add("is-open");
   mobileMenu.classList.remove("is-products", "is-curl");
@@ -1307,6 +1335,7 @@ function openMobileMenu(event) {
   document.body.classList.add("is-menu-open");
 }
 
+// Mobilmenu: lukker alle paneler og nulstiller aria-tilstand.
 function closeMobileMenu() {
   mobileMenu.classList.remove("is-open", "is-products", "is-curl");
   mobileMenu.setAttribute("aria-hidden", "true");
@@ -1314,6 +1343,7 @@ function closeMobileMenu() {
   document.body.classList.remove("is-menu-open");
 }
 
+// Mobilmenu: skifter mellem åben og lukket tilstand.
 function toggleMobileMenu(event) {
   if (event) {
     event.preventDefault();
@@ -1327,6 +1357,7 @@ function toggleMobileMenu(event) {
   openMobileMenu();
 }
 
+// Mobilmenu: viser produktpanelet og nulstiller scrollpositionen.
 function showProductsMenu() {
   mobileMenu.classList.add("is-products");
   mobileMenu.classList.remove("is-curl");
@@ -1335,6 +1366,7 @@ function showProductsMenu() {
   }
 }
 
+// Mobilmenu: viser krølleuniverspanelet og skjuler produktpanelet.
 function showCurlMenu() {
   mobileMenu.classList.add("is-curl");
   mobileMenu.classList.remove("is-products");
@@ -1343,6 +1375,7 @@ function showCurlMenu() {
   }
 }
 
+// Mobilmenu: vender tilbage til hovedpanelet.
 function showMainMenu() {
   mobileMenu.classList.remove("is-products", "is-curl");
 }
@@ -1386,6 +1419,7 @@ if (footerAccordionItems.length > 0) {
       return;
     }
 
+    // Footer-accordion: åbner/lukker en footergruppe på tablet og mobil.
     function toggleFooterItem() {
       if (!footerAccordionMedia.matches) {
         return;
@@ -1406,6 +1440,7 @@ if (footerAccordionItems.length > 0) {
     });
   });
 
+  // Footer-accordion: skifter mellem accordion og almindelig footer efter breakpoint.
   function updateFooterAccordionState() {
     document.body.classList.toggle("has-footer-accordion", footerAccordionMedia.matches);
 
@@ -1434,6 +1469,7 @@ if (footerAccordionItems.length > 0) {
   footerAccordionMedia.addEventListener("change", updateFooterAccordionState);
 }
 
+// Sticky booking: viser mobil bookingknap efter første hovedsektion.
 function updateStickyBooking() {
   if (!mobileBookingMedia.matches) {
     document.body.classList.remove("is-sticky-booking-visible");
@@ -1449,6 +1485,7 @@ function updateStickyBooking() {
   document.body.classList.toggle("is-sticky-booking-visible", triggerBounds.bottom <= 0);
 }
 
+// Mobilheader: skifter fast navigation og logo-størrelse ved scroll.
 function updateMobileNavPosition() {
   const isFixed = window.scrollY > 0;
   document.body.classList.toggle("is-mobile-nav-fixed", isFixed);
@@ -1468,6 +1505,7 @@ if (typeof mobileBookingMedia.addEventListener === "function") {
 
 const contactStatus = document.querySelector(".kontakt-status");
 
+// Tid: henter aktuel ugedag og klokkeslæt i København.
 function getCopenhagenTimeParts() {
   const formatter = new Intl.DateTimeFormat("en-US", {
     timeZone: "Europe/Copenhagen",
@@ -1483,12 +1521,14 @@ function getCopenhagenTimeParts() {
   }, {});
 }
 
+// Tid: formaterer minutter efter midnat som HH:MM.
 function formatOpeningTime(minutes) {
   const hours = Math.floor(minutes / 60);
   const remainingMinutes = minutes % 60;
   return `${String(hours).padStart(2, "0")}:${String(remainingMinutes).padStart(2, "0")}`;
 }
 
+// Åbningstid: finder næste dag og tidspunkt, hvor salonen åbner.
 function getNextOpening(schedule, currentDayIndex, currentMinutes) {
   for (let offset = 0; offset < schedule.length; offset += 1) {
     const dayIndex = (currentDayIndex + offset) % schedule.length;
@@ -1511,6 +1551,7 @@ function getNextOpening(schedule, currentDayIndex, currentMinutes) {
   return null;
 }
 
+// Åbningstid: opdaterer statusfeltet med åben/lukket og næste åbning.
 function updateContactOpeningStatus() {
   if (!contactStatus) {
     return;
@@ -1576,6 +1617,7 @@ if (postMenu) {
   let postScrollTimeoutId = null;
   let postMenuStartTop = 0;
 
+  // Indlægsmenu: markerer aktivt ankerlink og trin.
   function setActivePostMenuItem(id) {
     postMenuLinks.forEach((link) => {
       const item = link.closest(".indlaeg-menu-punkt");
@@ -1600,6 +1642,7 @@ if (postMenu) {
     });
   }
 
+  // Indlægsmenu: åbner eller lukker menuen på mobil.
   function setPostMenuOpen(isOpen) {
     postMenu.classList.toggle("is-open", isOpen);
 
@@ -1608,11 +1651,13 @@ if (postMenu) {
     }
   }
 
+  // Indlægsmenu: beregner offset, så ankre ikke skjules bag headeren.
   function getPostHeaderOffset() {
     const header = document.querySelector(".header");
     return header && getComputedStyle(header).position === "fixed" ? header.offsetHeight + 24 : 24;
   }
 
+  // Scrollspy: vælger aktivt indlægspunkt ud fra den synlige sektion.
   function updateActivePostMenuFromScroll() {
     if (shouldIgnorePostScrollSpy || postSections.length === 0) {
       return;
@@ -1632,6 +1677,7 @@ if (postMenu) {
     setActivePostMenuItem(activeSection.id);
   }
 
+  // Indlægsmenu: gør menuen fast på mobil, når brugeren scroller forbi den.
   function updatePostMenuFixedPosition() {
     const isMobile = window.matchMedia("(max-width: 1180px)").matches;
 
@@ -1653,6 +1699,7 @@ if (postMenu) {
     }
   }
 
+  // Indlægsmenu: gemmer startpositionen til sticky-beregningen.
   function setPostMenuStartTop() {
     const wasFixed = postMenu.classList.contains("is-mobile-fixed");
 
@@ -1720,6 +1767,7 @@ const productSections = Array.from(document.querySelectorAll("[data-product-sect
 const productFilterLinks = Array.from(document.querySelectorAll("[data-product-filter]"));
 const phoneMedia = window.matchMedia("(max-width: 1180px)");
 
+// Produktsæt: finder gruppeetiket ud fra titel eller beskrivelse.
 function getProductSetGroupLabel(card) {
   const title = card.querySelector("h4")?.textContent.trim() || "";
   const description = card.querySelector(".product-content p")?.textContent.trim() || "";
@@ -1746,6 +1794,7 @@ function getProductSetGroupLabel(card) {
   return match ? match[0] : title;
 }
 
+// Produktsæt: prioriterer shampoo før conditioner og øvrige produkter.
 function getProductSetSortRank(card) {
   const title = card.querySelector("h4")?.textContent.trim() || "";
   const description = card.querySelector(".product-content p")?.textContent.trim() || "";
@@ -1761,7 +1810,7 @@ function getProductSetSortRank(card) {
 
   return 3;
 }
-
+// Produktkort-data: retter titler, priser, størrelser og alt-tekster for sæt.
 const productSetCardUpdates = {
   "products/saet/rich-low-intensive-care-for-curly-ends.html": {
     title: "Rich + Low Intensive Care For Curly Ends",
@@ -1806,11 +1855,13 @@ const productSetCardUpdates = {
   },
 };
 
+// Produktsæt: links der fjernes fra organiserede sætvisninger.
 const duplicateProductSetLinks = new Set([
   "products/saet/low-rich-deep-drink-conditioner-200.html",
   "products/saet/low-refresh-rich-repair-cleansing-shampoo-1000.html",
 ]);
 
+// Produktsæt: fast sorteringsrækkefølge for sæt-kort.
 const productSetCardOrder = [
   "products/saet/rich-low-intensive-care-for-curly-ends.html",
   "products/saet/rich-low-curly-conditioner-bars-orange-sensitive.html",
@@ -1823,11 +1874,13 @@ const productSetCardOrder = [
   "products/saet/low-refiner-curl-gel-rich-curl-cream.html",
 ];
 
+// Startpakker: viser antal produkter på kortene.
 const startPackageCardUpdates = {
   "products/startpakker/startpakke-2.html": "6 produkter",
   "products/startpakker/startpakke-3.html": "6 produkter",
 };
 
+// Produktkort: viser kendte størrelsesintervaller på oversigter.
 const productCardSizeUpdates = {
   "products/shampoo/rich-repair-cleansing-shampoo.html": "100 ml / 1000 ml",
   "products/shampoo/low-refresh-cleansing-shampoo.html": "100 ml / 1000 ml",
@@ -1839,10 +1892,12 @@ const productCardSizeUpdates = {
   "products/saet/low-rich-conditioner.html": "2 × 200 ml / 2 × 1000 ml",
 };
 
+// Produktlink: fjerner relative ../-prefixer, så opslag kan matches stabilt.
 function normalizeProductHref(href) {
   return href.replace(/^(\.\.\/)+/, "");
 }
 
+// Produktkort: erstatter lange størrelseslister med antal størrelser.
 function updateProductCardSizeCount(card, sizes = []) {
   const sizeLabel = card.querySelector(".product-meta span:last-child");
 
@@ -1859,6 +1914,7 @@ function updateProductCardSizeCount(card, sizes = []) {
   }
 }
 
+// Produktkort: opdaterer metadata og billeder ud fra lokale korrekturdata.
 function normalizeProductCardSizes() {
   document.querySelectorAll(".product-card").forEach((card) => {
     const titleLink = card.querySelector("h4 a");
@@ -1894,6 +1950,7 @@ function normalizeProductCardSizes() {
   });
 }
 
+// Startpakker: justerer kortmetadata for produktantal.
 function normalizeStartPackageCards() {
   document.querySelectorAll('[data-product-section="startpakker"] .product-card').forEach((card) => {
     const link = card.querySelector("h4 a")?.getAttribute("href") || "";
@@ -1906,6 +1963,7 @@ function normalizeStartPackageCards() {
   });
 }
 
+// Produktsæt: anvender korrekturdata på ét sæt-kort.
 function normalizeProductSetCard(card) {
   const titleLink = card.querySelector("h4 a");
   const imageLink = card.querySelector(".product-image a");
@@ -1942,6 +2000,7 @@ function normalizeProductSetCard(card) {
   updateProductCardSizeCount(card);
 }
 
+// Produktsæt: fjerner dubletter og sorterer kortene i en fast rækkefølge.
 function organizeProductSets() {
   document.querySelectorAll("[data-organize-product-sets]").forEach((row) => {
     Array.from(row.querySelectorAll(".product-card")).forEach(normalizeProductSetCard);
@@ -1984,6 +2043,7 @@ function organizeProductSets() {
   });
 }
 
+// Produktoversigt: indsætter stemningskort mellem produktkort i udvalgte sektioner.
 function insertProductImagePlaceholderCards() {
   const featureCardPositions = {
     startpakker: 0,
@@ -2053,6 +2113,7 @@ function insertProductImagePlaceholderCards() {
   });
 }
 
+// Billedlabels: viser faktiske placeholder-mål i menuens billedfelter.
 function initializeImagePlaceholderSizes() {
   const placeholders = document.querySelectorAll(
     ".menu-dropdown-product-image, .mobile-menu-feature-image"
@@ -2089,6 +2150,7 @@ function initializeImagePlaceholderSizes() {
   });
 }
 
+// Produktfilter: viser kun den valgte produktsektion og markerer aktivt filter.
 function setProductFilter(filter) {
   productSections.forEach((section) => {
     const isVisible = filter === "all" || section.dataset.productSection === filter;
@@ -2107,6 +2169,7 @@ function setProductFilter(filter) {
   });
 }
 
+// Produktfilter: centrerer aktiv filterknap på mobil.
 function centerActiveProductFilter() {
   const filterBar = document.querySelector(".product-filter");
   const activeFilter = filterBar?.querySelector(".product-filter-link.is-active");
@@ -2141,10 +2204,12 @@ if (productSections.length) {
   });
 }
 
+// Produktkort-helper: henter kortets titel med fallback.
 function getCardTitle(card) {
   return card.querySelector("h4, h3")?.textContent.trim() || "Mixly produkt";
 }
 
+// Produktkort-helper: henter beskrivelse fra almindelige og relaterede kort.
 function getCardDescription(card) {
   return card.querySelector(".product-content p")?.textContent.trim() ||
     card.querySelector(".produkt-skabelon-related-card > a > p")?.textContent.trim() ||
@@ -2152,23 +2217,28 @@ function getCardDescription(card) {
     "";
 }
 
+// Produktkort-helper: finder produktbilledet.
 function getCardImage(card) {
   return card.querySelector(".product-image img, .produkt-skabelon-related-image img");
 }
 
+// Produktkort-helper: finder kortets primære link.
 function getCardLink(card) {
   return card.querySelector("h4 a, h3 a, .produkt-skabelon-related-card > a, a")?.getAttribute("href") || "#";
 }
 
+// Produktkort-helper: finder billedrammen til knapper og overlays.
 function getCardImageFrame(card) {
   return card.querySelector(".product-image, .produkt-skabelon-related-image");
 }
 
+// Ikoner: bygger sti til interface-ikoner ud fra kurvikonets placering.
 function getInterfaceIconUrl(iconName) {
   const cartIcon = document.querySelector(".top-nav-icon-cart")?.getAttribute("src") || "img/ikoner/kurv.svg";
   return cartIcon.replace(/kurv\.svg$/i, `${iconName}.svg`);
 }
 
+// Quick view-knap: tilføjer øje-knap på produktbilledet.
 function createProductHoverEye(card) {
   const image = getCardImageFrame(card);
 
@@ -2184,6 +2254,7 @@ function createProductHoverEye(card) {
   image.append(eyeButton);
 }
 
+// Sliderindikatorer: opretter dots og tæller for horisontale kortlister.
 function setupSliderIndicators(row, options = {}) {
   const itemSelector = options.itemSelector || ".product-card, .product-promo-card, .product-image-placeholder-card";
   const label = options.label || "produktgruppe";
@@ -2195,6 +2266,7 @@ function setupSliderIndicators(row, options = {}) {
     return;
   }
 
+  // Sliderindikatorer: beregner aktiv side ud fra scrollposition.
   function updateIndicators() {
     const maxScroll = row.scrollWidth - row.clientWidth;
 
@@ -2376,6 +2448,7 @@ relatedProductCards.forEach((card) => {
   image.append(addButton);
 });
 
+// Produktkort-knap: flytter kurvknappen mellem tekst og billede efter breakpoint.
 function syncProductCardAddButtonPlacement() {
   document.querySelectorAll(".product-add-button").forEach((addButton) => {
     const text = addButton.querySelector(".product-add-button-text");
@@ -2431,6 +2504,7 @@ let cartDrawer = null;
 let lastCartTrigger = null;
 let lastAddedCartItem = null;
 
+// Quick add-katalog: fallbackdata til kort, før produktsider er hentet.
 const quickAddCatalog = {
   "rich repair cleansing shampoo": {
     tags: ["Økologisk", "Vegansk", "Parfumefri", "Unisex"],
@@ -2513,27 +2587,32 @@ const quickAddCatalog = {
   },
 };
 
+// Pris: udtrækker tal fra danske prisstrenge.
 function parsePrice(priceText) {
   const match = String(priceText || "").replace(/\./g, "").match(/\d+/);
   return match ? Number(match[0]) : 0;
 }
 
+// Pris: formaterer heltal som danske kroner.
 function formatPrice(amount) {
   return `${amount.toLocaleString("da-DK")} kr.`;
 }
 
+// Pris: fjerner unødige decimaler fra viste priser.
 function formatDisplayPrice(priceText) {
   return String(priceText || "")
     .replace(/(\d[\d.]*)\s*,00\s*kr\.?/gi, "$1 kr.")
     .replace(/(\d[\d.]*)\s*kr(?![.\w])/gi, "$1 kr.");
 }
 
+// Pris: normaliserer priser på produktkort og produktsider.
 function normalizeDisplayedPrices(scope = document) {
   scope.querySelectorAll(".produkt-skabelon-price, [data-product-page-price], .product-meta span:first-child").forEach((item) => {
     item.textContent = formatDisplayPrice(item.textContent);
   });
 }
 
+// Assetsti: konverterer relative billedstier til absolutte URLer.
 function getAbsoluteAssetUrl(src) {
   if (!src) {
     return "";
@@ -2542,6 +2621,7 @@ function getAbsoluteAssetUrl(src) {
   return new URL(src, window.location.href).href;
 }
 
+// Kurv: henter gemte varer fra localStorage.
 function loadCartItems() {
   try {
     const storedItems = JSON.parse(localStorage.getItem(cartStorageKey));
@@ -2551,6 +2631,7 @@ function loadCartItems() {
   }
 }
 
+// Kurv: gemmer varer og udsender fælles kurv-event.
 function saveCartItems() {
   try {
     localStorage.setItem(cartStorageKey, JSON.stringify(cartItems));
@@ -2561,18 +2642,22 @@ function saveCartItems() {
   document.dispatchEvent(new CustomEvent("hildebrandt-cart-updated"));
 }
 
+// Kurv: beregner samlet antal varer.
 function getCartCount() {
   return cartItems.reduce((count, item) => count + item.quantity, 0);
 }
 
+// Kurv: beregner samlet varebeløb.
 function getCartTotal() {
   return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 }
 
+// Kurv: bygger stabilt id ud fra produktnavn og størrelse.
 function getCartItemId(product) {
   return `${normalizeProductTitle(product.name)}::${normalizeProductTitle(product.size || "standard")}`;
 }
 
+// Kurvbadge: viser antal varer i alle kurvikoner.
 function updateCartBadges() {
   const count = getCartCount();
 
@@ -2596,6 +2681,7 @@ function updateCartBadges() {
   });
 }
 
+// Kurv: tilføjer produkt, samler dubletter og åbner sidekurven.
 function addToCart(product, options = {}) {
   const id = getCartItemId(product);
   const existingItemIndex = cartItems.findIndex((item) => item.id === id);
@@ -2631,6 +2717,7 @@ function addToCart(product, options = {}) {
   }
 }
 
+// Kurv: ændrer antal eller fjerner varen ved nul.
 function updateCartItemQuantity(id, quantity) {
   if (quantity <= 0) {
     cartItems = cartItems.filter((item) => item.id !== id);
@@ -2643,12 +2730,14 @@ function updateCartItemQuantity(id, quantity) {
   renderCartDrawer();
 }
 
+// Kurv: escaper tekst, før den sættes ind som HTML.
 function escapeCartText(value) {
   const div = document.createElement("div");
   div.textContent = value;
   return div.innerHTML;
 }
 
+// Produktdata: udleder et kurvprodukt fra et produktkort.
 function getProductFromCard(card) {
   const title = getCardTitle(card);
   const catalogData = quickAddCatalog[normalizeProductTitle(title)];
@@ -2666,12 +2755,14 @@ function getProductFromCard(card) {
   };
 }
 
+// Produktdata: afgør om produktet kræver størrelsesvalg før køb.
 function cardMayHaveMultipleSizes(card, sizes = []) {
   const meta = Array.from(card.querySelectorAll(".product-meta span")).map((item) => item.textContent.trim());
   const originalSizes = card.querySelector(".product-meta span:last-child")?.dataset.productSizes || meta[1] || "";
   return sizes.length > 1 || /^fra\b/i.test(meta[0] || "") || originalSizes.includes("/");
 }
 
+// Produktdata: bygger kurvprodukt ud fra valgt variant.
 function getProductFromCardVariant(card, variant) {
   const title = getCardTitle(card);
   const image = variant?.image || getCardImage(card)?.getAttribute("src") || "";
@@ -2684,6 +2775,7 @@ function getProductFromCardVariant(card, variant) {
   };
 }
 
+// Produktdata: udleder valgt produkt fra produktsidens aktive størrelse.
 function getProductFromPage() {
   const title = document.querySelector("#produkt-skabelon-title")?.textContent.trim() || document.title.replace(" - Hildebrandt Copenhagen", "").trim();
   const checkedSize = document.querySelector(".produkt-skabelon-size input:checked");
@@ -2700,6 +2792,7 @@ function getProductFromPage() {
   };
 }
 
+// Sidekurv: opretter drawer, backdrop og eventdelegation til varehandlinger.
 function createCartDrawer() {
   const drawer = document.createElement("div");
   drawer.className = "side-cart";
@@ -2759,6 +2852,7 @@ function createCartDrawer() {
   return drawer;
 }
 
+// Sidekurv: tegner varer, total og checkout-link.
 function renderCartDrawer() {
   const drawer = cartDrawer || createCartDrawer();
   cartDrawer = drawer;
@@ -2833,7 +2927,7 @@ function renderCartDrawer() {
   `;
 }
 
-// Cart drawer
+// Sidekurv: styrer åbning, lukning og fokus.
 function openCartDrawer() {
   const drawer = cartDrawer || createCartDrawer();
   cartDrawer = drawer;
@@ -2848,6 +2942,7 @@ function openCartDrawer() {
   }, 0);
 }
 
+// Sidekurv: lukker drawer og returnerer fokus til seneste trigger.
 function closeCartDrawer() {
   if (!cartDrawer || !cartDrawer.classList.contains("is-open")) {
     return;
@@ -2899,6 +2994,7 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+// Produktside-data: matcher størrelser med ingrediensbilleder.
 const productDetailsImageBySize = {
   "rich repair cleansing shampoo": {
     "1000 ml": "../../img/ingredienser/ingredienser-Rich-Repair-Shampoo-1000ml.png",
@@ -2933,6 +3029,7 @@ const productDetailsImageBySize = {
   },
 };
 
+// Produktside-data: matcher størrelser med produktinfo og varenumre.
 const productInfoBySize = {
   "curly charcoal calm shampoo": {
     "50 ml": { weight: "0,050 kg", dimensions: "11 cm", amount: "50 ml", shelfLife: "12 måneder efter åbning", sku: "MCCC50" },
@@ -2964,14 +3061,17 @@ const productInfoBySize = {
   },
 };
 
+// Produktside-helper: henter den viste produkttitel.
 function getProductPageTitle() {
   return document.querySelector("#produkt-skabelon-title")?.textContent.trim() || "";
 }
 
+// Størrelse: normaliserer labels, så opslag kan matches på tværs af x/×.
 function normalizeProductSizeLabel(label) {
   return String(label || "").trim().replace(/\s*[×x]\s*/gi, " x ").replace(/\s+/g, " ").toLowerCase();
 }
 
+// Størrelse: beregner volumen/vægt til valg af største standardstørrelse.
 function getProductSizeVolume(label) {
   const matches = String(label || "").matchAll(/(?:(\d+)\s*x\s*)?(\d+(?:[.,]\d+)?)\s*(ml|g|gr)\b/gi);
   let volume = 0;
@@ -2987,6 +3087,7 @@ function getProductSizeVolume(label) {
   return volume;
 }
 
+// Størrelse: vælger største knap som standardvariant.
 function getDefaultProductSizeButton(buttons) {
   return Array.from(buttons).reduce((bestButton, button) => {
     if (!bestButton) {
@@ -3000,6 +3101,7 @@ function getDefaultProductSizeButton(buttons) {
   }, null);
 }
 
+// Produktside: finder ingrediensbillede for valgt størrelse.
 function getProductDetailsImageForSize(title, label) {
   const productMap = productDetailsImageBySize[normalizeProductTitle(title)] || {};
   const normalizedLabel = normalizeProductSizeLabel(label);
@@ -3007,11 +3109,13 @@ function getProductDetailsImageForSize(title, label) {
   return productMap[matchingKey] || "";
 }
 
+// Produktside: finder produktinfo for valgt størrelse.
 function getProductInfoForSize(title, label) {
   const productMap = productInfoBySize[normalizeProductTitle(title)] || {};
   return productMap[normalizeProductSizeLabel(label)] || null;
 }
 
+// Produktside: opdaterer en produktinforække ud fra label-match.
 function setProductInfoRowValue(labelMatchers, value) {
   if (!value) {
     return;
@@ -3029,6 +3133,7 @@ function setProductInfoRowValue(labelMatchers, value) {
   }
 }
 
+// Produktside: opdaterer SKU, mængde, vægt og holdbarhed ved størrelsesvalg.
 function updateProductInfoForSize(title, label) {
   const info = getProductInfoForSize(title, label);
 
@@ -3043,6 +3148,7 @@ function updateProductInfoForSize(title, label) {
   setProductInfoRowValue(["STØRRELSE"], info.dimensions);
 }
 
+// Sætside: finder variantindhold for valgt sætstørrelse.
 function getSetVariantForSize(title, label) {
   const normalizedTitle = normalizeProductTitle(title);
   const normalizedLabel = normalizeProductSizeLabel(label);
@@ -3059,6 +3165,7 @@ function getSetVariantForSize(title, label) {
   return null;
 }
 
+// Størrelse: finder index for største variant i quick add-data.
 function getDefaultProductSizeIndex(sizes) {
   return sizes.reduce((bestIndex, size, index) => {
     if (bestIndex < 0) {
@@ -3072,6 +3179,7 @@ function getDefaultProductSizeIndex(sizes) {
   }, -1);
 }
 
+// Produktside: henter mængdelabel fra eksisterende produktinfo.
 function getProductPageAmountLabel() {
   const rows = Array.from(document.querySelectorAll(".produkt-skabelon-info-row"));
   const amountRow = rows.find((row) => {
@@ -3085,6 +3193,7 @@ function getProductPageAmountLabel() {
     : "";
 }
 
+// Produktside: opretter størrelsesknap på produkter med kun én størrelse.
 function ensureSingleProductSizeButton() {
   const summary = document.querySelector(".produkt-skabelon-summary");
   const price = document.querySelector("[data-product-page-price]");
@@ -3124,6 +3233,7 @@ function ensureSingleProductSizeButton() {
 
 ensureSingleProductSizeButton();
 
+// Sætside-indhold: dynamiske tekster, pakkeindhold og produktinfo pr. variant.
 const mixlySetPageUpgrades = {
   "low refresh + rich repair cleansing shampoo - 2 x 1000 ml": {
     price: "758 kr.",
@@ -3267,6 +3377,7 @@ const mixlySetPageUpgrades = {
   },
 };
 
+// Produktside-indhold: opretter afsnit til accordion-paneler.
 function createProductPageParagraphs(items) {
   return items.map((text) => {
     const paragraph = document.createElement("p");
@@ -3275,6 +3386,7 @@ function createProductPageParagraphs(items) {
   });
 }
 
+// Produktside-indhold: opretter nummereret brugsvejledning.
 function createProductPageOrderedList(items) {
   const list = document.createElement("ol");
   list.className = "produkt-skabelon-panel-list";
@@ -3288,6 +3400,7 @@ function createProductPageOrderedList(items) {
   return list;
 }
 
+// Sætside-indhold: bygger kort for produkterne i et sæt.
 function createSetPackageCards(config) {
   const row = document.createElement("div");
   row.className = "produkt-skabelon-package-products";
@@ -3308,6 +3421,7 @@ function createSetPackageCards(config) {
   return row;
 }
 
+// Produktside-indhold: bygger et accordion-element med givet indhold.
 function createSetAccordion(title, children) {
   const details = document.createElement("details");
   details.className = "produkt-skabelon-accordion";
@@ -3324,6 +3438,7 @@ function createSetAccordion(title, children) {
   return details;
 }
 
+// Produktside-indhold: bevarer eksisterende ingrediensinfo før paneler genbygges.
 function extractExistingIngredientInfo(productInfo) {
   const ingredientRow = Array.from(productInfo?.querySelectorAll(".produkt-skabelon-info-row") || []).find((row) => {
     const label = row.querySelector(".produkt-skabelon-info-label")?.textContent.trim().toUpperCase() || "";
@@ -3333,6 +3448,7 @@ function extractExistingIngredientInfo(productInfo) {
   return ingredientRow?.querySelector(".produkt-skabelon-info-value") || null;
 }
 
+// Sætside-indhold: samler produktinfo og bevaret ingrediensindhold.
 function createSetProductInfo(config, existingIngredientInfo) {
   const wrapper = document.createElement("div");
   wrapper.className = "produkt-skabelon-product-info";
@@ -3363,6 +3479,7 @@ function createSetProductInfo(config, existingIngredientInfo) {
   return wrapper;
 }
 
+// Sætside: erstatter standardsummary med variantstyret sætindhold.
 function upgradeMixlySetPage() {
   const summary = document.querySelector(".produkt-skabelon-summary");
   const title = getProductPageTitle();
@@ -3419,6 +3536,7 @@ function upgradeMixlySetPage() {
 
 upgradeMixlySetPage();
 
+// Produktside-indhold: tekster og vejledninger for enkeltprodukter.
 const standaloneProductPageUpgrades = {
   "low curly protein treatment tea": {
     intro: "En intensiv proteinbehandling til krøller og bølger, der mangler styrke, spændstighed eller struktur. Hjælper håret med at genopbygge sig efter belastning fra styling, farvning eller miljøpåvirkninger.",
@@ -3559,6 +3677,7 @@ const standaloneProductPageUpgrades = {
   },
 };
 
+// Produktside: opdaterer enkeltprodukters intro og accordion-indhold.
 function upgradeStandaloneProductPage() {
   const summary = document.querySelector(".produkt-skabelon-summary");
   const config = standaloneProductPageUpgrades[normalizeProductTitle(getProductPageTitle())];
@@ -3588,6 +3707,7 @@ function upgradeStandaloneProductPage() {
 
 upgradeStandaloneProductPage();
 
+// Sætside: genbygger indhold, pakkeprodukter og produktinfo ved størrelsesvalg.
 function updateSetContentForSize(title, label) {
   const config = getSetVariantForSize(title, label);
   const summary = document.querySelector(".produkt-skabelon-summary");
@@ -3630,8 +3750,10 @@ function updateSetContentForSize(title, label) {
   });
 }
 
+// Produktside-tags: fælles badges vist over produkttitlen.
 const productPageTags = ["Økologisk", "Vegansk", "Parfumefri", "Unisex"];
 
+// Produktside: sikrer at fælles produkt-tags findes og er opdaterede.
 function ensureProductPageTags() {
   const summary = document.querySelector(".produkt-skabelon-summary");
   const title = getProductPageTitle();
@@ -3661,6 +3783,7 @@ function ensureProductPageTags() {
 
 ensureProductPageTags();
 
+// Produktbrødkrummer: labels til kategorier ud fra mappestruktur.
 const productBreadcrumbLabels = {
   shampoo: "Shampoo",
   conditioner: "Conditioner",
@@ -3670,6 +3793,7 @@ const productBreadcrumbLabels = {
   startpakker: "Startpakker",
 };
 
+// Produktbrødkrummer: links tilbage til relevante kategorioversigter.
 const productBreadcrumbLinks = {
   shampoo: "../../produkter-shampoo.html",
   conditioner: "../../produkter-conditioner.html",
@@ -3679,6 +3803,7 @@ const productBreadcrumbLinks = {
   startpakker: "../../produkter-startpakker.html",
 };
 
+// Produktside: opretter brødkrummer, hvis siden ikke allerede har dem.
 function ensureProductBreadcrumbs() {
   const main = document.querySelector(".produkt-skabelon-main");
   const hero = document.querySelector(".produkt-skabelon-hero");
@@ -3710,7 +3835,7 @@ function ensureProductBreadcrumbs() {
 ensureProductBreadcrumbs();
 
 const productPageSizeButtons = document.querySelectorAll(".produkt-skabelon-size[data-product-price]");
-
+// Størrelsesvalg: initialiserer aktiv variant og binder knapper til pris og billeder.
 if (productPageSizeButtons.length) {
   const productPagePrice = document.querySelector("[data-product-page-price]");
   const productPageImage = document.querySelector(".produkt-skabelon-image-hero img");
@@ -3773,6 +3898,7 @@ if (productPageSizeButtons.length) {
   });
 }
 
+// Sticky produktkurv: viser købspanelet på desktop, når originalknappen er væk.
 function setupProductStickyCart() {
   const supportsStickyCart = document.body.classList.contains("conditioner-product-page") ||
     document.body.classList.contains("hair-mask-product-page") ||
@@ -3864,6 +3990,7 @@ let quickAddSheet = null;
 let quickView = null;
 let lastQuickViewTrigger = null;
 
+// Quick add-dropdown: lukker desktop-størrelsesvælgeren.
 function closeQuickAddDropdown(control = openQuickAddDropdown) {
   if (!control) {
     return;
@@ -3888,6 +4015,7 @@ function closeQuickAddDropdown(control = openQuickAddDropdown) {
   }
 }
 
+// Quick add-dropdown: åbner én størrelsesvælger ad gangen på desktop.
 function openQuickAddDropdownFor(control) {
   if (openQuickAddDropdown && openQuickAddDropdown !== control) {
     closeQuickAddDropdown(openQuickAddDropdown);
@@ -3905,6 +4033,7 @@ function openQuickAddDropdownFor(control) {
   openQuickAddDropdown = control;
 }
 
+// Quick add-dropdown: opretter størrelsesknapper for et produktkort.
 function renderQuickAddOptions(control, data) {
   const options = control.querySelector(".quick-add-options");
 
@@ -3930,6 +4059,7 @@ function renderQuickAddOptions(control, data) {
   }));
 }
 
+// Quick add: erstatter enkel kurvknap med størrelsesvælger på desktop.
 function replaceCardAddButtonWithQuickAdd(card, data) {
   const addButton = card.querySelector(".product-add-button");
   const sizes = data.sizes.filter((size) => size.label);
@@ -3977,6 +4107,7 @@ function replaceCardAddButtonWithQuickAdd(card, data) {
   addButton.replaceWith(control);
 }
 
+// Quick add: beriger produktkort med variantdata fra katalog og produktside.
 async function enhanceCardQuickAdd(card) {
   const data = getQuickAddData(card);
   const sizes = data.sizes.filter((size) => size.label);
@@ -3998,7 +4129,7 @@ async function enhanceCardQuickAdd(card) {
   replaceCardAddButtonWithQuickAdd(card, enrichedData);
 }
 
-// Quick add and quick view
+// Quick add og quick view: styrer modalvalg, produktpreview og køb fra kort.
 function createQuickAddSheet() {
   const sheet = document.createElement("div");
   sheet.className = "quick-add-sheet";
@@ -4047,6 +4178,7 @@ function createQuickAddSheet() {
   return sheet;
 }
 
+// Quick add-sheet: viser størrelsesvalg på touch-enheder.
 function openQuickAddSheet(card, data) {
   const sheet = quickAddSheet || createQuickAddSheet();
   quickAddSheet = sheet;
@@ -4075,6 +4207,7 @@ function openQuickAddSheet(card, data) {
   document.body.classList.add("is-quick-add-sheet-open");
 }
 
+// Quick add-sheet: lukker mobilvælgeren og rydder aktivt kort.
 function closeQuickAddSheet() {
   if (!quickAddSheet || quickAddSheet.hidden) {
     return;
@@ -4098,6 +4231,7 @@ function closeQuickAddSheet() {
   }
 }
 
+// Quick view: opretter produktpreview-dialog med eventdelegation.
 function createQuickView() {
   const view = document.createElement("div");
   view.className = "quick-view";
@@ -4138,11 +4272,13 @@ function createQuickView() {
   return view;
 }
 
+// Quick view: finder valgt variant eller falder tilbage til standardstørrelsen.
 function getSelectedQuickViewVariant(view) {
   const sizes = view.quickViewData?.sizes?.filter((size) => size.label) || [];
   return sizes.find((size) => size.label === view.dataset.selectedSize) || sizes[Math.max(getDefaultProductSizeIndex(sizes), 0)] || view.quickViewData?.sizes?.[0] || null;
 }
 
+// Quick view: opdaterer aktiv størrelse, pris og billede.
 function updateQuickViewSizeState(view) {
   const selectedVariant = getSelectedQuickViewVariant(view);
 
@@ -4168,6 +4304,7 @@ function updateQuickViewSizeState(view) {
   }
 }
 
+// Quick view: tegner preview med billede, størrelser, pris og produktinfo.
 function renderQuickView(view, data) {
   const media = view.querySelector(".quick-view-media");
   const content = view.querySelector(".quick-view-content");
@@ -4208,6 +4345,7 @@ function renderQuickView(view, data) {
   updateQuickViewSizeState(view);
 }
 
+// Quick view: henter produktdata, åbner dialog og flytter fokus.
 async function openQuickView(card) {
   const view = quickView || createQuickView();
   quickView = view;
@@ -4229,6 +4367,7 @@ async function openQuickView(card) {
   window.setTimeout(() => view.querySelector(".quick-view-panel")?.focus(), 0);
 }
 
+// Quick view: lukker dialogen og gendanner fokus.
 function closeQuickView() {
   if (!quickView || quickView.hidden) {
     return;
@@ -4243,6 +4382,7 @@ function closeQuickView() {
   }
 }
 
+// Produktkort-køb: vælger mellem direkte køb, dropdown eller mobil-sheet.
 async function handleProductCardAdd(card, event) {
   const control = event.target.closest(".quick-add-control");
 
@@ -4354,12 +4494,15 @@ document.addEventListener("hildebrandt-cart-updated", () => {
 
 updateCartBadges();
 
+// Quick add-cache: undgår gentagne fetches af samme produktside.
 const quickAddDetailCache = new Map();
 
+// Produktnøgle: normaliserer titler til katalogopslag.
 function normalizeProductTitle(title) {
   return title.trim().toLowerCase();
 }
 
+// Quick add-data: samler basisdata fra kort og fallbackkatalog.
 function getQuickAddData(card) {
   const title = getCardTitle(card);
   const key = normalizeProductTitle(title);
@@ -4384,6 +4527,7 @@ function getQuickAddData(card) {
   };
 }
 
+// Quick add-URL: gør relative produkt- og billedstier absolutte.
 function getQuickAddUrl(value, baseUrl = window.location.href) {
   if (!value || value === "#") {
     return "";
@@ -4396,6 +4540,7 @@ function getQuickAddUrl(value, baseUrl = window.location.href) {
   }
 }
 
+// Quick add-guide: normaliserer produktinfo-labels til previewet.
 function getQuickAddGuideLabel(label) {
   const normalizedLabel = normalizeProductTitle(label);
 
@@ -4406,6 +4551,7 @@ function getQuickAddGuideLabel(label) {
   return label;
 }
 
+// Quick add-guide: giver fallbackinfo, hvis produktsiden mangler detaljer.
 function getQuickAddFallbackGuide(data) {
   if (data.guide.length) {
     return data.guide;
@@ -4418,6 +4564,7 @@ function getQuickAddFallbackGuide(data) {
   ];
 }
 
+// Quick add-fetch: henter størrelser, billeder og specs fra produktsiden.
 async function fetchQuickAddDetails(fullLink) {
   const url = getQuickAddUrl(fullLink);
 
@@ -4496,6 +4643,7 @@ async function fetchQuickAddDetails(fullLink) {
   return detailsPromise;
 }
 
+// Quick add-data: kombinerer katalogfallback med hentede produktdetaljer.
 function mergeQuickAddData(data, details) {
   if (!details) {
     return data;
@@ -4513,7 +4661,7 @@ function mergeQuickAddData(data, details) {
 
 document.querySelectorAll(".product-card, .produkt-skabelon-related-card").forEach(enhanceCardQuickAdd);
 
-// Blog package sliders
+// Blogpakke-sliders: holder indikatorer synkroniseret med vandret scroll.
 document.querySelectorAll(".blogs-package-feature").forEach((feature) => {
   const panels = feature.querySelector(".blogs-package-feature-panels");
   const indicators = [...feature.querySelectorAll(".blogs-package-feature-scroll-indicator span")];
@@ -4545,7 +4693,7 @@ document.querySelectorAll(".blogs-package-feature").forEach((feature) => {
   }, { passive: true });
 });
 
-// Related blog posts
+// Relaterede blogindlæg: vælger de næste to indlæg og bygger kort dynamisk.
 const relatedPostsContainer = document.querySelector("[data-related-posts]");
 
 if (relatedPostsContainer) {

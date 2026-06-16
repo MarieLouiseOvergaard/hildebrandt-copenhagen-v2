@@ -12,14 +12,16 @@
   <link rel="stylesheet" href="styles/behandlinger.css">
 </head>
 <body>
-  <!-- Header -->
+  <!-- Header: samler booking, logo og navigation øverst på behandlingssiden. -->
   <header class="header">
+    <!-- Topmenu: viser hurtig booking, logo og mobile handlinger. -->
     <div class="top-menu">
       <a class="book-knap" href="https://salonbook.one/?henriksencopenhagen#/" aria-label="Book tid" target="_blank" rel="noopener noreferrer">Book tid</a>
       <a class="menu-logo-link top-menu-logo" href="index.html" aria-label="Gå til forsiden">
         <img class="menu-logo top-menu-logo-image" src="img/logo/monogramLysgraa.svg" alt="Hildebrandt Copenhagen monogram">
       </a>
 
+      <!-- Hjælpenavigation: indeholder kurv og knap til mobilmenu. -->
       <nav class="top-nav" aria-label="Hjælpenavigation">
         <ul class="top-nav-list">
           <li class="top-nav-item">
@@ -32,6 +34,7 @@
       </nav>
     </div>
 
+    <!-- Hovednavigation: viser desktopmenu med dropdowns og centrale undersider. -->
     <nav class="menu" aria-label="Hovednavigation">
       <ul class="menu-list">
         <li class="menu-item menu-item-dropdown">
@@ -41,6 +44,7 @@
           </a>
           <div class="menu-dropdown" aria-label="Produktmenu">
             <div class="menu-dropdown-inner">
+              <!-- Produktdropdown: grupperer produktlinks efter overblik og type. -->
               <nav class="menu-dropdown-column" aria-label="Produktoversigt">
                 <ul class="menu-dropdown-list">
                   <li class="menu-dropdown-item">
@@ -54,6 +58,7 @@
                   </li>
                 </ul>
               </nav>
+              <!-- Produkttyper: linker direkte til hver produktkategori. -->
               <nav class="menu-dropdown-column" aria-label="Produkttyper">
                 <ul class="menu-dropdown-list">
                   <li class="menu-dropdown-item">
@@ -70,6 +75,7 @@
                   </li>
                 </ul>
               </nav>
+              <!-- Dropdown-teasers: fremhæver startpakker og LOW-RICH-guiden. -->
               <div class="menu-dropdown-products">
                 <a class="menu-dropdown-product" href="produkter-startpakker.html">
                   <span class="menu-dropdown-product-image"><img src="img/salon/navigationsbar1.jpg" alt="Mixly produkter i krøllesalon på Frederiksberg" loading="lazy" decoding="async"><span class="image-placeholder-label">165 x 195</span></span>
@@ -92,6 +98,7 @@
           </a>
           <div class="menu-dropdown" aria-label="Krølleuniversmenu">
             <div class="menu-dropdown-inner">
+              <!-- Krølleunivers-dropdown: samler guides, stylingtips og blogindhold. -->
               <nav class="menu-dropdown-column" aria-label="Krølleunivers">
                 <ul class="menu-dropdown-list">
                   <li class="menu-dropdown-item">
@@ -109,6 +116,7 @@
                 </ul>
               </nav>
               <div class="menu-dropdown-column" aria-hidden="true"></div>
+              <!-- Dropdown-teasers: leder videre til produkter og guides. -->
               <div class="menu-dropdown-products">
                 <a class="menu-dropdown-product" href="produkter.html">
                   <span class="menu-dropdown-product-image"><img src="img/salon/produkter.styling.stemning4.jpg" alt="Mixly stylingprodukter til krøller og bølger" loading="lazy" decoding="async"><span class="image-placeholder-label">165 x 195</span></span>
@@ -132,7 +140,9 @@
     </nav>
   </header>
 
+  <!-- Mobilmenu: skifter mellem hovedpanel og underpaneler via JavaScript. -->
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <!-- Hovedpanel: viser de primære mobilnavigationer. -->
     <div class="mobile-menu-panel mobile-menu-panel-main" data-mobile-panel="main">
       <div class="mobile-menu-header">
         <p class="mobile-menu-title">Menu</p>
@@ -166,6 +176,7 @@
       </nav>
     </div>
 
+    <!-- Produktpanel: viser produktkategorier og fremhævet guide til mobil. -->
     <div class="mobile-menu-panel mobile-menu-panel-products" data-mobile-panel="products">
       <div class="mobile-menu-header">
         <button class="mobile-menu-back" type="button" aria-label="Tilbage til menu">‹</button>
@@ -207,6 +218,7 @@
         </div>
       </div>
     </div>
+    <!-- Krølleuniverspanel: viser guide- og inspirationslinks til mobil. -->
     <div class="mobile-menu-panel mobile-menu-panel-curl" data-mobile-panel="curl">
       <div class="mobile-menu-header">
         <button class="mobile-menu-back" type="button" aria-label="Tilbage til menu">‹</button>
@@ -234,9 +246,9 @@
     </div>
   </div>
 
-  <!-- Main -->
+  <!-- Main: indeholder introduktion, behandlingspriser og booking-CTA. -->
   <main class="behandlinger-main">
-    <!-- Hero -->
+    <!-- Hero: forklarer behandlingsfilosofien og leder til booking. -->
     <section class="behandlinger-section behandlinger-hero" aria-labelledby="behandlinger-hero-titel">
       <div class="behandlinger-text behandlinger-hero-text">
         <h1 id="behandlinger-hero-titel">Behandlinger</h1>
@@ -246,6 +258,7 @@
         <a class="button button-primary" href="https://salonbook.one/?henriksencopenhagen#/" target="_blank" rel="noopener noreferrer"><span class="button-label">Book en tid</span></a>
       </div>
 
+      <!-- Herobillede: bruger tabletbeskæring på mellemstore skærme. -->
       <figure class="behandlinger-image behandlinger-hero-image">
         <picture>
           <source media="(min-width: 768px) and (max-width: 999px)" srcset="img/salon/behandlinger.sektion1.tablet.jpg">
@@ -254,8 +267,9 @@
       </figure>
     </section>
 
-    <!-- Curl DNA og Mixly Curly Cut -->
+    <!-- Mixly Curl Cut: kombinerer Curl DNA-forklaring med klippepriser. -->
     <section id="mixly-curly-cut" class="behandlinger-section behandlinger-two-column behandlinger-mixly" aria-label="Curl DNA og Mixly Curly Cut priser">
+      <!-- Kort-række: viser stemningsbilleder og introduktion til Curl DNA. -->
       <div class="behandlinger-card-row behandlinger-mixly-cards">
         <figure class="behandlinger-image behandlinger-card-image">
           <img src="img/salon/behandlinger.sektion2.stemning1.jpg" alt="Krøllet hår efter behandling med Mixly produkter hos Hildebrandt Copenhagen">
@@ -272,6 +286,7 @@
         </figure>
       </div>
 
+      <!-- Prisliste: viser Mixly Curl Cut-behandlinger og pakker. -->
       <section class="behandlinger-prices" aria-labelledby="mixly-curly-cut-titel">
         <h2 id="mixly-curly-cut-titel">Mixly Curl Cut</h2>
         <dl class="behandlinger-price-list">
@@ -293,8 +308,9 @@
       </section>
     </section>
 
-    <!-- Farvepriser -->
+    <!-- Farvepriser: opdeler rene farver og farve med reflekser. -->
     <section id="farve-og-reflekser" class="behandlinger-section behandlinger-price-section" aria-label="Farvepriser">
+      <!-- Prisliste: viser farvebehandlinger efter hårlængde. -->
       <section class="behandlinger-prices" aria-labelledby="farve-titel">
         <h2 id="farve-titel">Farve</h2>
         <dl class="behandlinger-price-list">
@@ -305,6 +321,7 @@
         </dl>
       </section>
 
+      <!-- Prisliste: viser farve med reflekser efter hårlængde. -->
       <section class="behandlinger-prices" aria-labelledby="farve-reflekser-titel">
         <h2 id="farve-reflekser-titel">Farve med reflekser</h2>
         <dl class="behandlinger-price-list">
@@ -315,8 +332,9 @@
       </section>
     </section>
 
-    <!-- Permanent -->
+    <!-- Permanent: viser inspirationsbilleder og priser for permanent inkl. klip. -->
     <section class="behandlinger-section behandlinger-two-column behandlinger-permanent" aria-label="Permanentpriser">
+      <!-- Billedrække: understøtter permanent- og stylingsektionen visuelt. -->
       <div class="behandlinger-card-row behandlinger-permanent-images">
         <figure class="behandlinger-image behandlinger-card-image">
           <img src="img/salon/produkter.styling.stemning4.jpg" alt="Stylingprodukter til krøllebehandling hos Hildebrandt Copenhagen" loading="lazy" decoding="async">
@@ -329,6 +347,7 @@
         </figure>
       </div>
 
+      <!-- Prisliste: viser permanentpriser efter hårlængde. -->
       <section class="behandlinger-prices" aria-labelledby="permanent-titel">
         <h2 id="permanent-titel">Permanent inkl. klip</h2>
         <dl class="behandlinger-price-list">
@@ -340,7 +359,7 @@
       </section>
     </section>
 
-    <!-- Konsultation -->
+    <!-- Konsultation: inviterer til personlig rådgivning og booking. -->
     <section class="behandlinger-section behandlinger-consultation" aria-labelledby="behandlinger-konsultation-titel">
       <div class="behandlinger-text behandlinger-consultation-text">
         <h2 id="behandlinger-konsultation-titel">Ønsker du en personlig konsultation?</h2>
@@ -354,10 +373,9 @@
     </section>
   </main>
 
-  <!-- Footer med kontakt, åbningstider og links -->
-<!-- Footer -->
+  <!-- Footer: samler åbningstider, kontakt, navigation, nyhedsbrev og sociale links. -->
 <footer class="footer footer--frontpage">
-  <!-- Sektion .footer-tider: samlet indholdsblok paa siden. -->
+  <!-- Åbningstider: viser faste tider og dynamisk åben/lukket-status. -->
   <section class="footer-tider" aria-labelledby="footer-tider-titel">
     <h2 id="footer-tider-titel" class="footer-tider-titel">Åbningstider</h2>
     <p class="kontakt-status footer-status" aria-live="polite">
@@ -378,7 +396,7 @@
     </dl>
   </section>
 
-  <!-- Sektion .footer-kontakt: samlet indholdsblok paa siden. -->
+  <!-- Kontakt: viser adresse, telefon og e-mail i semantisk address-markup. -->
   <section class="footer-kontakt" aria-labelledby="footer-kontakt-titel">
     <h2 id="footer-kontakt-titel" class="footer-kontakt-titel">Kontakt</h2>
     <address class="footer-kontakt-adresse">
@@ -389,6 +407,7 @@
     </address>
   </section>
 
+  <!-- Footermenu: giver hurtig adgang til centrale undersider og booking. -->
   <nav class="footer-menu" aria-labelledby="footer-menu-titel">
     <h2 id="footer-menu-titel" class="footer-menu-titel">Udforsk</h2>
     <ul class="footer-menu-liste">
@@ -408,10 +427,9 @@
     <a class="button button-primary footer-booking" href="https://salonbook.one/?henriksencopenhagen#/" target="_blank" rel="noopener noreferrer">Book tid</a>
   </nav>
 
-  <!-- Sektion .footer-newsletter: samlet indholdsblok paa siden. -->
+  <!-- Nyhedsbrev: indsamler navn, e-mail og samtykke til community-kommunikation. -->
   <section class="footer-newsletter" aria-labelledby="footer-newsletter-titel">
     <h2 id="footer-newsletter-titel" class="footer-newsletter-titel">Få tips til dine krøller</h2>
-    <!-- Formular: samler felter og knapper til brugerinput. -->
     <form class="footer-newsletter-form" action="#" method="post">
       <label class="footer-newsletter-label" for="footer-newsletter-name">Navn</label>
       <input id="footer-newsletter-name" class="footer-newsletter-input" type="text" name="name" placeholder="Navn" autocomplete="name">
@@ -428,6 +446,7 @@
     </form>
   </section>
 
+  <!-- Footer-info: viser juridiske oplysninger og sociale medier. -->
   <div class="footer-info">
     <div class="footer-legal">
       <a class="footer-terms" href="handelsbetingelser.html">Handelsbetingelser</a>
@@ -453,8 +472,7 @@
     </ul>
   </div>
 </footer>
-  <!-- Script: indlaeser JavaScript til interaktioner paa siden. -->
+  <!-- Script: styrer menu, sliders og dynamisk åbningstidsstatus. -->
   <script src="scripts/script.js"></script>
 </body>
 </html>
-

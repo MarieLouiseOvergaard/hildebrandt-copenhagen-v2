@@ -1,3 +1,4 @@
+// Ingrediensdata: bruges til at bygge carousel-kortene i blogindlægget.
 const ingredients = [
   {
     name: "Aloe Vera",
@@ -101,9 +102,11 @@ const ingredients = [
   }
 ];
 
+// Carousel-root: findes kun på ingrediensbloggen, så scriptet kan deles sikkert.
 const ingredientsCarousel = document.querySelector("[data-ingredients-carousel]");
 
 if (ingredientsCarousel) {
+  // Rendering: opretter et kort for hver ingrediens med navn, latin og beskrivelse.
   ingredients.forEach(({ name, latin, description }) => {
     const card = document.createElement("article");
     const heading = document.createElement("h3");
@@ -121,9 +124,11 @@ if (ingredientsCarousel) {
     ingredientsCarousel.append(card);
   });
 
+  // Drag-state: gemmer startpunkt og scrollposition under pointer-drag.
   let dragStartX = 0;
   let dragStartScroll = 0;
 
+  // Drag-start: låser pointeren til carousellen og gemmer udgangspunktet.
   ingredientsCarousel.addEventListener("pointerdown", (event) => {
     dragStartX = event.clientX;
     dragStartScroll = ingredientsCarousel.scrollLeft;
@@ -131,11 +136,13 @@ if (ingredientsCarousel) {
     ingredientsCarousel.setPointerCapture(event.pointerId);
   });
 
+  // Drag-move: omsætter vandret pointerbevægelse til scroll.
   ingredientsCarousel.addEventListener("pointermove", (event) => {
     if (!ingredientsCarousel.classList.contains("is-dragging")) return;
     ingredientsCarousel.scrollLeft = dragStartScroll - (event.clientX - dragStartX);
   });
 
+  // Drag-stop: rydder drag-tilstand og frigiver pointer capture.
   const stopDragging = (event) => {
     ingredientsCarousel.classList.remove("is-dragging");
     if (ingredientsCarousel.hasPointerCapture(event.pointerId)) {

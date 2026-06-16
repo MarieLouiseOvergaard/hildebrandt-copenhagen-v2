@@ -13,8 +13,9 @@
   <link rel="stylesheet" href="../styles/blogindlaeg.css">
 </head>
 <body class="blog-page blog-post-page blog-template-page">
-  <!-- Header: topnavigation og branding for siden. -->
+  <!-- Header: samler booking, logo og navigation i blog-template. -->
   <header class="header">
+    <!-- Topmenu: viser bookingknap, logo, kurv og mobilmenu-trigger. -->
     <div class="top-menu">
       <a class="book-knap" href="https://salonbook.one/?henriksencopenhagen#/" aria-label="Book tid" target="_blank" rel="noopener noreferrer">Book tid</a>
       <a class="menu-logo-link top-menu-logo" href="../index.html" aria-label="Gå til forsiden">
@@ -33,13 +34,16 @@
       </nav>
     </div>
 
+    <!-- Hovednavigation: linker til de vigtigste sider på desktop. -->
     <nav class="menu" aria-label="Hovednavigation">
       <ul class="menu-list">
+        <!-- Produktdropdown: grupperer produktkategorier og fremhævet guide. -->
         <li class="menu-item menu-item-dropdown">
           <a class="menu-link menu-link-dropdown" href="../produkter.html" aria-haspopup="true">
             <span>Produkter</span>
             <span class="menu-link-arrow" aria-hidden="true">?</span>
           </a>
+          <!-- Produktmenu: viser produktlinks og anbefalet LOW-RICH guide. -->
           <div class="menu-dropdown" aria-label="Produktmenu">
             <div class="menu-dropdown-inner">
               <nav class="menu-dropdown-column" aria-label="Produktoversigt">
@@ -87,10 +91,12 @@
           <a class="menu-link" href="../behandlinger.html">Behandlinger</a>
         </li>
         <li class="menu-item menu-item-dropdown">
+          <!-- Krølleunivers-dropdown: samler guides, stylingtips og blogindhold. -->
           <a class="menu-link menu-link-dropdown" href="../kroelleunivers.html" aria-haspopup="true">
             Krølleunivers
             <span class="menu-link-arrow" aria-hidden="true">?</span>
           </a>
+          <!-- Krølleuniversmenu: viser relevante guide- og inspirationslinks. -->
           <div class="menu-dropdown" aria-label="Krølleuniversmenu">
             <div class="menu-dropdown-inner">
               <nav class="menu-dropdown-column" aria-label="Krølleunivers">
@@ -133,7 +139,9 @@
     </nav>
   </header>
 
+  <!-- Mobilmenu: skifter mellem hovedpanel og underpaneler via script.js. -->
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <!-- Hovedpanel: viser primære mobilnavigationer. -->
     <div class="mobile-menu-panel mobile-menu-panel-main" data-mobile-panel="main">
       <div class="mobile-menu-header">
         <p class="mobile-menu-title">Menu</p>
@@ -167,6 +175,7 @@
       </nav>
     </div>
 
+    <!-- Produktpanel: viser produktkategorier og fremhævet guide til mobil. -->
     <div class="mobile-menu-panel mobile-menu-panel-products" data-mobile-panel="products">
       <div class="mobile-menu-header">
         <button class="mobile-menu-back" type="button" aria-label="Tilbage til menu">‹</button>
@@ -208,6 +217,7 @@
         </div>
       </div>
     </div>
+    <!-- Krølleuniverspanel: viser guides og stylingindhold i mobilmenuen. -->
     <div class="mobile-menu-panel mobile-menu-panel-curl" data-mobile-panel="curl">
       <div class="mobile-menu-header">
         <button class="mobile-menu-back" type="button" aria-label="Tilbage til menu">‹</button>
@@ -235,9 +245,9 @@
     </div>
   </div>
 
-  <!-- Main -->
+  <!-- Main: viser blogintro, indholdsfortegnelse, artikel, relaterede indlæg og CTA. -->
   <main class="blog-post-main">
-    <!-- Indlæggets intro -->
+    <!-- Blogintro: placerer kategori, titel og kort indledning øverst i indlægget. -->
     <section class="indlaeg-hero" aria-labelledby="indlaeg-titel">
       <div class="indlaeg-hero-tekst">
         <p class="eyebrow blog-post-category">Kategori</p>
@@ -246,8 +256,9 @@
       </div>
     </section>
 
-    <!-- Indlæg med indholdsfortegnelse -->
+    <!-- Bloglayout: kombinerer indholdsfortegnelse og artikeltekst. -->
     <section class="indlaeg-layout" aria-label="Blogindlæg">
+      <!-- Indholdsfortegnelse: bruges af scrollspy og mobil-toggle i script.js. -->
       <nav class="indlaeg-menu" aria-label="Indholdsfortegnelse">
         <button class="indlaeg-menu-toggle" type="button" aria-expanded="false">
           <span class="indlaeg-menu-progress" aria-hidden="true">
@@ -283,36 +294,35 @@
         </li>
       </ol>
       </nav>
-
-      <!-- Artikel: selvstaendigt indhold, fx blogindlaeg eller produktblok. -->
+      <!-- Artikeltekst: rummer intro, billeder og redigerbare afsnit. -->
       <article class="indlaeg-tekst">
         <p>Indsæt en kort åbning til artiklen her. Brug et eller to afsnit til at sætte scenen, før de enkelte afsnit begynder.</p>
         <p>Udskift denne tekst med den endelige introduktion til blogindlægget.</p>
       <figure class="indlaeg-billede" aria-label="Illustration til indholdet"><img src="../img/salon/kroelleunivers.kursus.jpg" alt="Naturlige kr&#248;ller som inspiration til blogindl&#230;g"><span class="image-placeholder-label">IMG</span><span>730 x 320</span></figure>
 
 
-        <!-- Sektion .indlaeg-afsnit: samlet indholdsblok paa siden. -->
+        <!-- Artikelafsnit: markerer et ankerpunkt fra indholdsfortegnelsen. -->
         <section class="indlaeg-afsnit">
           <h2 id="afsnit-1">Indsæt overskrift 1</h2>
           <p>Indsæt brødtekst til første afsnit her.</p>
           <p>Tilføj flere afsnit efter behov.</p>
         </section>
 
-        <!-- Sektion .indlaeg-afsnit: samlet indholdsblok paa siden. -->
+        <!-- Artikelafsnit: markerer et ankerpunkt fra indholdsfortegnelsen. -->
         <section class="indlaeg-afsnit">
           <h2 id="afsnit-2">Indsæt overskrift 2</h2>
           <p>Indsæt brødtekst til andet afsnit her.</p>
           <p>Tilføj flere afsnit efter behov.</p>
         </section>
 
-        <!-- Sektion .indlaeg-afsnit: samlet indholdsblok paa siden. -->
+        <!-- Artikelafsnit: markerer et ankerpunkt fra indholdsfortegnelsen. -->
         <section class="indlaeg-afsnit">
           <h2 id="afsnit-3">Indsæt overskrift 3</h2>
           <p>Indsæt brødtekst til tredje afsnit her.</p>
           <p>Tilføj flere afsnit efter behov.</p>
         </section>
 
-        <!-- Sektion .indlaeg-afsnit: samlet indholdsblok paa siden. -->
+        <!-- Artikelafsnit: markerer et ankerpunkt fra indholdsfortegnelsen. -->
         <section class="indlaeg-afsnit">
           <h2 id="afsnit-4">Indsæt overskrift 4</h2>
           <p>Indsæt brødtekst til fjerde afsnit her.</p>
@@ -321,14 +331,14 @@
 
       <figure class="indlaeg-billede indlaeg-billede-ekstra" aria-label="Illustration til indholdet"><img src="../img/salon/kroelleunivers.kursus.jpg" alt="Naturlige kr&#248;ller som inspiration til blogindl&#230;g" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span><span>730 x 320</span></figure>
 
-        <!-- Sektion .indlaeg-afsnit: samlet indholdsblok paa siden. -->
+        <!-- Artikelafsnit: markerer et ankerpunkt fra indholdsfortegnelsen. -->
         <section class="indlaeg-afsnit">
           <h2 id="afsnit-5">Indsæt overskrift 5</h2>
           <p>Indsæt brødtekst til femte afsnit her.</p>
           <p>Tilføj flere afsnit efter behov.</p>
         </section>
 
-        <!-- Sektion .indlaeg-afsnit: samlet indholdsblok paa siden. -->
+        <!-- Artikelafsnit: markerer et ankerpunkt fra indholdsfortegnelsen. -->
         <section class="indlaeg-afsnit">
           <h2 id="afsnit-6">Indsæt overskrift 6</h2>
           <p>Indsæt brødtekst til sjette afsnit her.</p>
@@ -337,25 +347,23 @@
       </article>
     </section>
 
-    <!-- Relaterede indlæg -->
+    <!-- Relaterede indlæg: fyldes dynamisk af script.js via data-related-posts. -->
     <section class="indlaeg-laes-ogsa" aria-labelledby="indlaeg-laes-ogsa-titel">
       <h2 id="indlaeg-laes-ogsa-titel">Læs også</h2>
+      <!-- Relateret grid: erstattes med aktuelle blogkort af script.js. -->
       <div class="indlaeg-laes-ogsa-grid blog-grid" data-related-posts>
-        <!-- Artikel: selvstaendigt indhold, fx blogindlaeg eller produktblok. -->
         <article class="blog-card">
           <figure class="blog-card-image" aria-label="Illustration til indholdet"><img src="../img/salon/forside.behandling3-desktop.jpg" alt="Styling og definition af naturlige kr&#248;ller" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span><span>360 x 215</span></figure>
           <p class="blog-card-category">Krølleviden</p>
           <h3 class="blog-card-title">Sådan får du dine naturlige krøller frem</h3>
           <a class="blog-card-link" href="../blog/sadan-far-du-dine-naturlige-kroller-frem.html">Læs indlæg ?</a>
         </article>
-        <!-- Artikel: selvstaendigt indhold, fx blogindlaeg eller produktblok. -->
         <article class="blog-card">
           <figure class="blog-card-image" aria-label="Illustration til indholdet"><img src="../img/salon/behandlinger.sektion3.stemning2.jpg" alt="Skandinaviske kr&#248;ller og b&#248;lger med naturligt fald" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span><span>360 x 215</span></figure>
           <p class="blog-card-category">Guides</p>
           <h3 class="blog-card-title">Sådan får du dine skandinaviske krøller frem - uden spildte penge</h3>
           <a class="blog-card-link" href="../blog/sadan-far-du-dine-skandinaviske-kroller-frem.html">Læs indlæg ?</a>
         </article>
-        <!-- Artikel: selvstaendigt indhold, fx blogindlaeg eller produktblok. -->
         <article class="blog-card">
           <figure class="blog-card-image" aria-label="Illustration til indholdet"><img src="../img/salon/navigationsbar2.jpg" alt="Fine kr&#248;ller og b&#248;lger som inspiration til gode h&#229;rvaner" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span><span>360 x 215</span></figure>
           <p class="blog-card-category">Krølleviden</p>
@@ -365,7 +373,7 @@
       </div>
     </section>
 
-    <!-- Produkt CTA -->
+    <!-- Produkt-CTA: sender læseren videre til produkter eller relevant guide. -->
     <section class="indlaeg-produkt-cta" aria-labelledby="indlaeg-produkt-cta-titel">
       <figure class="indlaeg-produkt-cta-billede" aria-label="Mixly produkter til at lære krøller og bølger bedre at kende"><img src="../img/salon/produkter-i-haand.jpg" alt="Mixly produkter til fleksibel pleje af krøller og bølger" loading="lazy" decoding="async"><span class="image-placeholder-label">IMG</span><span>670 x 370</span></figure>
       <div class="indlaeg-produkt-cta-tekst">
@@ -376,10 +384,9 @@
     </section>
   </main>
 
-<!-- Footer: nederste omraade med links, kontakt og ekstra information. -->
-<!-- Footer -->
+<!-- Footer: samler åbningstider, kontakt, navigation, nyhedsbrev og sociale links. -->
 <footer class="footer footer--frontpage">
-  <!-- Sektion .footer-tider: samlet indholdsblok paa siden. -->
+  <!-- Åbningstider: viser ugeskema og dynamisk åben-status. -->
   <section class="footer-tider" aria-labelledby="footer-tider-titel">
     <h2 id="footer-tider-titel" class="footer-tider-titel">Åbningstider</h2>
     <p class="kontakt-status footer-status" aria-live="polite">
@@ -400,7 +407,7 @@
     </dl>
   </section>
 
-  <!-- Sektion .footer-kontakt: samlet indholdsblok paa siden. -->
+  <!-- Footer-kontakt: samler adresse, telefon og e-mail. -->
   <section class="footer-kontakt" aria-labelledby="footer-kontakt-titel">
     <h2 id="footer-kontakt-titel" class="footer-kontakt-titel">Kontakt</h2>
     <address class="footer-kontakt-adresse">
@@ -411,6 +418,7 @@
     </address>
   </section>
 
+  <!-- Footer-menu: giver hurtig adgang til centrale undersider. -->
   <nav class="footer-menu" aria-labelledby="footer-menu-titel">
     <h2 id="footer-menu-titel" class="footer-menu-titel">Udforsk</h2>
     <ul class="footer-menu-liste">
@@ -430,10 +438,10 @@
     <a class="button button-primary footer-booking" href="https://salonbook.one/?henriksencopenhagen#/" target="_blank" rel="noopener noreferrer">Book tid</a>
   </nav>
 
-  <!-- Sektion .footer-newsletter: samlet indholdsblok paa siden. -->
+  <!-- Footer-nyhedsbrev: indsamler tilmelding til HCM Community. -->
   <section class="footer-newsletter" aria-labelledby="footer-newsletter-titel">
     <h2 id="footer-newsletter-titel" class="footer-newsletter-titel">Få tips til dine krøller</h2>
-    <!-- Formular: samler felter og knapper til brugerinput. -->
+    <!-- Footerformular: indsamler navn, e-mail og samtykke til nyhedsbrev. -->
     <form class="footer-newsletter-form" action="#" method="post">
       <label class="footer-newsletter-label" for="footer-newsletter-name">Navn</label>
       <input id="footer-newsletter-name" class="footer-newsletter-input" type="text" name="name" placeholder="Navn" autocomplete="name">
@@ -450,6 +458,7 @@
     </form>
   </section>
 
+  <!-- Footer-info: indeholder juridiske links, CVR og sociale medier. -->
   <div class="footer-info">
     <div class="footer-legal">
       <a class="footer-terms" href="../handelsbetingelser.html">Handelsbetingelser</a>
@@ -475,7 +484,7 @@
     </ul>
   </div>
 </footer>
-  <!-- Script: indlaeser JavaScript til interaktioner paa siden. -->
+  <!-- Script: styrer navigation, kurv, formularer og dynamiske template-moduler. -->
   <script src="../scripts/script.js"></script>
 </body>
 </html>
