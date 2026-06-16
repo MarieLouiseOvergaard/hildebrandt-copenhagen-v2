@@ -3012,11 +3012,11 @@ const productDetailsImageBySize = {
     "200 ml": "../../img/ingredienser/ingredienser-Mixly-Curly-Charcoal-Calm-200-ml.-2.png",
   },
   "rich + low shampoo": {
-    "2 x 100 ml": "../../img/ingredienser/sets/ingredienser-Rich-Repair-Low-Refresh-Shampoo-100-Saet.png",
+    "2 x 100 ml": "../../img/ingredienser/sets/ingredienser-Low-Rich-Shampoo-1000.png",
     "2 x 1000 ml": "../../img/ingredienser/sets/ingredienser-Low-Rich-Shampoo-1000.png",
   },
   "low refresh + rich repair cleansing shampoo": {
-    "2 x 100 ml": "../../img/ingredienser/sets/ingredienser-Rich-Repair-Low-Refresh-Shampoo-100-Saet.png",
+    "2 x 100 ml": "../../img/ingredienser/sets/ingredienser-Low-Rich-Shampoo-1000.png",
     "2 x 1000 ml": "../../img/ingredienser/sets/ingredienser-Low-Rich-Shampoo-1000.png",
   },
   "low + rich conditioner": {
