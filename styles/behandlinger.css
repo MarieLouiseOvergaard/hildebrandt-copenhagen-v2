@@ -318,18 +318,20 @@
 /* Grundregler for almindelige HTML-elementer. */
 .behandlinger-consultation {
   display:grid;
-  grid-template-columns:minmax(320px,0.9fr) minmax(0,1.25fr);
-  gap:80px;
-  align-items:center;
-  max-width:none;
-  padding:92px 40px;
-  background:var(--color-heading)
+  grid-template-columns:minmax(360px,45fr) minmax(0,55fr);
+  gap:56px;
+  align-items:start;
+  max-width:var(--container-max);
+  padding:92px var(--page-gutter);
+  background:var(--color-heading);
+  box-shadow:0 0 0 100vmax var(--color-heading);
+  clip-path:inset(0 -100vmax)
 }
 
 /* Grundregler for almindelige HTML-elementer. */
 .behandlinger-consultation-text {
-  max-width:520px;
-  justify-self:end
+  max-width:560px;
+  justify-self:start
 }
 
 /* Grundregler for almindelige HTML-elementer. */
@@ -344,8 +346,11 @@
 
 /* Billeder og billedkasser. */
 .behandlinger-consultation-image {
-  width:min(670px,100%);
-  min-height:300px;
+  width:100%;
+  max-width:670px;
+  justify-self:end;
+  height:370px;
+  min-height:0;
   aspect-ratio:670/370
 }
 
@@ -465,20 +470,21 @@
     gap:16px
   }
   .behandlinger-consultation {
-    grid-template-columns:minmax(0,45fr) minmax(0,55fr);
-    gap:40px;
+    grid-template-columns:1fr 320px;
+    gap:36px;
     padding:70px 32px
   }
   .behandlinger-consultation-text {
     align-self:center
   }
   .behandlinger-consultation-image {
-    align-self:stretch;
+    align-self:start;
     width:100%;
-    height:100%;
+    max-width:320px;
+    justify-self:end;
+    height:350px;
     min-height:0;
     max-height:none;
-    aspect-ratio:auto;
     overflow:hidden
   }
 }
@@ -700,7 +706,8 @@
     --behandlinger-content-edge:0px;
     --behandlinger-content-gutter:32px;
     --behandlinger-left-column:min(53vw,640px);
-    --behandlinger-column-gap:clamp(32px,4.8vw,70px)
+    --behandlinger-column-gap:clamp(32px,4.8vw,70px);
+    --behandlinger-price-width:min(100%,560px)
   }
   .behandlinger-mixly,.behandlinger-permanent,.behandlinger-price-section {
     grid-template-columns:minmax(0,var(--behandlinger-left-column)) minmax(0,1fr);
@@ -713,9 +720,16 @@
     padding-left:var(--behandlinger-content-edge)
   }
   .behandlinger-price-section {
-    grid-template-columns:minmax(0,calc(var(--behandlinger-left-column) - var(--page-gutter))) minmax(0,1fr);
-    padding-right:var(--page-gutter);
-    padding-left:var(--page-gutter)
+    grid-template-columns:minmax(0,var(--behandlinger-left-column)) minmax(0,1fr);
+    padding-right:var(--behandlinger-content-gutter);
+    padding-left:var(--behandlinger-content-edge)
+  }
+  .behandlinger-price-section>.behandlinger-prices:first-child {
+    padding-left:var(--behandlinger-content-gutter)
+  }
+  .behandlinger-price-section>.behandlinger-prices:last-child,.behandlinger-two-column>.behandlinger-prices {
+    width:var(--behandlinger-price-width);
+    max-width:var(--behandlinger-price-width)
   }
   .behandlinger-mixly .behandlinger-card-row {
     display:grid;
