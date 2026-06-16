@@ -176,6 +176,16 @@
   line-height:1.05
 }
 
+/* Billeder og billedkasser. */
+.blog-page .blog-card-image>img {
+  transition:transform 420ms ease
+}
+
+/* Billeder og billedkasser. */
+.blog-page .blog-card-image:hover>img {
+  transform:scale(1.04)
+}
+
 /* Små kort med indhold. */
 .blog-page .blog-card-category,.blog-page .blog-card-title {
   color:var(--color-heading);
@@ -205,10 +215,10 @@
 
 /* Små kort med indhold. */
 .blog-page .blog-card-title {
-  min-height:80px;
+  min-height:0;
   margin-top:18px;
-  padding-bottom:8px;
-  border-bottom:1px solid var(--color-border);
+  padding-bottom:10px;
+  border-bottom:1px solid var(--color-heading);
   font-size:21px;
   font-weight:300;
   line-height:1.15;
@@ -243,11 +253,20 @@
 }
 
 @media (hover:none),(pointer:coarse) {
+  .blog-page .blog-card-image:hover>img {
+    transform:none
+  }
   .blog-page .blog-card-link:focus-visible,.blog-page .blog-card-link:hover {
     background-size:0 1px
   }
   .blog-page .blog-card-link:active {
     transform:scale(1.02)
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .blog-page .blog-card-image>img {
+    transition:none
   }
 }
 
@@ -543,7 +562,7 @@
   .blog-page .blog-card-title {
     min-height:0;
     margin-top:14px;
-    padding-bottom:14px;
+    padding-bottom:12px;
     font-size:var(--font-body-mobile);
     line-height:1.65
   }
@@ -653,7 +672,7 @@
     gap:58px 32px
   }
   .blog-page .blog-card-title {
-    min-height:70px;
+    min-height:0;
     font-size:var(--font-h3-tablet);
     line-height:1.2
   }
