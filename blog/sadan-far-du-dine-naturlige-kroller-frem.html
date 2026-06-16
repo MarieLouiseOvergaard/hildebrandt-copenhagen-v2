@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="../img/logo/monogramDarkblue.svg">
   <title>Sådan får du dine naturlige krøller frem | Hildebrandt Copenhagen</title>
-  <meta name="description" content="L&#230;s guiden S&#229;dan f&#229;r du dine naturlige kr&#248;ller frem fra Hildebrandt Copenhagen og f&#229; konkrete r&#229;d til kr&#248;llet og b&#248;lget h&#229;r, pleje, styling og produkter.">
+  <meta name="description" content="Læs guiden Sådan får du dine naturlige krøller frem fra Hildebrandt Copenhagen og få konkrete råd til krøllet og bølget hår, pleje, styling og produkter.">
   <link rel="stylesheet" href="../styles/global.css">
   <link rel="stylesheet" href="../styles/header.css">
   <link rel="stylesheet" href="../styles/footer.css">
+  <link rel="stylesheet" href="../styles/blog.css">
   <link rel="stylesheet" href="../styles/produkter.css">
   <link rel="stylesheet" href="../styles/blogs.css">
 </head>
@@ -150,6 +151,13 @@
   </div>
 
   <main class="blogs-main">
+    <nav class="indlaeg-breadcrumb" aria-label="Brødkrummesti">
+      <ol class="indlaeg-breadcrumb-list">
+        <li class="indlaeg-breadcrumb-item"><a class="indlaeg-breadcrumb-link" href="../blog.html">Blog</a></li>
+        <li class="indlaeg-breadcrumb-item"><span class="indlaeg-breadcrumb-current" aria-current="page">Sådan får du dine naturlige krøller frem</span></li>
+      </ol>
+    </nav>
+
     <section class="blogs-intro" aria-labelledby="blogs-intro-title">
       <div class="blogs-intro-heading">
         <p class="eyebrow">Krølleviden</p>
@@ -298,6 +306,27 @@
         </article>
       </div>
       <div class="slider-indicators" aria-label="Slider navigation"></div>
+    </section>
+    <!-- Sektion .blog-newsletter: samlet indholdsblok paa siden. -->
+    <section class="blog-newsletter" aria-labelledby="blog-newsletter-title">
+      <div class="blog-newsletter-copy">
+        <p id="blog-newsletter-title">Bliv en del af</p>
+        <p>HCM community</p>
+      </div>
+      <!-- Formular: samler felter og knapper til brugerinput. -->
+      <form class="blog-newsletter-form" action="#" method="post">
+        <div class="blog-newsletter-fields">
+          <label class="blog-newsletter-label" for="newsletter-name">Navn</label>
+          <input id="newsletter-name" class="blog-newsletter-input" type="text" name="name" placeholder="Navn" autocomplete="name">
+          <label class="blog-newsletter-label" for="newsletter-email">E-mail</label>
+          <input id="newsletter-email" class="blog-newsletter-input" type="email" name="email" placeholder="E-mail" autocomplete="email">
+          <button class="button button-primary blog-newsletter-submit" type="submit">Tilmeld dig</button>
+        </div>
+        <label class="blog-newsletter-consent">
+          <input class="blog-newsletter-checkbox" type="checkbox" name="privacy">
+          <span>Jeg accepterer, at HCM Community m&#229; gemme og dele min data jf. vores privatlivspolitik.</span>
+        </label>
+      </form>
     </section>
   </main>
 <!-- Footer: nederste omraade med links, kontakt og ekstra information. -->

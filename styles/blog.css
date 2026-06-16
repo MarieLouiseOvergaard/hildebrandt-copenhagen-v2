@@ -5,6 +5,66 @@
   background:var(--color-white)
 }
 
+/* Blogindhold og blogkort. */
+.blog-page .indlaeg-breadcrumb {
+  max-width:var(--container-max);
+  margin:0 auto;
+  padding:34px var(--page-gutter) 0
+}
+
+/* Lister og rækker med flere ting. */
+.blog-page .indlaeg-breadcrumb-list {
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  align-items:center;
+  margin:0;
+  padding:0;
+  color:var(--color-text);
+  font-family:var(--font-body);
+  font-size:var(--font-body-desktop);
+  list-style:none;
+  line-height:1.35
+}
+
+/* Blogindhold og blogkort. */
+.blog-page .indlaeg-breadcrumb-item {
+  display:inline-flex;
+  min-width:0;
+  align-items:center;
+  gap:7px
+}
+
+/* Blogindhold og blogkort. */
+.blog-page .indlaeg-breadcrumb-item:not(:last-child)::after {
+  color:var(--color-heading);
+  content:"/"
+}
+
+/* Blogindhold og blogkort. */
+.blog-page .indlaeg-breadcrumb-link {
+  color:var(--color-heading);
+  background-image:linear-gradient(currentColor,currentColor);
+  background-repeat:no-repeat;
+  background-position:left bottom;
+  background-size:0 1px;
+  transition:background-size 220ms
+}
+
+/* Blogindhold og blogkort. */
+.blog-page .indlaeg-breadcrumb-link:focus-visible,.blog-page .indlaeg-breadcrumb-link:hover {
+  background-size:100% 1px
+}
+
+/* Blogindhold og blogkort. */
+.blog-page .indlaeg-breadcrumb-current {
+  overflow:hidden;
+  max-width:min(52vw,520px);
+  color:var(--color-text);
+  text-overflow:ellipsis;
+  white-space:nowrap
+}
+
 /* Den store øverste sektion på siden. */
 .blog-page .blog-hero {
   display:flex;
@@ -483,6 +543,15 @@
 
 /* Regler for andre skærmstørrelser. */
 @media (max-width:767px) {
+  .blog-page .indlaeg-breadcrumb {
+    padding:22px 18px 0
+  }
+  .blog-page .indlaeg-breadcrumb-list {
+    font-size:var(--font-body-mobile)
+  }
+  .blog-page .indlaeg-breadcrumb-current {
+    max-width:min(58vw,320px)
+  }
   .blog-page .blog-hero {
     align-items:center;
     padding:46px 14px 54px;
@@ -637,6 +706,9 @@
 
 /* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1023px) {
+  .blog-page .indlaeg-breadcrumb-list {
+    font-size:var(--font-body-tablet)
+  }
   .blog-page .blog-hero {
     padding:72px var(--page-gutter) 68px
   }
