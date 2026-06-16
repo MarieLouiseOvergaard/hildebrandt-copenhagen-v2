@@ -1,16 +1,14 @@
-﻿/* Her ligger udseendet til behandlinger-siden. */
+/* Behandlinger: layout, behandlingskort, prislister og bookingsektion. */
 
-/* Denne del styrer udseendet for gruppen her. */
+/* Grundlayout: giver behandlingssiden hvid baggrund og fælles sektionbredde. */
 .behandlinger-main {
   background:var(--color-white)
 }
 
-/* Krøller, styling og hårguide. */
 #farve-og-reflekser,#mixly-curly-cut {
   scroll-margin-top:110px
 }
 
-/* Denne del styrer udseendet for gruppen her. */
 .behandlinger-section {
   width:100%;
   max-width:var(--container-max);
@@ -19,7 +17,6 @@
   padding-right:var(--page-gutter)
 }
 
-/* Billeder og billedkasser. */
 .behandlinger-image {
   display:block;
   width:100%;
@@ -28,7 +25,6 @@
   background:var(--color-image-placeholder)
 }
 
-/* Den store øverste sektion på siden. */
 .behandlinger-hero-image img,.behandlinger-image img,.behandlinger-image video {
   display:block;
   width:100%;
@@ -36,29 +32,25 @@
   object-fit:cover
 }
 
-/* Billeder og billedkasser. */
 .behandlinger-image picture {
   display:block;
   width:100%;
   height:100%
 }
 
-/* Denne del styrer udseendet for gruppen her. */
 .behandlinger-text {
   max-width:470px
 }
 
-/* Grundregler for almindelige HTML-elementer. */
 .behandlinger-text p+p {
   margin-top:18px
 }
 
-/* Knapper og links man skal klikke på. */
 .behandlinger-consultation .button,.behandlinger-info-card .button,.behandlinger-text .button {
   margin-top:36px
 }
 
-/* Den store øverste sektion på siden. */
+/* Hero: placerer introduktion og hovedbillede i et todelt grid. */
 .behandlinger-hero {
   display:grid;
   grid-template-columns:minmax(360px,45fr) minmax(0,55fr);
@@ -68,7 +60,6 @@
   padding-bottom:56px
 }
 
-/* Den store øverste sektion på siden. */
 .behandlinger-hero-text {
   display:flex;
   flex-direction:column;
@@ -76,12 +67,10 @@
   max-width:560px
 }
 
-/* Den store øverste sektion på siden. */
 .behandlinger-hero h1 {
   margin-bottom:20px
 }
 
-/* Den store øverste sektion på siden. */
 .behandlinger-hero-image {
   display:grid;
   place-items:center;
@@ -99,23 +88,19 @@
   text-align:center
 }
 
-/* Den store øverste sektion på siden. */
 .behandlinger-hero-image img[src=""] {
   display:none
 }
 
-/* Den store øverste sektion på siden. */
 .behandlinger-hero-image:has(img[src]:not([src=""]))::before {
   display:none
 }
 
-/* Den store øverste sektion på siden. */
 .behandlinger-hero-image::before {
   content:"IMG\A 670 × 370";
   white-space:pre-line
 }
 
-/* Denne del styrer udseendet for gruppen her. */
 .behandlinger-two-column {
   display:grid;
   grid-template-columns:minmax(0,760px) minmax(360px,1fr);
@@ -180,7 +165,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:1200px) and (max-width:1399px) {
   .behandlinger-mixly .behandlinger-card-row {
     display:flex;
@@ -193,7 +177,7 @@
   }
 }
 
-/* Små kort med indhold. */
+/* Behandlingskort: styrer vandrette kortlister og info-kort. */
 .behandlinger-card-row {
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -203,23 +187,19 @@
   min-width:0
 }
 
-/* Billeder og billedkasser. */
 .behandlinger-card-image,.behandlinger-info-card {
   min-width:0;
   min-height:370px
 }
 
-/* Billeder og billedkasser. */
 .behandlinger-card-image {
   aspect-ratio:315/370
 }
 
-/* Billeder og billedkasser. */
 .behandlinger-mixly .behandlinger-card-image,.behandlinger-mixly .behandlinger-info-card {
   height:370px
 }
 
-/* Små kort med indhold. */
 .behandlinger-info-card {
   display:grid;
   align-content:center;
@@ -228,41 +208,35 @@
   background:var(--color-turkis)
 }
 
-/* Små kort med indhold. */
 .behandlinger-info-card h4 {
   font-size:18px;
   letter-spacing:.03em
 }
 
-/* Små kort med indhold. */
 .behandlinger-info-card p {
   margin-top:14px;
   font-size:14px
 }
 
-/* Knapper og links man skal klikke på. */
 .behandlinger-info-card .button {
   align-self:flex-start;
   justify-self:start
 }
 
-/* Grundregler for almindelige HTML-elementer. */
+/* Prislister: formaterer behandlingstyper, beskrivelser og priser. */
 .behandlinger-prices {
   min-width:0
 }
 
-/* Grundregler for almindelige HTML-elementer. */
 .behandlinger-prices h2 {
   margin-bottom:30px
 }
 
-/* Lister og rækker med flere ting. */
 .behandlinger-price-list {
   display:grid;
   gap:25px
 }
 
-/* Grundregler for almindelige HTML-elementer. */
 .behandlinger-price-line {
   display:grid;
   grid-template-columns:minmax(0,1fr) auto;
@@ -270,18 +244,15 @@
   align-items:start
 }
 
-/* Grundregler for almindelige HTML-elementer. */
 .behandlinger-price-line dd,.behandlinger-price-line dt,.behandlinger-price-line h4,.behandlinger-price-line p {
   margin:0
 }
 
-/* Grundregler for almindelige HTML-elementer. */
 .behandlinger-price-line dd,.behandlinger-price-line>p:last-child {
   text-align:right;
   white-space:nowrap
 }
 
-/* Grundregler for almindelige HTML-elementer. */
 .behandlinger-price-section {
   display:grid;
   grid-template-columns:minmax(0,1fr) minmax(0,1fr);
@@ -292,30 +263,26 @@
   background:var(--color-light-blue)
 }
 
-/* Grundregler for almindelige HTML-elementer. */
 .behandlinger-price-section>.behandlinger-prices {
   max-width:640px
 }
 
-/* Grundregler for almindelige HTML-elementer. */
 .behandlinger-price-section>.behandlinger-prices:first-child {
   justify-self:start;
   width:100%
 }
 
-/* Grundregler for almindelige HTML-elementer. */
 .behandlinger-price-section>.behandlinger-prices:last-child {
   justify-self:start;
   width:100%
 }
 
-/* Grundregler for almindelige HTML-elementer. */
 .behandlinger-permanent {
   padding-top:44px;
   padding-bottom:66px
 }
 
-/* Grundregler for almindelige HTML-elementer. */
+/* Konsultation: fremhæver afsluttende booking-CTA med billede. */
 .behandlinger-consultation {
   display:grid;
   grid-template-columns:minmax(360px,45fr) minmax(0,55fr);
@@ -328,23 +295,19 @@
   clip-path:inset(0 -100vmax)
 }
 
-/* Grundregler for almindelige HTML-elementer. */
 .behandlinger-consultation-text {
   max-width:560px;
   justify-self:start
 }
 
-/* Grundregler for almindelige HTML-elementer. */
 .behandlinger-consultation h2,.behandlinger-consultation p {
   color:var(--color-light-blue)
 }
 
-/* Grundregler for almindelige HTML-elementer. */
 .behandlinger-consultation p {
   margin-top:30px
 }
 
-/* Billeder og billedkasser. */
 .behandlinger-consultation-image {
   width:100%;
   max-width:670px;
@@ -354,7 +317,6 @@
   aspect-ratio:670/370
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1199px) {
   .behandlinger-main {
     overflow-x:hidden
@@ -489,7 +451,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:1000px) and (max-width:1199px) {
   .behandlinger-hero {
     grid-template-columns:minmax(360px,45fr) minmax(0,55fr)
@@ -501,7 +462,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (max-width:767px) {
   .behandlinger-consultation,.behandlinger-hero,.behandlinger-price-section,.behandlinger-section,.behandlinger-two-column {
     grid-template-columns:1fr;
@@ -652,38 +612,32 @@
   }
 }
 
-/* Små kort med indhold. */
 .behandlinger-mixly .behandlinger-info-card {
   border-radius:var(--button-radius);
   background:var(--color-light-blue);
   overflow:hidden
 }
 
-/* Små kort med indhold. */
 .behandlinger-mixly .behandlinger-info-card h4 {
   font-size:var(--font-h4-desktop);
   font-weight:400;
   line-height:1.2
 }
 
-/* Små kort med indhold. */
 .behandlinger-mixly .behandlinger-info-card p {
   margin-top:16px
 }
 
-/* Knapper og links man skal klikke på. */
 .behandlinger-mixly .behandlinger-info-card .button {
   margin-top:24px
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1199px) {
   .behandlinger-mixly .behandlinger-info-card h4 {
     font-size:var(--font-h4-tablet)
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (max-width:767px) {
   .behandlinger-mixly .behandlinger-info-card {
     padding:20px 16px

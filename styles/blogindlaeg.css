@@ -1,18 +1,16 @@
-﻿/* Her ligger udseendet til de enkelte blogindlæg. */
+/* Blogindlæg: artikelhero, indholdsfortegnelse, brødtekst og CTA-moduler. */
 
-/* Blogindhold og blogkort. */
+/* Artikelbase: aktiverer smooth scroll mellem indlæggets ankre. */
 .blog-post-page {
   scroll-behavior:smooth
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-breadcrumb {
   max-width:var(--container-max);
   margin:0 auto;
   padding:34px var(--page-gutter) 0
 }
 
-/* Lister og rækker med flere ting. */
 .blog-page .indlaeg-breadcrumb-list {
   display:flex;
   flex-wrap:wrap;
@@ -27,7 +25,6 @@
   line-height:1.35
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-breadcrumb-item {
   display:inline-flex;
   min-width:0;
@@ -35,13 +32,11 @@
   gap:7px
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-breadcrumb-item:not(:last-child)::after {
   color:var(--color-heading);
   content:"/"
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-breadcrumb-link {
   color:var(--color-heading);
   background-image:linear-gradient(currentColor,currentColor);
@@ -51,12 +46,10 @@
   transition:background-size 220ms
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-breadcrumb-link:focus-visible,.blog-page .indlaeg-breadcrumb-link:hover {
   background-size:100% 1px
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-breadcrumb-current {
   overflow:hidden;
   max-width:min(52vw,520px);
@@ -65,7 +58,7 @@
   white-space:nowrap
 }
 
-/* Den store øverste sektion på siden. */
+/* Artikelhero: centrerer kategori, titel og intro. */
 .blog-page .indlaeg-hero {
   display:flex;
   max-width:920px;
@@ -76,19 +69,16 @@
   text-align:center
 }
 
-/* Den store øverste sektion på siden. */
 .blog-page .indlaeg-hero-tekst {
   max-width:780px;
   margin:0 auto
 }
 
-/* Den store øverste sektion på siden. */
 .blog-page .indlaeg-hero h1 {
   max-width:780px;
   text-transform:none
 }
 
-/* Den store øverste sektion på siden. */
 .blog-page .indlaeg-hero p:not(.eyebrow) {
   max-width:560px;
   margin:26px auto 0;
@@ -97,7 +87,6 @@
   line-height:1.45
 }
 
-/* Billeder og billedkasser. */
 .blog-page .indlaeg-billede {
   display:flex;
   width:min(100%,560px);
@@ -113,14 +102,13 @@
   line-height:1.05
 }
 
-/* Knapper og links man skal klikke på. */
 .blog-page .indlaeg-billede span,.blog-page .indlaeg-produkt-cta-billede span {
   margin-top:4px;
   font-family:var(--font-body);
   font-size:14px
 }
 
-/* Blogindhold og blogkort. */
+/* Artikellayout: placerer sticky indholdsfortegnelse ved siden af teksten. */
 .blog-page .indlaeg-layout {
   display:grid;
   grid-template-columns:280px minmax(0,600px);
@@ -130,19 +118,17 @@
   padding:30px var(--page-gutter) 112px
 }
 
-/* Menuen og navigationen. */
+/* Indholdsfortegnelse: styler scrollspy-menu og aktive trin. */
 .blog-page .indlaeg-menu {
   position:sticky;
   top:145px;
   align-self:start
 }
 
-/* Menuen og navigationen. */
 .blog-page .indlaeg-laes-ogsa-grid .blog-card:nth-child(n+3),.blog-page .indlaeg-menu-help,.blog-page .indlaeg-menu-toggle {
   display:none
 }
 
-/* Menuen og navigationen. */
 .blog-page .indlaeg-menu h2 {
   margin-bottom:28px;
   color:var(--color-heading);
@@ -151,7 +137,6 @@
   text-transform:none
 }
 
-/* Menuen og navigationen. */
 .blog-page .indlaeg-menu-liste {
   position:relative;
   display:grid;
@@ -161,7 +146,6 @@
   list-style:none
 }
 
-/* Menuen og navigationen. */
 .blog-page .indlaeg-menu-liste::before {
   position:absolute;
   top:8px;
@@ -173,12 +157,10 @@
   pointer-events:none
 }
 
-/* Menuen og navigationen. */
 .blog-page .indlaeg-menu-punkt {
   position:relative
 }
 
-/* Menuen og navigationen. */
 .blog-page .indlaeg-menu-punkt::before {
   position:absolute;
   top:3px;
@@ -193,7 +175,6 @@
   pointer-events:none
 }
 
-/* Menuen og navigationen. */
 .blog-page .indlaeg-menu-underpunkt::before {
   top:5px;
   left:-28.5px;
@@ -201,17 +182,14 @@
   height:9px
 }
 
-/* Menuen og navigationen. */
 .blog-page .indlaeg-menu-underpunkt {
   margin-top:-14px
 }
 
-/* Menuen og navigationen. */
 .blog-page .indlaeg-menu-punkt.aktiv::before,.blog-page .indlaeg-menu-punkt:focus-within::before,.blog-page .indlaeg-menu-punkt:hover::before {
   background:var(--color-heading)
 }
 
-/* Menuen og navigationen. */
 .blog-page .indlaeg-menu-link {
   display:block;
   min-height:22px;
@@ -223,35 +201,30 @@
   line-height:1.45
 }
 
-/* Menuen og navigationen. */
 .blog-page .indlaeg-menu-underpunkt .indlaeg-menu-link {
   font-size:12px;
   line-height:1.35
 }
 
-/* Menuen og navigationen. */
 .blog-page .indlaeg-menu-link.aktiv,.blog-page .indlaeg-menu-link:focus-visible,.blog-page .indlaeg-menu-link:hover {
   color:var(--color-heading)
 }
 
-/* Menuen og navigationen. */
 .blog-page .indlaeg-menu-link:focus-visible {
   outline:2px solid var(--color-primary);
   outline-offset:4px
 }
 
-/* Blogindhold og blogkort. */
+/* Artikeltekst: sætter læsebredde, afsnit, lister og faktabokse. */
 .blog-page .indlaeg-tekst {
   max-width:600px
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-afsnit p,.blog-page .indlaeg-tekst>p {
   font-size:var(--font-body-desktop);
   line-height:1.75
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-tekst ol,.blog-page .indlaeg-tekst ul {
   margin:12px 0 0 20px;
   padding-left:18px;
@@ -260,27 +233,22 @@
   line-height:1.75
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-tekst ul {
   list-style:disc
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-tekst ol {
   list-style:decimal
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-tekst li+li {
   margin-top:8px
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-afsnit {
   margin-top:30px
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-afsnit h2 {
   scroll-margin-top:140px;
   margin-bottom:8px;
@@ -290,7 +258,6 @@
   text-transform:none
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-afsnit h3,.blog-page .indlaeg-faktaboks h2 {
   scroll-margin-top:140px;
   margin:22px 0 8px;
@@ -300,12 +267,10 @@
   text-transform:none
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-afsnit p+p {
   margin-top:12px
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-faktaboks {
   margin:28px 0 34px;
   padding:24px;
@@ -313,31 +278,27 @@
   background:var(--color-light-blue)
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-faktaboks h2 {
   margin-top:0
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-faktaboks p {
   font-size:14px;
   line-height:1.75
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-laes-ogsa {
   max-width:1040px;
   margin:0 auto;
   padding:0 var(--page-gutter) 112px
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-laes-ogsa h2 {
   margin-bottom:34px;
   letter-spacing:.04em
 }
 
-/* Knapper og links man skal klikke på. */
+/* Produkt-CTA: afslutter artiklen med billede og knap videre. */
 .blog-page .indlaeg-produkt-cta {
   display:grid;
   grid-template-columns:minmax(420px,1fr) minmax(360px,1fr);
@@ -348,7 +309,6 @@
   background:var(--color-turkis)
 }
 
-/* Knapper og links man skal klikke på. */
 .blog-page .indlaeg-produkt-cta-billede {
   display:flex;
   width:100%;
@@ -363,12 +323,10 @@
   line-height:1.05
 }
 
-/* Knapper og links man skal klikke på. */
 .blog-page .indlaeg-produkt-cta-tekst h2 {
   text-transform:none
 }
 
-/* Knapper og links man skal klikke på. */
 .blog-page .indlaeg-produkt-cta-tekst p {
   max-width:470px;
   margin-top:26px;
@@ -376,14 +334,12 @@
   line-height:1.75
 }
 
-/* Knapper og links man skal klikke på. */
 .blog-page .indlaeg-produkt-cta-tekst .button {
   width:auto;
   min-width:178px;
   margin-top:32px
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (max-width:767px) {
   .blog-page .indlaeg-breadcrumb {
     padding:22px 18px 0
@@ -591,7 +547,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1023px) {
   .blog-page .indlaeg-hero {
     padding:72px var(--page-gutter) 68px

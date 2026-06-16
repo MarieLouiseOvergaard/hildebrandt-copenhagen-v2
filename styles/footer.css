@@ -1,13 +1,13 @@
-﻿/* Her ligger udseendet til footeren nederst på siden. */
+/* Footer: åbningstider, kontakt, navigation, nyhedsbrev og sociale links. */
 
-/* Footeren nederst på siden. */
+/* Footerbase: definerer typografi og farver for footerens sektioner. */
 .footer .kontakt-status,.footer h2 {
   color:#6f7f85;
   letter-spacing:.08em;
   text-transform:uppercase
 }
 
-/* Footeren nederst på siden. */
+/* Footergrid: fordeler åbningstider, kontakt, menu og nyhedsbrev. */
 .footer {
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -17,33 +17,30 @@
   background:var(--color-light-blue)
 }
 
-/* Footeren nederst på siden. */
 .footer h2 {
   margin-bottom:26px;
   font-size:.82rem;
   font-weight:700
 }
 
-/* Menuen og navigationen. */
+/* Footer-info: placerer juridiske links og sociale ikoner nederst. */
 .footer-info,.footer-kontakt-adresse,.footer-menu-link,.footer-tider-liste {
   font-size:.74rem;
   font-style:normal;
   line-height:2
 }
 
-/* Footeren nederst på siden. */
 .footer-tider-liste {
   display:grid;
   grid-template-columns:auto 1fr;
   column-gap:12px
 }
 
-/* Footeren nederst på siden. */
 .footer-tider-liste dd {
   color:#8a979b
 }
 
-/* Footeren nederst på siden. */
+/* Åben-status: viser dynamisk åben/lukket tilstand fra script.js. */
 .footer .kontakt-status {
   position:relative;
   display:flex;
@@ -58,17 +55,14 @@
   line-height:1.35
 }
 
-/* Footeren nederst på siden. */
 .footer .kontakt-status--open {
   color:#3f9f58
 }
 
-/* Footeren nederst på siden. */
 .footer .kontakt-status--closed {
   color:#c94f45
 }
 
-/* Footeren nederst på siden. */
 .footer .kontakt-status::before {
   position:absolute;
   top:.55em;
@@ -81,17 +75,14 @@
   transform:translateY(-50%)
 }
 
-/* Footeren nederst på siden. */
 .footer .kontakt-status--open::before {
   background:#3f9f58
 }
 
-/* Footeren nederst på siden. */
 .footer .kontakt-status--closed::before {
   background:#c94f45
 }
 
-/* Footeren nederst på siden. */
 .footer .kontakt-status-detail {
   color:#8a979b;
   font-family:var(--font-body);
@@ -101,21 +92,18 @@
   text-transform:none
 }
 
-/* Menuen og navigationen. */
 .footer-menu-liste {
   display:flex;
   flex-direction:column;
   gap:6px
 }
 
-/* Menuen og navigationen. */
 .footer-kontakt-adresse a,.footer-menu-link,.footer-social-link,.footer-terms {
   position:relative;
   display:inline-block;
   width:fit-content
 }
 
-/* Menuen og navigationen. */
 .footer-kontakt-adresse a::after,.footer-menu-link::after,.footer-social-link::after,.footer-terms::after {
   position:absolute;
   right:0;
@@ -129,7 +117,6 @@
   transition:transform 220ms
 }
 
-/* Menuen og navigationen. */
 .footer-kontakt-adresse a:focus-visible::after,.footer-kontakt-adresse a:hover::after,.footer-menu-link:focus-visible::after,.footer-menu-link:hover::after,.footer-menu-link[aria-current=page]::after,.footer-social-link:focus-visible::after,.footer-social-link:hover::after,.footer-terms:focus-visible::after,.footer-terms:hover::after {
   transform:scaleX(1)
 }
@@ -146,12 +133,10 @@
   }
 }
 
-/* Footeren nederst på siden. */
 .footer-social-link::after {
   bottom:-4px
 }
 
-/* Footeren nederst på siden. */
 .footer-info {
   display:grid;
   grid-column:1/-1;
@@ -162,24 +147,20 @@
   border-top:1px solid #dedede
 }
 
-/* Footeren nederst på siden. */
 .footer-betaling,.footer-socials {
   display:flex;
   justify-content:center;
   gap:14px
 }
 
-/* Footeren nederst på siden. */
 .footer-betaling {
   justify-content:flex-end
 }
 
-/* Footeren nederst på siden. */
 .footer-booking {
   display:none
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (max-width:1180px) {
   .footer {
     gap:64px;
@@ -270,7 +251,6 @@
   }
 }
 
-/* Footeren nederst på siden. */
 .footer--frontpage {
   grid-template-columns:minmax(150px,1fr) minmax(220px,1.15fr) minmax(150px,0.9fr) minmax(240px,1.1fr);
   gap:clamp(46px,7vw,120px);
@@ -279,7 +259,6 @@
   background:var(--color-light-blue)
 }
 
-/* Footeren nederst på siden. */
 .footer--frontpage h2 {
   position:relative;
   margin-bottom:0;
@@ -290,7 +269,6 @@
   line-height:1.2
 }
 
-/* Menuen og navigationen. */
 .footer--frontpage .footer-kontakt,.footer--frontpage .footer-menu,.footer--frontpage .footer-newsletter,.footer--frontpage .footer-tider {
   display:grid;
   grid-template-rows:20px auto;
@@ -298,14 +276,12 @@
   align-content:start
 }
 
-/* Menuen og navigationen. */
 .footer--frontpage .footer-info,.footer--frontpage .footer-kontakt-adresse,.footer--frontpage .footer-menu-link,.footer--frontpage .footer-newsletter-consent,.footer--frontpage .footer-tider-liste,.footer--frontpage .kontakt-status,.footer--frontpage .kontakt-status-detail {
   color:var(--color-text);
   font-size:14px;
   line-height:1.85
 }
 
-/* Footeren nederst på siden. */
 .footer--frontpage .kontakt-status {
   gap:1px;
   margin:0 0 4px;
@@ -313,34 +289,28 @@
   letter-spacing:.04em
 }
 
-/* Footeren nederst på siden. */
 .footer--frontpage .kontakt-status::before {
   top:.9em
 }
 
-/* Footeren nederst på siden. */
 .footer--frontpage .kontakt-status-detail {
   color:var(--color-text);
   line-height:1.45
 }
 
-/* Footeren nederst på siden. */
 .footer--frontpage .footer-kontakt-adresse a,.footer--frontpage .footer-terms {
   transition:color 180ms
 }
 
-/* Footeren nederst på siden. */
 .footer--frontpage .footer-kontakt-adresse a:hover,.footer--frontpage .footer-terms:hover {
   color:inherit
 }
 
-/* Footeren nederst på siden. */
 .footer--frontpage .footer-kontakt-brand,.footer--frontpage .footer-kontakt-city {
   display:block;
   margin-bottom:1.2em
 }
 
-/* Footeren nederst på siden. */
 .footer--frontpage .footer-tider-liste {
   display:grid;
   grid-template-columns:max-content max-content;
@@ -348,22 +318,18 @@
   padding-left:12px
 }
 
-/* Footeren nederst på siden. */
 .footer--frontpage .footer-tider-liste dd,.footer--frontpage .footer-tider-liste dt {
   display:block
 }
 
-/* Footeren nederst på siden. */
 .footer--frontpage .footer-tider-liste dd {
   color:var(--color-text)
 }
 
-/* Menuen og navigationen. */
 .footer--frontpage .footer-menu-liste {
   gap:4px
 }
 
-/* Footeren nederst på siden. */
 .footer--frontpage .footer-booking {
   display:inline-flex;
   width:144px;
@@ -372,13 +338,12 @@
   margin-top:8px
 }
 
-/* Footeren nederst på siden. */
+/* Footer-nyhedsbrev: styler input, samtykke og succesbesked. */
 .footer-newsletter-form {
   display:grid;
   gap:14px
 }
 
-/* Footeren nederst på siden. */
 .footer-newsletter-label {
   position:absolute;
   width:1px;
@@ -388,7 +353,6 @@
   white-space:nowrap
 }
 
-/* Footeren nederst på siden. */
 .footer-newsletter-input {
   width:100%;
   height:31px;
@@ -405,13 +369,11 @@
   text-transform:uppercase
 }
 
-/* Footeren nederst på siden. */
 .footer-newsletter-input::placeholder {
   color:var(--color-heading);
   opacity:.78
 }
 
-/* Footeren nederst på siden. */
 .footer-newsletter-consent {
   display:grid;
   grid-template-columns:18px 1fr;
@@ -422,12 +384,10 @@
   line-height:1.45
 }
 
-/* Footeren nederst på siden. */
 .footer--frontpage .footer-newsletter-consent {
   font-size:10px
 }
 
-/* Footeren nederst på siden. */
 .footer-newsletter-checkbox {
   display:grid;
   flex:0 0 auto;
@@ -442,18 +402,15 @@
   appearance:none
 }
 
-/* Footeren nederst på siden. */
 .footer-newsletter-checkbox:checked {
   background:linear-gradient(135deg,transparent 45%,var(--color-heading) 45%,var(--color-heading) 55%,transparent 55%),linear-gradient(45deg,transparent 45%,var(--color-heading) 45%,var(--color-heading) 55%,transparent 55%)
 }
 
-/* Footeren nederst på siden. */
 .footer-newsletter-checkbox:focus-visible {
   outline:1px solid var(--color-primary);
   outline-offset:3px
 }
 
-/* Footeren nederst på siden. */
 .footer-newsletter-error {
   margin:-8px 0 0;
   color:#c98282;
@@ -462,17 +419,14 @@
   line-height:1.35
 }
 
-/* Footeren nederst på siden. */
 .footer-newsletter-error[hidden] {
   display:none
 }
 
-/* Footeren nederst på siden. */
 .footer-newsletter-success {
   min-height:51px
 }
 
-/* Footeren nederst på siden. */
 .footer-newsletter-success-message {
   margin:0;
   color:var(--color-heading);
@@ -480,7 +434,6 @@
   line-height:1.45
 }
 
-/* Footeren nederst på siden. */
 .footer-newsletter-submit {
   width:171px;
   min-width:0;
@@ -490,7 +443,6 @@
   background:0 0
 }
 
-/* Footeren nederst på siden. */
 .footer--frontpage .footer-info {
   grid-template-columns:1fr auto 1fr;
   grid-column:1/-1;
@@ -499,7 +451,6 @@
   border-top-color:#dedede
 }
 
-/* Footeren nederst på siden. */
 .footer-legal {
   display:flex;
   gap:80px;
@@ -507,19 +458,16 @@
   line-height:1
 }
 
-/* Footeren nederst på siden. */
 .footer--frontpage .footer-cvr,.footer--frontpage .footer-terms {
   font-size:inherit;
   line-height:1
 }
 
-/* Footeren nederst på siden. */
 .footer--frontpage .footer-betaling,.footer--frontpage .footer-socials {
   align-items:center;
   gap:9px
 }
 
-/* Footeren nederst på siden. */
 .footer--frontpage .footer-betaling-item,.footer--frontpage .footer-social-link {
   display:inline-grid;
   place-items:center;
@@ -529,7 +477,6 @@
   text-transform:uppercase
 }
 
-/* Footeren nederst på siden. */
 .footer--frontpage .footer-betaling-item {
   width:auto;
   height:auto;
@@ -538,7 +485,6 @@
   background:0 0
 }
 
-/* Footeren nederst på siden. */
 .footer--frontpage .footer-social-link {
   width:31px;
   min-width:31px;
@@ -547,7 +493,6 @@
   background:0 0
 }
 
-/* Footeren nederst på siden. */
 .footer-social-icon {
   width:31px;
   height:31px;
@@ -558,24 +503,20 @@
   stroke-linejoin:round
 }
 
-/* Footeren nederst på siden. */
 .footer-social-icon path {
   fill:#9a9a9a;
   stroke:none
 }
 
-/* Footeren nederst på siden. */
 .footer-payment-icon {
   display:block;
   height:24px
 }
 
-/* Footeren nederst på siden. */
 .footer-payment-icon-visa {
   width:74px
 }
 
-/* Footeren nederst på siden. */
 .footer-payment-icon-visa text {
   fill:#0b2f87;
   font-family:Arial,Helvetica,sans-serif;
@@ -585,24 +526,20 @@
   letter-spacing:-2px
 }
 
-/* Footeren nederst på siden. */
 .footer-payment-icon-mastercard {
   width:48px;
   height:31px
 }
 
-/* Footeren nederst på siden. */
 .footer-payment-mastercard-red {
   fill:#eb001b
 }
 
-/* Footeren nederst på siden. */
 .footer-payment-mastercard-orange {
   fill:#ff9900;
   fill-opacity:0.88
 }
 
-/* Footeren nederst på siden. */
 .footer-payment-icon-mastercard text {
   fill:#333333;
   font-family:Arial,Helvetica,sans-serif;
@@ -612,24 +549,20 @@
   text-transform:lowercase
 }
 
-/* Footeren nederst på siden. */
 .footer-payment-icon-pensopay {
   width:38px
 }
 
-/* Footeren nederst på siden. */
 .footer-payment-pensopay-mark rect {
   fill:none;
   stroke:#587cff;
   stroke-width:3
 }
 
-/* Footeren nederst på siden. */
 .footer-payment-pensopay-mark path {
   fill:#587cff
 }
 
-/* Footeren nederst på siden. */
 .footer-payment-icon-pensopay text {
   fill:#223069;
   font-family:var(--font-heading);
@@ -638,7 +571,6 @@
   letter-spacing:3px
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (max-width:1180px) {
   .footer--frontpage {
     grid-template-columns:repeat(2,minmax(0,1fr));
@@ -711,7 +643,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1180px) {
   .footer {
     grid-template-columns:repeat(3,1fr);
@@ -767,7 +698,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1199px) {
   .footer,.footer--frontpage {
     display:grid;

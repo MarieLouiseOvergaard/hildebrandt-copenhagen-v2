@@ -1,9 +1,11 @@
-/* Her ligger udseendet til de enkelte blogindlæg. */
+/* Blogartikler: speciallayout til guideindlæg, pakker, ingredienser og billedsektioner. */
 
+/* Sidebase: giver specialindlæg fælles hvid baggrund. */
 .blogs-main {
   background:var(--color-white)
 }
 
+/* Blogintro: bygger todelt introduktion med titel, lead og brødtekst. */
 .blogs-intro {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -53,6 +55,7 @@
   margin-top:8px
 }
 
+/* Reaktionsmodul: viser billeder og sammenlignende tabel i farvet bånd. */
 .blogs-reactions {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -145,6 +148,7 @@
   padding-left:24px
 }
 
+/* Billede og tekst: blander inspirationsbilleder med næste handling. */
 .blogs-image-copy {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -234,7 +238,7 @@
   margin-top:0
 }
 
-/* Fælles produktpakke-sektion med tekst, produktkort og specifikationer. */
+/* Pakkevisning: kombinerer produktpakker, specifikationer og scroll-indikatorer. */
 .blogs-package-feature {
   display:grid;
   grid-template-columns:minmax(0,.62fr) minmax(0,1.38fr);
@@ -364,6 +368,7 @@
   }
 }
 
+/* To-kolonneblokke: opdeler forklaring og råd i tekstkort. */
 .blogs-two-column {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
@@ -573,6 +578,7 @@
   object-fit:cover
 }
 
+/* Ingrediensoversigt: styler carousel-kortene fra blog-ingredients.js. */
 .blogs-ingredients {
   width:100%;
   max-width:var(--container-max);

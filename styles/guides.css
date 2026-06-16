@@ -1,13 +1,11 @@
-﻿/* Her ligger udseendet til LOW/RICH-guiden. */
+/* LOW/RICH-guide: hero, forklaringsblokke, balancekort, trin og produktkoblinger. */
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guides-main {
   --guide-page-offset:var(--page-gutter);
   overflow-x:hidden;
   background:var(--color-white)
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guides-main .sr-only {
   position:absolute;
   width:1px;
@@ -19,7 +17,6 @@
   border:0
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-section {
   width:100%;
   max-width:var(--container-max);
@@ -27,24 +24,20 @@
   padding:64px var(--page-gutter)
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-section-heading {
   max-width:720px;
   margin-bottom:30px
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-section-heading p:not(.eyebrow) {
   max-width:540px;
   margin-top:22px
 }
 
-/* Knapper og links man skal klikke på. */
 .guide-button {
   min-width:154px
 }
 
-/* Den store øverste sektion på siden. */
 .guide-compare-copy,.guide-cta-copy,.guide-editorial-copy,.guide-hero-content,.guide-styling-copy {
   display:flex;
   min-width:0;
@@ -52,13 +45,11 @@
   align-items:flex-start
 }
 
-/* Den store øverste sektion på siden. */
 .guide-compare-placeholder,.guide-cta-image,.guide-editorial-image,.guide-hero-media,.guide-placeholder,.guide-styling-placeholder,.guide-styling-tube {
   width:100%;
   overflow:hidden
 }
 
-/* Den store øverste sektion på siden. */
 .guide-compare-placeholder img,.guide-cta-image img,.guide-editorial-image img,.guide-editorial-image picture,.guide-hero-media img,.guide-hero-media picture,.guide-placeholder img,.guide-placeholder picture,.guide-styling-placeholder img,.guide-styling-tube img {
   display:block;
   width:100%;
@@ -66,12 +57,10 @@
   object-fit:cover
 }
 
-/* Billeder og billedkasser. */
 .guide-compare-placeholder img,.guide-styling-tube img {
   object-fit:contain
 }
 
-/* Den store øverste sektion på siden. */
 .guide-cta-image,.guide-editorial-image,.guide-hero-media,.guide-placeholder,.guide-styling-placeholder {
   display:grid;
   place-items:center;
@@ -81,22 +70,19 @@
   text-align:center
 }
 
-/* Den store øverste sektion på siden. */
 .guide-cta-image .image-placeholder-label,.guide-editorial-image .image-placeholder-label,.guide-hero-media .image-placeholder-label,.guide-placeholder .image-placeholder-label {
   display:none
 }
 
-/* Den store øverste sektion på siden. */
 .guide-cta-image:has(img[src]:not([src=""]))::before,.guide-editorial-image:has(img[src]:not([src=""]))::before,.guide-hero-media:has(img[src]:not([src=""]))::before,.guide-placeholder:has(img[src]:not([src=""]))::before {
   display:none
 }
 
-/* Den store øverste sektion på siden. */
 .guide-cta-image::before,.guide-editorial-image::before,.guide-hero-media::before,.guide-placeholder::before {
   content:"IMG"
 }
 
-/* Den store øverste sektion på siden. */
+/* Guidehero: introducerer LOW/RICH-universet med tekst og billede. */
 .guide-hero {
   display:grid;
   width:100%;
@@ -108,52 +94,44 @@
   background:var(--color-white)
 }
 
-/* Den store øverste sektion på siden. */
 .guide-hero-content {
   width:100%;
   max-width:560px
 }
 
-/* Den store øverste sektion på siden. */
 .guide-hero h1 {
   max-width:520px
 }
 
-/* Den store øverste sektion på siden. */
 .guide-hero-lead {
   margin-top:16px
 }
 
-/* Den store øverste sektion på siden. */
 .guide-compare-placeholder .image-placeholder-label,.guide-feeling-mobile,.guide-hero-desktop-break,.guide-steps-indicators.is-hidden,.guide-steps-indicators:empty {
   display:none
 }
 
-/* Den store øverste sektion på siden. */
 .guide-hero p:not(.eyebrow):not(.guide-hero-lead) {
   max-width:470px;
   margin-top:24px
 }
 
-/* Den store øverste sektion på siden. */
 .guide-hero .button {
   align-self:flex-start;
   margin-top:24px
 }
 
-/* Den store øverste sektion på siden. */
 .guide-cta-image,.guide-editorial-image,.guide-hero-media {
   min-height:0;
   aspect-ratio:1.8/1
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
+/* LOW/RICH-sammenligning: bygger produktkort med tekst og frilagte produktbilleder. */
 .guide-compare {
   max-width:none;
   padding:52px 0 44px
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-compare .guide-section-heading {
   max-width:none;
   margin-bottom:10px;
@@ -161,12 +139,10 @@
   padding-left:var(--page-gutter)
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-compare .guide-section-heading h4,.guide-line-rich {
   color:var(--color-primary)
 }
 
-/* Lister og rækker med flere ting. */
 .guide-compare-grid {
   display:grid;
   width:100%;
@@ -176,7 +152,6 @@
   gap:40px
 }
 
-/* Små kort med indhold. */
 .guide-compare-card {
   --guide-compare-product-width:clamp(285px, 24vw, 430px);
   --guide-compare-product-height:clamp(390px, 34vw, 560px);
@@ -187,7 +162,6 @@
   min-width:0
 }
 
-/* Små kort med indhold. */
 .guide-compare-card h2 {
   margin-bottom:22px;
   padding-right:var(--page-gutter);
@@ -195,7 +169,6 @@
   color:var(--color-heading)
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-compare-body {
   position:relative;
   display:flex;
@@ -209,7 +182,6 @@
   background: #A0BECF
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-compare-rich .guide-compare-body {
   padding-right:32px;
   padding-left:calc((var(--guide-compare-product-width) * .72) + 28px);
@@ -217,35 +189,29 @@
   background:#af7f3a
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-compare-copy {
   position:relative;
   flex:1 1 auto;
   z-index:1
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-compare-low h2,.guide-compare-low .guide-compare-copy {
   text-align:start
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-compare-copy h4,.guide-compare-copy li,.guide-compare-copy p {
   color:#f7f7f7
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-compare-copy h4:first-child,.guide-styling-copy h4:first-child,.guide-styling-copy-group:first-child h4 {
   margin-top:0
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-compare-copy h4 {
   margin-top:18px;
   margin-bottom:10px
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-compare-copy ul {
   display:grid;
   gap:4px;
@@ -253,7 +219,6 @@
   list-style:disc
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-compare-copy li {
   font-family:var(--font-body);
   font-size:var(--font-body-desktop);
@@ -261,7 +226,6 @@
   line-height:1.6
 }
 
-/* Billeder og billedkasser. */
 .guide-compare-placeholder {
   position:absolute;
   top:50%;
@@ -274,7 +238,6 @@
   z-index:0
 }
 
-/* Billeder og billedkasser. */
 .guide-compare-rich .guide-compare-placeholder {
   right:auto;
   left:-22px
@@ -315,19 +278,17 @@
   }
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
+/* Guidetrin: styler trinvis forklaring og kortslider. */
 .guide-steps {
   padding-top:48px;
   padding-bottom:66px
 }
 
-/* Lister og rækker med flere ting. */
 .guide-steps-grid {
   display:grid;
   gap:38px
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-steps-indicators {
   display:flex;
   align-items:center;
@@ -336,7 +297,6 @@
   margin-top:1.5rem
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-steps-indicators .indicator {
   width:18px;
   height:3px;
@@ -349,24 +309,20 @@
   transition:width 260ms,opacity 260ms,background 260ms
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-steps-indicators .indicator:focus-visible,.guide-steps-indicators .indicator:hover {
   opacity:.85
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-steps-indicators .indicator.active {
   width:30px;
   background:#8b989d;
   opacity:1
 }
 
-/* Små kort med indhold. */
 .guide-step-card {
   width:min(100%,220px)
 }
 
-/* Små kort med indhold. */
 .guide-step-card img {
   display:block;
   width:100%;
@@ -375,12 +331,11 @@
   object-fit:contain
 }
 
-/* Små kort med indhold. */
 .guide-step-card h4,.guide-step-card p:last-child {
   margin-top:8px
 }
 
-/* Knapper og links man skal klikke på. */
+/* Editorial og CTA: deler tekst, billeder og knapper i fleksible kampagneblokke. */
 .guide-cta,.guide-editorial,.guide-styling-block,.guide-styling-block-reverse {
   display:grid;
   width:100%;
@@ -391,7 +346,6 @@
   align-items:start
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-editorial {
   max-width:var(--container-max);
   background:var(--color-light-blue);
@@ -399,27 +353,22 @@
   clip-path:inset(0 -100vmax)
 }
 
-/* Knapper og links man skal klikke på. */
 .guide-cta-copy,.guide-editorial-copy {
   max-width:470px
 }
 
-/* Knapper og links man skal klikke på. */
 .guide-cta-copy p:not(.eyebrow),.guide-editorial-copy p:not(.eyebrow) {
   margin-top:22px
 }
 
-/* Knapper og links man skal klikke på. */
 .guide-cta-copy h4 {
   margin-top:20px
 }
 
-/* Knapper og links man skal klikke på. */
 .guide-cta-copy .button,.guide-editorial-copy .button,.guide-styling-copy h4 {
   margin-top:28px
 }
 
-/* Knapper og links man skal klikke på. */
 .guide-cta-actions {
   display:flex;
   flex-wrap:wrap;
@@ -427,18 +376,16 @@
   margin-top:28px
 }
 
-/* Knapper og links man skal klikke på. */
 .guide-cta-actions .button {
   margin-top:0
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
+/* Balancegrafik: placerer LOW/RICH-tekst oven på guiden og viser punkter nedenunder. */
 .guide-section.guide-feeling {
   max-width:none;
   padding:58px var(--guide-page-offset) 64px
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-feeling-balance-wrap {
   position:relative;
   width:100%;
@@ -446,14 +393,12 @@
   margin:0 auto
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-feeling-balance,.guide-feeling-mobile-balance {
   display:block;
   width:100%;
   height:auto
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-feeling-balance-text {
   position:absolute;
   top:68%;
@@ -467,25 +412,21 @@
   text-align:center
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-feeling-balance-text-low {
   left:3.5%;
   text-align:left
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-feeling-balance-text-mid {
   left:50%;
   transform:translateX(-50%)
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-feeling-balance-text-rich {
   right:3.5%;
   text-align:right
 }
 
-/* Lister og rækker med flere ting. */
 .guide-feeling-grid {
   display:grid;
   gap:28px;
@@ -493,7 +434,6 @@
   margin:42px auto 0
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-feeling-item {
   display:grid;
   min-height:82px;
@@ -502,24 +442,20 @@
   align-items:center
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-line-low {
   color:#7eafbf
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-feeling-item img {
   width:118px;
   height:82px;
   object-fit:contain
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-feeling-item p {
   color:#333
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-feeling-item span {
   display:block;
   margin-top:8px;
@@ -527,13 +463,12 @@
   font-size:var(--font-body-desktop)
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-feeling-mobile-text {
   color:#111;
   font-size:var(--font-body-mobile)
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
+/* Citatblok: fremhæver en kort brandbesked mellem guideafsnit. */
 .guide-quote-section {
   display:grid;
   min-height:345px;
@@ -543,19 +478,16 @@
   text-align:center
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-quote {
   max-width:1120px
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-quote p {
   color:var(--color-light-blue);
   font-size:clamp(22px, 1.9vw, var(--font-quote-desktop));
   line-height:1.3
 }
 
-/* Footeren nederst på siden. */
 .guide-quote footer {
   margin-top:34px;
   color:var(--color-light-blue);
@@ -566,25 +498,22 @@
   text-transform:uppercase
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
+/* Stylingsektion: kombinerer produktbilleder, stylingtrin og klikbare anbefalinger. */
 .guide-section.guide-styling {
   max-width:none;
   padding:58px var(--page-gutter) 82px
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-styling .guide-section-heading {
   max-width:var(--container-max);
   margin-right:auto;
   margin-left:auto
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-styling-block-reverse {
   margin-top:44px
 }
 
-/* Billeder og billedkasser. */
 .guide-styling-images,.guide-styling-images-left,.guide-styling-images-right {
   display:grid;
   width:100%;
@@ -593,7 +522,6 @@
   gap:5px
 }
 
-/* Billeder og billedkasser. */
 .guide-styling-placeholder {
   display:flex;
   min-width:0;
@@ -604,36 +532,30 @@
   background:0 0
 }
 
-/* Billeder og billedkasser. */
 .guide-styling-placeholder picture {
   width:100%;
   height:100%
 }
 
-/* Billeder og billedkasser. */
 .guide-styling-placeholder>a {
   display:block;
   width:100%;
   height:100%
 }
 
-/* Billeder og billedkasser. */
 .guide-styling-placeholder small,.guide-styling-placeholder span {
   display:block
 }
 
-/* Billeder og billedkasser. */
 .guide-styling-placeholder span {
   font-size:1.6rem
 }
 
-/* Billeder og billedkasser. */
 .guide-styling-placeholder small {
   margin-top:0;
   font-size:.78rem
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-styling-pair {
   display:flex;
   min-width:0;
@@ -641,12 +563,10 @@
   align-items:flex-end
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-styling-pair-left {
   flex-direction:row-reverse
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-styling-tube {
   display:grid;
   flex:0 0 clamp(82px,32%,150px);
@@ -657,24 +577,20 @@
   font-family:var(--font-heading)
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-styling-copy {
   max-width:560px
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-styling-copy-group {
   display:block;
   color:inherit;
   text-decoration:none
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-styling-copy p {
   margin-top:12px
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:1200px) {
   .guide-section {
     padding:82px var(--page-gutter)
@@ -727,7 +643,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1199px) {
   .guide-section {
     padding:64px var(--page-gutter)
@@ -808,7 +723,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:768px) {
   .guide-styling-block,.guide-styling-block-reverse {
     grid-template-columns:repeat(2,minmax(0,1fr));
@@ -842,7 +756,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:845px) and (max-width:1199px) {
   .guide-hero {
     grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr);
@@ -855,14 +768,12 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:831px) and (max-width:859px) {
   .guide-hero {
     grid-template-columns:minmax(0,1fr) minmax(0,1fr)
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:860px) and (max-width:1199px) {
   .guide-hero {
     grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);
@@ -873,7 +784,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:910px) and (max-width:1199px) {
   .guide-cta,.guide-editorial {
     grid-template-columns:minmax(0,1.28fr) minmax(0,0.72fr);
@@ -890,7 +800,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (max-width:767px) {
   .guide-section {
     padding:52px var(--page-gutter)
@@ -1201,4 +1110,3 @@
     object-position:center
   }
 }
-

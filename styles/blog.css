@@ -1,18 +1,16 @@
-﻿/* Her ligger udseendet til blogoversigten. */
+/* Blogoversigt: hero, filtre, blogkort og community-tilmelding. */
 
-/* Blogindhold og blogkort. */
 .blog-page .blog-filter,.blog-page .blog-main,.blog-page .blog-post-main {
   background:var(--color-white)
 }
 
-/* Blogindhold og blogkort. */
+/* Brødkrummer: viser placering på blog- og indlægssider. */
 .blog-page .indlaeg-breadcrumb {
   max-width:var(--container-max);
   margin:0 auto;
   padding:34px var(--page-gutter) 0
 }
 
-/* Lister og rækker med flere ting. */
 .blog-page .indlaeg-breadcrumb-list {
   display:flex;
   flex-wrap:wrap;
@@ -27,7 +25,6 @@
   line-height:1.35
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-breadcrumb-item {
   display:inline-flex;
   min-width:0;
@@ -35,13 +32,11 @@
   gap:7px
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-breadcrumb-item:not(:last-child)::after {
   color:var(--color-heading);
   content:"/"
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-breadcrumb-link {
   color:var(--color-heading);
   background-image:linear-gradient(currentColor,currentColor);
@@ -51,12 +46,10 @@
   transition:background-size 220ms
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-breadcrumb-link:focus-visible,.blog-page .indlaeg-breadcrumb-link:hover {
   background-size:100% 1px
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .indlaeg-breadcrumb-current {
   overflow:hidden;
   max-width:min(52vw,520px);
@@ -65,7 +58,7 @@
   white-space:nowrap
 }
 
-/* Den store øverste sektion på siden. */
+/* Bloghero: centrerer introduktion til blogoversigten. */
 .blog-page .blog-hero {
   display:flex;
   max-width:920px;
@@ -76,18 +69,15 @@
   text-align:center
 }
 
-/* Den store øverste sektion på siden. */
 .blog-page .blog-hero .eyebrow {
   margin-bottom:18px
 }
 
-/* Den store øverste sektion på siden. */
 .blog-page .blog-hero h1 {
   max-width:780px;
   letter-spacing:.04em
 }
 
-/* Den store øverste sektion på siden. */
 .blog-page .blog-hero-text {
   max-width:560px;
   margin-top:26px;
@@ -96,14 +86,13 @@
   line-height:1.45
 }
 
-/* Lister og rækker med flere ting. */
+/* Bloglisting: samler filtre og kortgrid. */
 .blog-page .blog-listing {
   max-width:1080px;
   margin:0 auto;
   padding:0 var(--page-gutter) 88px
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .blog-page .blog-filter-input,.blog-page .blog-newsletter-label,.blog-page .blog-section-title {
   position:absolute;
   width:1px;
@@ -113,7 +102,6 @@
   white-space:nowrap
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .blog-filters {
   display:flex;
   flex-wrap:wrap;
@@ -122,7 +110,6 @@
   margin-bottom:58px
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .blog-filter {
   display:inline-flex;
   position:relative;
@@ -142,13 +129,11 @@
   cursor:pointer
 }
 
-/* Knapper og links man skal klikke på. */
 .blog-page .blog-filter .button-label {
   padding-bottom:0;
   background-image:none
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .blog-filter::after {
   position:absolute;
   right:16px;
@@ -162,14 +147,12 @@
   transition:transform 220ms
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .blog-page #blog-filter-all:checked~.blog-filters label[for=blog-filter-all],.blog-page #blog-filter-guides:checked~.blog-filters label[for=blog-filter-guides],.blog-page #blog-filter-kroelleviden:checked~.blog-filters label[for=blog-filter-kroelleviden],.blog-page #blog-filter-mixly:checked~.blog-filters label[for=blog-filter-mixly],.blog-page .blog-filter:focus-visible,.blog-page .blog-filter:hover {
   border-color:var(--color-border);
   background:var(--color-white);
   color:var(--color-heading)
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .blog-page #blog-filter-all:checked~.blog-filters label[for=blog-filter-all]::after,.blog-page #blog-filter-guides:checked~.blog-filters label[for=blog-filter-guides]::after,.blog-page #blog-filter-kroelleviden:checked~.blog-filters label[for=blog-filter-kroelleviden]::after,.blog-page #blog-filter-mixly:checked~.blog-filters label[for=blog-filter-mixly]::after,.blog-page .blog-filter:focus-visible::after,.blog-page .blog-filter:hover::after {
   transform:scaleX(1)
 }
@@ -183,35 +166,30 @@
   }
 }
 
-/* Knapper og links man skal klikke på. */
 .blog-page #blog-filter-all:checked~.blog-filters label[for=blog-filter-all] .button-label::after,.blog-page #blog-filter-guides:checked~.blog-filters label[for=blog-filter-guides] .button-label::after,.blog-page #blog-filter-kroelleviden:checked~.blog-filters label[for=blog-filter-kroelleviden] .button-label::after,.blog-page #blog-filter-mixly:checked~.blog-filters label[for=blog-filter-mixly] .button-label::after {
   clip-path:none
 }
 
-/* Knapper og links man skal klikke på. */
 .blog-page #blog-filter-all:checked~.blog-filters label[for=blog-filter-all] .button-label,.blog-page #blog-filter-guides:checked~.blog-filters label[for=blog-filter-guides] .button-label,.blog-page #blog-filter-kroelleviden:checked~.blog-filters label[for=blog-filter-kroelleviden] .button-label,.blog-page #blog-filter-mixly:checked~.blog-filters label[for=blog-filter-mixly] .button-label {
   background-size:100% 1px
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .blog-page #blog-filter-all:focus-visible~.blog-filters label[for=blog-filter-all],.blog-page #blog-filter-guides:focus-visible~.blog-filters label[for=blog-filter-guides],.blog-page #blog-filter-kroelleviden:focus-visible~.blog-filters label[for=blog-filter-kroelleviden],.blog-page #blog-filter-mixly:focus-visible~.blog-filters label[for=blog-filter-mixly] {
   outline:2px solid var(--color-heading);
   outline-offset:3px
 }
 
-/* Lister og rækker med flere ting. */
+/* Blogkort: definerer grid, billeder, kategorier og læs-mere-links. */
 .blog-page .blog-grid {
   display:flex;
   flex-wrap:wrap;
   gap:72px 44px
 }
 
-/* Små kort med indhold. */
 .blog-page #blog-filter-guides:checked~.blog-grid .blog-card:not(.blog-card-guides),.blog-page #blog-filter-kroelleviden:checked~.blog-grid .blog-card:not(.blog-card-kroelleviden),.blog-page #blog-filter-mixly:checked~.blog-grid .blog-card:not(.blog-card-mixly) {
   display:none
 }
 
-/* Små kort med indhold. */
 .blog-page .blog-card {
   display:flex;
   position:relative;
@@ -220,7 +198,6 @@
   flex-direction:column
 }
 
-/* Billeder og billedkasser. */
 .blog-page .blog-card-image {
   display:flex;
   width:100%;
@@ -236,35 +213,29 @@
   line-height:1.05
 }
 
-/* Billeder og billedkasser. */
 .blog-page .blog-card-image>img {
   transition:transform 420ms ease
 }
 
-/* Billeder og billedkasser. */
 .blog-page .blog-card-image:hover>img {
   transform:scale(1.04)
 }
 
-/* Små kort med indhold. */
 .blog-page .blog-card-category,.blog-page .blog-card-title {
   color:var(--color-heading);
   font-family:var(--font-heading)
 }
 
-/* Billeder og billedkasser. */
 .blog-page .blog-card-media-link {
   display:block
 }
 
-/* Billeder og billedkasser. */
 .blog-page .blog-card-image span,.blog-page .blog-post-image span {
   margin-top:4px;
   font-family:var(--font-body);
   font-size:14px
 }
 
-/* Små kort med indhold. */
 .blog-page .blog-card-category {
   margin-top:10px;
   font-size:13px;
@@ -273,7 +244,6 @@
   text-transform:uppercase
 }
 
-/* Små kort med indhold. */
 .blog-page .blog-card-title {
   min-height:0;
   margin-top:18px;
@@ -285,12 +255,10 @@
   text-transform:none
 }
 
-/* Små kort med indhold. */
 .blog-page .blog-card-title-link {
   color:inherit
 }
 
-/* Små kort med indhold. */
 .blog-page .blog-card-link {
   display:inline-flex;
   width:fit-content;
@@ -307,7 +275,6 @@
   transition:background-size 220ms
 }
 
-/* Små kort med indhold. */
 .blog-page .blog-card-link:focus-visible,.blog-page .blog-card-link:hover {
   background-size:100% 1px
 }
@@ -330,18 +297,16 @@
   }
 }
 
-/* Små kort med indhold. */
 .blog-page .blog-card-link::after {
   content:none
 }
 
-/* Små kort med indhold. */
 .blog-page .blog-card-link:focus-visible {
   outline:2px solid var(--color-primary);
   outline-offset:4px
 }
 
-/* Blogindhold og blogkort. */
+/* Blognyhedsbrev: styler community-CTA og tilmeldingsformular. */
 .blog-page .blog-newsletter {
   display:grid;
   grid-template-columns:minmax(220px,0.28fr) minmax(0,1fr);
@@ -355,7 +320,6 @@
   background:var(--color-light-blue)
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .blog-newsletter-copy {
   align-self:stretch;
   display:flex;
@@ -366,7 +330,6 @@
   text-align:center
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .blog-newsletter-copy p {
   color:var(--color-heading);
   font-family:var(--font-quote);
@@ -377,20 +340,17 @@
   text-transform:uppercase
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .blog-page .blog-newsletter-input,.blog-page .blog-newsletter-success h3 {
   font-family:var(--font-heading);
   font-weight:300;
   text-transform:uppercase
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .blog-page .blog-newsletter-form {
   min-width:0;
   align-self:center
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .blog-newsletter-fields {
   display:grid;
   grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(150px,0.68fr);
@@ -398,7 +358,6 @@
   align-items:end
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .blog-page .blog-newsletter-input {
   width:100%;
   height:52px;
@@ -413,13 +372,11 @@
   line-height:52px
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .blog-page .blog-newsletter-input::placeholder {
   color:var(--color-heading);
   opacity:.8
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .blog-newsletter-submit {
   width:100%;
   min-width:0;
@@ -428,7 +385,6 @@
   letter-spacing:.18em
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .blog-newsletter-consent {
   display:flex;
   align-items:flex-start;
@@ -440,14 +396,12 @@
   line-height:1.35
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .blog-newsletter-success {
   align-self:center;
   max-width:720px;
   text-align:center
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .blog-newsletter-success h3 {
   margin-bottom:24px;
   color:#111;
@@ -456,14 +410,12 @@
   line-height:1.15
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .blog-newsletter-success p {
   color:var(--color-heading);
   font-size:17px;
   line-height:1.55
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .blog-page .blog-newsletter-checkbox {
   display:grid;
   width:24px;
@@ -477,25 +429,21 @@
   cursor:pointer
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .blog-page .blog-newsletter-checkbox:checked {
   background:linear-gradient(135deg,transparent 45%,var(--color-heading) 45%,var(--color-heading) 55%,transparent 55%),linear-gradient(45deg,transparent 45%,var(--color-heading) 45%,var(--color-heading) 55%,transparent 55%)
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .blog-page .blog-newsletter-checkbox:focus-visible {
   outline:1px solid var(--color-primary);
   outline-offset:3px
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .blog-post {
   max-width:820px;
   margin:0 auto;
   padding:72px var(--page-gutter) 92px
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .blog-post-back {
   display:inline-flex;
   margin-bottom:42px;
@@ -504,17 +452,14 @@
   font-size:var(--font-body-desktop)
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .blog-post-category {
   margin-bottom:14px
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .blog-post h1 {
   max-width:760px
 }
 
-/* Billeder og billedkasser. */
 .blog-page .blog-post-image {
   display:flex;
   width:100%;
@@ -530,18 +475,15 @@
   line-height:1.05
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .blog-post-content {
   display:grid;
   gap:18px
 }
 
-/* Blogindhold og blogkort. */
 .blog-page .blog-post-content p {
   color:var(--color-text)
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (max-width:767px) {
   .blog-page .indlaeg-breadcrumb {
     padding:22px 18px 0
@@ -704,7 +646,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1023px) {
   .blog-page .indlaeg-breadcrumb-list {
     font-size:var(--font-body-tablet)
@@ -750,7 +691,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1199px) {
   .blog-page .blog-newsletter {
     grid-template-columns:minmax(180px,0.35fr) minmax(0,0.65fr);

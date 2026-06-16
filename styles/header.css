@@ -1,11 +1,10 @@
-﻿/* Her ligger udseendet til menuen øverst på siden. */
+/* Header: topmenu, desktopnavigation, mobilmenu og sidekurv. */
 
-/* Menuen og navigationen. */
 .menu-link,.top-menu {
   text-transform:uppercase
 }
 
-/* Menuen og navigationen. */
+/* Headerbase: placerer topmenu og desktopnavigation øverst. */
 .header {
   position:fixed;
   z-index:1000;
@@ -15,12 +14,11 @@
   background:var(--color-light-blue)
 }
 
-/* Menuen og navigationen. */
 .menu-item-dropdown,.top-menu {
   position:relative
 }
 
-/* Menuen og navigationen. */
+/* Topmenu: styrer bookingknap, logo, kurv og menu-trigger. */
 .top-menu-logo {
   position:absolute;
   left:50%;
@@ -33,13 +31,11 @@
   height:100%
 }
 
-/* Menuen og navigationen. */
 .is-header-logo-expanded .top-menu-logo::before,.top-menu-logo-image {
   transform:scale(1);
   opacity:1
 }
 
-/* Menuen og navigationen. */
 .top-menu-logo::before {
   position:absolute;
   width:100%;
@@ -51,7 +47,6 @@
   transition:opacity 240ms,transform 240ms
 }
 
-/* Menuen og navigationen. */
 .top-menu-logo-image {
   height:100%;
   max-height:35px;
@@ -60,13 +55,11 @@
   transition:opacity 240ms,transform 240ms
 }
 
-/* Menuen og navigationen. */
 .is-header-logo-expanded .top-menu-logo-image {
   opacity:0;
   transform:scale(.82)
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (max-width:767px) {
   .top-menu-logo::before {
     opacity:1;
@@ -77,13 +70,11 @@
   }
 }
 
-/* Menuen og navigationen. */
 .top-menu,.top-nav-list {
   display:flex;
   align-items:center
 }
 
-/* Menuen og navigationen. */
 .top-menu {
   justify-content:space-between;
   min-height:58px;
@@ -94,23 +85,19 @@
   letter-spacing:.04em
 }
 
-/* Menuen og navigationen. */
 .cart-badge,.menu-link {
   color:var(--color-heading)
 }
 
-/* Menuen og navigationen. */
 .menu-link,.side-cart-header h2 {
   letter-spacing:.06em;
   font-weight:300
 }
 
-/* Lister og rækker med flere ting. */
 .top-nav-list {
   gap:24px
 }
 
-/* Grundregler for almindelige HTML-elementer. */
 .top-nav-link {
   position:relative;
   display:inline-flex;
@@ -121,12 +108,10 @@
   cursor:pointer
 }
 
-/* Kurven og det man lægger i kurven. */
 .top-nav-link-cart {
   overflow:visible
 }
 
-/* Kurven og det man lægger i kurven. */
 .cart-badge {
   position:absolute;
   top:-7px;
@@ -146,12 +131,10 @@
   box-shadow:0 1px 4px rgba(0,0,0,.1)
 }
 
-/* Menuen og navigationen. */
 .cart-badge[hidden],.mobile-menu,.side-cart-footer[hidden],.top-nav-item-menu {
   display:none
 }
 
-/* Grundregler for almindelige HTML-elementer. */
 .top-nav-icon {
   display:block;
   width:30px;
@@ -205,7 +188,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:1181px) {
   .top-menu {
     justify-content:flex-start
@@ -218,7 +200,7 @@
   }
 }
 
-/* Menuen og navigationen. */
+/* Desktopmenu: styler hovednavigation og dropdowns. */
 .menu {
   display:flex;
   justify-content:center;
@@ -226,13 +208,11 @@
   border-bottom:1px solid var(--color-border)
 }
 
-/* Menuen og navigationen. */
 .menu-link,.mobile-menu-link {
   position:relative;
   padding-bottom:5px
 }
 
-/* Menuen og navigationen. */
 .menu-list {
   display:flex;
   align-items:center;
@@ -240,14 +220,12 @@
   gap:clamp(10px,2.2vw,38px)
 }
 
-/* Menuen og navigationen. */
 .menu-link {
   display:inline-flex;
   font-family:var(--font-heading);
   font-size:14px
 }
 
-/* Menuen og navigationen. */
 .menu-link::after {
   position:absolute;
   right:0;
@@ -261,29 +239,26 @@
   transition:transform 220ms
 }
 
-/* Menuen og navigationen. */
+/* Dropdowns: viser produkt- og krølleuniverslinks med billedkort. */
 .menu-dropdown,.side-cart {
   position:fixed;
   visibility:hidden;
   pointer-events:none
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown-link::after,.menu-dropdown-product-image .image-placeholder-label::after,.menu-dropdown-product-image .image-placeholder-label::before,.menu-dropdown-product-title::after,.mobile-menu-link::after {
   content:none
 }
 
-/* Menuen og navigationen. */
+/* Mobilmenu: offcanvas-paneler og undernavigation på små skærme. */
 .mobile-menu-link-active::after,.mobile-menu-link:focus-visible::after,.mobile-menu-link:hover::after,.mobile-menu-link[aria-current=page]::after {
   transform:none
 }
 
-/* Menuen og navigationen. */
 .mobile-menu-link-active,.mobile-menu-link:focus-visible,.mobile-menu-link:hover,.mobile-menu-link[aria-current=page] {
   background-size:auto
 }
 
-/* Menuen og navigationen. */
 .menu-link-active::after,.menu-link:focus-visible::after,.menu-link:hover::after,.menu-link[aria-current=page]::after {
   transform:scaleX(1)
 }
@@ -300,13 +275,11 @@
   }
 }
 
-/* Menuen og navigationen. */
 .menu-link-dropdown {
   align-items:center;
   gap:6px
 }
 
-/* Menuen og navigationen. */
 .menu-item-dropdown::after {
   position:absolute;
   top:100%;
@@ -316,7 +289,6 @@
   content:""
 }
 
-/* Menuen og navigationen. */
 .menu-link-arrow {
   display:inline-block;
   width:16px;
@@ -328,7 +300,6 @@
   transition:transform 250ms
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown {
   z-index:999;
   top:113px;
@@ -341,13 +312,11 @@
   transition:opacity 280ms,visibility 280ms,transform 280ms
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown-link,.menu-dropdown-product-title {
   padding-bottom:5px;
   transition:background-size 220ms
 }
 
-/* Menuen og navigationen. */
 .menu-item-dropdown:focus-within .menu-dropdown,.menu-item-dropdown:hover .menu-dropdown {
   opacity:1;
   visibility:visible;
@@ -355,12 +324,10 @@
   transform:translateY(0)
 }
 
-/* Menuen og navigationen. */
 .menu-item-dropdown:focus-within .menu-link-arrow,.menu-item-dropdown:hover .menu-link-arrow {
   transform:rotate(180deg)
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown-inner {
   display:grid;
   grid-template-columns:minmax(120px,170px) minmax(140px,190px) auto;
@@ -370,24 +337,20 @@
   margin:0 auto
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown[aria-label="Krølleuniversmenu"] .menu-dropdown-inner {
   grid-template-columns:max-content 0 auto
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown[aria-label="Krølleuniversmenu"] .menu-dropdown-link {
   white-space:nowrap
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown-list {
   display:flex;
   flex-direction:column;
   gap:24px
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown-link,.menu-dropdown-product-title {
   color:var(--color-heading);
   font-family:var(--font-heading);
@@ -395,7 +358,6 @@
   font-weight:300
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown-link {
   display:inline;
   width:fit-content;
@@ -408,31 +370,26 @@
   text-transform:none
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown-link-active::after,.menu-dropdown-link:focus-visible::after,.menu-dropdown-link:hover::after,.menu-dropdown-link[aria-current=page]::after {
   transform:none
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown-link-active,.menu-dropdown-link:focus-visible,.menu-dropdown-link:hover,.menu-dropdown-link[aria-current=page] {
   background-size:100% 1px
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown-products {
   display:grid;
   grid-template-columns:repeat(2,230px);
   gap:clamp(30px,4vw,52px)
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown-product {
   display:flex;
   flex-direction:column;
   gap:18px
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown-product-image {
   display:grid;
   width:230px;
@@ -449,12 +406,10 @@
   text-transform:uppercase
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown-product:nth-child(2) .menu-dropdown-product-image {
   background:var(--color-light-blue)
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown-product-image img {
   display:block;
   width:100%;
@@ -462,18 +417,15 @@
   object-fit:cover
 }
 
-/* Menuen og navigationen. */
 .mobile-menu-feature-image>.image-placeholder-label {
   display:block!important
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown-product-image .image-placeholder-label {
   font-size:12px;
   white-space:pre-line
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown-product-title {
   display:inline;
   width:fit-content;
@@ -488,12 +440,10 @@
   text-transform:uppercase
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown-product:focus-visible .menu-dropdown-product-title::after,.menu-dropdown-product:hover .menu-dropdown-product-title::after {
   clip-path:none
 }
 
-/* Menuen og navigationen. */
 .menu-dropdown-product:focus-visible .menu-dropdown-product-title,.menu-dropdown-product:hover .menu-dropdown-product-title {
   background-size:100% 1px
 }
@@ -510,26 +460,23 @@
   }
 }
 
-/* Menuen og navigationen. */
 .is-cart-open,.is-menu-open {
   overflow:hidden
 }
 
-/* Kurven og det man lægger i kurven. */
+/* Sidekurv: drawer, backdrop, varelinjer, rabatfelt og checkout-knap. */
 .side-cart {
   z-index:4000;
   inset:0;
   transition:visibility 0s linear 520ms
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart.is-open {
   visibility:visible;
   pointer-events:auto;
   transition-delay:0s
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-backdrop {
   position:absolute;
   inset:0;
@@ -538,12 +485,10 @@
   transition:opacity 360ms
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart.is-open .side-cart-backdrop {
   opacity:1
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-panel {
   position:absolute;
   top:0;
@@ -560,12 +505,10 @@
   will-change:transform
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart.is-open .side-cart-panel {
   transform:translateX(0)
 }
 
-/* Menuen og navigationen. */
 .side-cart-header {
   display:flex;
   min-height:88px;
@@ -576,14 +519,12 @@
   border-bottom:1px solid #ececec
 }
 
-/* Menuen og navigationen. */
 .side-cart-header h2 {
   color:#111;
   font-size:var(--font-h3-desktop);
   line-height:1.1
 }
 
-/* Knapper og links man skal klikke på. */
 .side-cart-close,.side-cart-quantity button,.side-cart-remove {
   border:0;
   background:0 0;
@@ -591,7 +532,6 @@
   font:inherit
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-close {
   display:grid;
   width:44px;
@@ -604,7 +544,6 @@
   line-height:1
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-body {
   flex:1 1 auto;
   min-height:0;
@@ -614,7 +553,6 @@
   -webkit-overflow-scrolling:touch
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-empty {
   display:grid;
   min-height:calc(100dvh - 260px);
@@ -622,7 +560,6 @@
   text-align:center
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-empty h3 {
   color:#111;
   font-family:var(--font-body);
@@ -632,7 +569,6 @@
   text-transform:none
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-empty p {
   margin-top:20px;
   color:#8c8c8c;
@@ -642,13 +578,11 @@
   line-height:1.2
 }
 
-/* Lister og rækker med flere ting. */
 .side-cart-list {
   display:grid;
   gap:0
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-added {
   display:grid;
   gap:2px;
@@ -661,12 +595,10 @@
   line-height:1.25
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-added p {
   margin:0
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-added-title {
   color:var(--color-heading);
   font-family:var(--font-heading);
@@ -676,13 +608,11 @@
   text-transform:uppercase
 }
 
-/* Produkter og produktkort. */
 .side-cart-added-product span {
   color:var(--color-text);
   font-size:.92em
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-item {
   display:grid;
   grid-template-columns:92px 1fr;
@@ -691,12 +621,10 @@
   border-bottom:1px solid #ececec
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-item+.side-cart-item {
   padding-top:16px
 }
 
-/* Billeder og billedkasser. */
 .side-cart-item-image {
   display:grid;
   width:92px;
@@ -706,14 +634,12 @@
   overflow:hidden
 }
 
-/* Billeder og billedkasser. */
 .side-cart-item-image img {
   width:94%;
   height:94%;
   object-fit:contain
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-item-heading {
   display:flex;
   align-items:flex-start;
@@ -721,7 +647,6 @@
   gap:12px
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-item-heading h3 {
   color:#111;
   font-family:var(--font-body);
@@ -732,7 +657,6 @@
   text-transform:uppercase
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-remove {
   flex:0 0 auto;
   color:#9aa8ad;
@@ -741,7 +665,6 @@
   line-height:1
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-item-size {
   margin-top:6px;
   color:#8c8c8c;
@@ -751,7 +674,6 @@
   line-height:1.2
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-item-price {
   margin-top:10px;
   color:#111;
@@ -759,7 +681,6 @@
   line-height:1.2
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-quantity {
   display:flex;
   align-items:center;
@@ -768,7 +689,6 @@
   color:#111
 }
 
-/* Knapper og links man skal klikke på. */
 .side-cart-quantity button {
   display:grid;
   width:26px;
@@ -781,7 +701,6 @@
   transition:border-color 180ms,background 180ms
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-quantity span {
   min-width:12px;
   color:#111;
@@ -789,7 +708,6 @@
   text-align:center
 }
 
-/* Footeren nederst på siden. */
 .side-cart-footer {
   position:sticky;
   bottom:0;
@@ -799,14 +717,12 @@
   background:var(--color-white)
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-discount {
   display:grid;
   gap:10px;
   margin-bottom:18px
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .side-cart-discount label,.side-cart-total span {
   color:var(--color-heading);
   font-family:var(--font-heading);
@@ -815,7 +731,6 @@
   text-transform:uppercase
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-discount-row {
   display:grid;
   grid-template-columns:1fr auto;
@@ -825,14 +740,12 @@
   border-bottom:1px solid var(--color-heading)
 }
 
-/* Knapper og links man skal klikke på. */
 .side-cart-discount button,.side-cart-discount input {
   border:0;
   background:0 0;
   font:inherit
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .side-cart-discount input {
   min-width:0;
   padding:0 14px;
@@ -840,12 +753,10 @@
   outline:0
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .side-cart-discount input::placeholder {
   color:#9a9a9a
 }
 
-/* Knapper og links man skal klikke på. */
 .side-cart-discount button {
   padding:0 16px;
   border-left:1px solid #ececec;
@@ -855,7 +766,6 @@
   transition:transform 180ms
 }
 
-/* Knapper og links man skal klikke på. */
 .side-cart-checkout:focus-visible .button-label,.side-cart-checkout:hover .button-label,.side-cart-discount button:focus-visible .button-label,.side-cart-discount button:hover .button-label {
   background-size:100% 1px
 }
@@ -872,12 +782,10 @@
   background:transparent
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-discount-row:focus-within {
   border-color:var(--color-heading)
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-total {
   display:flex;
   align-items:baseline;
@@ -886,7 +794,6 @@
   color:#111
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-total strong {
   color:#111;
   font-family:var(--font-heading);
@@ -895,7 +802,6 @@
   line-height:1
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-checkout {
   display:flex;
   min-height:40px;
@@ -910,7 +816,6 @@
   transition:transform 180ms
 }
 
-/* Footeren nederst på siden. */
 .side-cart-footer p {
   margin-top:14px;
   color:#7c8794;
@@ -919,18 +824,15 @@
   text-align:center
 }
 
-/* Kurven og det man lægger i kurven. */
 .side-cart-close:focus-visible,.side-cart-close:hover,.side-cart-remove:focus-visible,.side-cart-remove:hover {
   color:var(--color-heading)
 }
 
-/* Knapper og links man skal klikke på. */
 .side-cart-quantity button:focus-visible,.side-cart-quantity button:hover {
   border-color:var(--color-heading);
   background:#f6f6f6
 }
 
-/* Knapper og links man skal klikke på. */
 .side-cart a:focus-visible,.side-cart button:focus-visible {
   outline:2px solid var(--color-heading);
   outline-offset:3px
@@ -945,7 +847,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (max-width:767px) {
   .top-menu>.book-knap {
     position:fixed;
@@ -997,7 +898,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (max-width:1180px) {
   .is-mobile-nav-fixed .top-menu-logo,.top-menu-logo {
     opacity:1;
@@ -1321,7 +1221,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1199px) {
   .is-mobile-nav-fixed .header,body {
     padding-bottom:0
@@ -1443,7 +1342,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:1000px) and (max-width:1199px) {
   .menu-dropdown-inner,.menu-dropdown[aria-label="Krølleuniversmenu"] .menu-dropdown-inner {
     grid-template-columns:max-content max-content auto;

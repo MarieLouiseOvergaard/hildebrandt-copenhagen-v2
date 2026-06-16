@@ -1,18 +1,17 @@
-﻿/* Her ligger udseendet til en enkelt produktside. */
+/* Produktskabelon: produkthero, størrelsesvalg, accordions, sticky køb og relaterede produkter. */
 
-/* Produkter og produktkort. */
+/* Produktsidebase: skjuler vandret overflow og sætter sidebaggrund. */
 .produkt-skabelon-main {
   overflow-x:clip;
   background:var(--color-white)
 }
 
-/* Den store øverste sektion på siden. */
+/* Brødkrummer: viser produktets placering i kategori-hierarkiet. */
 .produkt-breadcrumbs,.produkt-skabelon-hero,.produkt-skabelon-low-rich,.produkt-skabelon-related,.produkt-skabelon-set-buy {
   max-width:var(--container-max);
   margin:0 auto
 }
 
-/* Produkter og produktkort. */
 .produkt-breadcrumbs {
   display:flex;
   flex-wrap:wrap;
@@ -24,19 +23,16 @@
   line-height:1.45
 }
 
-/* Billeder og billedkasser. */
 .produkt-skabelon-image,.produkt-skabelon-price {
   color:var(--color-heading);
   font-family:var(--font-heading)
 }
 
-/* Produkter og produktkort. */
 .produkt-breadcrumbs a,.produkt-breadcrumbs span {
   color:inherit;
   text-decoration:none
 }
 
-/* Produkter og produktkort. */
 .produkt-breadcrumbs a {
   padding-bottom:3px;
   background-image:linear-gradient(currentColor,currentColor);
@@ -46,13 +42,12 @@
   transition:background-size 220ms,color 220ms
 }
 
-/* Produkter og produktkort. */
 .produkt-breadcrumbs a:focus-visible,.produkt-breadcrumbs a:hover {
   color:var(--color-heading);
   background-size:100% 1px
 }
 
-/* Den store øverste sektion på siden. */
+/* Produkthero: splitter produktbillede og købssummary på desktop. */
 .produkt-skabelon-hero {
   display:grid;
   grid-template-columns:minmax(0,1fr) minmax(360px,1fr);
@@ -60,7 +55,6 @@
   padding:16px var(--page-gutter) 0
 }
 
-/* Billeder og billedkasser. */
 .produkt-skabelon-image {
   display:grid;
   place-items:center;
@@ -68,27 +62,23 @@
   text-transform:uppercase
 }
 
-/* Billeder og billedkasser. */
 .produkt-skabelon-image img {
   width:min(88%,500px);
   max-height:88%;
   object-fit:contain
 }
 
-/* Den store øverste sektion på siden. */
 .produkt-skabelon-image-hero {
   min-height:650px;
   background:0 0;
   font-size:var(--font-h1-desktop)
 }
 
-/* Den store øverste sektion på siden. */
 .produkt-skabelon-image-hero-large img {
   width:min(94%,580px);
   max-height:94%
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:1181px) {
   .produkt-skabelon-image-hero {
     position:sticky;
@@ -103,14 +93,13 @@
   }
 }
 
-/* Produkter og produktkort. */
+/* Produktsummary: styrer titel, pris, størrelser, købsknap og accordions. */
 .produkt-skabelon-summary {
   display:flex;
   flex-direction:column;
   padding:32px 40px 52px
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-summary::before {
   order:0;
   display:block;
@@ -119,13 +108,11 @@
   content:""
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-summary h1 {
   order:2;
   margin:16px 0 0
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-price {
   order:3;
   width:100%;
@@ -138,7 +125,6 @@
   line-height:1.1
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-price-offer {
   order:3;
   display:flex;
@@ -158,24 +144,20 @@
   white-space:nowrap
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-price-old,.produkt-skabelon-price-current {
   flex:0 0 auto
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-price-old {
   color:#78919b;
   text-decoration:line-through;
   text-decoration-thickness:1px
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-price-current {
   color:var(--color-primary)
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-price-offer .product-badge {
   position:static;
   flex:0 0 auto;
@@ -193,7 +175,6 @@
   flex-basis:100%
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .produkt-skabelon-size-label,.produkt-skabelon-status {
   color:var(--color-primary);
   font-size:calc(var(--font-eyebrow-desktop) - 1px);
@@ -202,14 +183,13 @@
   text-transform:uppercase
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-status {
   order:4;
   margin-top:12px;
   line-height:1.2
 }
 
-/* Produkter og produktkort. */
+/* Størrelsesvalg: knapper og aktiv tilstand for produktvarianter. */
 .produkt-skabelon-size-group {
   order:4;
   width:100%;
@@ -221,7 +201,6 @@
   border:0
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .produkt-skabelon-size-label {
   position:static;
   display:block;
@@ -235,14 +214,12 @@
   white-space:normal
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-size-options {
   display:flex;
   flex-wrap:wrap;
   gap:12px
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-size {
   display:inline-flex;
   position:relative;
@@ -264,25 +241,21 @@
   text-transform:uppercase
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .produkt-skabelon-size-active,.produkt-skabelon-size:focus-visible,.produkt-skabelon-size:has(input:checked),.produkt-skabelon-size:hover {
   color:var(--color-heading);
   background:0 0
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .produkt-skabelon-size input {
   position:absolute;
   opacity:0
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-size span {
   position:relative;
   display:inline-block
 }
 
-/* Knapper og links man skal klikke på. */
 .produkt-skabelon-size span:not(.button-label)::after {
   content:"";
   position:absolute;
@@ -295,17 +268,14 @@
   transition:clip-path 220ms
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .produkt-skabelon-size-active span::after,.produkt-skabelon-size:focus-visible span::after,.produkt-skabelon-size:has(input:checked) span::after,.produkt-skabelon-size:hover span::after {
   clip-path:inset(0 0 0 0)
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .produkt-skabelon-size input:focus-visible+span {
   outline:0
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-buy {
   order:5;
   width:auto;
@@ -314,22 +284,18 @@
   white-space:nowrap
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-summary:not(:has(.produkt-skabelon-size-group)) .produkt-skabelon-buy {
   margin-top:18px
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-set-copy .eyebrow {
   color:var(--color-primary)
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-tags {
   color:var(--color-heading)
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-tags {
   order:1;
   display:flex;
@@ -344,17 +310,14 @@
   text-transform:uppercase
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-tags li:nth-child(n+5) {
   display:none
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-tags-all li:nth-child(n+5) {
   display:list-item
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-description {
   order:6;
   max-width:620px;
@@ -364,13 +327,12 @@
   border-bottom:1px solid var(--color-heading)
 }
 
-/* Produkter og produktkort. */
+/* Produktaccordions: foldbare paneler til brug, dosering og produktinfo. */
 .produkt-skabelon-accordions {
   order:7;
   margin-top:0
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-set-buy {
   order:8;
   display:grid;
@@ -385,21 +347,18 @@
   border-bottom:1px solid var(--color-heading)
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-set-copy {
   display:flex;
   min-width:0;
   flex-direction:column
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-set-copy h2 {
   margin-top:8px;
   font-size:clamp(28px, 3vw, 38px);
   line-height:1
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-set-copy p {
   max-width:320px;
   margin-top:auto;
@@ -407,14 +366,12 @@
   line-height:1.55
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-set-products {
   display:grid;
   grid-template-columns:1fr;
   gap:0
 }
 
-/* Små kort med indhold. */
 .produkt-skabelon-set-products .product-card {
   display:flex;
   min-width:0;
@@ -424,7 +381,6 @@
   overflow:hidden
 }
 
-/* Billeder og billedkasser. */
 .produkt-skabelon-set-products .product-image {
   position:relative;
   display:flex;
@@ -437,7 +393,6 @@
   border-radius:var(--button-radius) var(--button-radius) 0 0
 }
 
-/* Billeder og billedkasser. */
 .produkt-skabelon-set-products .product-image>a {
   display:flex;
   width:100%;
@@ -446,7 +401,6 @@
   justify-content:center
 }
 
-/* Billeder og billedkasser. */
 .produkt-skabelon-package-image img,.produkt-skabelon-set-products .product-image img {
   display:block;
   width:80%;
@@ -454,7 +408,6 @@
   object-fit:contain
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-set-products .product-content {
   position:relative;
   display:flex;
@@ -468,7 +421,6 @@
   overflow:hidden
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-set-products .product-content h4 {
   height:calc(1.2em * 2);
   overflow:hidden;
@@ -476,7 +428,6 @@
   line-height:1.2
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-set-products .product-content p {
   height:calc(1.45em * 2);
   margin-top:4px;
@@ -486,7 +437,6 @@
   line-height:1.45
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-set-products .product-meta {
   display:flex;
   align-items:flex-end;
@@ -501,12 +451,10 @@
   line-height:1.3
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-set-products .product-meta span:first-child {
   font-size:11px
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-package-meta span:last-child,.produkt-skabelon-set-products .product-meta span:last-child {
   color:var(--color-text);
   font-size:9px;
@@ -593,23 +541,19 @@
   }
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-accordion {
   border-bottom:1px solid #8fa4ad
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-accordion:first-child {
   border-top:0
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-accordion h2 {
   font-size:inherit;
   line-height:inherit
 }
 
-/* Knapper og links man skal klikke på. */
 .produkt-skabelon-accordion-button {
   display:flex;
   width:100%;
@@ -626,22 +570,18 @@
   text-align:left
 }
 
-/* Knapper og links man skal klikke på. */
 .produkt-skabelon-accordion-button::-webkit-details-marker {
   display:none
 }
 
-/* Knapper og links man skal klikke på. */
 .produkt-skabelon-accordion-button::marker {
   content:""
 }
 
-/* Knapper og links man skal klikke på. */
 .produkt-skabelon-accordion[open] .produkt-skabelon-accordion-button span:last-child {
   transform:rotate(180deg)
 }
 
-/* Knapper og links man skal klikke på. */
 .produkt-skabelon-accordion-button span:last-child {
   display:inline-block;
   width:16px;
@@ -654,27 +594,22 @@
   transition:transform 180ms
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-accordion-panel,.produkt-skabelon-accordion[open] .produkt-skabelon-accordion-panel {
   padding:0 0 22px 40px
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-accordion-panel p {
   margin:0
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-accordion-panel p+p {
   margin-top:14px
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-accordion-panel:has(.produkt-skabelon-package-products),.produkt-skabelon-accordion[open] .produkt-skabelon-accordion-panel:has(.produkt-skabelon-package-products) {
   padding-left:0
 }
 
-/* Lister og rækker med flere ting. */
 .produkt-skabelon-panel-list {
   display:grid;
   gap:6px;
@@ -682,12 +617,10 @@
   padding-left:18px
 }
 
-/* Lister og rækker med flere ting. */
 .produkt-skabelon-panel-list li {
   line-height:1.55
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-package-products {
   display:grid;
   width:100%;
@@ -698,7 +631,6 @@
   min-width:0
 }
 
-/* Små kort med indhold. */
 .produkt-skabelon-package-card {
   display:flex;
   min-width:0;
@@ -709,13 +641,11 @@
   overflow:hidden
 }
 
-/* Små kort med indhold. */
 .produkt-skabelon-package-card:focus-visible {
   outline:2px solid var(--color-heading);
   outline-offset:3px
 }
 
-/* Billeder og billedkasser. */
 .produkt-skabelon-package-image {
   display:flex;
   width:100%;
@@ -724,7 +654,6 @@
   justify-content:center
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-package-content {
   display:flex;
   flex:1;
@@ -734,7 +663,6 @@
   border-top:1px solid var(--color-heading)
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-package-content strong {
   min-height:calc(1.2em * 2);
   color:var(--color-heading);
@@ -744,7 +672,6 @@
   line-height:1.2
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-package-description {
   display:-webkit-box;
   min-height:calc(1.4em * 3);
@@ -756,7 +683,6 @@
   line-height:1.4
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-package-meta {
   display:flex;
   align-items:flex-end;
@@ -770,7 +696,6 @@
   line-height:1.3
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-package-indicators {
   display:none;
   align-items:center;
@@ -779,12 +704,10 @@
   margin-top:14px
 }
 
-/* Knapper og links man skal klikke på. */
 .product-add-button .product-add-button-icon,.produkt-skabelon-ingredient-map,.produkt-skabelon-low-rich-visual,.produkt-skabelon-package-indicators.is-hidden,.produkt-skabelon-package-indicators:empty,.quick-add-sheet[hidden] {
   display:none
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-package-indicators .indicator {
   width:18px;
   height:3px;
@@ -797,14 +720,12 @@
   transition:width 260ms,opacity 260ms,background 260ms
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-package-indicators .indicator.active {
   width:30px;
   background:#8b989d;
   opacity:1
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-product-info {
   margin-top:14px;
   padding:0;
@@ -812,7 +733,6 @@
   color:#111
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-info-row {
   display:grid;
   grid-template-columns:108px minmax(0,1fr);
@@ -821,7 +741,6 @@
   border-bottom:1px solid #8fa4ad
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .produkt-skabelon-info-label {
   color:#111;
   font-family:var(--font-heading);
@@ -830,14 +749,12 @@
   line-height:1.35
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-info-value {
   color:#111;
   font-size:14px;
   line-height:1.55
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-info-value strong {
   display:inline-block;
   margin:10px 0 2px;
@@ -845,12 +762,10 @@
   font-weight:700
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-info-value strong:first-child {
   margin-top:0
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-details {
   display:grid;
   grid-template-columns:minmax(0,1fr) minmax(360px,1fr);
@@ -861,30 +776,25 @@
   background:var(--color-light-blue)
 }
 
-/* Billeder og billedkasser. */
 .produkt-skabelon-image-secondary {
   min-height:360px;
   background:0 0;
   font-size:var(--font-h2-desktop)
 }
 
-/* Billeder og billedkasser. */
 .produkt-skabelon-image-secondary-placeholder {
   background:var(--color-image-placeholder)
 }
 
-/* Billeder og billedkasser. */
 .produkt-skabelon-image-secondary .produkt-skabelon-ingredient-image {
   width:min(92%,560px);
   max-height:92%
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-specs {
   align-self:center
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-spec-row {
   display:grid;
   grid-template-columns:150px 1fr;
@@ -893,40 +803,33 @@
   border-bottom:1px solid var(--color-heading)
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-spec-row:first-child {
   border-top:1px solid var(--color-heading)
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-spec-row dt {
   color:var(--color-heading);
   font-family:var(--font-heading);
   text-transform:uppercase
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-spec-row dd {
   line-height:1.4
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-low-rich {
   margin-top:42px;
   padding:70px var(--page-gutter) 78px
 }
 
-/* Felter hvor brugeren kan skrive eller vælge noget. */
 .produkt-skabelon-section-label {
   line-height:1.2
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-low-rich h2 {
   margin-top:10px
 }
 
-/* Billeder og billedkasser. */
 .produkt-skabelon-low-rich-placeholder {
   display:grid;
   margin-top:42px;
@@ -938,12 +841,10 @@
   text-align:center
 }
 
-/* Billeder og billedkasser. */
 .product-badge,.produkt-skabelon-related-card,.produkt-skabelon-related-card a,.produkt-skabelon-related-image {
   border-radius:var(--button-radius)
 }
 
-/* Billeder og billedkasser. */
 .produkt-skabelon-low-rich-image {
   display:block;
   width:100%;
@@ -951,25 +852,22 @@
   height:auto
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-low-rich-actions {
   display:flex;
   justify-content:flex-end;
   margin-top:22px
 }
 
-/* Knapper og links man skal klikke på. */
 .produkt-skabelon-low-rich-cta {
   width:auto;
   min-width:190px
 }
 
-/* Produkter og produktkort. */
+/* Relaterede produkter: grid og slider for anbefalede produkter. */
 .produkt-skabelon-related {
   padding:0 var(--page-gutter) 82px
 }
 
-/* Lister og rækker med flere ting. */
 .produkt-skabelon-related-grid {
   display:grid;
   grid-template-columns:repeat(5,minmax(0,1fr));
@@ -977,12 +875,10 @@
   margin-top:22px
 }
 
-/* Små kort med indhold. */
 .produkt-skabelon-related-card a {
   display:block
 }
 
-/* Billeder og billedkasser. */
 .produkt-skabelon-related-image {
   position:relative;
   display:grid;
@@ -995,7 +891,6 @@
   overflow:visible
 }
 
-/* Knapper og links man skal klikke på. */
 .product-add-button,.product-badge {
   position:absolute;
   display:inline-flex;
@@ -1006,7 +901,6 @@
   text-transform:uppercase
 }
 
-/* Produkter og produktkort. */
 .product-badge {
   top:10px;
   left:6px;
@@ -1023,26 +917,22 @@
   transform-origin:center
 }
 
-/* Billeder og billedkasser. */
 .produkt-skabelon-related-image img {
   width:100%;
   height:100%;
   object-fit:contain
 }
 
-/* Små kort med indhold. */
 .produkt-skabelon-related-card h3 {
   margin-top:16px;
   color:var(--color-heading);
   font-size:var(--font-h4-desktop)
 }
 
-/* Små kort med indhold. */
 .produkt-skabelon-related-card p {
   margin-top:6px
 }
 
-/* Knapper og links man skal klikke på. */
 .product-add-button {
   z-index:1;
   border:0;
@@ -1059,14 +949,12 @@
   transform:translate(-50%,10px)
 }
 
-/* Knapper og links man skal klikke på. */
 .produkt-skabelon-related-card:focus-within .product-add-button,.produkt-skabelon-related-card:hover .product-add-button {
   opacity:1;
   transform:translateY(0);
   transform:translate(-50%,0)
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-control {
   display:block;
   width:min(82%,257px);
@@ -1075,14 +963,12 @@
   overflow:visible
 }
 
-/* Menuen og navigationen. */
 .quick-add-menu {
   position:relative;
   width:100%;
   min-height:inherit
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-option,.quick-add-submit {
   border:0;
   color:inherit;
@@ -1093,7 +979,6 @@
   text-transform:inherit
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-submit {
   display:flex;
   width:100%;
@@ -1110,17 +995,14 @@
   white-space:nowrap
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-dropdown,.quick-add-heading,.quick-add-help,.quick-add-option {
   color:var(--color-heading)
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-control.is-open .quick-add-submit {
   border-radius:0 0 var(--button-radius) var(--button-radius)
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-heading {
   margin:0;
   padding:11px 14px 9px;
@@ -1132,7 +1014,6 @@
   text-transform:uppercase
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-dropdown {
   position:absolute;
   right:0;
@@ -1150,13 +1031,11 @@
   transition:opacity 180ms,transform 180ms
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-control.is-open .quick-add-dropdown {
   opacity:1;
   transform:translateY(0)
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-help {
   margin:0;
   padding:10px 12px 8px;
@@ -1167,7 +1046,6 @@
   text-transform:none
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-option {
   display:block;
   width:100%;
@@ -1178,12 +1056,10 @@
   text-align:left
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-option:focus-visible,.quick-add-option:hover {
   background:var(--color-light-blue)
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (hover:hover) and (min-width:1181px) {
   .produkt-skabelon-related-card:not(:hover) .product-add-button {
     opacity:0;
@@ -1191,26 +1067,22 @@
   }
 }
 
-/* Hurtige handlinger på produkter. */
 .is-quick-add-sheet-open {
   overflow:hidden
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-sheet {
   position:fixed;
   z-index:4100;
   inset:0
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-sheet-backdrop {
   position:absolute;
   inset:0;
   background:rgba(0,0,0,.34)
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-sheet-panel {
   position:absolute;
   right:0;
@@ -1223,14 +1095,12 @@
   box-shadow:0 -18px 40px rgba(51,76,86,.16)
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-sheet-close,.quick-add-sheet-option {
   background:0 0;
   color:var(--color-heading);
   cursor:pointer
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-sheet-close {
   position:absolute;
   top:10px;
@@ -1240,7 +1110,6 @@
   font-size:28px
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-sheet-panel h2 {
   color:var(--color-heading);
   font-family:var(--font-heading);
@@ -1248,7 +1117,6 @@
   font-weight:400
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-sheet.show-help .quick-add-sheet-options::before {
   display:block;
   margin-bottom:10px;
@@ -1257,13 +1125,11 @@
   font-size:14px
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-sheet-options {
   display:grid;
   gap:8px
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-sheet-option {
   min-height:44px;
   border:1px solid var(--color-heading);
@@ -1271,18 +1137,15 @@
   text-align:left
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-sheet-option::before {
   margin-right:10px;
   content:"○"
 }
 
-/* Hurtige handlinger på produkter. */
 .quick-add-sheet-option.is-active::before {
   content:"●"
 }
 
-/* Produkter og produktkort. */
 .produkt-skabelon-visually-hidden {
   position:absolute;
   width:1px;
@@ -1308,7 +1171,6 @@
   display:none
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (max-width:767px) {
   .produkt-skabelon-price-offer {
     gap:clamp(6px,2vw,8px);
@@ -1855,7 +1717,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1180px) {
   .produkt-skabelon-price-offer {
     gap:10px;
@@ -1942,7 +1803,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (hover:hover) and (min-width:768px) and (max-width:1023px) {
   .produkt-skabelon-related .product-add-button {
     opacity:0;
@@ -1954,7 +1814,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (max-width:1180px) {
   .produkt-skabelon-related-card {
     position:relative
@@ -2034,7 +1893,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (max-width:767px) {
   .is-quick-add-sheet-open {
     overflow:auto
@@ -2097,7 +1955,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1180px) {
   .produkt-skabelon-set-buy {
     grid-template-columns:minmax(0,1fr) minmax(180px,220px);
@@ -2567,7 +2424,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1180px) {
   .produkt-skabelon-set-buy {
     grid-template-columns:1fr;
@@ -2637,7 +2493,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1180px) {
   .produkt-skabelon-set-products .product-card {
     position:relative
@@ -2777,14 +2632,12 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1180px) {
   .produkt-skabelon-related-card:nth-child(n+5) {
     display:none
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1180px) {
   .produkt-skabelon-image-hero {
     position:sticky;
@@ -2796,7 +2649,7 @@
   }
 }
 
-/* Mobil-layout for produktkategorier uden breadcrumbs paa mobil. */
+/* Mobil-layout for produktkategorier uden breadcrumbs på mobil. */
 @media (max-width:767px) {
   .shampoo-product-page .produkt-breadcrumbs,
   .set-product-page .produkt-breadcrumbs,

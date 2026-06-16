@@ -1,4 +1,6 @@
-﻿
+/* Stylingtips: hero, LOW-RICH mix, cases, Instagram og responsivt layout. */
+
+/* Stylingbase: definerer sektionsafstand og hvid sidebaggrund. */
 .styling-main {
   --styling-section-space:72px;
   overflow-x:hidden;
@@ -9,6 +11,7 @@
   min-width:154px
 }
 
+/* Stylinghero: deler intro og hero-medie i et responsivt grid. */
 .styling-hero-content {
   display:flex;
   min-width:0;
@@ -81,6 +84,7 @@
   margin-top:24px
 }
 
+/* Mix-sektion: forklarer kombinationen af produkter og stylingmetode. */
 .styling-mix {
   display:grid;
   width:100%;
@@ -133,12 +137,14 @@
   object-position:center
 }
 
+/* Instagram: genbruger det fælles visuelle grid på stylingtips. */
 .styling-main .om-os-instagram {
   box-sizing:border-box;
   width:100%;
   padding:var(--styling-section-space) 0
 }
 
+/* Stylingcases: styrer kortslideren med konkrete stylingtips. */
 .styling-cases {
   display:grid;
   width:100%;

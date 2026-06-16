@@ -1,4 +1,4 @@
-﻿/* Her ligger udseendet til forsiden. */
+/* Forside: hero, salonfortælling, Mixly-intro, behandlinger, guides og anmeldelser. */
 
 /* Fælles rytme for sektioner med tekst og billede på forsiden. */
 :root {
@@ -9,23 +9,21 @@
   --forside-split-media-aspect:710/420
 }
 
-/* Citater og anmeldelser. */
 .citat-tekst p,.salon-citat-tekst p {
   line-height:1.3;
   color:var(--color-light-blue)
 }
 
-/* Den store øverste sektion på siden. */
+/* Anmeldelser: styler auto-scrollende reviewliste og indikatorer. */
 .anmeldelser-titel,.hero {
   text-transform:uppercase
 }
 
-/* Billeder og billedkasser. */
 .behandlinger-slider-indicators.is-hidden,.behandlinger-slider-indicators:empty,.forside-behandling-kort-billede img[src=""],.guide-sektion-billede img[src=""],.guide-sektion_-produkt img[src=""],.guide-sektion_-produkt::before,.kort-sektion-billede img[src=""],.mixly-introduktion-billede img[src=""],.om-belinda-billede img[src=""] {
   display:none
 }
 
-/* Den store øverste sektion på siden. */
+/* Hero: fuldbredt forsidebillede med centreret brandlogo og CTAer. */
 .hero {
   position:relative;
   display:flex;
@@ -46,18 +44,15 @@
   text-align:center
 }
 
-/* Den store øverste sektion på siden. */
 .hero>:not(.image-placeholder-label) {
   position:relative;
   z-index:1
 }
 
-/* Den store øverste sektion på siden. */
 .hero-title {
   text-align:center
 }
 
-/* Den store øverste sektion på siden. */
 .hero-title-logo {
   display:block;
   width:min(1044px,90vw);
@@ -67,14 +62,12 @@
   margin-left:auto
 }
 
-/* Den store øverste sektion på siden. */
 .hero-title-logo img {
   display:block;
   width:100%;
   height:auto
 }
 
-/* Billeder og billedkasser. */
 .forside-behandling-kort-billede img,.guide-sektion-billede img,.guide-sektion-billede picture,.guide-sektion_-produkt img,.kort-sektion-billede img,.mixly-introduktion-billede img,.om-belinda-billede img {
   display:block;
   width:100%;
@@ -82,24 +75,20 @@
   object-fit:cover
 }
 
-/* Billeder og billedkasser. */
 .forside-behandling-kort-billede:has(img[src]:not([src=""]))::before,.guide-sektion-billede:has(img[src]:not([src=""]))::before,.guide-sektion_-produkt:has(img[src]:not([src=""]))::before,.kort-sektion-billede:has(img[src]:not([src=""]))::before,.mixly-introduktion-billede:has(img[src]:not([src=""]))::before,.om-belinda-billede:has(img[src]:not([src=""]))::before {
   display:none
 }
 
-/* Den store øverste sektion på siden. */
 .guide-sektion-knapper,.hero-actions,.mixly-introduktion-knapper {
   display:flex;
   align-items:center;
   gap:20px
 }
 
-/* Den store øverste sektion på siden. */
 .anmeldelse-citat footer,.hero-actions {
   margin-top:28px
 }
 
-/* Denne del styrer udseendet for gruppen her. */
 .mixly-introduktion-indhold,.om-belinda {
   display:grid;
   align-items:start;
@@ -107,13 +96,12 @@
   max-width:var(--container-max)
 }
 
-/* Den store øverste sektion på siden. */
 .hero-actions .button-secondary {
   border-color:#f7f7f7;
   color:#f7f7f7
 }
 
-/* Denne del styrer udseendet for gruppen her. */
+/* Om Belinda: split-layout med tekst og portrætbillede. */
 .om-belinda {
   grid-template-columns:minmax(0,370px) minmax(0,500px);
   justify-content:center;
@@ -122,7 +110,6 @@
   padding:140px var(--page-gutter) 135px
 }
 
-/* Billeder og billedkasser. */
 .om-belinda-billede {
   display:grid;
   width:100%;
@@ -131,7 +118,6 @@
   background:#111
 }
 
-/* Billeder og billedkasser. */
 .om-belinda-billede::before {
   content:"";
   width:100%;
@@ -139,32 +125,27 @@
   background:linear-gradient(145deg,#111,#363636 52%,#161616)
 }
 
-/* Denne del styrer udseendet for gruppen her. */
 .om-belinda__content {
   padding-top:0
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .behandlinger-sektion p:not(.eyebrow),.guide-sektion p:not(.eyebrow),.mixly-introduktion p:not(.eyebrow),.om-belinda p:not(.eyebrow) {
   max-width:470px
 }
 
-/* Grundregler for almindelige HTML-elementer. */
 .om-belinda p:not(.eyebrow) {
   margin-top:26px
 }
 
-/* Knapper og links man skal klikke på. */
 .om-belinda .button {
   margin-top:42px
 }
 
-/* Denne del styrer udseendet for gruppen her. */
+/* Mixly-intro: præsenterer produktuniverset med tekst og billedslider. */
 .mixly-introduktion {
   background:var(--color-light-blue)
 }
 
-/* Denne del styrer udseendet for gruppen her. */
 .mixly-introduktion-indhold {
   grid-template-columns:var(--forside-split-text-column) var(--forside-split-media-column);
   column-gap:var(--forside-split-gap-desktop);
@@ -172,27 +153,22 @@
   padding:52px var(--page-gutter) 64px
 }
 
-/* Denne del styrer udseendet for gruppen her. */
 .behandlinger-sektion-titel,.mixly-introduktion-tekst {
   padding:0
 }
 
-/* Grundregler for almindelige HTML-elementer. */
 .behandlinger-sektion-titel p:not(.eyebrow),.mixly-introduktion-tekst p:not(.eyebrow) {
   margin-top:22px
 }
 
-/* Knapper og links man skal klikke på. */
 .behandlinger-sektion-titel .button,.mixly-introduktion-knapper {
   margin-top:40px
 }
 
-/* Denne del styrer udseendet for gruppen her. */
 .mixly-introduktion-slider {
   display:contents
 }
 
-/* Billeder og billedkasser. */
 .mixly-introduktion-billeder {
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -200,7 +176,6 @@
   align-self:stretch
 }
 
-/* Billeder og billedkasser. */
 .mixly-introduktion-billede {
   display:grid;
   height:100%;
@@ -209,38 +184,33 @@
   background:var(--color-image-placeholder)
 }
 
-/* Billeder og billedkasser. */
 .forside-behandling-kort-billede::before,.mixly-introduktion-billede::before {
   content:"IMG\A 315 x 370";
   white-space:pre;
   text-align:center
 }
 
-/* Citater og anmeldelser. */
+/* Citatbånd: fremhæver redaktionelle citater og salonstemning. */
 .citat-sektion,.salon-citat {
   display:grid;
   place-items:center;
   text-align:center
 }
 
-/* Citater og anmeldelser. */
 .citat-sektion {
   min-height:345px;
   padding:90px var(--page-gutter);
   background:var(--color-turkis)
 }
 
-/* Citater og anmeldelser. */
 .citat-tekst p {
   font-size:clamp(26px, 2.1vw, var(--font-quote-desktop))
 }
 
-/* Citater og anmeldelser. */
 .salon-citat-tekst p {
   font-size:clamp(22px, 1.9vw, var(--font-salon-quote-desktop))
 }
 
-/* Footeren nederst på siden. */
 .citat-tekst footer,.salon-citat-tekst footer {
   margin-top:34px;
   color:var(--color-light-blue);
@@ -248,7 +218,7 @@
   letter-spacing:.16em
 }
 
-/* Denne del styrer udseendet for gruppen her. */
+/* Behandlinger: viser servicekort og slider-indikatorer. */
 .behandlinger-sektion {
   display:grid;
   grid-template-columns:var(--forside-split-media-column) var(--forside-split-text-column);
@@ -259,14 +229,12 @@
   padding:70px var(--page-gutter) 100px
 }
 
-/* Lister og rækker med flere ting. */
 .behandlinger-sektion-liste {
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:8px
 }
 
-/* Denne del styrer udseendet for gruppen her. */
 .behandlinger-slider-indicators {
   display:flex;
   align-items:center;
@@ -275,7 +243,6 @@
   margin-top:1.5rem
 }
 
-/* Denne del styrer udseendet for gruppen her. */
 .behandlinger-slider-indicators .indicator {
   width:18px;
   height:3px;
@@ -288,25 +255,21 @@
   transition:width 260ms,opacity 260ms,background 260ms
 }
 
-/* Hvordan noget ser ud, når det er aktivt, åbent eller valgt. */
 .behandlinger-slider-indicators .indicator:focus-visible,.behandlinger-slider-indicators .indicator:hover {
   opacity:.85
 }
 
-/* Hvordan noget ser ud, når det er aktivt, åbent eller valgt. */
 .behandlinger-slider-indicators .indicator.active {
   width:30px;
   background:#8b989d;
   opacity:1
 }
 
-/* Små kort med indhold. */
 .forside-behandling-kort {
   display:flex;
   flex-direction:column
 }
 
-/* Små kort med indhold. */
 .forside-behandling-kort-link {
   display:flex;
   height:100%;
@@ -315,7 +278,6 @@
   text-decoration:none
 }
 
-/* Billeder og billedkasser. */
 .forside-behandling-kort-billede {
   display:grid;
   aspect-ratio:315/370;
@@ -326,17 +288,14 @@
   background:var(--color-image-placeholder)
 }
 
-/* Billeder og billedkasser. */
 .forside-behandling-kort-billede img {
   transition:transform 420ms ease
 }
 
-/* Billeder og billedkasser. */
 .forside-behandling-kort-link:hover .forside-behandling-kort-billede img {
   transform:scale(1.04)
 }
 
-/* Små kort med indhold. */
 .forside-behandling-kort-titel {
   width:fit-content;
   padding-bottom:4px;
@@ -347,7 +306,6 @@
   transition:background-size 220ms
 }
 
-/* Små kort med indhold. */
 .forside-behandling-kort-link:focus-visible .forside-behandling-kort-titel,
 .forside-behandling-kort-link:hover .forside-behandling-kort-titel {
   background-size:100% 1px
@@ -370,31 +328,26 @@
   }
 }
 
-/* Små kort med indhold. */
 .forside-behandling-kort p {
   margin-top:12px
 }
 
-/* Citater og anmeldelser. */
 .anmeldelser {
   padding:58px var(--page-gutter) 120px;
   background:var(--color-light-blue);
   text-align:center
 }
 
-/* Citater og anmeldelser. */
 .anmeldelser-titel,.anmeldelser>.eyebrow {
   max-width:1180px;
   margin-right:auto;
   margin-left:auto
 }
 
-/* Citater og anmeldelser. */
 .anmeldelser-titel {
   color:var(--color-heading)
 }
 
-/* Lister og rækker med flere ting. */
 .anmeldelser-liste {
   position:relative;
   max-width:1180px;
@@ -425,13 +378,11 @@
   display:none
 }
 
-/* Citater og anmeldelser. */
 .anmeldelser-track {
   display:flex;
   gap:56px
 }
 
-/* Citater og anmeldelser. */
 .anmeldelse {
   display:flex;
   flex:0 0 calc((100% - 112px) / 3);
@@ -442,7 +393,6 @@
   scroll-snap-align:start
 }
 
-/* Citater og anmeldelser. */
 .anmeldelse-stjerner {
   order:-1;
   margin-top:18px;
@@ -451,7 +401,7 @@
   letter-spacing:.12em
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
+/* Guide-sektion: kobler LOW/RICH-guiden til forsidens flow. */
 .guide-sektion {
   display:grid;
   grid-template-columns:var(--forside-split-media-column) var(--forside-split-text-column);
@@ -463,7 +413,6 @@
   overflow:hidden
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-sektion-tekst {
   display:flex;
   max-width:470px;
@@ -472,18 +421,15 @@
   padding-left:0
 }
 
-/* Guide-sektioner med forklaringer og gode råd. */
 .guide-sektion-tekst p:not(.eyebrow) {
   margin-top:24px
 }
 
-/* Knapper og links man skal klikke på. */
 .guide-sektion-knapper {
   margin-top:40px;
   padding-top:0
 }
 
-/* Produkter og produktkort. */
 .guide-sektion_-produkt {
   display:grid;
   height:370px;
@@ -496,12 +442,10 @@
   background:0 0
 }
 
-/* Produkter og produktkort. */
 .guide-sektion_-produkt:has(img[src=""]) {
   display:none
 }
 
-/* Produkter og produktkort. */
 .guide-sektion_-produkt img {
   display:block;
   width:100%;
@@ -509,7 +453,6 @@
   object-fit:contain
 }
 
-/* Billeder og billedkasser. */
 .guide-sektion-billede {
   display:grid;
   height:100%;
@@ -518,26 +461,22 @@
   background:var(--color-image-placeholder)
 }
 
-/* Billeder og billedkasser. */
 .guide-sektion-billede::before {
   content:"IMG\A 710 x 370";
   white-space:pre;
   text-align:center
 }
 
-/* Citater og anmeldelser. */
 .salon-citat {
   min-height:305px;
   padding:64px var(--page-gutter);
   background:#294a54
 }
 
-/* Citater og anmeldelser. */
 .salon-citat-tekst {
   max-width:1120px
 }
 
-/* Billeder og billedkasser. */
 .kort-sektion-billede {
   display:grid;
   min-height:525px;
@@ -545,14 +484,12 @@
   background:var(--color-image-placeholder)
 }
 
-/* Billeder og billedkasser. */
 .kort-sektion-billede::before {
   content:"IMG\A 1140 x 525";
   white-space:pre;
   text-align:center
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:1200px) {
   .guide-sektion {
     grid-template-columns:var(--forside-split-media-column) var(--forside-split-text-column);
@@ -593,14 +530,12 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:1010px) and (max-width:1198px) {
   .guide-sektion-billede {
     display:none
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:1200px) {
   .mixly-introduktion {
     overflow:hidden
@@ -648,7 +583,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (max-width:767px) {
   .citat-tekst p,.salon-citat-tekst p {
     font-size:var(--font-review-quote-mobile)
@@ -960,7 +894,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1023px) {
   .hero {
     min-height:380px;
@@ -1137,7 +1070,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:1199px) {
   .anmeldelser-track {
     gap:32px
@@ -1178,7 +1110,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (min-width:768px) and (max-width:820px) {
   .mixly-introduktion-indhold {
     grid-template-columns:minmax(0,1.05fr) minmax(220px,0.95fr);
@@ -1202,7 +1133,6 @@
   }
 }
 
-/* Regler for andre skærmstørrelser. */
 @media (max-width:767px) {
   .mixly-introduktion-slider {
     overflow:visible
