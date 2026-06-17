@@ -2238,6 +2238,12 @@ function getInterfaceIconUrl(iconName) {
   return cartIcon.replace(/kurv\.svg$/i, `${iconName}.svg`);
 }
 
+// Checkoutsti: finder korrekt relativ sti fra nuværende side til checkout.
+function getCheckoutUrl() {
+  const cartIcon = document.querySelector(".top-nav-icon-cart")?.getAttribute("src") || "img/ikoner/kurv.svg";
+  return cartIcon.replace(/img\/ikoner\/kurv\.svg$/i, "checkout.html");
+}
+
 // Quick view-knap: tilføjer øje-knap på produktbilledet.
 function createProductHoverEye(card) {
   const image = getCardImageFrame(card);
@@ -2922,7 +2928,7 @@ function renderCartDrawer() {
       <span>I alt</span>
       <strong>${formatPrice(getCartTotal())}</strong>
     </div>
-    <a class="side-cart-checkout" href="checkout.html" aria-label="Gå til kassen"><span class="button-label">Gå til kassen</span></a>
+    <a class="side-cart-checkout" href="${getCheckoutUrl()}" aria-label="Gå til kassen"><span class="button-label">Gå til kassen</span></a>
     <p>Fri fragt over 1000 kr. · 1-2 hverdages levering</p>
   `;
 }
